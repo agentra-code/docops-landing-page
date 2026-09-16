@@ -8,7 +8,7 @@ import { ConsentBar } from '@/components/site/ConsentBar'
 import { Footer } from '@/components/site/Footer'
 import { Header } from '@/components/site/Header'
 import { SkipLink } from '@/components/site/SkipLink'
-import { routing, type Locale } from '@/i18n/routing'
+import { routing } from '@/i18n/routing'
 import { site } from '@/lib/site'
 import '@/app/globals.css'
 
@@ -22,11 +22,15 @@ const font = Be_Vietnam_Pro({
   display: 'swap',
 })
 
+// Chỉ nhận locale trong generateStaticParams; giá trị lạ (vd. /llms.txt, /foo.php) → 404 thay vì 500.
+export const dynamicParams = false
+
 export const viewport: Viewport = { themeColor: '#567f2e', width: 'device-width', initialScale: 1 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
-  const t = await getTranslations({ locale: locale as Locale, namespace: 'common' })
+  if (!hasLocale(routing.locales, locale)) notFound()
+  const t = await getTranslations({ locale, namespace: 'common' })
   const verification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
   return {
     metadataBase: new URL(site.siteUrl()),

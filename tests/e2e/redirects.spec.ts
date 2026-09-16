@@ -21,3 +21,14 @@ test('metadata routes and security headers', async ({ request }) => {
   const og = await request.get('/opengraph-image')
   expect(og.headers()['content-type']).toContain('image/png')
 })
+
+test('llms.txt exists and unknown dotted paths are 404, not 500', async ({ request }) => {
+  const llms = await request.get('/llms.txt')
+  expect(llms.status()).toBe(200)
+  expect(llms.headers()['content-type']).toContain('text/plain')
+  expect(await llms.text()).toMatch(/^# Agentra DocOps/)
+  for (const path of ['/khong-ton-tai.txt', '/wp-login.php', '/vi.json']) {
+    const res = await request.get(path)
+    expect(res.status(), path).toBe(404)
+  }
+})

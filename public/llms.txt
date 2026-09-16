@@ -1,0 +1,36 @@
+# Agentra DocOps
+
+> Phần mềm AI xử lý văn bản hành chính trường đại học: nhập, phân loại, tra cứu có trích dẫn, dò tác động pháp lý và soạn nháp theo Nghị định 30/2020; cán bộ luôn duyệt cuối. Ứng dụng desktop cho Windows và macOS của Agentra JSC (Đà Nẵng, Việt Nam). AI software for university administrative documents, a desktop app for Windows and macOS.
+
+Trang web này là trang giới thiệu và tải bộ cài DocOps. Nội dung có hai ngôn ngữ: tiếng Việt (mặc định, không tiền tố) và tiếng Anh (tiền tố /en). Dữ liệu văn bản của người dùng lưu trên máy họ; máy chủ chỉ xử lý phần AI và không dùng dữ liệu của đơn vị để huấn luyện mô hình. Bộ cài được tải từ máy chủ của Agentra (download-docsopapp.agentra.io.vn), không phải từ trang này.
+
+## Trang tiếng Việt
+
+- [Trang chủ](https://docops.agentra.io.vn/): DocOps làm gì, quy trình 6 bước, lợi ích, tải về, câu hỏi thường gặp
+- [Tải về](https://docops.agentra.io.vn/tai-ve): bộ cài Windows x64, macOS Apple Silicon và macOS Intel, kèm dung lượng, SHA-512 và yêu cầu hệ thống
+- [Cài đặt trên macOS](https://docops.agentra.io.vn/huong-dan-cai-dat/macos): chọn bản theo chip, cho phép mở lần đầu, kích hoạt bằng key, cập nhật trong app
+- [Cài đặt trên Windows](https://docops.agentra.io.vn/huong-dan-cai-dat/windows): vượt cảnh báo SmartScreen, chạy trình cài, kích hoạt bằng key
+- [Quy trình](https://docops.agentra.io.vn/quy-trinh): sáu bước xử lý văn bản, ba luồng công việc, độ tin cậy nội dung
+- [Minh bạch AI và dữ liệu](https://docops.agentra.io.vn/minh-bach-ai): DocOps dùng AI ở đâu, con người giám sát, bảo mật, sở hữu nội dung, tuân thủ Nghị định 30/2020 và 13/2023
+- [Liên hệ](https://docops.agentra.io.vn/lien-he): email, địa chỉ, cách nhận key kích hoạt, báo lỗi
+- [Chính sách bảo mật](https://docops.agentra.io.vn/chinh-sach-bao-mat): dữ liệu trang web thu thập, cookie, quyền của người dùng
+
+## English pages
+
+- [Home](https://docops.agentra.io.vn/en): what DocOps does, the six-step process, benefits, download, FAQ
+- [Download](https://docops.agentra.io.vn/en/download): installers for Windows x64, macOS Apple Silicon and macOS Intel with sizes, SHA-512 and system requirements
+- [Install on macOS](https://docops.agentra.io.vn/en/install/macos): choose the build for your chip, allow the first launch, activate with a key, update in the app
+- [Install on Windows](https://docops.agentra.io.vn/en/install/windows): get past SmartScreen, run the installer, activate with a key
+- [How it works](https://docops.agentra.io.vn/en/how-it-works): six processing steps, three daily workflows, content reliability
+- [AI and data transparency](https://docops.agentra.io.vn/en/ai-transparency): where AI is used, human oversight, security, content ownership, Decree 30/2020 and 13/2023
+- [Contact](https://docops.agentra.io.vn/en/contact): email, address, how to get an activation key, bug reports
+- [Privacy policy](https://docops.agentra.io.vn/en/privacy): what the website collects, cookies, your rights
+
+## Liên hệ / Contact
+
+- Agentra JSC, Đà Nẵng, Việt Nam · info@agentra.io.vn · https://agentra.io.vn
+
+## Optional
+
+- [Sitemap](https://docops.agentra.io.vn/sitemap.xml): 16 URL, có hreflang vi/en
+- [robots.txt](https://docops.agentra.io.vn/robots.txt)
