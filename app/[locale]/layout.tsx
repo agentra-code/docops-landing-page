@@ -17,7 +17,7 @@ import '@/app/globals.css'
 
 const font = Be_Vietnam_Pro({
   subsets: ['latin', 'vietnamese'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '600', '700'],
   variable: '--font-be-vietnam',
   display: 'swap',
 })

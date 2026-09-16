@@ -34,6 +34,7 @@ export function PlatformGrid({ assets, locale }: { assets: ReleaseAsset[]; local
               highlighted={match}
               badge={match && asset.platform === preferred[0] ? t('badge') : undefined}
               checksum
+              headingLevel="h2"
               guideLabel={asset.platform === 'windows-x64' ? t('guideWindows') : t('guideMac')}
             />
           )

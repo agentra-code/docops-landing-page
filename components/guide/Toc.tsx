@@ -10,7 +10,7 @@ export function Toc({ items }: { items: Array<{ id: string; label: string }> }) 
           <li key={item.id}>
             <a
               href={`#${item.id}`}
-              className="flex gap-2.5 border-l-2 border-transparent py-1.5 pl-3 text-[14.5px] leading-snug font-medium text-ink2 hover:border-accent hover:text-ink"
+              className="flex gap-2.5 border-l-2 border-transparent py-1.5 pl-3 text-[14.5px] leading-snug font-normal text-ink2 hover:border-accent hover:text-ink"
             >
               <span className="text-muted tabular-nums">{i + 1}.</span>
               {item.label}

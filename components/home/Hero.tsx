@@ -23,7 +23,7 @@ export function Hero({ assets, version }: { assets: ReleaseAsset[]; version: str
         <p className="text-[13.5px] text-muted">{t('meta', { version })}</p>
         <ul className="flex flex-col gap-2 sm:flex-row sm:gap-7">
           {trust.map((item) => (
-            <li key={item} className="inline-flex items-center gap-2 text-[14.5px] font-medium text-ink2">
+            <li key={item} className="inline-flex items-center gap-2 text-[14.5px] font-normal text-ink2">
               <Icon name="check" size={18} strokeWidth={2} className="text-accent" />
               {item}
             </li>

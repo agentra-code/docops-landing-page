@@ -22,6 +22,7 @@ export function PlatformCard({
   badge,
   checksum = false,
   guideLabel,
+  headingLevel = 'h3',
 }: {
   asset: ReleaseAsset
   locale: Locale
@@ -30,10 +31,13 @@ export function PlatformCard({
   badge?: string
   checksum?: boolean
   guideLabel?: string
+  /** h2 khi thẻ đứng ngay dưới h1 của trang (Tải về); h3 trong một khối đã có h2 (trang chủ). */
+  headingLevel?: 'h2' | 'h3'
 }) {
   const t = useTranslations('home.download')
   const tc = useTranslations('common')
   const os = OS_OF[asset.platform]
+  const Heading = headingLevel
   return (
     <div
       className={cn(
@@ -51,7 +55,7 @@ export function PlatformCard({
           <Icon name={os === 'windows' ? 'windows' : 'apple'} size={24} />
         </span>
         <div className="flex flex-col gap-0.5">
-          <h3 className="text-lg leading-snug font-semibold">{t(`platforms.${asset.platform}.title`)}</h3>
+          <Heading className="text-lg leading-snug font-semibold">{t(`platforms.${asset.platform}.title`)}</Heading>
           <span className="text-[13.5px] text-ink2">{t(`platforms.${asset.platform}.sub`)}</span>
         </div>
       </div>

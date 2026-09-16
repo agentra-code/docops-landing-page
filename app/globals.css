@@ -9,7 +9,8 @@
   --color-sidebar: #f3f3f0;
   --color-ink: #0b0b0b;
   --color-ink2: #52514e;
-  --color-muted: #898781;
+  /* tokens.css có --muted #898781 (3,4:1) — chữ nhỏ trên web phải đạt 4,5:1 (spec §8.3) nên tối hơn một nấc. */
+  --color-muted: #6f6d67;
   --color-line: #e1e0d9;
   --color-brand-light: #8cbf3c;
   --color-brand: #6a9c39;
