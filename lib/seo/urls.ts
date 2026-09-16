@@ -14,7 +14,8 @@ export function localizedPath(locale: Locale, page: PageKey, params?: Record<str
   return `${prefix}${path}`
 }
 
-/** URL tuyệt đối của một trang theo locale. */
+/** URL tuyệt đối của một trang theo locale. Trang gốc không có dấu `/` cuối để khớp canonical mà Next sinh ra. */
 export function absoluteUrl(locale: Locale, page: PageKey, params?: Record<string, string>): string {
-  return `${site.siteUrl()}${localizedPath(locale, page, params)}`
+  const path = localizedPath(locale, page, params)
+  return path === '/' ? site.siteUrl() : `${site.siteUrl()}${path}`
 }

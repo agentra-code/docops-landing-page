@@ -8,7 +8,7 @@ beforeAll(() => {
 
 test('absoluteUrl localizes slugs and prefixes', async () => {
   const { absoluteUrl } = await import('@/lib/seo/urls')
-  expect(absoluteUrl('vi', '/')).toBe('https://docops.agentra.io.vn/')
+  expect(absoluteUrl('vi', '/')).toBe('https://docops.agentra.io.vn')
   expect(absoluteUrl('en', '/')).toBe('https://docops.agentra.io.vn/en')
   expect(absoluteUrl('vi', '/download')).toBe('https://docops.agentra.io.vn/tai-ve')
   expect(absoluteUrl('en', '/install/[os]', { os: 'macos' })).toBe('https://docops.agentra.io.vn/en/install/macos')
@@ -34,7 +34,7 @@ test('sitemap lists 16 urls with alternates and feed-based lastModified for the 
   const entries = await sitemap()
   expect(entries).toHaveLength(16)
   const urls = entries.map((e) => e.url)
-  expect(urls).toContain('https://docops.agentra.io.vn/')
+  expect(urls).toContain('https://docops.agentra.io.vn')
   expect(urls).toContain('https://docops.agentra.io.vn/en/install/windows')
   const dl = entries.find((e) => e.url.endsWith('/tai-ve'))!
   expect(dl.alternates?.languages).toMatchObject({ en: 'https://docops.agentra.io.vn/en/download', 'x-default': 'https://docops.agentra.io.vn/tai-ve' })

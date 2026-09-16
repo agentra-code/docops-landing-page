@@ -2,25 +2,21 @@
 
 import { useLocale, useTranslations } from 'next-intl'
 import { useParams } from 'next/navigation'
-import { usePathname, useRouter } from '@/i18n/navigation'
+import type { ComponentProps } from 'react'
+import { Link, usePathname } from '@/i18n/navigation'
 import { routing, type Locale } from '@/i18n/routing'
 import { track } from '@/lib/analytics'
 import { cn } from '@/lib/cn'
 
-/** Chuyển VI/EN, giữ nguyên trang hiện tại (slug dịch theo locale). */
+type Href = ComponentProps<typeof Link>['href']
+
+/** Chuyển VI/EN bằng link thật (bot theo được), giữ nguyên trang hiện tại (slug dịch theo locale). */
 export function LocaleSwitcher({ className }: { className?: string }) {
   const locale = useLocale() as Locale
   const t = useTranslations('common')
   const pathname = usePathname()
   const params = useParams()
-  const router = useRouter()
-
-  function switchTo(next: Locale) {
-    if (next === locale) return
-    track({ name: 'locale_switch', from: locale, to: next })
-    router.replace({ pathname, params } as Parameters<typeof router.replace>[0], { locale: next })
-  }
-
+  const href = { pathname, params } as Href
   return (
     <div
       role="group"
@@ -30,18 +26,20 @@ export function LocaleSwitcher({ className }: { className?: string }) {
       {routing.locales.map((code) => {
         const on = code === locale
         return (
-          <button
+          <Link
             key={code}
-            type="button"
-            onClick={() => switchTo(code)}
-            aria-pressed={on}
+            href={href}
+            locale={code}
+            hrefLang={code}
+            aria-current={on ? 'true' : undefined}
+            onClick={() => !on && track({ name: 'locale_switch', from: locale, to: code })}
             className={cn(
-              'h-[30px] rounded-full px-2.5 text-[12.5px] font-bold tracking-[0.4px] transition-colors',
+              'inline-flex h-[30px] items-center rounded-full px-2.5 text-[12.5px] font-bold tracking-[0.4px] transition-colors',
               on ? 'bg-card2 text-ink shadow-[0_1px_2px_rgba(0,0,0,0.08)]' : 'text-muted hover:text-ink',
             )}
           >
             {code.toUpperCase()}
-          </button>
+          </Link>
         )
       })}
     </div>

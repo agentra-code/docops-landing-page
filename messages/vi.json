@@ -199,8 +199,8 @@
       "b2": "Liên hệ"
     },
     "meta": {
-      "title": "Agentra DocOps · Phần mềm AI xử lý văn bản hành chính trường đại học",
-      "description": "DocOps nhập, phân loại, tra cứu có trích dẫn, dò tác động pháp lý và soạn nháp theo Nghị định 30 cho văn bản hành chính trường đại học. Ứng dụng desktop cho Windows và macOS, cán bộ duyệt cuối."
+      "title": "Agentra DocOps · AI cho văn bản hành chính trường đại học",
+      "description": "DocOps nhập, phân loại, tra cứu có trích dẫn, dò tác động pháp lý và soạn nháp theo Nghị định 30. Ứng dụng desktop cho Windows và macOS, cán bộ duyệt cuối."
     }
   },
   "download": {
@@ -268,7 +268,7 @@
     "meta": {
       "macos": {
         "title": "Cài DocOps trên máy Mac",
-        "description": "Hướng dẫn cài DocOps trên macOS: chọn đúng bản theo chip, kéo vào Applications, cho phép mở lần đầu trong Cài đặt Hệ thống, kích hoạt bằng key và cập nhật trong app."
+        "description": "Cài DocOps trên macOS: chọn đúng bản theo chip, kéo vào Applications, cho phép mở lần đầu, kích hoạt bằng key và cập nhật trong app."
       },
       "windows": {
         "title": "Cài DocOps trên máy Windows",
@@ -350,7 +350,7 @@
   "transparency": {
     "meta": {
       "title": "Minh bạch AI và dữ liệu",
-      "description": "DocOps dùng AI ở đâu, con người giám sát thế nào, dữ liệu văn bản lưu ở đâu và các cam kết về bảo mật, sở hữu nội dung, tuân thủ Nghị định 30/2020 và Nghị định 13/2023."
+      "description": "DocOps dùng AI ở đâu, con người giám sát thế nào, dữ liệu lưu ở đâu và cam kết về bảo mật, sở hữu nội dung, Nghị định 30/2020 và 13/2023."
     },
     "eyebrow": "Minh bạch AI",
     "h1": "Minh bạch AI và dữ liệu",

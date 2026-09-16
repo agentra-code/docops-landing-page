@@ -199,14 +199,14 @@
       "b2": "Contact us"
     },
     "meta": {
-      "title": "Agentra DocOps · AI software for university administrative documents",
-      "description": "DocOps ingests, classifies, searches with citations, maps legal impact and drafts under Decree 30 for university administrative documents. Desktop app for Windows and macOS; staff make the final call."
+      "title": "Agentra DocOps · AI for university administrative documents",
+      "description": "DocOps ingests, classifies, searches with citations, maps legal impact and drafts under Decree 30. Desktop app for Windows and macOS; staff decide last."
     }
   },
   "download": {
     "meta": {
       "title": "Download DocOps for Windows and macOS",
-      "description": "Download the latest DocOps installer for Windows 10/11, macOS Apple Silicon and Intel. Free to download, activated with your institution key, with installation guides."
+      "description": "Download the latest DocOps installer for Windows 10/11, macOS Apple Silicon and Intel. Free to download, activated with your institution key."
     },
     "eyebrow": "Download",
     "h1": "Download DocOps for your computer",
@@ -268,11 +268,11 @@
     "meta": {
       "macos": {
         "title": "Install DocOps on a Mac",
-        "description": "How to install DocOps on macOS: pick the build for your chip, drag to Applications, allow the first launch in System Settings, activate with your key and update inside the app."
+        "description": "Install DocOps on macOS: pick the build for your chip, drag to Applications, allow the first launch, activate with your key and update in the app."
       },
       "windows": {
         "title": "Install DocOps on Windows",
-        "description": "How to install DocOps on Windows 10/11: download the Setup file, get past the SmartScreen warning, run the installer, activate with your key and update inside the app."
+        "description": "Install DocOps on Windows 10/11: download Setup, get past SmartScreen, run the installer, activate with your key and update in the app."
       }
     }
   },
@@ -350,7 +350,7 @@
   "transparency": {
     "meta": {
       "title": "AI and data transparency",
-      "description": "Where DocOps uses AI, how people stay in control, where document data lives, and our commitments on security, content ownership and compliance with Decree 30/2020 and Decree 13/2023."
+      "description": "Where DocOps uses AI, how people stay in control, where document data lives, and our commitments on security, ownership, Decree 30/2020 and 13/2023."
     },
     "eyebrow": "AI transparency",
     "h1": "AI and data transparency",

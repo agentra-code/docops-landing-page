@@ -36,7 +36,7 @@ export default async function TransparencyPage() {
           <ol className="flex max-w-[820px] flex-col divide-y divide-line border-y border-line">
             {ITEMS.map((key, i) => (
               <li key={key} className="flex gap-4 py-6 md:gap-6 md:py-7">
-                <span className="w-8 shrink-0 pt-0.5 text-[15px] font-bold text-accent tabular-nums md:w-10">{String(i + 1).padStart(2, '0')}</span>
+                <span className="w-8 shrink-0 pt-0.5 text-[15px] font-bold text-accent-strong tabular-nums md:w-10">{String(i + 1).padStart(2, '0')}</span>
                 <div className="flex flex-col gap-2">
                   <h2 className="text-xl leading-snug font-semibold">{t(`${key}.title`)}</h2>
                   <p className="text-base leading-relaxed text-ink2">

@@ -31,9 +31,9 @@ for (const [path, lang] of PAGES) {
 
 test('locale switch keeps the current page', async ({ page }) => {
   await page.goto('/tai-ve')
-  await page.locator('header').getByRole('button', { name: 'EN' }).click()
+  await page.locator('header').getByRole('link', { name: 'EN', exact: true }).click()
   await expect(page).toHaveURL(/\/en\/download$/)
-  await page.locator('header').getByRole('button', { name: 'VI' }).click()
+  await page.locator('header').getByRole('link', { name: 'VI', exact: true }).click()
   await expect(page).toHaveURL(/\/tai-ve$/)
 })
 
