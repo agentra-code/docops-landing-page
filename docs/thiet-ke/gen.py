@@ -224,14 +224,14 @@ T['vi'] = dict(
            ('Tác động', 'đồ thị pháp lý', 'graph'), ('Soạn thảo', 'nháp theo NĐ 30', 'pen'), ('Cán bộ kiểm &amp; duyệt', 'người quyết cuối', 'user-check')],
     steps_caption='Quy trình 6 bước, người quyết ở bước cuối',
     flows_eyebrow='Ba luồng lõi', flows_h2='DocOps làm gì',
-    flows_lead='Ba luồng cho vòng đời văn bản hành chính, dùng chung một kho tri thức tích lũy của đơn vị.',
+    flows_lead='Ba luồng cho vòng đời văn bản hành chính, dùng chung một kho tri thức tích luỹ của đơn vị.',
     flows=[('Nhập &amp; phân loại', 'OCR cho bản quét, nhận dạng con dấu và chữ ký, bóc số hiệu, ngày ký, cơ quan ban hành. Tự phân loại và định tuyến vào kho.', 'app-khovanban.jpg'),
            ('Tra cứu &amp; Q&amp;A', 'Hỏi bằng ngôn ngữ tự nhiên trên toàn bộ kho văn bản. Mỗi câu trả lời nêu rõ nguồn và nói "chưa đủ căn cứ" thay vì suy diễn.', 'app-tracuu.jpg'),
            ('Tác động &amp; soạn thảo', 'Dò quan hệ pháp lý, cảnh báo căn cứ hết hiệu lực, sinh nháp theo mẫu Nghị định 30 và kiểm thể thức trước khi trình ký.', 'app-soanthao.jpg')],
     why_eyebrow='Lợi ích', why_h2='Vì sao chọn DocOps',
     why=[('clock', 'Từ giờ xuống phút', 'Ở các luồng nhập, tra cứu và soạn thảo, việc lặp lại rút từ hàng giờ thủ công xuống còn vài phút.'),
          ('book', 'Trích dẫn bắt buộc', 'Mọi câu trả lời nêu rõ nguồn; cảnh báo ngay khi viện dẫn căn cứ đã hết hiệu lực.'),
-         ('archive', 'Giữ tri thức thể chế', 'Kho văn bản và đồ thị quan hệ pháp lý tích lũy theo năm, không bốc hơi khi cán bộ nghỉ.'),
+         ('archive', 'Giữ tri thức thể chế', 'Kho văn bản và đồ thị quan hệ pháp lý tích luỹ theo năm, không bốc hơi khi cán bộ nghỉ.'),
          ('shield', 'Bám chuẩn Nghị định 30/2020', 'Thể thức văn bản theo quy định nhà nước; luôn có cán bộ duyệt cuối trước khi ban hành.')],
     trust_eyebrow='Minh bạch và an toàn', trust_h2='AI hỗ trợ, con người quyết',
     trust_cards=[('user-check', 'Con người quyết', 'Văn bản ở trạng thái chờ cho tới khi cán bộ xem, sửa và duyệt. AI không thay quyền quyết định.'),
@@ -250,7 +250,7 @@ T['vi'] = dict(
     faq=[('Key kích hoạt là gì và xin ở đâu?', 'Mỗi đơn vị được Agentra cấp một key dạng DOCOPS-XXXX-XXXX-XXXX để mở workspace riêng. Cài app, ở màn Kích hoạt chọn "Chưa có key (đăng ký mới)" và gửi đơn ngay trong app, hoặc email cho chúng tôi kèm tên đơn vị.'),
          ('Có cần Internet không?', 'Cần khi kích hoạt và ở các bước AI: OCR, phân loại, tra cứu, soạn nháp. Văn bản của bạn vẫn lưu tại máy.'),
          ('Dữ liệu văn bản lưu ở đâu?', 'Trên máy của bạn. Máy chủ chỉ xử lý phần AI và không giữ nội dung sau khi trả kết quả. Agentra không dùng dữ liệu của trường để huấn luyện mô hình.'),
-         ('Vì sao Windows hoặc macOS cảnh báo khi cài?', 'Bản hiện tại chưa mua chứng thư ký số nên hệ điều hành hỏi xác nhận một lần. Hướng dẫn cài đặt chỉ từng bước bấm "Vẫn chạy" trên Windows và "Vẫn mở" trên macOS.'),
+         ('Vì sao Windows hoặc macOS cảnh báo khi cài?', 'Bản hiện tại chưa mua chứng thư số nên hệ điều hành hỏi xác nhận một lần. Hướng dẫn cài đặt chỉ từng bước bấm "Vẫn chạy" trên Windows và "Vẫn mở" trên macOS.'),
          ('Cập nhật phiên bản mới thế nào?', 'Không cần tải lại. Trong app vào Cài đặt, thẻ Phiên bản, bấm Kiểm tra cập nhật, rồi Tải và cài, sau đó Khởi động lại để cài.'),
          ('Chi phí sử dụng?', 'Tải và cài miễn phí. Chi phí tính theo quy mô sử dụng của đơn vị; liên hệ để nhận báo giá.')],
     cta_h2='Sẵn sàng thử DocOps cho đơn vị của bạn?',
@@ -274,7 +274,7 @@ T['en'] = dict(
     hero_sub='From document to decision in minutes, not days. DocOps ingests, classifies, searches with citations, maps legal impact and drafts under Decree 30. Your staff always make the final call.',
     hero_cta1='Download for macOS', hero_cta2='See how it works',
     hero_meta='Version 1.0.0 · Windows 10/11 · macOS 13 or later · Free to download, activated with your institution key',
-    trust=['Data stays on your machine', 'Citations required', 'Staff approve every step'],
+    trust=['Data stays on your machine', 'Citations required', 'Staff make the final call'],
     window_title='DocOps · Legal basis review',
     steps=[('Ingest', 'PDF, scans', 'file'), ('Classify', 'extract metadata', 'tag'), ('Search', 'cited Q&amp;A', 'search'),
            ('Impact', 'legal graph', 'graph'), ('Draft', 'Decree 30 templates', 'pen'), ('Staff review &amp; approve', 'a person decides', 'user-check')],
@@ -288,7 +288,7 @@ T['en'] = dict(
     why=[('clock', 'Hours down to minutes', 'Across ingest, search and drafting, repetitive work drops from hours of manual effort to a few minutes.'),
          ('book', 'Citations, always', 'Every answer names its source and warns as soon as a cited basis has expired.'),
          ('archive', 'Institutional memory that stays', 'The repository and the legal relationship graph accumulate year after year and do not leave with staff turnover.'),
-         ('shield', 'Built on Decree 30/2020', 'Document format follows the national standard; a staff member always approves before issuance.')],
+         ('shield', 'Compliant with Decree 30/2020 on clerical work', 'Document format follows the national standard; a staff member always approves before issuance.')],
     trust_eyebrow='Transparent and safe', trust_h2='AI assists, people decide',
     trust_cards=[('user-check', 'People decide', 'A document stays pending until a staff member reviews, edits and approves it. AI never replaces that decision.'),
                  ('laptop', 'Data on your machine', 'Original documents live on your computer. Each institution gets its own key and a fully separate workspace.'),
@@ -586,7 +586,7 @@ def page_taive(t):
     detect = (f'<div style="display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 12px;border-radius:99px;background:{SOFT};border:1px solid {SOFT_LINE};'
               f'color:{ACCENT_S};font-size:14px;font-weight:600">{ic("apple", 18)}Máy bạn đang dùng macOS. Chọn bản theo chip của máy.</div>')
     p = t['platforms']
-    cards = (platform_card(t, p[1], highlight=True, badge='Gợi ý cho máy bạn', checksum=True, guide_label='Hướng dẫn cài đặt cho macOS') +
+    cards = (platform_card(t, p[1], highlight=True, checksum=True, guide_label='Hướng dẫn cài đặt cho macOS') +
              platform_card(t, p[2], highlight=True, checksum=True, guide_label='Hướng dẫn cài đặt cho macOS') +
              platform_card(t, p[0], checksum=True, guide_label='Hướng dẫn cài đặt cho Windows'))
     grid = f'<div style="display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:24px;margin-top:24px">{cards}</div>'
@@ -603,8 +603,8 @@ def page_taive(t):
             + req_card('windows', 'Windows', [('monitor', 'Windows 10 hoặc 11, bản 64-bit'), ('hdd', 'Khoảng 1 GB dung lượng trống'), ('wifi', 'Kết nối Internet để kích hoạt và cho các bước AI')])
             + req_card('apple', 'macOS', [('monitor', 'macOS 13 Ventura trở lên'), ('chip', 'Apple Silicon (M1 trở lên) hoặc Intel'), ('hdd', 'Khoảng 1 GB dung lượng trống'), ('wifi', 'Kết nối Internet để kích hoạt và cho các bước AI')])
             + '</div>')
-    unsigned = callout('warning', 'Windows sẽ hiện "Windows protected your PC", macOS hiện "Apple không thể xác minh". Đó là thủ tục bình thường với phần mềm chưa ký số, không phải lỗi. '
-                                  'Hướng dẫn cài đặt chỉ đúng chỗ bấm "Vẫn chạy" (Windows) và "Vẫn mở" (macOS); chỉ phải làm một lần.', title='Bản hiện tại chưa ký số')
+    unsigned = callout('warning', 'Windows sẽ hiện "Windows đã bảo vệ PC của bạn" (Windows protected your PC), macOS hiện "Apple không thể xác minh". Đó là thủ tục bình thường với phần mềm chưa ký số, không phải lỗi. '
+                                  '<a href="#" style="font-weight:600">Hướng dẫn cài đặt</a> chỉ đúng chỗ bấm "Vẫn chạy" (Windows) và "Vẫn mở" (macOS); chỉ phải làm một lần.', title='Bản hiện tại chưa ký số')
     update = (f'<div style="display:flex;gap:14px;padding:20px 22px;background:{CARD};border:1px solid {LINE};border-radius:12px">{icon_box("refresh", 40)}'
               f'<div style="display:flex;flex-direction:column;gap:4px"><b style="font-size:16px">Đã cài rồi? Bản mới tự cập nhật trong app</b>'
               f'<span style="font-size:15px;line-height:1.55;color:{INK2}">Vào Cài đặt, thẻ Phiên bản, bấm Kiểm tra cập nhật rồi Tải và cài. Không cần tải lại tệp cài.</span></div></div>')
@@ -637,7 +637,7 @@ def code_block(cmd):
 
 
 def page_caidat(t):
-    head = page_head('Hướng dẫn cài đặt', 'Cài DocOps trên máy Mac', 'Khoảng 5 phút. Cập nhật ngày 09/09/2026.', crumbs=['Tải về', 'Hướng dẫn cài đặt', 'macOS'])
+    head = page_head('Hướng dẫn cài đặt', 'Cài DocOps trên máy Mac', 'Khoảng 5 phút. Cập nhật ngày 15/09/2026.', crumbs=['Tải về', 'Hướng dẫn cài đặt', 'macOS'])
     tabs = (f'<div style="display:inline-flex;gap:4px;padding:4px;border:1px solid {LINE};border-radius:10px;background:{SIDEBAR}">'
             f'<span style="display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;border-radius:7px;background:{CARD2};box-shadow:0 1px 2px rgba(0,0,0,.08);font-size:14.5px;font-weight:600;color:{INK}">{ic("apple", 18)}macOS</span>'
             f'<a href="#" style="display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;border-radius:7px;font-size:14.5px;font-weight:600;color:{INK2}">{ic("windows", 18)}Windows</a></div>')
@@ -647,7 +647,7 @@ def page_caidat(t):
                   for i, x in enumerate(toc_items))
     toc_html = (f'<div style="position:sticky;top:24px;display:flex;flex-direction:column;gap:12px"><span style="font-size:12.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:{MUTED};padding-left:12px">Nội dung</span>'
                 f'<nav style="display:flex;flex-direction:column;gap:2px;border-left:1px solid {LINE}">{toc}</nav>'
-                f'<div style="margin-top:12px;padding-left:12px">{btn("Tải DocOps cho macOS", "primary", "download", "md")}</div></div>')
+                f'<div style="margin-top:12px;padding-left:12px">{btn("Tải về cho macOS", "primary", "download", "md")}</div></div>')
     intro = callout('note', 'Bản này chưa mua chứng thư số của Apple, nên lần mở đầu macOS sẽ chặn và bạn phải cho phép một lần trong Cài đặt Hệ thống. '
                             'Đây là thủ tục bình thường của macOS với phần mềm ngoài App Store, không phải lỗi. Sau khi cho phép, những lần mở sau không hỏi lại.')
     th = f'padding:10px 14px;text-align:left;font-size:13px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:{MUTED};background:{SIDEBAR};border-bottom:1px solid {LINE}'
@@ -660,13 +660,13 @@ def page_caidat(t):
                     para('Cài nhầm tệp thì app không mở được. Nếu không chắc, email cho Agentra kèm ảnh chụp cửa sổ Giới thiệu về máy Mac này.'))
     s2 = step_block(2, 'Cài đặt', olist(['Bấm đúp tệp <b>.dmg</b> vừa tải. Một cửa sổ hiện ra có biểu tượng <b>DocOps</b> và thư mục <b>Applications</b>.',
                                          'Kéo biểu tượng <b>DocOps</b> thả vào thư mục <b>Applications</b>.',
-                                         'Đóng cửa sổ, rồi tháo ổ đĩa DocOps trên màn hình chính (chuột phải, chọn Eject).']))
+                                         'Đóng cửa sổ, rồi tháo ổ đĩa DocOps trên màn hình chính (chuột phải, chọn Đẩy ra (Eject)).']))
     sub_a = (f'<div style="display:flex;flex-direction:column;gap:12px;padding:20px;background:{CARD};border:1px solid {LINE};border-radius:12px">'
              f'<h3 style="font-size:17px;font-weight:600">3a. macOS 15 Sequoia và macOS 26 Tahoe</h3>'
              + olist(['Mở <b>Launchpad</b> hoặc thư mục <b>Applications</b>, bấm đúp <b>DocOps</b>.',
                       'macOS hiện hộp thoại "Apple không thể xác minh DocOps không chứa phần mềm độc hại". Bấm <b>Xong</b> (Done).',
                       'Mở <b>Cài đặt Hệ thống</b>, chọn <b>Quyền riêng tư &amp; Bảo mật</b>, cuộn xuống mục <b>Bảo mật</b>.',
-                      'Ở dòng "DocOps đã bị chặn để bảo vệ máy Mac của bạn", bấm <b>Vẫn mở</b> (Open Anyway). Dòng này chỉ xuất hiện sau khi bạn đã thử mở app ở bước 2.',
+                      'Ở dòng "DocOps đã bị chặn để bảo vệ máy Mac của bạn", bấm <b>Vẫn mở</b> (Open Anyway). Dòng này chỉ xuất hiện sau khi bạn đã thử mở app ở bước 1.',
                       'macOS hỏi lại lần nữa: bấm <b>Vẫn mở</b>, rồi xác thực bằng Touch ID hoặc mật khẩu máy. Từ lần sau bấm đúp là chạy thẳng.'])
              + callout('warning', 'Ở bước 2, <b>đừng bấm "Chuyển vào Thùng rác"</b> (Move to Trash). Nút đó xoá app vừa cài.') + '</div>')
     sub_b = (f'<div style="display:flex;flex-direction:column;gap:12px;padding:20px;background:{CARD};border:1px solid {LINE};border-radius:12px">'
@@ -677,12 +677,12 @@ def page_caidat(t):
     s3 = step_block(3, 'Lần mở đầu: cho phép trong Cài đặt Hệ thống', para('Cách làm tuỳ phiên bản macOS. Xem phiên bản ở Giới thiệu về máy Mac này.') + sub_a + sub_b)
     s4 = step_block(4, 'Nếu máy báo "DocOps bị hỏng" (is damaged)',
                     para('Thông báo này xảy ra khi tệp cài bị sửa đổi trên đường truyền, thường do nén lại hoặc do dịch vụ gửi tệp. App không hỏng. '
-                         'Mở <b>Terminal</b> (Launchpad, gõ "Terminal"), dán đúng dòng dưới rồi bấm Enter, nhập mật khẩu máy nếu được hỏi:')
+                         'Mở <b>Terminal</b> (Spotlight: bấm ⌘ + Space, gõ "Terminal"), dán đúng dòng dưới rồi bấm Enter, nhập mật khẩu máy nếu được hỏi:')
                     + code_block('xattr -dr com.apple.quarantine /Applications/DocOps.app')
                     + para('Xong bấm đúp mở DocOps như bình thường. Nếu vẫn không được, email cho Agentra để nhận tệp mới; đừng tải bản khác trên mạng.'))
     key_chip = f'<span style="display:inline-block;padding:4px 10px;border-radius:6px;background:{SIDEBAR};border:1px solid {LINE};font-family:{MONO};font-size:13.5px;color:{INK}">DOCOPS-XXXX-XXXX-XXXX</span>'
     s5 = step_block(5, 'Kích hoạt bằng key',
-                    para(f'Màn hình đầu tiên là <b>Kích hoạt</b>. Nhập key Agentra đã cấp cho đơn vị, dạng {key_chip}, rồi bấm kích hoạt. Máy cần có Internet. '
+                    para(f'Màn hình đầu tiên là <b>Kích hoạt</b>. Nhập key Agentra đã cấp cho đơn vị, dạng {key_chip}, rồi bấm <b>Kích hoạt</b>. Máy cần có Internet. '
                          f'Chưa có key? Ở màn này chọn <b>Chưa có key (đăng ký mới)</b>, điền tên đơn vị và liên hệ, Agentra sẽ xét duyệt và gửi key qua email.'))
     s6 = step_block(6, 'Nhận bản mới',
                     para('Không cần tải lại tệp .dmg. DocOps tự kiểm tra và tải bản mới:')
@@ -696,7 +696,7 @@ def page_caidat(t):
           + '</div></div>')
     bottom = (f'<div style="display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:40px;padding:24px;background:{SOFT};border:1px solid {SOFT_LINE};border-radius:12px">'
               f'<div style="display:flex;flex-direction:column;gap:4px"><b style="font-size:16px">Sẵn sàng cài?</b><span style="font-size:14.5px;color:{INK2}">Tải đúng bản theo chip của máy rồi làm theo các bước trên.</span></div>'
-              f'<div style="display:flex;gap:10px">{btn("Tải cho macOS", "primary", "download", "md")}{btn("Hướng dẫn cho Windows", "secondary", "arrow-right", "md", icon_after=True)}</div></div>')
+              f'<div style="display:flex;gap:10px">{btn("Tải về cho macOS", "primary", "download", "md")}{btn("Hướng dẫn cho Windows", "secondary", "arrow-right", "md", icon_after=True)}</div></div>')
     content = f'<div style="display:flex;flex-direction:column;gap:40px;max-width:780px">{intro}{s1}{s2}{s3}{s4}{s5}{s6}{s7}</div>' + bottom
     body = section(container(f'<div style="margin-bottom:40px">{tabs}</div><div style="display:grid;grid-template-columns:260px minmax(0, 1fr);gap:64px;align-items:start">{toc_html}<div>{content}</div></div>'),
                    pad='8px 0 96px')
@@ -714,7 +714,7 @@ def page_lienhe(t):
                 f'<div style="margin-top:auto">{action}</div></div>')
     link = lambda label, icon: f'<a href="#" style="display:inline-flex;align-items:center;gap:6px;font-size:14.5px;font-weight:600;color:{ACCENT_S}">{ic(icon, 16)}{label}</a>'
     cards = (contact_card('mail', 'Email', 'info@agentra.io.vn', 'Câu hỏi về sản phẩm, xin key, báo lỗi và góp ý.', link('Sao chép địa chỉ', 'copy'))
-             + contact_card('phone', 'Điện thoại / Zalo', '[Số điện thoại]', 'Giờ hành chính, thứ Hai đến thứ Sáu.', link('Mở Zalo', 'external'), placeholder=True)
+             + contact_card('phone', 'Điện thoại / Zalo', '[Số điện thoại]', '[Giờ làm việc]', link('Mở Zalo', 'external'), placeholder=True)
              + contact_card('pin', 'Địa chỉ', 'Agentra JSC, Đà Nẵng', '[Địa chỉ đầy đủ], Đà Nẵng, Việt Nam', link('Mở Google Maps', 'external')))
     grid = f'<div style="display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:24px">{cards}</div>'
     block1 = section(container(grid), pad='8px 0 80px')
@@ -731,7 +731,7 @@ def page_lienhe(t):
                                + f'<div style="display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:24px;margin-top:40px">{steps}</div>' + note),
                      bg=CARD, extra=f'border-top:1px solid {LINE};border-bottom:1px solid {LINE}', pad='80px 0')
     items = ''.join(f'<li style="display:flex;gap:10px;align-items:flex-start;font-size:15.5px;line-height:1.55;color:{INK2}"><span style="color:{ACCENT};margin-top:2px">{ic("check", 18, sw=2)}</span><span>{x}</span></li>'
-                    for x in ['Đang ở màn hình nào, bấm gì thì lỗi xảy ra', 'Thông báo lỗi hiện ra (chụp màn hình càng tốt)',
+                    for x in ['Đang ở màn hình nào, bấm gì thì lỗi xảy ra', 'Thông báo lỗi hiện ra (kèm ảnh chụp màn hình nếu có)',
                               'Phiên bản Windows hoặc macOS, và loại chip nếu là máy Mac', 'Phiên bản DocOps (Cài đặt, thẻ Phiên bản)'])
     left = (f'<div style="display:flex;flex-direction:column;gap:16px">{sec_head("Hỗ trợ", "Báo lỗi và góp ý", align="left")}'
             f'<p style="font-size:16px;line-height:1.6;color:{INK2};max-width:520px">Khi gặp lỗi, gửi cho chúng tôi những thông tin sau để xử lý nhanh:</p>'
@@ -746,13 +746,13 @@ def page_lienhe(t):
 
 def page_quytrinh(t):
     head = page_head('Quy trình', 'Văn bản được xử lý bởi các luồng AI. Cán bộ là người quyết định cuối cùng.',
-                     'DocOps làm phần nặng: đọc, bóc tách, phân loại, tra cứu và soạn nháp. Cán bộ, chuyên gia thật của nghiệp vụ, luôn là người cuối cùng quyết định nội dung được dùng.')
+                     'DocOps làm phần nặng: đọc, bóc tách, phân loại, tra cứu và soạn nháp. Cán bộ, những chuyên gia nghiệp vụ thực thụ, luôn là người cuối cùng quyết định nội dung được dùng.')
     steps = [('file', 'Nhập', 'OCR bản quét, nhận dạng con dấu và chữ ký, bóc số hiệu, ngày ký, cơ quan ban hành, trích yếu.'),
              ('tag', 'Phân loại', 'Xác định loại văn bản, chủ đề, hiệu lực và định tuyến vào đúng khu vực của kho.'),
              ('search', 'Tra cứu', 'Trả lời kèm trích dẫn nguồn cụ thể; chặn suy diễn khi thiếu căn cứ.'),
              ('graph', 'Tác động', 'Dò đồ thị quan hệ pháp lý: văn bản nào dẫn văn bản nào, căn cứ nào đã hết hiệu lực hoặc sắp thay đổi.'),
-             ('pen', 'Soạn thảo', 'Sinh nháp theo mẫu Nghị định 30, kiểm thể thức, gợi ý thay câu căn cứ đã hỏng.'),
-             ('user-check', 'Cán bộ kiểm &amp; quyết', 'Con người xem, sửa, duyệt. AI chỉ hỗ trợ, không thay quyền quyết định.')]
+             ('pen', 'Soạn thảo', 'Sinh nháp theo mẫu Nghị định 30, kiểm thể thức, gợi ý thay căn cứ đã hết hiệu lực.'),
+             ('user-check', 'Cán bộ kiểm &amp; duyệt', 'Con người xem, sửa, duyệt. AI chỉ hỗ trợ, không thay quyền quyết định.')]
     rows = ''
     for i, (icon, title, desc) in enumerate(steps):
         last = i == len(steps) - 1
@@ -828,7 +828,7 @@ def main():
                       for n, ttl, _b, _w, _h in ARTBOARDS],
         'annotations': [
             {'id': 'note-nguon', 'x': 0, 'y': -260, 'w': 520,
-             'text': 'Landing page Agentra DocOps · bản thiết kế 16/09/2026\nMàu, bo góc, chữ lấy từ tokens.css của app; font Be Vietnam Pro. Ảnh app render từ artboard thiết kế desktop (sẽ thay bằng ảnh chụp app thật khi code).\nHàng trên: trang chủ VI desktop, VI mobile, EN desktop. Hàng dưới: Tải về, Cài đặt macOS, Liên hệ, Quy trình.'},
+             'text': 'Landing page Agentra DocOps · bản thiết kế 16/09/2026\nMàu, bo góc, chữ lấy từ tokens.css của app; font Be Vietnam Pro. Ảnh app render từ artboard thiết kế desktop (sẽ thay bằng ảnh chụp app thật khi code).\nHàng trên: trang chủ VI desktop, VI mobile, EN desktop. Hai hàng dưới: Tải về, Cài đặt macOS, Liên hệ, Quy trình.'},
             {'id': 'note-hero', 'x': 1540, 'y': -200, 'w': 380,
              'text': 'Nút "Tải về cho macOS" đổi theo hệ điều hành của người xem (Windows / macOS); mặc định "Tải DocOps".'},
             {'id': 'note-lienhe', 'x': 0, 'y': y3 - 150, 'w': 460,
