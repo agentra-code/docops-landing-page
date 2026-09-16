@@ -1,7 +1,30 @@
-import type { NextConfig } from "next";
+import createMDX from '@next/mdx'
+import type { NextConfig } from 'next'
+import createNextIntlPlugin from 'next-intl/plugin'
+
+const securityHeaders = [
+  { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },
+  { key: 'X-Content-Type-Options', value: 'nosniff' },
+  { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+  { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
+  { key: 'X-Frame-Options', value: 'DENY' },
+]
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
+  async redirects() {
+    // Đường dẫn của site cũ (web app) — spec §9
+    return [
+      { source: '/xin-key', destination: '/lien-he', permanent: true },
+      { source: '/login', destination: '/', permanent: true },
+    ]
+  },
+  async headers() {
+    return [{ source: '/(.*)', headers: securityHeaders }]
+  },
+}
 
-export default nextConfig;
+const withNextIntl = createNextIntlPlugin('./i18n/request.ts')
+const withMDX = createMDX({ options: { remarkPlugins: ['remark-gfm'] } })
+
+export default withNextIntl(withMDX(nextConfig))

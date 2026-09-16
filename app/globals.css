@@ -1,26 +1,51 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Token màu lấy nguyên từ docops-application/packages/ui/src/tokens.css (spec §8.1).
+   Token mới duy nhất cho marketing: --color-brand-deep. */
+@theme {
+  --color-page: #f9f9f7;
+  --color-card: #fcfcfb;
+  --color-card2: #ffffff;
+  --color-sidebar: #f3f3f0;
+  --color-ink: #0b0b0b;
+  --color-ink2: #52514e;
+  --color-muted: #898781;
+  --color-line: #e1e0d9;
+  --color-brand-light: #8cbf3c;
+  --color-brand: #6a9c39;
+  --color-accent: #567f2e;
+  --color-accent-strong: #3e6b1f;
+  --color-accent-soft: #eff5e3;
+  --color-accent-line: #d9e6c4;
+  --color-brand-deep: #1e3413;
+  --color-good: #0ca30c;
+  --color-warn-dot: #fab219;
+  --color-warn-soft: #fdf3dc;
+  --color-warn-text: #7a5200;
+  --color-warn-border: #f0dfae;
+  --color-crit: #d03b3b;
+  --color-info-soft: #eaf2fc;
+  --color-info-text: #1c5cab;
+  --color-info-border: #c9dcf3;
+  --radius-card: 10px;
+  --radius-control: 8px;
+  --radius-modal: 14px;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-be-vietnam), system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
 }

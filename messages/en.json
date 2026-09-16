@@ -1,0 +1,34 @@
+{
+  "common": {
+    "siteName": "Agentra DocOps",
+    "tagline": "AI software for university administrative documents",
+    "download": "Download DocOps",
+    "retry": "Try again",
+    "skipToContent": "Skip to content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "language": "Language"
+  },
+  "nav": {
+    "howItWorks": "How it works",
+    "transparency": "AI transparency",
+    "download": "Download",
+    "contact": "Contact"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "This address does not exist or has moved.",
+    "home": "Back to home",
+    "download": "Download DocOps"
+  },
+  "error": {
+    "title": "Something went wrong",
+    "body": "The page could not load. Try again, or go back to the home page."
+  },
+  "consent": {
+    "text": "This site uses analytics cookies (Google Analytics) to understand how you use it. Vercel's visit statistics use no cookies.",
+    "policy": "Privacy policy",
+    "accept": "Accept",
+    "decline": "Decline"
+  }
+}

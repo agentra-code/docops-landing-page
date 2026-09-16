@@ -1,0 +1,34 @@
+{
+  "common": {
+    "siteName": "Agentra DocOps",
+    "tagline": "Phần mềm AI xử lý văn bản hành chính trường đại học",
+    "download": "Tải DocOps",
+    "retry": "Thử lại",
+    "skipToContent": "Bỏ qua tới nội dung",
+    "openMenu": "Mở menu",
+    "closeMenu": "Đóng menu",
+    "language": "Ngôn ngữ"
+  },
+  "nav": {
+    "howItWorks": "Quy trình",
+    "transparency": "Minh bạch AI",
+    "download": "Tải về",
+    "contact": "Liên hệ"
+  },
+  "notFound": {
+    "title": "Không tìm thấy trang",
+    "body": "Đường dẫn này không tồn tại hoặc đã được chuyển đi.",
+    "home": "Về trang chủ",
+    "download": "Tải DocOps"
+  },
+  "error": {
+    "title": "Có lỗi xảy ra",
+    "body": "Trang không tải được. Bấm thử lại, hoặc quay về trang chủ."
+  },
+  "consent": {
+    "text": "Trang này dùng cookie phân tích (Google Analytics) để hiểu cách bạn sử dụng site. Dữ liệu truy cập của Vercel không dùng cookie.",
+    "policy": "Chính sách bảo mật",
+    "accept": "Đồng ý",
+    "decline": "Từ chối"
+  }
+}
