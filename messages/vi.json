@@ -197,5 +197,46 @@
       "b1": "Tải DocOps",
       "b2": "Liên hệ"
     }
+  },
+  "download": {
+    "meta": {
+      "title": "Tải DocOps cho Windows và macOS",
+      "description": "Tải bộ cài DocOps phiên bản mới nhất cho Windows 10/11, macOS Apple Silicon và Intel. Miễn phí tải, kích hoạt bằng key của đơn vị, kèm hướng dẫn cài đặt."
+    },
+    "eyebrow": "Tải về",
+    "h1": "Tải DocOps cho máy tính của bạn",
+    "lead": "Phiên bản {version}, phát hành {date}. Miễn phí tải; sau khi cài, kích hoạt bằng key của đơn vị.",
+    "detected": {
+      "macos": "Máy bạn đang dùng macOS. Chọn bản theo chip của máy.",
+      "windows": "Máy bạn đang dùng Windows."
+    },
+    "badge": "Máy bạn đang dùng",
+    "guideMac": "Hướng dẫn cài đặt cho macOS",
+    "guideWindows": "Hướng dẫn cài đặt cho Windows",
+    "chipNote": "Không chắc máy dùng chip gì? Bấm biểu tượng Apple ở góc trái trên, chọn \"Giới thiệu về máy Mac này\" và đọc dòng Chip: Apple M1, M2, M3, M4 chọn bản Apple Silicon; Intel Core chọn bản Intel. Cài nhầm bản thì app không mở được.",
+    "req": {
+      "eyebrow": "Yêu cầu hệ thống",
+      "h2": "Máy nào chạy được DocOps",
+      "windows": {
+        "os": "Windows 10 hoặc 11, bản 64-bit",
+        "disk": "Khoảng 1 GB dung lượng trống",
+        "net": "Kết nối Internet để kích hoạt và cho các bước AI"
+      },
+      "macos": {
+        "os": "macOS 13 Ventura trở lên",
+        "chip": "Apple Silicon (M1 trở lên) hoặc Intel",
+        "disk": "Khoảng 1 GB dung lượng trống",
+        "net": "Kết nối Internet để kích hoạt và cho các bước AI"
+      }
+    },
+    "unsigned": {
+      "title": "Bản hiện tại chưa ký số",
+      "body": "Windows sẽ hiện \"Windows đã bảo vệ PC của bạn\" (Windows protected your PC), macOS hiện \"Apple không thể xác minh\". Đó là thủ tục bình thường với phần mềm chưa ký số, không phải lỗi. Hướng dẫn cài đặt chỉ đúng chỗ bấm \"Vẫn chạy\" (Windows) và \"Vẫn mở\" (macOS); chỉ phải làm một lần."
+    },
+    "update": {
+      "title": "Đã cài rồi? Bản mới tự cập nhật trong app",
+      "body": "Vào Cài đặt, thẻ Phiên bản, bấm Kiểm tra cập nhật rồi Tải và cài. Không cần tải lại tệp cài."
+    },
+    "help": "Không tải được? Email <email></email>, chúng tôi gửi tệp qua kênh khác."
   }
 }

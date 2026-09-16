@@ -197,5 +197,46 @@
       "b1": "Download DocOps",
       "b2": "Contact us"
     }
+  },
+  "download": {
+    "meta": {
+      "title": "Download DocOps for Windows and macOS",
+      "description": "Download the latest DocOps installer for Windows 10/11, macOS Apple Silicon and Intel. Free to download, activated with your institution key, with installation guides."
+    },
+    "eyebrow": "Download",
+    "h1": "Download DocOps for your computer",
+    "lead": "Version {version}, released {date}. Free to download; after installing, activate with your institution key.",
+    "detected": {
+      "macos": "You are on macOS. Pick the build that matches your chip.",
+      "windows": "You are on Windows."
+    },
+    "badge": "Your system",
+    "guideMac": "Installation guide for macOS",
+    "guideWindows": "Installation guide for Windows",
+    "chipNote": "Not sure which chip your Mac has? Click the Apple menu at the top left, choose \"About This Mac\" and read the Chip line: Apple M1, M2, M3, M4 means Apple Silicon; Intel Core means Intel. The wrong build will not open.",
+    "req": {
+      "eyebrow": "System requirements",
+      "h2": "Which computers run DocOps",
+      "windows": {
+        "os": "Windows 10 or 11, 64-bit",
+        "disk": "About 1 GB of free disk space",
+        "net": "Internet connection for activation and the AI steps"
+      },
+      "macos": {
+        "os": "macOS 13 Ventura or later",
+        "chip": "Apple Silicon (M1 or later) or Intel",
+        "disk": "About 1 GB of free disk space",
+        "net": "Internet connection for activation and the AI steps"
+      }
+    },
+    "unsigned": {
+      "title": "The current build is not code-signed",
+      "body": "Windows shows \"Windows protected your PC\" and macOS shows \"Apple could not verify\". That is the normal procedure for unsigned software, not an error. The installation guides show exactly where to click \"Run anyway\" (Windows) and \"Open Anyway\" (macOS); you only do it once."
+    },
+    "update": {
+      "title": "Already installed? New versions update inside the app",
+      "body": "Open Settings, the Version tab, click Check for updates and then Download and install. No need to download the installer again."
+    },
+    "help": "Cannot download? Email <email></email> and we will send the file another way."
   }
 }

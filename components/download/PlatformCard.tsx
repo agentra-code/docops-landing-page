@@ -21,6 +21,7 @@ export function PlatformCard({
   highlighted = false,
   badge,
   checksum = false,
+  guideLabel,
 }: {
   asset: ReleaseAsset
   locale: Locale
@@ -28,6 +29,7 @@ export function PlatformCard({
   highlighted?: boolean
   badge?: string
   checksum?: boolean
+  guideLabel?: string
 }) {
   const t = useTranslations('home.download')
   const tc = useTranslations('common')
@@ -67,7 +69,7 @@ export function PlatformCard({
         href={{ pathname: '/install/[os]', params: { os } }}
         className="inline-flex items-center gap-1.5 text-[14.5px] font-semibold text-accent-strong hover:text-accent"
       >
-        {t('guide')}
+        {guideLabel ?? t('guide')}
         <Icon name="arrow-right" size={16} />
       </Link>
     </div>
