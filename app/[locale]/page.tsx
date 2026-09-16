@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { getLocale, getTranslations } from 'next-intl/server'
 import { Benefits } from '@/components/home/Benefits'
 import { CoreFlows } from '@/components/home/CoreFlows'
@@ -11,7 +12,14 @@ import { JsonLd } from '@/components/seo/JsonLd'
 import type { Locale } from '@/i18n/routing'
 import { getReleases, latestRelease } from '@/lib/releases'
 import { faqPage, organization, softwareApplication } from '@/lib/seo/jsonld'
+import { buildMetadata } from '@/lib/seo/metadata'
 import { absoluteUrl } from '@/lib/seo/urls'
+
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = (await getLocale()) as Locale
+  const t = await getTranslations('home.meta')
+  return buildMetadata({ locale, page: '/', title: t('title'), description: t('description'), absoluteTitle: true })
+}
 
 export default async function HomePage() {
   const locale = (await getLocale()) as Locale

@@ -1,10 +1,13 @@
+import type { Metadata, Viewport } from 'next'
 import { hasLocale, NextIntlClientProvider } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import { Be_Vietnam_Pro } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import { Footer } from '@/components/site/Footer'
 import { Header } from '@/components/site/Header'
 import { SkipLink } from '@/components/site/SkipLink'
-import { routing } from '@/i18n/routing'
+import { routing, type Locale } from '@/i18n/routing'
+import { site } from '@/lib/site'
 import '@/app/globals.css'
 
 // Đây là ROOT layout (không có app/layout.tsx) để `locale` là root param → next/root-params
@@ -16,6 +19,22 @@ const font = Be_Vietnam_Pro({
   variable: '--font-be-vietnam',
   display: 'swap',
 })
+
+export const viewport: Viewport = { themeColor: '#567f2e', width: 'device-width', initialScale: 1 }
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale: locale as Locale, namespace: 'common' })
+  const verification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+  return {
+    metadataBase: new URL(site.siteUrl()),
+    title: { default: t('siteName'), template: `%s · ${t('siteName')}` },
+    description: t('tagline'),
+    applicationName: t('siteName'),
+    robots: { index: true, follow: true },
+    ...(verification ? { verification: { google: verification } } : {}),
+  }
+}
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))

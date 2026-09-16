@@ -10,13 +10,15 @@ export function buildMetadata(opts: {
   params?: Record<string, string>
   title: string
   description: string
+  /** Trang chủ: không nối template '· Agentra DocOps'. */
+  absoluteTitle?: boolean
 }): Metadata {
-  const { locale, page, params, title, description } = opts
+  const { locale, page, params, title, description, absoluteTitle } = opts
   const url = absoluteUrl(locale, page, params)
   const vi = absoluteUrl('vi', page, params)
   const en = absoluteUrl('en', page, params)
   return {
-    title,
+    title: absoluteTitle ? { absolute: title } : title,
     description,
     alternates: { canonical: url, languages: { vi, en, 'x-default': vi } },
     openGraph: {

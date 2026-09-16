@@ -197,6 +197,10 @@
       "sub": "Download the app, request a key right from the activation screen, and start reviewing your document repository today.",
       "b1": "Download DocOps",
       "b2": "Contact us"
+    },
+    "meta": {
+      "title": "Agentra DocOps · AI software for university administrative documents",
+      "description": "DocOps ingests, classifies, searches with citations, maps legal impact and drafts under Decree 30 for university administrative documents. Desktop app for Windows and macOS; staff make the final call."
     }
   },
   "download": {

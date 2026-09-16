@@ -197,6 +197,10 @@
       "sub": "Tải app, xin key ngay trong màn Kích hoạt, và bắt đầu rà soát kho văn bản của đơn vị trong hôm nay.",
       "b1": "Tải DocOps",
       "b2": "Liên hệ"
+    },
+    "meta": {
+      "title": "Agentra DocOps · Phần mềm AI xử lý văn bản hành chính trường đại học",
+      "description": "DocOps nhập, phân loại, tra cứu có trích dẫn, dò tác động pháp lý và soạn nháp theo Nghị định 30 cho văn bản hành chính trường đại học. Ứng dụng desktop cho Windows và macOS, cán bộ duyệt cuối."
     }
   },
   "download": {
