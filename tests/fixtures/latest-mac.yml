@@ -1,0 +1,17 @@
+version: 1.0.0
+files:
+  - url: DocOps-1.0.0-mac.zip
+    sha512: J4lsWjcv7Gs27f+JLBSt/2BvsU7hQtFaFa0GhlbOVexqlXgc28+L7id4evLB4rl1lpyyJJDBClVJNldj7Zxnig==
+    size: 199937474
+  - url: DocOps-1.0.0-arm64-mac.zip
+    sha512: TGFFnoUwEFnKe9UC2si2g++pIttMF1dTMDTzJWv8inkYWIXff/3tAv5e8zRdxaiVwyCgqwOhrrmA9aipnNnZqw==
+    size: 194994752
+  - url: DocOps-1.0.0.dmg
+    sha512: nwCiOamO6uqO6D9itiiCeJeasFEYDQHXd5RUuMs9ip9ZXTVDwLhVy0AG5+Ngzmfh8OdVq2XOru14q5K18U2Uuw==
+    size: 199815749
+  - url: DocOps-1.0.0-arm64.dmg
+    sha512: hj7TvzOhP8eQ9MYXywM/iV3mlWJ8Ll9kyZfi8DAKGNxGPgumbVEZuj9h2jx5ZKW9l2iX0vtYaFDg+zm5ysgAAA==
+    size: 194928638
+path: DocOps-1.0.0-mac.zip
+sha512: J4lsWjcv7Gs27f+JLBSt/2BvsU7hQtFaFa0GhlbOVexqlXgc28+L7id4evLB4rl1lpyyJJDBClVJNldj7Zxnig==
+releaseDate: '2026-09-15T15:21:11.587Z'
