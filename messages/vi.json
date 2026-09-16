@@ -7,7 +7,8 @@
     "skipToContent": "Bỏ qua tới nội dung",
     "openMenu": "Mở menu",
     "closeMenu": "Đóng menu",
-    "language": "Ngôn ngữ"
+    "language": "Ngôn ngữ",
+    "mainNav": "Điều hướng chính"
   },
   "nav": {
     "howItWorks": "Quy trình",
@@ -30,5 +31,15 @@
     "policy": "Chính sách bảo mật",
     "accept": "Đồng ý",
     "decline": "Từ chối"
+  },
+  "footer": {
+    "tagline": "Phần mềm AI xử lý văn bản hành chính trường đại học. Một sản phẩm của Agentra.",
+    "product": "Sản phẩm",
+    "trust": "Tin cậy",
+    "company": "Công ty",
+    "installMacos": "Cài đặt trên macOS",
+    "installWindows": "Cài đặt trên Windows",
+    "privacy": "Chính sách bảo mật",
+    "copyright": "© {year} Agentra JSC · Đà Nẵng, Việt Nam"
   }
 }

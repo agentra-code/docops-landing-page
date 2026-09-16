@@ -4,7 +4,7 @@ import { Link } from '@/i18n/navigation'
 export default function NotFoundPage() {
   const t = useTranslations('notFound')
   return (
-    <main className="mx-auto flex max-w-[1200px] flex-col items-start gap-4 px-4 py-24">
+    <main id="main" className="flex-1 mx-auto flex max-w-[1200px] flex-col items-start gap-4 px-4 py-24">
       <h1 className="text-4xl font-bold">{t('title')}</h1>
       <p className="text-ink2">{t('body')}</p>
       <div className="flex gap-3">

@@ -7,7 +7,8 @@
     "skipToContent": "Skip to content",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
-    "language": "Language"
+    "language": "Language",
+    "mainNav": "Main navigation"
   },
   "nav": {
     "howItWorks": "How it works",
@@ -30,5 +31,15 @@
     "policy": "Privacy policy",
     "accept": "Accept",
     "decline": "Decline"
+  },
+  "footer": {
+    "tagline": "AI software for university administrative documents. A product of Agentra.",
+    "product": "Product",
+    "trust": "Trust",
+    "company": "Company",
+    "installMacos": "Install on macOS",
+    "installWindows": "Install on Windows",
+    "privacy": "Privacy policy",
+    "copyright": "© {year} Agentra JSC · Da Nang, Vietnam"
   }
 }

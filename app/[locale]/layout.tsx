@@ -1,6 +1,9 @@
 import { hasLocale, NextIntlClientProvider } from 'next-intl'
 import { Be_Vietnam_Pro } from 'next/font/google'
 import { notFound } from 'next/navigation'
+import { Footer } from '@/components/site/Footer'
+import { Header } from '@/components/site/Header'
+import { SkipLink } from '@/components/site/SkipLink'
 import { routing } from '@/i18n/routing'
 import '@/app/globals.css'
 
@@ -29,8 +32,13 @@ export default async function LocaleLayout({
   if (!hasLocale(routing.locales, locale)) notFound()
   return (
     <html lang={locale} className={font.variable}>
-      <body className="bg-page text-ink font-sans antialiased">
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+      <body className="flex min-h-dvh flex-col bg-page font-sans text-ink antialiased">
+        <NextIntlClientProvider>
+          <SkipLink />
+          <Header />
+          {children}
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   )
