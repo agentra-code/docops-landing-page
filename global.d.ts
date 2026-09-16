@@ -7,3 +7,4 @@ declare module 'next-intl' {
     Messages: typeof messages
   }
 }
+

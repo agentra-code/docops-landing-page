@@ -1,0 +1,112 @@
+export const meta = {
+  title: 'Install DocOps on a Mac',
+  description: 'Pick the build for your chip, drag to Applications, allow the first launch, activate with your key and update inside the app.',
+  updated: '2026-09-15',
+  minutes: 5,
+  toc: [
+    { id: 'choose-file', label: 'Choose the right file for your Mac' },
+    { id: 'install', label: 'Install' },
+    { id: 'first-launch', label: 'First launch: allow it in System Settings' },
+    { id: 'damaged', label: 'If macOS says "DocOps is damaged"' },
+    { id: 'activate', label: 'Activate with your key' },
+    { id: 'updates', label: 'Getting new versions' },
+    { id: 'report', label: 'Reporting a problem' },
+  ],
+}
+
+<Callout kind="note">
+  This build is not notarized with an Apple certificate yet, so macOS blocks the first launch and you allow it once in System Settings. That is the normal macOS procedure for software outside the App Store, not an error. After you allow it once, later launches do not ask again.
+</Callout>
+
+<Steps>
+
+<Step n={1} id="choose-file" title="Choose the right file for your Mac">
+
+Click the Apple menu at the top left, choose **About This Mac** and read the **Chip** line:
+
+| Chip line says | File to download |
+| --- | --- |
+| Apple M1, M2, M3, M4… | `DocOps-1.0.0-arm64.dmg` (Apple Silicon build) |
+| Intel Core i5, i7, i9… | `DocOps-1.0.0.dmg` (Intel build) |
+
+The wrong build will not open. If unsure, email Agentra a screenshot of the About This Mac window.
+
+</Step>
+
+<Step n={2} id="install" title="Install">
+
+1. Double-click the **.dmg** you downloaded. A window opens with the **DocOps** icon and an **Applications** folder.
+2. Drag the **DocOps** icon into **Applications**.
+3. Close the window and eject the DocOps disk on the desktop (right-click, **Eject**).
+
+</Step>
+
+<Step n={3} id="first-launch" title="First launch: allow it in System Settings">
+
+The steps depend on your macOS version. Check it in About This Mac.
+
+<SubBlock title="3a. macOS 15 Sequoia and macOS 26 Tahoe">
+
+1. Open the **Applications** folder (or Launchpad if your Mac has it) and double-click **DocOps**.
+2. macOS shows "Apple could not verify DocOps is free of malware". Click **Done**.
+3. Open **System Settings**, choose **Privacy & Security** and scroll down to the **Security** section.
+4. Next to "DocOps was blocked to protect your Mac", click **Open Anyway**. This line only appears after you tried to open the app in step 1.
+5. macOS asks once more: click **Open Anyway**, then confirm with Touch ID or your login password. From now on a double-click opens it directly.
+
+<Callout kind="warning">
+  In step 2, **do not click "Move to Trash"**. That deletes the app you just installed.
+</Callout>
+
+</SubBlock>
+
+<SubBlock title="3b. macOS 13 Ventura and macOS 14 Sonoma">
+
+1. Open the **Applications** folder, **right-click** **DocOps** and choose **Open**.
+2. The dialog has an **Open** button: click it. A normal double-click does not show this button; you must right-click exactly once.
+
+If there is no Open button, follow section 3a from step 3.
+
+</SubBlock>
+
+</Step>
+
+<Step n={4} id="damaged" title='If macOS says "DocOps is damaged"'>
+
+This message appears when the installer was altered in transit, usually by re-compression or a file-sharing service. The app is not damaged. Open **Terminal** (Spotlight: press ⌘ + Space and type "Terminal"), paste the line below exactly, press Enter and type your login password if asked:
+
+<CodeBlock code="xattr -dr com.apple.quarantine /Applications/DocOps.app" copyLabel="Copy command" copiedLabel="Copied" />
+
+Then double-click DocOps as usual. If it still does not open, email Agentra for a fresh file; do not download a copy from elsewhere.
+
+</Step>
+
+<Step n={5} id="activate" title="Activate with your key">
+
+The first screen is **Activation**. Enter the key Agentra issued to your institution, in the form `DOCOPS-XXXX-XXXX-XXXX`, and click **Activate**. An internet connection is required. The build already points at the official DocOps server, so there is no address to type.
+
+No key yet? On this screen choose **No key yet (new registration)**, enter your institution and a contact, and Agentra will review the request and email you a key. Once activated you can ingest documents, search, review and draft.
+
+</Step>
+
+<Step n={6} id="updates" title="Getting new versions">
+
+No need to download the .dmg again. DocOps checks for and downloads new versions itself:
+
+1. Open **Settings** in the app and choose the **Version** tab.
+2. Click **Check for updates**.
+3. If a new version is available, click **Download and install** and wait for the progress bar to finish.
+4. Click **Restart to install**. DocOps closes, installs the new version and reopens.
+
+<Callout kind="info">
+  Drafting something? Save it before clicking "Restart to install": that step closes the app immediately. If nothing happens after clicking, download the latest .dmg and install it again following steps 1 to 3.
+</Callout>
+
+</Step>
+
+<Step n={7} id="report" title="Reporting a problem">
+
+When something goes wrong, take a screenshot and note: which screen you were on, what you clicked, the exact message shown, your macOS version and chip. Send it to [info@agentra.io.vn](mailto:info@agentra.io.vn) or use **Feedback** inside the app.
+
+</Step>
+
+</Steps>

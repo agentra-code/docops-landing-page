@@ -1,0 +1,112 @@
+export const meta = {
+  title: 'Cài DocOps trên máy Mac',
+  description: 'Chọn đúng bản theo chip, kéo vào Applications, cho phép mở lần đầu, kích hoạt bằng key và cập nhật trong app.',
+  updated: '2026-09-15',
+  minutes: 5,
+  toc: [
+    { id: 'chon-tep', label: 'Chọn đúng tệp cho máy của bạn' },
+    { id: 'cai-dat', label: 'Cài đặt' },
+    { id: 'lan-mo-dau', label: 'Lần mở đầu: cho phép trong Cài đặt Hệ thống' },
+    { id: 'bi-hong', label: 'Nếu máy báo "DocOps bị hỏng"' },
+    { id: 'kich-hoat', label: 'Kích hoạt bằng key' },
+    { id: 'cap-nhat', label: 'Nhận bản mới' },
+    { id: 'bao-loi', label: 'Báo lỗi' },
+  ],
+}
+
+<Callout kind="note">
+  Bản này chưa mua chứng thư số của Apple, nên lần mở đầu macOS sẽ chặn và bạn phải cho phép một lần trong Cài đặt Hệ thống. Đây là thủ tục bình thường của macOS với phần mềm ngoài App Store, không phải lỗi. Sau khi cho phép, những lần mở sau không hỏi lại.
+</Callout>
+
+<Steps>
+
+<Step n={1} id="chon-tep" title="Chọn đúng tệp cho máy của bạn">
+
+Bấm biểu tượng Apple ở góc trái trên, chọn **Giới thiệu về máy Mac này** (About This Mac) và đọc dòng **Chip**:
+
+| Dòng Chip ghi | Tệp cần tải |
+| --- | --- |
+| Apple M1, M2, M3, M4… | `DocOps-1.0.0-arm64.dmg` (bản Apple Silicon) |
+| Intel Core i5, i7, i9… | `DocOps-1.0.0.dmg` (bản Intel) |
+
+Cài nhầm tệp thì app không mở được. Nếu không chắc, email cho Agentra kèm ảnh chụp cửa sổ Giới thiệu về máy Mac này.
+
+</Step>
+
+<Step n={2} id="cai-dat" title="Cài đặt">
+
+1. Bấm đúp tệp **.dmg** vừa tải. Một cửa sổ hiện ra có biểu tượng **DocOps** và thư mục **Applications**.
+2. Kéo biểu tượng **DocOps** thả vào thư mục **Applications**.
+3. Đóng cửa sổ, rồi tháo ổ đĩa DocOps trên màn hình chính (chuột phải, chọn **Đẩy ra** (Eject)).
+
+</Step>
+
+<Step n={3} id="lan-mo-dau" title="Lần mở đầu: cho phép trong Cài đặt Hệ thống">
+
+Cách làm tuỳ phiên bản macOS. Xem phiên bản ở Giới thiệu về máy Mac này.
+
+<SubBlock title="3a. macOS 15 Sequoia và macOS 26 Tahoe">
+
+1. Mở thư mục **Applications** (hoặc Launchpad nếu máy có), bấm đúp **DocOps**.
+2. macOS hiện hộp thoại "Apple không thể xác minh DocOps không chứa phần mềm độc hại" (Apple could not verify DocOps is free of malware). Bấm **Xong** (Done).
+3. Mở **Cài đặt Hệ thống** (System Settings), chọn **Quyền riêng tư & Bảo mật** (Privacy & Security), cuộn xuống mục **Bảo mật**.
+4. Ở dòng "DocOps đã bị chặn để bảo vệ máy Mac của bạn", bấm **Vẫn mở** (Open Anyway). Dòng này chỉ xuất hiện sau khi bạn đã thử mở app ở bước 1.
+5. macOS hỏi lại lần nữa: bấm **Vẫn mở**, rồi xác thực bằng Touch ID hoặc mật khẩu máy. Từ lần sau bấm đúp là chạy thẳng.
+
+<Callout kind="warning">
+  Ở bước 2, **đừng bấm "Chuyển vào Thùng rác"** (Move to Trash). Nút đó xoá app vừa cài.
+</Callout>
+
+</SubBlock>
+
+<SubBlock title="3b. macOS 13 Ventura và macOS 14 Sonoma">
+
+1. Mở thư mục **Applications**, **bấm chuột phải** vào **DocOps**, chọn **Mở** (Open).
+2. Hộp thoại hiện ra có nút **Mở**: bấm vào đó. Bấm đúp thông thường sẽ không có nút này, phải vào bằng chuột phải đúng một lần.
+
+Nếu không thấy nút Mở, làm theo mục 3a từ bước 3.
+
+</SubBlock>
+
+</Step>
+
+<Step n={4} id="bi-hong" title='Nếu máy báo "DocOps bị hỏng" (is damaged)'>
+
+Thông báo này xảy ra khi tệp cài bị sửa đổi trên đường truyền, thường do nén lại hoặc do dịch vụ gửi tệp. App không hỏng. Mở **Terminal** (Spotlight: bấm ⌘ + Space, gõ "Terminal"), dán đúng dòng dưới rồi bấm Enter, nhập mật khẩu máy nếu được hỏi:
+
+<CodeBlock code="xattr -dr com.apple.quarantine /Applications/DocOps.app" copyLabel="Sao chép lệnh" copiedLabel="Đã sao chép" />
+
+Xong bấm đúp mở DocOps như bình thường. Nếu vẫn không được, email cho Agentra để nhận tệp mới; đừng tải bản khác trên mạng.
+
+</Step>
+
+<Step n={5} id="kich-hoat" title="Kích hoạt bằng key">
+
+Màn hình đầu tiên là **Kích hoạt**. Nhập key Agentra đã cấp cho đơn vị, dạng `DOCOPS-XXXX-XXXX-XXXX`, rồi bấm **Kích hoạt**. Máy cần có Internet. Bản cài đã trỏ sẵn tới máy chủ DocOps chính thức, bạn không phải nhập địa chỉ nào.
+
+Chưa có key? Ở màn này chọn **Chưa có key (đăng ký mới)**, điền tên đơn vị và người liên hệ, Agentra sẽ xét duyệt và gửi key qua email. Kích hoạt xong là dùng được: nạp văn bản, tra cứu, rà soát, soạn thảo.
+
+</Step>
+
+<Step n={6} id="cap-nhat" title="Nhận bản mới">
+
+Không cần tải lại tệp .dmg. DocOps tự kiểm tra và tải bản mới:
+
+1. Mở **Cài đặt** trong app, chọn thẻ **Phiên bản**.
+2. Bấm **Kiểm tra cập nhật**.
+3. Nếu có bản mới, bấm **Tải và cài** và đợi thanh phần trăm chạy hết.
+4. Bấm **Khởi động lại để cài**. DocOps đóng lại, cài bản mới rồi tự mở lại.
+
+<Callout kind="info">
+  Đang soạn thảo dở? Lưu bản thảo trước khi bấm "Khởi động lại để cài": bước này đóng app ngay. Nếu bấm mà không thấy gì xảy ra, tải bản .dmg mới nhất và cài lại theo mục 1 đến 3.
+</Callout>
+
+</Step>
+
+<Step n={7} id="bao-loi" title="Báo lỗi">
+
+Khi gặp lỗi, chụp màn hình và ghi lại: đang ở màn nào, bấm gì thì lỗi, thông báo hiện ra chữ gì, kèm phiên bản macOS và loại chip. Gửi về [info@agentra.io.vn](mailto:info@agentra.io.vn) hoặc dùng mục **Phản hồi** trong app.
+
+</Step>
+
+</Steps>

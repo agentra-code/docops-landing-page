@@ -1,0 +1,74 @@
+export const meta = {
+  title: 'Install DocOps on Windows',
+  description: 'Download the Setup file, get past the SmartScreen warning, run the installer, activate with your key and update inside the app.',
+  updated: '2026-09-15',
+  minutes: 3,
+  toc: [
+    { id: 'download', label: 'Download the installer' },
+    { id: 'smartscreen', label: 'Windows blocks it: "Windows protected your PC"' },
+    { id: 'installer', label: 'The installer' },
+    { id: 'activate', label: 'Open DocOps and activate' },
+    { id: 'updates', label: 'Getting new versions' },
+    { id: 'other-errors', label: 'Other warnings' },
+  ],
+}
+
+<Callout kind="note">
+  This build does not carry a Windows code-signing certificate yet, so Windows shows a blue warning screen on the first install. That is the normal Windows procedure for software without a registered publisher signature (Microsoft calls it an "unknown publisher"), not a sign of a problem.
+</Callout>
+
+<Steps>
+
+<Step n={1} id="download" title="Download the installer">
+
+Download `DocOps Setup 1.0.0.exe` from the Download page. It runs on any 64-bit Windows 10 or 11 computer; unlike macOS there is no chip to choose.
+
+</Step>
+
+<Step n={2} id="smartscreen" title='Windows blocks it: "Windows protected your PC"'>
+
+Double-click the **.exe** you downloaded. Windows Defender SmartScreen shows a blue dialog titled **"Windows protected your PC"** with a smaller line saying it does not recognise this app.
+
+1. Click **"More info"**, just below the description; it is small and easy to miss.
+2. The dialog now shows the file name and a **"Run anyway"** button. Click it.
+
+The reason: the current build is not code-signed, so Windows has no way to confirm who published it and asks you first by default. It is not a virus and not a broken installer.
+
+</Step>
+
+<Step n={3} id="installer" title="The installer">
+
+The **DocOps Setup** installer opens and asks for a folder. Keep the default and click through until it finishes; nothing needs changing.
+
+</Step>
+
+<Step n={4} id="activate" title="Open DocOps and activate">
+
+Open DocOps from the Start menu or the new shortcut. The first screen is **Activation**: enter the key Agentra issued to your institution, in the form `DOCOPS-XXXX-XXXX-XXXX`, and click **Activate**. An internet connection is required.
+
+No key yet? On this screen choose **No key yet (new registration)**, enter your institution and a contact, and Agentra will review the request and email you a key. Once activated you can ingest documents, search, review and draft.
+
+</Step>
+
+<Step n={5} id="updates" title="Getting new versions">
+
+No need to download the .exe again. DocOps checks for and downloads new versions itself:
+
+1. Open **Settings** in the app and choose the **Version** tab.
+2. Click **Check for updates**.
+3. If a new version is available, click **Download and install** and wait for the progress bar to finish.
+4. Click **Restart to install**. DocOps closes, installs the new version and reopens.
+
+<Callout kind="info">
+  Drafting something? Save it before clicking "Restart to install": that step closes the app immediately.
+</Callout>
+
+</Step>
+
+<Step n={6} id="other-errors" title="Other warnings">
+
+Windows may also show a warning from antivirus software installed on the computer (a third-party firewall or antivirus). Handle it like step 2: allow it to run once. If the app does not open or shows an error unlike anything above, take a screenshot and note which step you were on, what you clicked and the exact message, plus your Windows version (Settings, System, About). Send it to [info@agentra.io.vn](mailto:info@agentra.io.vn) or use **Feedback** inside the app.
+
+</Step>
+
+</Steps>

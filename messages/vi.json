@@ -238,5 +238,37 @@
       "body": "Vào Cài đặt, thẻ Phiên bản, bấm Kiểm tra cập nhật rồi Tải và cài. Không cần tải lại tệp cài."
     },
     "help": "Không tải được? Email <email></email>, chúng tôi gửi tệp qua kênh khác."
+  },
+  "install": {
+    "eyebrow": "Hướng dẫn cài đặt",
+    "breadcrumbDownload": "Tải về",
+    "breadcrumbInstall": "Hướng dẫn cài đặt",
+    "tocTitle": "Nội dung",
+    "tabs": {
+      "macos": "macOS",
+      "windows": "Windows"
+    },
+    "updated": "Cập nhật ngày {date}",
+    "minutes": "Khoảng {n} phút",
+    "bottom": {
+      "title": "Sẵn sàng cài?",
+      "body": "Tải đúng bản cho máy rồi làm theo các bước trên.",
+      "downloadMac": "Tải về cho macOS",
+      "downloadWindows": "Tải về cho Windows",
+      "other": {
+        "macos": "Hướng dẫn cho macOS",
+        "windows": "Hướng dẫn cho Windows"
+      }
+    },
+    "meta": {
+      "macos": {
+        "title": "Cài DocOps trên máy Mac",
+        "description": "Hướng dẫn cài DocOps trên macOS: chọn đúng bản theo chip, kéo vào Applications, cho phép mở lần đầu trong Cài đặt Hệ thống, kích hoạt bằng key và cập nhật trong app."
+      },
+      "windows": {
+        "title": "Cài DocOps trên máy Windows",
+        "description": "Hướng dẫn cài DocOps trên Windows 10/11: tải tệp Setup, vượt cảnh báo SmartScreen, chạy trình cài, kích hoạt bằng key và cập nhật trong app."
+      }
+    }
   }
 }

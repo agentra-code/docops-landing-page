@@ -1,0 +1,74 @@
+export const meta = {
+  title: 'Cài DocOps trên máy Windows',
+  description: 'Tải tệp Setup, vượt cảnh báo SmartScreen, chạy trình cài, kích hoạt bằng key và cập nhật trong app.',
+  updated: '2026-09-15',
+  minutes: 3,
+  toc: [
+    { id: 'tai-tep', label: 'Tải tệp cài' },
+    { id: 'smartscreen', label: 'Windows chặn: "Windows đã bảo vệ PC của bạn"' },
+    { id: 'trinh-cai', label: 'Trình cài' },
+    { id: 'kich-hoat', label: 'Mở DocOps và kích hoạt' },
+    { id: 'cap-nhat', label: 'Nhận bản mới' },
+    { id: 'loi-khac', label: 'Nếu gặp lỗi khác' },
+  ],
+}
+
+<Callout kind="note">
+  Bản này chưa mua chứng thư ký số Windows, nên khi cài lần đầu Windows hiện một màn cảnh báo màu xanh. Đây là thủ tục bình thường của Windows với phần mềm chưa có chữ ký của một hãng đã đăng ký (Microsoft gọi là "unknown publisher"), không phải phần mềm có vấn đề.
+</Callout>
+
+<Steps>
+
+<Step n={1} id="tai-tep" title="Tải tệp cài">
+
+Tải tệp `DocOps Setup 1.0.0.exe` từ trang Tải về. Tệp chạy được trên mọi máy Windows 10 và 11 bản 64-bit, không cần phân biệt loại chip như bên macOS.
+
+</Step>
+
+<Step n={2} id="smartscreen" title='Windows chặn: "Windows đã bảo vệ PC của bạn"'>
+
+Bấm đúp tệp **.exe** vừa tải. Windows Defender SmartScreen hiện một hộp thoại nền xanh, tiêu đề **"Windows đã bảo vệ PC của bạn"** (Windows protected your PC), kèm dòng nhỏ nói không nhận ra ứng dụng này.
+
+1. Bấm chữ **"Thông tin thêm"** (More info), nằm ngay dưới dòng mô tả, dễ bị bỏ qua vì nhỏ.
+2. Hộp thoại hiện thêm tên tệp và nút **"Vẫn chạy"** (Run anyway). Bấm nút đó.
+
+Lý do có màn này: bản cài hiện tại chưa được ký số, Windows chưa có cách nào xác nhận ai là người phát hành nên mặc định hỏi bạn trước. Đây không phải virus và không phải bản cài lỗi.
+
+</Step>
+
+<Step n={3} id="trinh-cai" title="Trình cài">
+
+Trình cài **DocOps Setup** hiện lên, hỏi thư mục muốn cài vào. Cứ để nguyên thư mục mặc định và bấm tiếp cho tới khi cài xong, không cần đổi gì.
+
+</Step>
+
+<Step n={4} id="kich-hoat" title="Mở DocOps và kích hoạt">
+
+Mở DocOps từ menu Start hoặc biểu tượng vừa tạo. Màn đầu tiên là **Kích hoạt**: nhập key Agentra đã cấp cho đơn vị, dạng `DOCOPS-XXXX-XXXX-XXXX`, rồi bấm **Kích hoạt**. Máy cần có Internet.
+
+Chưa có key? Ở màn này chọn **Chưa có key (đăng ký mới)**, điền tên đơn vị và người liên hệ, Agentra sẽ xét duyệt và gửi key qua email. Kích hoạt xong là dùng được: nạp văn bản, tra cứu, rà soát, soạn thảo.
+
+</Step>
+
+<Step n={5} id="cap-nhat" title="Nhận bản mới">
+
+Không cần tải lại tệp .exe. DocOps tự kiểm tra và tải bản mới:
+
+1. Mở **Cài đặt** trong app, chọn thẻ **Phiên bản**.
+2. Bấm **Kiểm tra cập nhật**.
+3. Nếu có bản mới, bấm **Tải và cài** và đợi thanh phần trăm chạy hết.
+4. Bấm **Khởi động lại để cài**. DocOps đóng lại, cài bản mới rồi tự mở lại.
+
+<Callout kind="info">
+  Đang soạn thảo dở? Lưu bản thảo trước khi bấm "Khởi động lại để cài": bước này đóng app ngay.
+</Callout>
+
+</Step>
+
+<Step n={6} id="loi-khac" title="Nếu gặp lỗi khác">
+
+Windows có thể còn hiện thêm cảnh báo của phần mềm diệt virus đang cài trên máy (tường lửa riêng, antivirus của bên thứ ba). Cách xử lý tương tự bước 2: xác nhận cho phép chạy một lần. Nếu app không mở được hoặc báo lỗi khác hẳn những gì nói ở trên, chụp màn hình và ghi lại: đang ở bước nào, bấm gì thì lỗi, thông báo hiện ra chữ gì, kèm phiên bản Windows (Cài đặt, Hệ thống, Giới thiệu). Gửi về [info@agentra.io.vn](mailto:info@agentra.io.vn) hoặc dùng mục **Phản hồi** trong app.
+
+</Step>
+
+</Steps>

@@ -238,5 +238,37 @@
       "body": "Open Settings, the Version tab, click Check for updates and then Download and install. No need to download the installer again."
     },
     "help": "Cannot download? Email <email></email> and we will send the file another way."
+  },
+  "install": {
+    "eyebrow": "Installation guide",
+    "breadcrumbDownload": "Download",
+    "breadcrumbInstall": "Installation guide",
+    "tocTitle": "Contents",
+    "tabs": {
+      "macos": "macOS",
+      "windows": "Windows"
+    },
+    "updated": "Updated {date}",
+    "minutes": "About {n} minutes",
+    "bottom": {
+      "title": "Ready to install?",
+      "body": "Download the right build for your computer and follow the steps above.",
+      "downloadMac": "Download for macOS",
+      "downloadWindows": "Download for Windows",
+      "other": {
+        "macos": "Guide for macOS",
+        "windows": "Guide for Windows"
+      }
+    },
+    "meta": {
+      "macos": {
+        "title": "Install DocOps on a Mac",
+        "description": "How to install DocOps on macOS: pick the build for your chip, drag to Applications, allow the first launch in System Settings, activate with your key and update inside the app."
+      },
+      "windows": {
+        "title": "Install DocOps on Windows",
+        "description": "How to install DocOps on Windows 10/11: download the Setup file, get past the SmartScreen warning, run the installer, activate with your key and update inside the app."
+      }
+    }
   }
 }
