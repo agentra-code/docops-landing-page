@@ -11,7 +11,7 @@ export function Hero({ assets, version }: { assets: ReleaseAsset[]; version: str
   return (
     <section className="overflow-hidden bg-[radial-gradient(1000px_480px_at_50%_-60px,#eff5e3_0%,rgba(239,245,227,0)_70%)] pt-10 md:pt-20">
       <Container className="flex flex-col items-center gap-5 text-center">
-        <span className="text-[13px] font-bold tracking-[0.6px] text-accent uppercase">{t('eyebrow')}</span>
+        <span className="text-[13px] font-bold tracking-[0.6px] text-accent-strong uppercase">{t('eyebrow')}</span>
         <h1 className="max-w-[940px] text-[34px] leading-[1.12] font-bold tracking-[-0.02em] text-balance md:text-[58px] md:leading-[1.08]">
           {t('h1')}
         </h1>

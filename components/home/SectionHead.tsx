@@ -16,7 +16,7 @@ export function SectionHead({
   const center = align === 'center'
   return (
     <div className={cn('flex flex-col gap-3', center && 'items-center text-center')}>
-      <span className="text-[13px] font-bold tracking-[0.6px] text-accent uppercase">{eyebrow}</span>
+      <span className="text-[13px] font-bold tracking-[0.6px] text-accent-strong uppercase">{eyebrow}</span>
       <Heading className="max-w-[800px] text-[28px] leading-[1.18] font-bold tracking-[-0.01em] text-balance md:text-[38px] md:leading-[1.15]">
         {title}
       </Heading>

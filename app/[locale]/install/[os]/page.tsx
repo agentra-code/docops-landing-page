@@ -67,7 +67,7 @@ export default async function GuidePage({ params }: { params: Params }) {
             <Icon name="chevron-right" size={14} />
             <span className="text-ink2">{t(`tabs.${os}`)}</span>
           </nav>
-          <span className="text-[13px] font-bold tracking-[0.6px] text-accent uppercase">{t('eyebrow')}</span>
+          <span className="text-[13px] font-bold tracking-[0.6px] text-accent-strong uppercase">{t('eyebrow')}</span>
           <h1 className="max-w-[900px] text-[32px] leading-[1.12] font-bold tracking-[-0.02em] text-balance md:text-[44px] md:leading-[1.1]">
             {meta.title}
           </h1>
