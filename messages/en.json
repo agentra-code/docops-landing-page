@@ -8,7 +8,9 @@
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "language": "Language",
-    "mainNav": "Main navigation"
+    "mainNav": "Main navigation",
+    "copy": "Copy",
+    "copied": "Copied"
   },
   "nav": {
     "howItWorks": "How it works",
@@ -41,5 +43,159 @@
     "installWindows": "Install on Windows",
     "privacy": "Privacy policy",
     "copyright": "© {year} Agentra JSC · Da Nang, Vietnam"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Desktop app for Windows and macOS",
+      "h1": "The AI agent for university administrative documents",
+      "sub": "From document to decision in minutes, not days. DocOps ingests, classifies, searches with citations, maps legal impact and drafts under Decree 30. Your staff always make the final call.",
+      "ctaDefault": "Download DocOps",
+      "ctaMac": "Download for macOS",
+      "ctaWindows": "Download for Windows",
+      "cta2": "See how it works",
+      "meta": "Version {version} · Windows 10/11 · macOS 13 or later · Free to download, activated with your institution key",
+      "trust1": "Data stays on your machine",
+      "trust2": "Citations required",
+      "trust3": "Staff make the final call",
+      "windowTitle": "DocOps · Legal basis review",
+      "imageAlt": "DocOps review screen: document list with expired legal references highlighted"
+    },
+    "pipeline": {
+      "caption": "Six steps; a person decides at the last one",
+      "s1": {
+        "name": "Ingest",
+        "sub": "PDF, scans"
+      },
+      "s2": {
+        "name": "Classify",
+        "sub": "extract metadata"
+      },
+      "s3": {
+        "name": "Search",
+        "sub": "cited Q&A"
+      },
+      "s4": {
+        "name": "Impact",
+        "sub": "legal graph"
+      },
+      "s5": {
+        "name": "Draft",
+        "sub": "Decree 30 templates"
+      },
+      "s6": {
+        "name": "Staff review & approve",
+        "sub": "a person decides"
+      }
+    },
+    "flows": {
+      "eyebrow": "Three core flows",
+      "h2": "What DocOps does",
+      "lead": "Three flows for the administrative document lifecycle, sharing one knowledge base that grows with your institution.",
+      "f1": {
+        "title": "Ingest & classify",
+        "desc": "OCR for scans, seal and signature detection, extraction of number, date and issuing body. Automatic classification and routing into the repository."
+      },
+      "f2": {
+        "title": "Search & Q&A",
+        "desc": "Ask in plain language across the whole repository. Every answer cites its sources and says \"insufficient basis\" instead of guessing."
+      },
+      "f3": {
+        "title": "Impact & drafting",
+        "desc": "Map legal relationships, flag expired references, generate drafts on Decree 30 templates and check the format before signing."
+      }
+    },
+    "why": {
+      "eyebrow": "Benefits",
+      "h2": "Why DocOps",
+      "w1": {
+        "title": "Hours down to minutes",
+        "desc": "Across ingest, search and drafting, repetitive work drops from hours of manual effort to a few minutes."
+      },
+      "w2": {
+        "title": "Citations, always",
+        "desc": "Every answer names its source and warns as soon as a cited basis has expired."
+      },
+      "w3": {
+        "title": "Institutional memory that stays",
+        "desc": "The repository and the legal relationship graph accumulate year after year and do not leave with staff turnover."
+      },
+      "w4": {
+        "title": "Compliant with Decree 30/2020 on clerical work",
+        "desc": "Document format follows the national standard; a staff member always approves before issuance."
+      }
+    },
+    "trust": {
+      "eyebrow": "Transparent and safe",
+      "h2": "AI assists, people decide",
+      "link": "Read the AI transparency policy",
+      "t1": {
+        "title": "People decide",
+        "desc": "A document stays pending until a staff member reviews, edits and approves it. AI never replaces that decision."
+      },
+      "t2": {
+        "title": "Data on your machine",
+        "desc": "Original documents live on your computer. Each institution gets its own key and a fully separate workspace."
+      },
+      "t3": {
+        "title": "Never used for training",
+        "desc": "The server only runs the AI steps and keeps no content after returning a result."
+      }
+    },
+    "download": {
+      "eyebrow": "Download",
+      "h2": "Download DocOps",
+      "lead": "Version {version}, released {date}. Free to download, activated with your institution key.",
+      "btn": "Download",
+      "guide": "Installation guide",
+      "note": "The current build is not code-signed yet, so Windows and macOS ask for a one-time confirmation. The installation guide walks through \"Run anyway\" and \"Open Anyway\".",
+      "platforms": {
+        "windows-x64": {
+          "title": "Windows",
+          "sub": "64-bit, Windows 10 and 11"
+        },
+        "macos-arm64": {
+          "title": "macOS Apple Silicon",
+          "sub": "M1, M2, M3, M4 chips"
+        },
+        "macos-x64": {
+          "title": "macOS Intel",
+          "sub": "Intel Core chips"
+        }
+      }
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "h2": "Frequently asked questions",
+      "q1": {
+        "q": "What is an activation key and where do I get one?",
+        "a": "Agentra issues each institution a key in the form DOCOPS-XXXX-XXXX-XXXX that opens its own workspace. Install the app, choose \"No key yet (new registration)\" on the activation screen and send the request from inside the app, or email us with your institution name."
+      },
+      "q2": {
+        "q": "Do I need an internet connection?",
+        "a": "Yes, for activation and for the AI steps: OCR, classification, search and drafting. Your documents still stay on your machine."
+      },
+      "q3": {
+        "q": "Where are my documents stored?",
+        "a": "On your computer. The server only runs the AI steps and keeps no content after returning a result. Agentra never uses institution data to train models."
+      },
+      "q4": {
+        "q": "Why does Windows or macOS warn me during installation?",
+        "a": "The current build has no code-signing certificate yet, so the operating system asks for a one-time confirmation. The guide shows exactly where to click \"Run anyway\" on Windows and \"Open Anyway\" on macOS."
+      },
+      "q5": {
+        "q": "How do I get new versions?",
+        "a": "No re-download needed. In the app open Settings, the Version tab, click Check for updates, then Download and install, then Restart to install."
+      },
+      "q6": {
+        "q": "What does it cost?",
+        "a": "Downloading and installing is free. Pricing depends on how much your institution uses; contact us for a quote."
+      }
+    },
+    "cta": {
+      "h2": "Ready to try DocOps at your institution?",
+      "sub": "Download the app, request a key right from the activation screen, and start reviewing your document repository today.",
+      "b1": "Download DocOps",
+      "b2": "Contact us"
+    }
   }
 }

@@ -8,7 +8,9 @@
     "openMenu": "Mở menu",
     "closeMenu": "Đóng menu",
     "language": "Ngôn ngữ",
-    "mainNav": "Điều hướng chính"
+    "mainNav": "Điều hướng chính",
+    "copy": "Sao chép",
+    "copied": "Đã sao chép"
   },
   "nav": {
     "howItWorks": "Quy trình",
@@ -41,5 +43,159 @@
     "installWindows": "Cài đặt trên Windows",
     "privacy": "Chính sách bảo mật",
     "copyright": "© {year} Agentra JSC · Đà Nẵng, Việt Nam"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Ứng dụng desktop cho Windows và macOS",
+      "h1": "Tác tử AI cho văn bản hành chính trường đại học",
+      "sub": "Từ văn bản đến quyết định, trong vài phút thay vì vài ngày. DocOps nhập, phân loại, tra cứu có trích dẫn, dò tác động pháp lý và soạn nháp theo Nghị định 30. Cán bộ luôn là người duyệt cuối.",
+      "ctaDefault": "Tải DocOps",
+      "ctaMac": "Tải về cho macOS",
+      "ctaWindows": "Tải về cho Windows",
+      "cta2": "Xem quy trình",
+      "meta": "Phiên bản {version} · Windows 10/11 · macOS 13 trở lên · Miễn phí tải, kích hoạt bằng key của đơn vị",
+      "trust1": "Dữ liệu lưu tại máy",
+      "trust2": "Trích dẫn bắt buộc",
+      "trust3": "Cán bộ duyệt cuối",
+      "windowTitle": "DocOps · Rà soát căn cứ pháp lý",
+      "imageAlt": "Màn hình Rà soát của DocOps: danh sách văn bản và các căn cứ pháp lý hết hiệu lực được đánh dấu"
+    },
+    "pipeline": {
+      "caption": "Quy trình 6 bước, người quyết ở bước cuối",
+      "s1": {
+        "name": "Nhập",
+        "sub": "PDF, ảnh quét"
+      },
+      "s2": {
+        "name": "Phân loại",
+        "sub": "bóc metadata"
+      },
+      "s3": {
+        "name": "Tra cứu",
+        "sub": "Q&A có trích dẫn"
+      },
+      "s4": {
+        "name": "Tác động",
+        "sub": "đồ thị pháp lý"
+      },
+      "s5": {
+        "name": "Soạn thảo",
+        "sub": "nháp theo NĐ 30"
+      },
+      "s6": {
+        "name": "Cán bộ kiểm & duyệt",
+        "sub": "người quyết cuối"
+      }
+    },
+    "flows": {
+      "eyebrow": "Ba luồng lõi",
+      "h2": "DocOps làm gì",
+      "lead": "Ba luồng cho vòng đời văn bản hành chính, dùng chung một kho tri thức tích luỹ của đơn vị.",
+      "f1": {
+        "title": "Nhập & phân loại",
+        "desc": "OCR cho bản quét, nhận dạng con dấu và chữ ký, bóc số hiệu, ngày ký, cơ quan ban hành. Tự phân loại và định tuyến vào kho."
+      },
+      "f2": {
+        "title": "Tra cứu & Q&A",
+        "desc": "Hỏi bằng ngôn ngữ tự nhiên trên toàn bộ kho văn bản. Mỗi câu trả lời nêu rõ nguồn và nói \"chưa đủ căn cứ\" thay vì suy diễn."
+      },
+      "f3": {
+        "title": "Tác động & soạn thảo",
+        "desc": "Dò quan hệ pháp lý, cảnh báo căn cứ hết hiệu lực, sinh nháp theo mẫu Nghị định 30 và kiểm thể thức trước khi trình ký."
+      }
+    },
+    "why": {
+      "eyebrow": "Lợi ích",
+      "h2": "Vì sao chọn DocOps",
+      "w1": {
+        "title": "Từ giờ xuống phút",
+        "desc": "Ở các luồng nhập, tra cứu và soạn thảo, việc lặp lại rút từ hàng giờ thủ công xuống còn vài phút."
+      },
+      "w2": {
+        "title": "Trích dẫn bắt buộc",
+        "desc": "Mọi câu trả lời nêu rõ nguồn; cảnh báo ngay khi viện dẫn căn cứ đã hết hiệu lực."
+      },
+      "w3": {
+        "title": "Giữ tri thức thể chế",
+        "desc": "Kho văn bản và đồ thị quan hệ pháp lý tích luỹ theo năm, không bốc hơi khi cán bộ nghỉ."
+      },
+      "w4": {
+        "title": "Bám chuẩn Nghị định 30/2020",
+        "desc": "Thể thức văn bản theo quy định nhà nước; luôn có cán bộ duyệt cuối trước khi ban hành."
+      }
+    },
+    "trust": {
+      "eyebrow": "Minh bạch và an toàn",
+      "h2": "AI hỗ trợ, con người quyết",
+      "link": "Đọc chính sách minh bạch AI",
+      "t1": {
+        "title": "Con người quyết",
+        "desc": "Văn bản ở trạng thái chờ cho tới khi cán bộ xem, sửa và duyệt. AI không thay quyền quyết định."
+      },
+      "t2": {
+        "title": "Dữ liệu tại máy",
+        "desc": "Văn bản gốc lưu trên máy của bạn. Mỗi đơn vị một key và một workspace riêng, tách biệt hoàn toàn."
+      },
+      "t3": {
+        "title": "Không huấn luyện trên dữ liệu của trường",
+        "desc": "Máy chủ chỉ xử lý phần AI và không giữ nội dung sau khi trả kết quả."
+      }
+    },
+    "download": {
+      "eyebrow": "Tải về",
+      "h2": "Tải DocOps",
+      "lead": "Phiên bản {version}, phát hành {date}. Miễn phí tải, kích hoạt bằng key của đơn vị.",
+      "btn": "Tải về",
+      "guide": "Hướng dẫn cài đặt",
+      "note": "Bản hiện tại chưa ký số nên Windows và macOS sẽ hỏi xác nhận một lần khi cài. Hướng dẫn cài đặt chỉ từng bước \"Vẫn chạy\" và \"Vẫn mở\".",
+      "platforms": {
+        "windows-x64": {
+          "title": "Windows",
+          "sub": "64-bit, Windows 10 và 11"
+        },
+        "macos-arm64": {
+          "title": "macOS Apple Silicon",
+          "sub": "Chip M1, M2, M3, M4"
+        },
+        "macos-x64": {
+          "title": "macOS Intel",
+          "sub": "Chip Intel Core"
+        }
+      }
+    },
+    "faq": {
+      "eyebrow": "Hỏi đáp",
+      "h2": "Câu hỏi thường gặp",
+      "q1": {
+        "q": "Key kích hoạt là gì và xin ở đâu?",
+        "a": "Mỗi đơn vị được Agentra cấp một key dạng DOCOPS-XXXX-XXXX-XXXX để mở workspace riêng. Cài app, ở màn Kích hoạt chọn \"Chưa có key (đăng ký mới)\" và gửi đơn ngay trong app, hoặc email cho chúng tôi kèm tên đơn vị."
+      },
+      "q2": {
+        "q": "Có cần Internet không?",
+        "a": "Cần khi kích hoạt và ở các bước AI: OCR, phân loại, tra cứu, soạn nháp. Văn bản của bạn vẫn lưu tại máy."
+      },
+      "q3": {
+        "q": "Dữ liệu văn bản lưu ở đâu?",
+        "a": "Trên máy của bạn. Máy chủ chỉ xử lý phần AI và không giữ nội dung sau khi trả kết quả. Agentra không dùng dữ liệu của trường để huấn luyện mô hình."
+      },
+      "q4": {
+        "q": "Vì sao Windows hoặc macOS cảnh báo khi cài?",
+        "a": "Bản hiện tại chưa mua chứng thư số nên hệ điều hành hỏi xác nhận một lần. Hướng dẫn cài đặt chỉ từng bước bấm \"Vẫn chạy\" trên Windows và \"Vẫn mở\" trên macOS."
+      },
+      "q5": {
+        "q": "Cập nhật phiên bản mới thế nào?",
+        "a": "Không cần tải lại. Trong app vào Cài đặt, thẻ Phiên bản, bấm Kiểm tra cập nhật, rồi Tải và cài, sau đó Khởi động lại để cài."
+      },
+      "q6": {
+        "q": "Chi phí sử dụng?",
+        "a": "Tải và cài miễn phí. Chi phí tính theo quy mô sử dụng của đơn vị; liên hệ để nhận báo giá."
+      }
+    },
+    "cta": {
+      "h2": "Sẵn sàng thử DocOps cho đơn vị của bạn?",
+      "sub": "Tải app, xin key ngay trong màn Kích hoạt, và bắt đầu rà soát kho văn bản của đơn vị trong hôm nay.",
+      "b1": "Tải DocOps",
+      "b2": "Liên hệ"
+    }
   }
 }
