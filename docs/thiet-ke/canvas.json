@@ -1,0 +1,86 @@
+{
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "title": "Trang chủ · Desktop 1440 (VI)",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 6250
+    },
+    {
+      "file": "TrangChuMobile.dc.html",
+      "title": "Trang chủ · Mobile 390 (VI)",
+      "x": 1540,
+      "y": 0,
+      "w": 390,
+      "h": 7942
+    },
+    {
+      "file": "HomeEN.dc.html",
+      "title": "Home · Desktop 1440 (EN)",
+      "x": 2030,
+      "y": 0,
+      "w": 1440,
+      "h": 6335
+    },
+    {
+      "file": "TaiVe.dc.html",
+      "title": "Tải về (VI)",
+      "x": 0,
+      "y": 8142,
+      "w": 1440,
+      "h": 2201
+    },
+    {
+      "file": "CaiDatMacOS.dc.html",
+      "title": "Hướng dẫn cài đặt · macOS (VI)",
+      "x": 1540,
+      "y": 8142,
+      "w": 1440,
+      "h": 3938
+    },
+    {
+      "file": "LienHe.dc.html",
+      "title": "Liên hệ (VI)",
+      "x": 0,
+      "y": 12280,
+      "w": 1440,
+      "h": 2099
+    },
+    {
+      "file": "QuyTrinh.dc.html",
+      "title": "Quy trình (VI)",
+      "x": 1540,
+      "y": 12280,
+      "w": 1440,
+      "h": 3049
+    }
+  ],
+  "annotations": [
+    {
+      "id": "note-nguon",
+      "x": 0,
+      "y": -260,
+      "w": 520,
+      "text": "Landing page Agentra DocOps · bản thiết kế 16/09/2026\nMàu, bo góc, chữ lấy từ tokens.css của app; font Be Vietnam Pro. Ảnh app render từ artboard thiết kế desktop (sẽ thay bằng ảnh chụp app thật khi code).\nHàng trên: trang chủ VI desktop, VI mobile, EN desktop. Hàng dưới: Tải về, Cài đặt macOS, Liên hệ, Quy trình."
+    },
+    {
+      "id": "note-hero",
+      "x": 1540,
+      "y": -200,
+      "w": 380,
+      "text": "Nút \"Tải về cho macOS\" đổi theo hệ điều hành của người xem (Windows / macOS); mặc định \"Tải DocOps\"."
+    },
+    {
+      "id": "note-lienhe",
+      "x": 0,
+      "y": 12130,
+      "w": 460,
+      "text": "Cần PO điền: [Số điện thoại], link Zalo và [Địa chỉ đầy đủ] ở trang Liên hệ. Chưa có thì thẻ Điện thoại/Zalo tự ẩn trên site thật."
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  }
+}
