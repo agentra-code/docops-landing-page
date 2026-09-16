@@ -10,7 +10,8 @@
     "language": "Ngôn ngữ",
     "mainNav": "Điều hướng chính",
     "copy": "Sao chép",
-    "copied": "Đã sao chép"
+    "copied": "Đã sao chép",
+    "privacyPolicy": "Chính sách bảo mật"
   },
   "nav": {
     "howItWorks": "Quy trình",
@@ -269,6 +270,182 @@
         "title": "Cài DocOps trên máy Windows",
         "description": "Hướng dẫn cài DocOps trên Windows 10/11: tải tệp Setup, vượt cảnh báo SmartScreen, chạy trình cài, kích hoạt bằng key và cập nhật trong app."
       }
+    }
+  },
+  "howItWorks": {
+    "meta": {
+      "title": "Quy trình DocOps: 6 bước, cán bộ quyết cuối",
+      "description": "Văn bản đi qua sáu bước: nhập, phân loại, tra cứu, tác động, soạn thảo và cán bộ kiểm duyệt. AI làm phần nặng, con người quyết định cuối cùng."
+    },
+    "eyebrow": "Quy trình",
+    "h1": "Văn bản được xử lý bởi các luồng AI. Cán bộ là người quyết định cuối cùng.",
+    "lead": "DocOps làm phần nặng: đọc, bóc tách, phân loại, tra cứu và soạn nháp. Cán bộ, những chuyên gia nghiệp vụ thực thụ, luôn là người cuối cùng quyết định nội dung được dùng.",
+    "s1": {
+      "title": "Nhập",
+      "desc": "OCR bản quét, nhận dạng con dấu và chữ ký, bóc số hiệu, ngày ký, cơ quan ban hành, trích yếu."
+    },
+    "s2": {
+      "title": "Phân loại",
+      "desc": "Xác định loại văn bản, chủ đề, hiệu lực và định tuyến vào đúng khu vực của kho."
+    },
+    "s3": {
+      "title": "Tra cứu",
+      "desc": "Trả lời kèm trích dẫn nguồn cụ thể; chặn suy diễn khi thiếu căn cứ."
+    },
+    "s4": {
+      "title": "Tác động",
+      "desc": "Dò đồ thị quan hệ pháp lý: văn bản nào dẫn văn bản nào, căn cứ nào đã hết hiệu lực hoặc sắp thay đổi."
+    },
+    "s5": {
+      "title": "Soạn thảo",
+      "desc": "Sinh nháp theo mẫu Nghị định 30, kiểm thể thức, gợi ý thay căn cứ đã hết hiệu lực."
+    },
+    "s6": {
+      "title": "Cán bộ kiểm & duyệt",
+      "desc": "Con người xem, sửa, duyệt. AI chỉ hỗ trợ, không thay quyền quyết định."
+    },
+    "imageTitle": "DocOps · Đồ thị quan hệ pháp lý",
+    "imageAlt": "Màn hình Đồ thị của DocOps: quan hệ dẫn chiếu giữa các văn bản và căn cứ hết hiệu lực",
+    "flows": {
+      "eyebrow": "Ba luồng công việc",
+      "h2": "Một kho tri thức, ba việc thường ngày",
+      "f1": {
+        "from": "Nhập",
+        "to": "Hồ sơ số hoá"
+      },
+      "f2": {
+        "from": "Hỏi",
+        "to": "Trả lời có căn cứ"
+      },
+      "f3": {
+        "from": "Thay đổi",
+        "to": "Tác động + Nháp"
+      }
+    },
+    "reliability": {
+      "eyebrow": "Độ tin cậy nội dung",
+      "h2": "Tin được vì kiểm được",
+      "r1": {
+        "title": "Trích dẫn bắt buộc",
+        "desc": "Mọi câu trả lời nêu rõ nguồn: số hiệu, điều khoản, trang."
+      },
+      "r2": {
+        "title": "Nội dung AI tự sinh phải duyệt",
+        "desc": "Nháp và tóm tắt ở trạng thái chờ; cán bộ đọc, sửa và duyệt trước khi dùng."
+      },
+      "r3": {
+        "title": "Dữ liệu theo đơn vị",
+        "desc": "Mỗi đơn vị một key và một workspace riêng; văn bản gốc lưu tại máy."
+      },
+      "r4": {
+        "title": "Vì sao có bước con người",
+        "desc": "Văn bản hành chính có hệ quả pháp lý. AI hỗ trợ nhưng không thay phán đoán chuyên môn."
+      }
+    }
+  },
+  "transparency": {
+    "meta": {
+      "title": "Minh bạch AI và dữ liệu",
+      "description": "DocOps dùng AI ở đâu, con người giám sát thế nào, dữ liệu văn bản lưu ở đâu và các cam kết về bảo mật, sở hữu nội dung, tuân thủ Nghị định 30/2020 và Nghị định 13/2023."
+    },
+    "eyebrow": "Minh bạch AI",
+    "h1": "Minh bạch AI và dữ liệu",
+    "lead": "DocOps công khai cách dùng trí tuệ nhân tạo, cơ chế con người giám sát, nơi lưu dữ liệu văn bản và các cam kết bảo mật, để đơn vị dùng phần mềm với sự tin cậy.",
+    "updated": "Cập nhật ngày {date}",
+    "p1": {
+      "title": "DocOps dùng AI ở đâu",
+      "body": "DocOps dùng mô hình Claude của Anthropic cho các bước OCR, nhận dạng con dấu và chữ ký, bóc metadata, phân loại và soạn nháp; mô hình được chọn theo độ phức tạp của từng tác vụ. Các bước kiểm tra tất định như đối chiếu ngày, số hiệu và tính hiệu lực chạy ngay trên máy của bạn, không qua AI."
+    },
+    "p2": {
+      "title": "Con người quyết định",
+      "body": "Theo thiết kế human in the loop, văn bản ở trạng thái chờ cho tới khi cán bộ xem, sửa và duyệt. Chỉ khi đó văn bản mới được lưu vào kho và đánh chỉ mục."
+    },
+    "p3": {
+      "title": "Trích dẫn và chặn suy diễn",
+      "body": "Mọi kết quả tra cứu kèm trích dẫn nguồn: số hiệu, điều khoản, trang. Khi không đủ căn cứ, hệ thống nói rõ \"chưa đủ căn cứ\" thay vì tự sinh câu trả lời."
+    },
+    "p4": {
+      "title": "Bảo mật dữ liệu",
+      "body": "Văn bản gốc lưu trên máy của người dùng. Máy chủ chỉ xử lý phần AI và không giữ nội dung sau khi trả kết quả. Mỗi đơn vị truy cập bằng key riêng, không dùng tài khoản cá nhân; dữ liệu của các đơn vị tách biệt hoàn toàn."
+    },
+    "p5": {
+      "title": "Tri thức thể chế thuộc về đơn vị",
+      "body": "Kho văn bản và đồ thị quan hệ pháp lý là bộ nhớ của tổ chức, thuộc về đơn vị và có thể xuất ra bất cứ lúc nào."
+    },
+    "p6": {
+      "title": "Tuân thủ pháp luật",
+      "body": "DocOps bám Nghị định 30/2020/NĐ-CP về công tác văn thư (thể thức văn bản hành chính) và Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân."
+    },
+    "p7": {
+      "title": "Quyền sở hữu nội dung",
+      "body": "Đơn vị giữ toàn quyền với văn bản đưa vào và kết quả xử lý. Agentra không dùng dữ liệu của đơn vị để huấn luyện mô hình."
+    },
+    "p8": {
+      "title": "Giới hạn trách nhiệm",
+      "body": "DocOps hỗ trợ chứ không thay thế chuyên môn. Nội dung do AI tạo ra phải được cán bộ kiểm tra trước khi sử dụng; quyết định cuối cùng và trách nhiệm ban hành thuộc về đơn vị."
+    },
+    "p9": {
+      "title": "Cập nhật chính sách",
+      "body": "Chính sách này có thể thay đổi khi có tính năng mới hoặc quy định mới. Ngày cập nhật ghi ở đầu trang."
+    },
+    "p10": {
+      "title": "Liên hệ",
+      "body": "Câu hỏi về AI và dữ liệu, gửi về <email></email>."
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Liên hệ Agentra",
+      "description": "Email info@agentra.io.vn để hỏi về DocOps, xin key kích hoạt cho đơn vị, báo lỗi và góp ý. Agentra JSC, Đà Nẵng."
+    },
+    "eyebrow": "Liên hệ",
+    "h1": "Liên hệ Agentra",
+    "lead": "Gửi email cho chúng tôi, hoặc xin key ngay trong ứng dụng DocOps.",
+    "email": {
+      "label": "Email",
+      "sub": "Câu hỏi về sản phẩm, xin key, báo lỗi và góp ý.",
+      "copy": "Sao chép địa chỉ",
+      "copied": "Đã sao chép"
+    },
+    "phone": {
+      "label": "Điện thoại / Zalo",
+      "sub": "Giờ hành chính, thứ Hai đến thứ Sáu.",
+      "zalo": "Mở Zalo"
+    },
+    "address": {
+      "label": "Địa chỉ",
+      "maps": "Mở Google Maps"
+    },
+    "key": {
+      "eyebrow": "Nhận key kích hoạt",
+      "h2": "Cách nhận key cho đơn vị của bạn",
+      "step": "Bước {n}",
+      "s1": {
+        "title": "Tải và cài DocOps",
+        "desc": "Chọn bản Windows hoặc macOS ở trang Tải về và cài theo hướng dẫn."
+      },
+      "s2": {
+        "title": "Gửi đơn ngay trong app",
+        "desc": "Ở màn Kích hoạt chọn \"Chưa có key (đăng ký mới)\", điền tên đơn vị và người liên hệ rồi gửi."
+      },
+      "s3": {
+        "title": "Nhận key qua email",
+        "desc": "Agentra xét duyệt và gửi key dạng DOCOPS-XXXX-XXXX-XXXX về email đã khai. Nhập key là dùng được."
+      },
+      "note": "Hoặc email cho chúng tôi kèm tên đơn vị và nhu cầu sử dụng, chúng tôi sẽ liên hệ lại."
+    },
+    "support": {
+      "eyebrow": "Hỗ trợ",
+      "h2": "Báo lỗi và góp ý",
+      "lead": "Khi gặp lỗi, gửi cho chúng tôi những thông tin sau để xử lý nhanh:",
+      "i1": "Đang ở màn hình nào, bấm gì thì lỗi xảy ra",
+      "i2": "Thông báo lỗi hiện ra (kèm ảnh chụp màn hình nếu có)",
+      "i3": "Phiên bản Windows hoặc macOS, và loại chip nếu là máy Mac",
+      "i4": "Phiên bản DocOps (Cài đặt, thẻ Phiên bản)",
+      "boxTitle": "Hai cách gửi",
+      "boxBody": "Email về {email}, hoặc mở mục Phản hồi ngay trong app DocOps: phản hồi gửi từ app tự đính kèm phiên bản và nhật ký kỹ thuật.",
+      "btn": "Gửi email báo lỗi",
+      "subject": "Báo lỗi DocOps"
     }
   }
 }

@@ -10,7 +10,8 @@
     "language": "Language",
     "mainNav": "Main navigation",
     "copy": "Copy",
-    "copied": "Copied"
+    "copied": "Copied",
+    "privacyPolicy": "Privacy policy"
   },
   "nav": {
     "howItWorks": "How it works",
@@ -269,6 +270,182 @@
         "title": "Install DocOps on Windows",
         "description": "How to install DocOps on Windows 10/11: download the Setup file, get past the SmartScreen warning, run the installer, activate with your key and update inside the app."
       }
+    }
+  },
+  "howItWorks": {
+    "meta": {
+      "title": "How DocOps works: six steps, staff decide last",
+      "description": "A document goes through six steps: ingest, classify, search, impact, draft and staff review. AI does the heavy lifting; a person makes the final decision."
+    },
+    "eyebrow": "How it works",
+    "h1": "Documents are processed by AI flows. Staff make the final decision.",
+    "lead": "DocOps does the heavy work: reading, extraction, classification, search and drafting. Your staff, the real domain experts, always have the last word on what gets used.",
+    "s1": {
+      "title": "Ingest",
+      "desc": "OCR for scans, seal and signature detection, extraction of number, date, issuing body and summary."
+    },
+    "s2": {
+      "title": "Classify",
+      "desc": "Determine document type, topic and validity, then route it to the right part of the repository."
+    },
+    "s3": {
+      "title": "Search",
+      "desc": "Answers come with specific citations; guessing is blocked when the basis is missing."
+    },
+    "s4": {
+      "title": "Impact",
+      "desc": "Trace the legal relationship graph: which document cites which, and which references have expired or are about to change."
+    },
+    "s5": {
+      "title": "Draft",
+      "desc": "Generate drafts on Decree 30 templates, check the format and suggest replacements for expired references."
+    },
+    "s6": {
+      "title": "Staff review & approve",
+      "desc": "A person reads, edits and approves. AI assists; it never replaces the decision."
+    },
+    "imageTitle": "DocOps · Legal relationship graph",
+    "imageAlt": "DocOps graph screen: citation relationships between documents and expired references",
+    "flows": {
+      "eyebrow": "Three daily workflows",
+      "h2": "One knowledge base, three everyday jobs",
+      "f1": {
+        "from": "Ingest",
+        "to": "Digital records"
+      },
+      "f2": {
+        "from": "Ask",
+        "to": "Cited answers"
+      },
+      "f3": {
+        "from": "Change",
+        "to": "Impact + draft"
+      }
+    },
+    "reliability": {
+      "eyebrow": "Content reliability",
+      "h2": "Trustworthy because it is checkable",
+      "r1": {
+        "title": "Citations required",
+        "desc": "Every answer names its source: document number, article, page."
+      },
+      "r2": {
+        "title": "AI output is reviewed",
+        "desc": "Drafts and summaries stay pending; staff read, edit and approve before use."
+      },
+      "r3": {
+        "title": "Data per institution",
+        "desc": "Each institution has its own key and workspace; original documents stay on your machine."
+      },
+      "r4": {
+        "title": "Why a person is in the loop",
+        "desc": "Administrative documents have legal consequences. AI assists but does not replace professional judgement."
+      }
+    }
+  },
+  "transparency": {
+    "meta": {
+      "title": "AI and data transparency",
+      "description": "Where DocOps uses AI, how people stay in control, where document data lives, and our commitments on security, content ownership and compliance with Decree 30/2020 and Decree 13/2023."
+    },
+    "eyebrow": "AI transparency",
+    "h1": "AI and data transparency",
+    "lead": "DocOps is open about how it uses artificial intelligence, how people supervise it, where document data is stored and what we commit to on security, so institutions can use the software with confidence.",
+    "updated": "Updated {date}",
+    "p1": {
+      "title": "Where DocOps uses AI",
+      "body": "DocOps uses Anthropic's Claude models for OCR, seal and signature detection, metadata extraction, classification and drafting; the model is chosen by task complexity. Deterministic checks such as date, number and validity comparisons run on your machine without AI."
+    },
+    "p2": {
+      "title": "People decide",
+      "body": "By human-in-the-loop design, a document stays pending until a staff member reviews, edits and approves it. Only then is it stored in the repository and indexed."
+    },
+    "p3": {
+      "title": "Citations and no guessing",
+      "body": "Every search result carries its sources: document number, article, page. When the basis is insufficient the system says \"insufficient basis\" instead of generating an answer."
+    },
+    "p4": {
+      "title": "Data security",
+      "body": "Original documents live on the user's computer. The server only runs the AI steps and keeps no content after returning a result. Each institution accesses with its own key rather than personal accounts, and institutions' data is fully separated."
+    },
+    "p5": {
+      "title": "Institutional knowledge belongs to you",
+      "body": "The document repository and the legal relationship graph are your organisation's memory; they belong to the institution and can be exported at any time."
+    },
+    "p6": {
+      "title": "Legal compliance",
+      "body": "DocOps follows Decree 30/2020/ND-CP on clerical work (the format of administrative documents) and Decree 13/2023/ND-CP on personal data protection."
+    },
+    "p7": {
+      "title": "Content ownership",
+      "body": "The institution keeps all rights to the documents it uploads and to the processed results. Agentra never uses institution data to train models."
+    },
+    "p8": {
+      "title": "Limits of responsibility",
+      "body": "DocOps supports professional work; it does not replace it. AI-generated content must be checked by staff before use; the final decision and the responsibility for issuing a document rest with the institution."
+    },
+    "p9": {
+      "title": "Policy updates",
+      "body": "This policy may change when new features or new regulations arrive. The update date is shown at the top of the page."
+    },
+    "p10": {
+      "title": "Contact",
+      "body": "Questions about AI and data: <email></email>."
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact Agentra",
+      "description": "Email info@agentra.io.vn to ask about DocOps, request an activation key for your institution, report a bug or send feedback. Agentra JSC, Da Nang."
+    },
+    "eyebrow": "Contact",
+    "h1": "Contact Agentra",
+    "lead": "Email us, or request a key right inside the DocOps app.",
+    "email": {
+      "label": "Email",
+      "sub": "Product questions, key requests, bug reports and feedback.",
+      "copy": "Copy address",
+      "copied": "Copied"
+    },
+    "phone": {
+      "label": "Phone / Zalo",
+      "sub": "Office hours, Monday to Friday.",
+      "zalo": "Open Zalo"
+    },
+    "address": {
+      "label": "Address",
+      "maps": "Open Google Maps"
+    },
+    "key": {
+      "eyebrow": "Getting an activation key",
+      "h2": "How your institution gets a key",
+      "step": "Step {n}",
+      "s1": {
+        "title": "Download and install DocOps",
+        "desc": "Pick the Windows or macOS build on the Download page and follow the guide."
+      },
+      "s2": {
+        "title": "Send the request from the app",
+        "desc": "On the activation screen choose \"No key yet (new registration)\", enter your institution and a contact, then send."
+      },
+      "s3": {
+        "title": "Receive the key by email",
+        "desc": "Agentra reviews the request and emails a key in the form DOCOPS-XXXX-XXXX-XXXX. Enter it and you are in."
+      },
+      "note": "Or email us with your institution name and what you need, and we will get back to you."
+    },
+    "support": {
+      "eyebrow": "Support",
+      "h2": "Bug reports and feedback",
+      "lead": "When something goes wrong, send us the following so we can act fast:",
+      "i1": "Which screen you were on and what you clicked",
+      "i2": "The error message shown (with a screenshot if possible)",
+      "i3": "Your Windows or macOS version, and the chip if it is a Mac",
+      "i4": "Your DocOps version (Settings, Version tab)",
+      "boxTitle": "Two ways to send",
+      "boxBody": "Email {email}, or open Feedback inside the DocOps app: feedback sent from the app automatically includes the version and technical logs.",
+      "btn": "Email a bug report",
+      "subject": "DocOps bug report"
     }
   }
 }
