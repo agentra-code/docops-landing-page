@@ -147,6 +147,7 @@
       "h2": "Download DocOps",
       "lead": "Version {version}, released {date}. Free to download, activated with your institution key.",
       "btn": "Download",
+      "checksum": "Verify file integrity (SHA-512)",
       "guide": "Installation guide",
       "note": "The current build is not code-signed yet, so Windows and macOS ask for a one-time confirmation. The installation guide walks through \"Run anyway\" and \"Open Anyway\".",
       "platforms": {

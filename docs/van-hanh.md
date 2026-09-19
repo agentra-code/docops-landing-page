@@ -8,7 +8,7 @@ Trang Tải về đọc `latest.yml` (Windows) và `latest-mac.yml` (macOS) từ
 1. Build bản desktop như quy trình của `docops-application` (`.github/workflows/release.yml`).
 2. Upload lên VPS đúng thứ tự quy trình hiện có (`deploy/README.md` của repo ứng dụng): tệp `.exe`, `.dmg`, `.zip`,
    `.blockmap` trước, **hai tệp `.yml` sau cùng**.
-3. Trong tối đa 10 phút, trang Tải về và khối tải trên trang chủ hiện phiên bản, dung lượng, ngày và SHA-512 mới.
+3. Trong tối đa 10 phút, trang Tải về và khối tải trên trang chủ hiện phiên bản, dung lượng, ngày mới; SHA-512 nằm sau dòng gập "Kiểm tra toàn vẹn tệp" trên trang Tải về.
 4. Tuỳ chọn, để snapshot dự phòng không cũ: `pnpm sync-releases` (đọc từ feed) hoặc
    `pnpm sync-releases --from ../docops-application/packages/desktop/release`, rồi commit `content/releases.json`.
 

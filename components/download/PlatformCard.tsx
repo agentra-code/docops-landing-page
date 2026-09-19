@@ -65,7 +65,7 @@ export function PlatformCard({
           {formatBytes(asset.sizeBytes, locale)} · v{asset.version} · {formatDate(asset.releaseDate, locale)}
         </span>
       </div>
-      {checksum ? <ChecksumField sha512={asset.sha512} copyLabel={tc('copy')} copiedLabel={tc('copied')} /> : null}
+      {checksum ? <ChecksumField sha512={asset.sha512} toggleLabel={t('checksum')} copyLabel={tc('copy')} copiedLabel={tc('copied')} /> : null}
       <DownloadLink asset={asset} location={location} full>
         {t('btn')}
       </DownloadLink>

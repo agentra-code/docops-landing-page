@@ -147,6 +147,7 @@
       "h2": "Tải DocOps",
       "lead": "Phiên bản {version}, phát hành {date}. Miễn phí tải, kích hoạt bằng key của đơn vị.",
       "btn": "Tải về",
+      "checksum": "Kiểm tra toàn vẹn tệp (SHA-512)",
       "guide": "Hướng dẫn cài đặt",
       "note": "Bản hiện tại chưa ký số nên Windows và macOS sẽ hỏi xác nhận một lần khi cài. Hướng dẫn cài đặt chỉ từng bước \"Vẫn chạy\" và \"Vẫn mở\".",
       "platforms": {
