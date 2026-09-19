@@ -11,6 +11,7 @@ import { Link } from '@/i18n/navigation'
 import type { Locale } from '@/i18n/routing'
 import { formatDate } from '@/lib/format'
 import { getReleases, latestRelease } from '@/lib/releases'
+import { productName, releaseLabel } from '@/lib/releases/codename'
 import { breadcrumb, softwareApplication } from '@/lib/seo/jsonld'
 import { buildMetadata } from '@/lib/seo/metadata'
 import { absoluteUrl } from '@/lib/seo/urls'
@@ -26,6 +27,7 @@ export default async function DownloadPage() {
   const locale = (await getLocale()) as Locale
   const [{ assets }, t, tc] = await Promise.all([getReleases(), getTranslations('download'), getTranslations('common')])
   const latest = latestRelease(assets)
+  const h1 = t('h1', { product: productName(latest?.version ?? '1.0.0') })
   const guide = (os: 'macos' | 'windows', label: string) => (
     <Link href={{ pathname: '/install/[os]', params: { os } }} className="font-semibold underline underline-offset-2">
       {label}
@@ -39,8 +41,8 @@ export default async function DownloadPage() {
             as="h1"
             align="left"
             eyebrow={t('eyebrow')}
-            title={t('h1')}
-            lead={latest ? t('lead', { version: latest.version, date: formatDate(latest.releaseDate, locale) }) : undefined}
+            title={h1}
+            lead={latest ? t('lead', { release: releaseLabel(latest.version), date: formatDate(latest.releaseDate, locale) }) : undefined}
           />
         </Container>
       </section>
@@ -84,7 +86,7 @@ export default async function DownloadPage() {
           </p>
         </Container>
       </section>
-      <JsonLd data={breadcrumb([{ name: tc('siteName'), url: absoluteUrl(locale, '/') }, { name: t('h1'), url: absoluteUrl(locale, '/download') }])} />
+      <JsonLd data={breadcrumb([{ name: tc('siteName'), url: absoluteUrl(locale, '/') }, { name: h1, url: absoluteUrl(locale, '/download') }])} />
       <JsonLd data={softwareApplication(assets, locale, absoluteUrl(locale, '/download'))} />
     </main>
   )

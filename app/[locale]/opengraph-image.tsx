@@ -1,5 +1,7 @@
 import { getTranslations } from 'next-intl/server'
 import { routing, type Locale } from '@/i18n/routing'
+import { getReleases, latestRelease } from '@/lib/releases'
+import { productName } from '@/lib/releases/codename'
 import { OG_SIZE, ogImage } from '@/lib/seo/og'
 
 export const alt = 'Agentra DocOps'
@@ -12,6 +14,7 @@ export function generateStaticParams() {
 
 export default async function Image({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
-  const t = await getTranslations({ locale: locale as Locale, namespace: 'home.hero' })
-  return ogImage({ title: t('h1'), subtitle: t('sub').split('. ')[0] })
+  const [t, { assets }] = await Promise.all([getTranslations({ locale: locale as Locale, namespace: 'home.hero' }), getReleases()])
+  const product = productName(latestRelease(assets)?.version ?? '1.0.0')
+  return ogImage({ title: t('h1', { product }), subtitle: t('sub').split('. ')[0] })
 }

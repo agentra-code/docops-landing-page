@@ -5,6 +5,7 @@ import { Container } from '@/components/ui/Container'
 import { Section } from '@/components/ui/Section'
 import type { Locale } from '@/i18n/routing'
 import { formatDate } from '@/lib/format'
+import { releaseLabel } from '@/lib/releases/codename'
 import type { ReleaseAsset } from '@/lib/releases/types'
 import { SectionHead } from './SectionHead'
 
@@ -24,7 +25,7 @@ export function DownloadBlock({
         <SectionHead
           eyebrow={t('eyebrow')}
           title={t('h2')}
-          lead={latest ? t('lead', { version: latest.version, date: formatDate(latest.releaseDate, locale) }) : undefined}
+          lead={latest ? t('lead', { release: releaseLabel(latest.version), date: formatDate(latest.releaseDate, locale) }) : undefined}
         />
         <div className="mt-8 grid gap-4 md:mt-12 md:grid-cols-3 md:gap-6">
           {assets.map((asset) => (

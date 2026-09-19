@@ -4,6 +4,7 @@ import { Link } from '@/i18n/navigation'
 import type { Locale } from '@/i18n/routing'
 import { cn } from '@/lib/cn'
 import { formatBytes, formatDate } from '@/lib/format'
+import { versionLabel } from '@/lib/releases/codename'
 import type { ReleaseAsset } from '@/lib/releases/types'
 import { ChecksumField } from './ChecksumField'
 import { DownloadLink } from './DownloadLink'
@@ -62,7 +63,7 @@ export function PlatformCard({
       <div className="flex flex-col gap-1.5 rounded-control bg-sidebar px-3.5 py-3">
         <code className="truncate font-mono text-[12.5px] text-ink">{asset.fileName}</code>
         <span className="text-[13px] text-muted">
-          {formatBytes(asset.sizeBytes, locale)} · v{asset.version} · {formatDate(asset.releaseDate, locale)}
+          {formatBytes(asset.sizeBytes, locale)} · {versionLabel(asset.version)} · {formatDate(asset.releaseDate, locale)}
         </span>
       </div>
       {checksum ? <ChecksumField sha512={asset.sha512} toggleLabel={t('checksum')} copyLabel={tc('copy')} copiedLabel={tc('copied')} /> : null}

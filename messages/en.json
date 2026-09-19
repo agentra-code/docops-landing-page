@@ -48,13 +48,13 @@
   "home": {
     "hero": {
       "eyebrow": "Desktop app for Windows and macOS",
-      "h1": "The AI agent for university administrative documents",
+      "h1": "{product}: the AI agent for university administrative documents",
       "sub": "From document to decision in minutes, not days. DocOps ingests, classifies, searches with citations, maps legal impact and drafts under Decree 30. Your staff always make the final call.",
       "ctaDefault": "Download DocOps",
       "ctaMac": "Download for macOS",
       "ctaWindows": "Download for Windows",
       "cta2": "See how it works",
-      "meta": "Version {version} · Windows 10/11 · macOS 13 or later · Free to download, activated with your institution key",
+      "meta": "{release} · Windows 10/11 · macOS 13 or later · Free to download, activated with your institution key",
       "trust1": "Data stays on your machine",
       "trust2": "Citations required",
       "trust3": "Staff make the final call",
@@ -145,7 +145,7 @@
     "download": {
       "eyebrow": "Download",
       "h2": "Download DocOps",
-      "lead": "Version {version}, released {date}. Free to download, activated with your institution key.",
+      "lead": "{release}, released {date}. Free to download, activated with your institution key.",
       "btn": "Download",
       "checksum": "Verify file integrity (SHA-512)",
       "guide": "Installation guide",
@@ -210,8 +210,8 @@
       "description": "Download the latest DocOps installer for Windows 10/11, macOS Apple Silicon and Intel. Free to download, activated with your institution key."
     },
     "eyebrow": "Download",
-    "h1": "Download DocOps for your computer",
-    "lead": "Version {version}, released {date}. Free to download; after installing, activate with your institution key.",
+    "h1": "Download {product} for your computer",
+    "lead": "{release}, released {date}. Free to download; after installing, activate with your institution key.",
     "detected": {
       "macos": "You are on macOS. Pick the build that matches your chip.",
       "windows": "You are on Windows."

@@ -48,13 +48,13 @@
   "home": {
     "hero": {
       "eyebrow": "Ứng dụng desktop cho Windows và macOS",
-      "h1": "Tác tử AI cho văn bản hành chính trường đại học",
+      "h1": "{product}: tác tử AI cho văn bản hành chính trường đại học",
       "sub": "Từ văn bản đến quyết định, trong vài phút thay vì vài ngày. DocOps nhập, phân loại, tra cứu có trích dẫn, dò tác động pháp lý và soạn nháp theo Nghị định 30. Cán bộ luôn là người duyệt cuối.",
       "ctaDefault": "Tải DocOps",
       "ctaMac": "Tải về cho macOS",
       "ctaWindows": "Tải về cho Windows",
       "cta2": "Xem quy trình",
-      "meta": "Phiên bản {version} · Windows 10/11 · macOS 13 trở lên · Miễn phí tải, kích hoạt bằng key của đơn vị",
+      "meta": "{release} · Windows 10/11 · macOS 13 trở lên · Miễn phí tải, kích hoạt bằng key của đơn vị",
       "trust1": "Dữ liệu lưu tại máy",
       "trust2": "Trích dẫn bắt buộc",
       "trust3": "Cán bộ duyệt cuối",
@@ -145,7 +145,7 @@
     "download": {
       "eyebrow": "Tải về",
       "h2": "Tải DocOps",
-      "lead": "Phiên bản {version}, phát hành {date}. Miễn phí tải, kích hoạt bằng key của đơn vị.",
+      "lead": "{release}, phát hành {date}. Miễn phí tải, kích hoạt bằng key của đơn vị.",
       "btn": "Tải về",
       "checksum": "Kiểm tra toàn vẹn tệp (SHA-512)",
       "guide": "Hướng dẫn cài đặt",
@@ -210,8 +210,8 @@
       "description": "Tải bộ cài DocOps phiên bản mới nhất cho Windows 10/11, macOS Apple Silicon và Intel. Miễn phí tải, kích hoạt bằng key của đơn vị, kèm hướng dẫn cài đặt."
     },
     "eyebrow": "Tải về",
-    "h1": "Tải DocOps cho máy tính của bạn",
-    "lead": "Phiên bản {version}, phát hành {date}. Miễn phí tải; sau khi cài, kích hoạt bằng key của đơn vị.",
+    "h1": "Tải {product} cho máy tính của bạn",
+    "lead": "{release}, phát hành {date}. Miễn phí tải; sau khi cài, kích hoạt bằng key của đơn vị.",
     "detected": {
       "macos": "Máy bạn đang dùng macOS. Chọn bản theo chip của máy.",
       "windows": "Máy bạn đang dùng Windows."

@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { Container } from '@/components/ui/Container'
 import { Icon } from '@/components/ui/Icon'
+import { productName, releaseLabel } from '@/lib/releases/codename'
 import type { ReleaseAsset } from '@/lib/releases/types'
 import { HeroCta } from './HeroCta'
 
@@ -13,14 +14,14 @@ export function Hero({ assets, version }: { assets: ReleaseAsset[]; version: str
       <Container className="flex flex-col items-center gap-5 text-center">
         <span className="text-[13px] font-bold tracking-[0.6px] text-accent-strong uppercase">{t('eyebrow')}</span>
         <h1 className="max-w-[940px] text-[34px] leading-[1.12] font-bold tracking-[-0.02em] text-balance md:text-[58px] md:leading-[1.08]">
-          {t('h1')}
+          {t('h1', { product: productName(version) })}
         </h1>
         <p className="max-w-[800px] text-base leading-relaxed text-ink2 text-pretty md:text-[19px]">{t('sub')}</p>
         <HeroCta
           assets={assets}
           labels={{ default: t('ctaDefault'), mac: t('ctaMac'), windows: t('ctaWindows'), secondary: t('cta2') }}
         />
-        <p className="text-[13.5px] text-muted">{t('meta', { version })}</p>
+        <p className="text-[13.5px] text-muted">{t('meta', { release: releaseLabel(version) })}</p>
         <ul className="flex flex-col gap-2 sm:flex-row sm:gap-7">
           {trust.map((item) => (
             <li key={item} className="inline-flex items-center gap-2 text-[14.5px] font-normal text-ink2">
