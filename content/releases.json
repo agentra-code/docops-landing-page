@@ -1,43 +1,43 @@
 {
   "windows": {
-    "version": "1.0.0",
+    "version": "1.0.5",
     "files": [
       {
-        "url": "DocOps Setup 1.0.0.exe",
-        "sha512": "93YxTv222mr9/9U3PTHkVZXl8L4+x8QqF2LC2+315ns298W/XqS0Vm0Y8x3+XqnygYz+l7Rcyt1goTAKCWVBhw==",
-        "size": 157058273
+        "url": "DocOps Setup 1.0.5.exe",
+        "sha512": "XtF7NFQrPQ+xwmcX8kz9OBdrONFzCSDg94tHSYsDy4BqNwnkDV7Wj+kf9ZgiKJvbdqTInHi3ttXVe5URVhrZ8Q==",
+        "size": 157181471
       }
     ],
-    "path": "DocOps Setup 1.0.0.exe",
-    "sha512": "93YxTv222mr9/9U3PTHkVZXl8L4+x8QqF2LC2+315ns298W/XqS0Vm0Y8x3+XqnygYz+l7Rcyt1goTAKCWVBhw==",
-    "releaseDate": "2026-09-15T15:22:00.690Z"
+    "path": "DocOps Setup 1.0.5.exe",
+    "sha512": "XtF7NFQrPQ+xwmcX8kz9OBdrONFzCSDg94tHSYsDy4BqNwnkDV7Wj+kf9ZgiKJvbdqTInHi3ttXVe5URVhrZ8Q==",
+    "releaseDate": "2026-09-23T12:42:15.610Z"
   },
   "mac": {
-    "version": "1.0.0",
+    "version": "1.0.5",
     "files": [
       {
-        "url": "DocOps-1.0.0-mac.zip",
-        "sha512": "J4lsWjcv7Gs27f+JLBSt/2BvsU7hQtFaFa0GhlbOVexqlXgc28+L7id4evLB4rl1lpyyJJDBClVJNldj7Zxnig==",
-        "size": 199937474
+        "url": "DocOps-1.0.5-mac.zip",
+        "sha512": "DDGEAFcngqLT0TbScHm0+p2h8RxpW0UUr2I9MmNyZT6L/gvNIUN0kEG+rrLv+leyzEwNEU9Kc/Vq8esmMQBLvw==",
+        "size": 200128815
       },
       {
-        "url": "DocOps-1.0.0-arm64-mac.zip",
-        "sha512": "TGFFnoUwEFnKe9UC2si2g++pIttMF1dTMDTzJWv8inkYWIXff/3tAv5e8zRdxaiVwyCgqwOhrrmA9aipnNnZqw==",
-        "size": 194994752
+        "url": "DocOps-1.0.5-arm64-mac.zip",
+        "sha512": "/OTaJi38LhjAT6D20HMWQE5SH2IT/1xBLGmqiToT6eAZV1QqQueEL/ymzKa/RytEBb6gj0J5peW/15RiSkBSQg==",
+        "size": 195186087
       },
       {
-        "url": "DocOps-1.0.0.dmg",
-        "sha512": "nwCiOamO6uqO6D9itiiCeJeasFEYDQHXd5RUuMs9ip9ZXTVDwLhVy0AG5+Ngzmfh8OdVq2XOru14q5K18U2Uuw==",
-        "size": 199815749
+        "url": "DocOps-1.0.5.dmg",
+        "sha512": "UENyV+qySWRaOpN6lEWVbn3eRhofd6JVqYesfB9U7AibPgryCMthhIVWfK+fnrN4vs6uj7yEjCffl5tWoLzw8Q==",
+        "size": 200048450
       },
       {
-        "url": "DocOps-1.0.0-arm64.dmg",
-        "sha512": "hj7TvzOhP8eQ9MYXywM/iV3mlWJ8Ll9kyZfi8DAKGNxGPgumbVEZuj9h2jx5ZKW9l2iX0vtYaFDg+zm5ysgAAA==",
-        "size": 194928638
+        "url": "DocOps-1.0.5-arm64.dmg",
+        "sha512": "VG5z2MxBcGkruwloDdP+22g90NQeDWmaH+bsDtNplrOs+JVN25qleLP1sjVWAFu8RvhLKmeirKW5D0znGh+6yw==",
+        "size": 195156510
       }
     ],
-    "path": "DocOps-1.0.0-mac.zip",
-    "sha512": "J4lsWjcv7Gs27f+JLBSt/2BvsU7hQtFaFa0GhlbOVexqlXgc28+L7id4evLB4rl1lpyyJJDBClVJNldj7Zxnig==",
-    "releaseDate": "2026-09-15T15:21:11.587Z"
+    "path": "DocOps-1.0.5-mac.zip",
+    "sha512": "DDGEAFcngqLT0TbScHm0+p2h8RxpW0UUr2I9MmNyZT6L/gvNIUN0kEG+rrLv+leyzEwNEU9Kc/Vq8esmMQBLvw==",
+    "releaseDate": "2026-09-23T12:42:15.610Z"
   }
 }
