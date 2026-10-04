@@ -92,18 +92,18 @@
     "flows": {
       "eyebrow": "Ba luồng lõi",
       "h2": "DocOps làm gì",
-      "lead": "Ba luồng cho vòng đời văn bản hành chính, dùng chung một kho tri thức tích luỹ của đơn vị.",
+      "lead": "Ba luồng cho vòng đời văn bản hành chính, cùng chạy trên kho văn bản của đơn vị lưu tại máy, tích luỹ theo năm.",
       "f1": {
         "title": "Nhập & phân loại",
-        "desc": "OCR cho bản quét, nhận dạng con dấu và chữ ký, bóc số hiệu, ngày ký, cơ quan ban hành. Tự phân loại và định tuyến vào kho."
+        "desc": "Nạp PDF, kể cả bản quét: OCR từng trang, bóc số hiệu, ngày ký, cơ quan ban hành và trích yếu. Tự phân loại theo Nghị định 30, cán bộ chốt văn bản vào kho."
       },
       "f2": {
         "title": "Tra cứu & Q&A",
-        "desc": "Hỏi bằng ngôn ngữ tự nhiên trên toàn bộ kho văn bản. Mỗi câu trả lời nêu rõ nguồn và nói \"chưa đủ căn cứ\" thay vì suy diễn."
+        "desc": "Hỏi bằng ngôn ngữ tự nhiên trên toàn bộ kho văn bản. Mỗi câu trả lời dẫn số hiệu và Điều, và nói rõ \"Chưa tìm thấy trong kho\" thay vì suy diễn."
       },
       "f3": {
         "title": "Tác động & soạn thảo",
-        "desc": "Dò quan hệ pháp lý, cảnh báo căn cứ hết hiệu lực, sinh nháp theo mẫu Nghị định 30 và kiểm thể thức trước khi trình ký."
+        "desc": "Dò quan hệ pháp lý, cảnh báo căn cứ hết hiệu lực, soạn nháp đúng thể thức Nghị định 30 rồi xuất Word hoặc PDF để trình ký."
       }
     },
     "why": {
@@ -115,7 +115,7 @@
       },
       "w2": {
         "title": "Trích dẫn bắt buộc",
-        "desc": "Mọi câu trả lời nêu rõ nguồn; cảnh báo ngay khi viện dẫn căn cứ đã hết hiệu lực."
+        "desc": "Mọi câu trả lời nêu rõ số hiệu và Điều; cảnh báo ngay khi viện dẫn căn cứ đã hết hiệu lực."
       },
       "w3": {
         "title": "Giữ tri thức thể chế",
@@ -123,7 +123,7 @@
       },
       "w4": {
         "title": "Bám chuẩn Nghị định 30/2020",
-        "desc": "Thể thức văn bản theo quy định nhà nước; luôn có cán bộ duyệt cuối trước khi ban hành."
+        "desc": "Bản nháp đúng thể thức cho 29 loại văn bản hành chính; cán bộ sửa, xuất tệp và trình ký theo quy trình của đơn vị."
       }
     },
     "trust": {
@@ -132,7 +132,7 @@
       "link": "Đọc chính sách minh bạch AI",
       "t1": {
         "title": "Con người quyết",
-        "desc": "Văn bản ở trạng thái chờ cho tới khi cán bộ xem, sửa và duyệt. AI không thay quyền quyết định."
+        "desc": "Văn bản mới nạp ở trạng thái chờ cho tới khi cán bộ xem, sửa và chốt vào kho. AI không thay quyền quyết định."
       },
       "t2": {
         "title": "Dữ liệu tại máy",
@@ -179,7 +179,7 @@
       },
       "q2": {
         "q": "Có cần Internet không?",
-        "a": "Cần khi kích hoạt và ở các bước AI: OCR, phân loại, tra cứu, soạn nháp. Văn bản của bạn vẫn lưu tại máy."
+        "a": "Cần khi kích hoạt và ở các bước AI: OCR, phân loại, hỏi đáp, soạn nháp. Văn bản của bạn vẫn lưu tại máy."
       },
       "q3": {
         "q": "Dữ liệu văn bản lưu ở đâu?",
@@ -295,11 +295,11 @@
     "lead": "DocOps làm phần nặng: đọc, bóc tách, phân loại, tra cứu và soạn nháp. Cán bộ, những chuyên gia nghiệp vụ thực thụ, luôn là người cuối cùng quyết định nội dung được dùng.",
     "s1": {
       "title": "Nhập",
-      "desc": "OCR bản quét, nhận dạng con dấu và chữ ký, bóc số hiệu, ngày ký, cơ quan ban hành, trích yếu."
+      "desc": "Nạp PDF, kể cả bản quét: OCR từng trang, bóc số hiệu, ngày ký, cơ quan ban hành, trích yếu kèm độ tin cậy."
     },
     "s2": {
       "title": "Phân loại",
-      "desc": "Xác định loại văn bản, chủ đề, hiệu lực và định tuyến vào đúng khu vực của kho."
+      "desc": "Xếp vào 29 loại văn bản của Nghị định 30, bóc quan hệ pháp lý và dòng nghiệp vụ, kiểm thể thức 9 thành phần."
     },
     "s3": {
       "title": "Tra cứu",
@@ -311,11 +311,11 @@
     },
     "s5": {
       "title": "Soạn thảo",
-      "desc": "Sinh nháp theo mẫu Nghị định 30, kiểm thể thức, gợi ý thay căn cứ đã hết hiệu lực."
+      "desc": "Soạn nháp đúng thể thức Nghị định 30, đánh dấu căn cứ hết hiệu lực kèm nút thay câu căn cứ, xuất Word hoặc PDF."
     },
     "s6": {
       "title": "Cán bộ kiểm & duyệt",
-      "desc": "Con người xem, sửa, duyệt. AI chỉ hỗ trợ, không thay quyền quyết định."
+      "desc": "Cán bộ chốt văn bản vào kho, duyệt quan hệ pháp lý và sửa bản nháp trước khi trình ký. AI chỉ hỗ trợ, không thay quyền quyết định."
     },
     "imageTitle": "DocOps · Đồ thị quan hệ pháp lý",
     "imageAlt": "Màn hình Đồ thị của DocOps: quan hệ dẫn chiếu giữa các văn bản và căn cứ hết hiệu lực",
@@ -340,11 +340,11 @@
       "h2": "Tin được vì kiểm được",
       "r1": {
         "title": "Trích dẫn bắt buộc",
-        "desc": "Mọi câu trả lời nêu rõ nguồn: số hiệu, điều khoản, trang."
+        "desc": "Mọi câu trả lời nêu rõ nguồn: số hiệu văn bản và Điều, bấm vào là mở văn bản gốc."
       },
       "r2": {
-        "title": "Nội dung AI tự sinh phải duyệt",
-        "desc": "Nháp và tóm tắt ở trạng thái chờ; cán bộ đọc, sửa và duyệt trước khi dùng."
+        "title": "Cán bộ chốt dữ liệu",
+        "desc": "Văn bản mới nạp và quan hệ có độ tin cậy thấp chờ cán bộ chốt; mọi quyết định ghi vào nhật ký không sửa được."
       },
       "r3": {
         "title": "Dữ liệu theo đơn vị",
@@ -367,15 +367,15 @@
     "updated": "Cập nhật ngày {date}",
     "p1": {
       "title": "DocOps dùng AI ở đâu",
-      "body": "DocOps dùng mô hình Claude của Anthropic cho các bước OCR, nhận dạng con dấu và chữ ký, bóc metadata, phân loại và soạn nháp; mô hình được chọn theo độ phức tạp của từng tác vụ. Các bước kiểm tra tất định như đối chiếu ngày, số hiệu và tính hiệu lực chạy ngay trên máy của bạn, không qua AI."
+      "body": "DocOps dùng mô hình ngôn ngữ lớn cho các bước nhận dạng trang quét, bóc thông tin văn bản, phân loại, bóc quan hệ pháp lý, hỏi đáp và soạn nháp. Mặc định là mô hình Claude của Anthropic; Agentra có thể cấu hình mô hình khác cho từng đơn vị, ví dụ GLM. Các bước kiểm tra tất định như đối chiếu ngày, số hiệu và tính hiệu lực chạy ngay trên máy của bạn, không qua AI."
     },
     "p2": {
       "title": "Con người quyết định",
-      "body": "Theo thiết kế human in the loop, văn bản ở trạng thái chờ cho tới khi cán bộ xem, sửa và duyệt. Chỉ khi đó văn bản mới được lưu vào kho và đánh chỉ mục."
+      "body": "Theo thiết kế human in the loop, văn bản mới nạp ở trạng thái chờ cho tới khi cán bộ xem, sửa và chốt. Chỉ khi đó văn bản mới được lưu vào kho và đánh chỉ mục. Quan hệ pháp lý có độ tin cậy dưới 0,85 cũng chờ cán bộ duyệt; bản nháp do AI viết được cán bộ sửa và trình ký theo quy trình của đơn vị."
     },
     "p3": {
       "title": "Trích dẫn và chặn suy diễn",
-      "body": "Mọi kết quả tra cứu kèm trích dẫn nguồn: số hiệu, điều khoản, trang. Khi không đủ căn cứ, hệ thống nói rõ \"chưa đủ căn cứ\" thay vì tự sinh câu trả lời."
+      "body": "Mọi câu trả lời hỏi đáp kèm trích dẫn số hiệu văn bản và Điều được viện dẫn. Khi kho thiếu văn bản cần thiết, hệ thống nói rõ \"Chưa tìm thấy trong kho\" thay vì tự sinh câu trả lời."
     },
     "p4": {
       "title": "Bảo mật dữ liệu",

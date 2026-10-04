@@ -92,18 +92,18 @@
     "flows": {
       "eyebrow": "Three core flows",
       "h2": "What DocOps does",
-      "lead": "Three flows for the administrative document lifecycle, sharing one knowledge base that grows with your institution.",
+      "lead": "Three flows for the administrative document lifecycle, all working on your institution's repository, stored on your machine and growing year by year.",
       "f1": {
         "title": "Ingest & classify",
-        "desc": "OCR for scans, seal and signature detection, extraction of number, date and issuing body. Automatic classification and routing into the repository."
+        "desc": "Ingest PDFs, scans included: page-by-page OCR and extraction of number, signing date, issuing body and summary. Automatic Decree 30 classification; staff confirm each document into the repository."
       },
       "f2": {
         "title": "Search & Q&A",
-        "desc": "Ask in plain language across the whole repository. Every answer cites its sources and says \"insufficient basis\" instead of guessing."
+        "desc": "Ask in plain language across the whole repository. Every answer cites document number and article, and says \"Not found in the repository\" instead of guessing."
       },
       "f3": {
         "title": "Impact & drafting",
-        "desc": "Map legal relationships, flag expired references, generate drafts on Decree 30 templates and check the format before signing."
+        "desc": "Map legal relationships, flag expired references, draft in the Decree 30 format and export to Word or PDF for signing."
       }
     },
     "why": {
@@ -115,7 +115,7 @@
       },
       "w2": {
         "title": "Citations, always",
-        "desc": "Every answer names its source and warns as soon as a cited basis has expired."
+        "desc": "Every answer names document number and article, and warns as soon as a cited basis has expired."
       },
       "w3": {
         "title": "Institutional memory that stays",
@@ -123,7 +123,7 @@
       },
       "w4": {
         "title": "Compliant with Decree 30/2020 on clerical work",
-        "desc": "Document format follows the national standard; a staff member always approves before issuance."
+        "desc": "Drafts follow the format of all 29 administrative document types; staff edit, export and sign them through your own process."
       }
     },
     "trust": {
@@ -132,7 +132,7 @@
       "link": "Read the AI transparency policy",
       "t1": {
         "title": "People decide",
-        "desc": "A document stays pending until a staff member reviews, edits and approves it. AI never replaces that decision."
+        "desc": "A newly ingested document stays pending until a staff member reviews, edits and confirms it into the repository. AI never replaces that decision."
       },
       "t2": {
         "title": "Data on your machine",
@@ -179,7 +179,7 @@
       },
       "q2": {
         "q": "Do I need an internet connection?",
-        "a": "Yes, for activation and for the AI steps: OCR, classification, search and drafting. Your documents still stay on your machine."
+        "a": "Yes, for activation and for the AI steps: OCR, classification, Q&A and drafting. Your documents still stay on your machine."
       },
       "q3": {
         "q": "Where are my documents stored?",
@@ -295,11 +295,11 @@
     "lead": "DocOps does the heavy work: reading, extraction, classification, search and drafting. Your staff, the real domain experts, always have the last word on what gets used.",
     "s1": {
       "title": "Ingest",
-      "desc": "OCR for scans, seal and signature detection, extraction of number, date, issuing body and summary."
+      "desc": "Ingest PDFs, scans included: page-by-page OCR, extraction of number, signing date, issuing body and summary with confidence scores."
     },
     "s2": {
       "title": "Classify",
-      "desc": "Determine document type, topic and validity, then route it to the right part of the repository."
+      "desc": "Classify into the 29 Decree 30 document types, extract legal relations and business rows, check 9 format parts."
     },
     "s3": {
       "title": "Search",
@@ -311,11 +311,11 @@
     },
     "s5": {
       "title": "Draft",
-      "desc": "Generate drafts on Decree 30 templates, check the format and suggest replacements for expired references."
+      "desc": "Draft in the Decree 30 format, flag expired references with a one-click replacement, export to Word or PDF."
     },
     "s6": {
       "title": "Staff review & approve",
-      "desc": "A person reads, edits and approves. AI assists; it never replaces the decision."
+      "desc": "Staff confirm documents into the repository, approve legal relations and edit drafts before signing. AI assists; it never replaces the decision."
     },
     "imageTitle": "DocOps · Legal relationship graph",
     "imageAlt": "DocOps graph screen: citation relationships between documents and expired references",
@@ -340,11 +340,11 @@
       "h2": "Trustworthy because it is checkable",
       "r1": {
         "title": "Citations required",
-        "desc": "Every answer names its source: document number, article, page."
+        "desc": "Every answer names its source: document number and article; one click opens the original."
       },
       "r2": {
-        "title": "AI output is reviewed",
-        "desc": "Drafts and summaries stay pending; staff read, edit and approve before use."
+        "title": "Staff confirm the data",
+        "desc": "New documents and low-confidence relations wait for staff; every decision goes into an append-only audit trail."
       },
       "r3": {
         "title": "Data per institution",
@@ -367,15 +367,15 @@
     "updated": "Updated {date}",
     "p1": {
       "title": "Where DocOps uses AI",
-      "body": "DocOps uses Anthropic's Claude models for OCR, seal and signature detection, metadata extraction, classification and drafting; the model is chosen by task complexity. Deterministic checks such as date, number and validity comparisons run on your machine without AI."
+      "body": "DocOps uses large language models to read scanned pages, extract document details, classify, extract legal relations, answer questions and draft. The default is Anthropic's Claude; Agentra can configure another model per institution, such as GLM. Deterministic checks such as date, number and validity comparisons run on your machine without AI."
     },
     "p2": {
       "title": "People decide",
-      "body": "By human-in-the-loop design, a document stays pending until a staff member reviews, edits and approves it. Only then is it stored in the repository and indexed."
+      "body": "By human-in-the-loop design, a newly ingested document stays pending until a staff member reviews, edits and confirms it. Only then is it stored in the repository and indexed. Legal relations below 0.85 confidence also wait for staff approval; AI drafts are edited by staff and signed through your institution's own process."
     },
     "p3": {
       "title": "Citations and no guessing",
-      "body": "Every search result carries its sources: document number, article, page. When the basis is insufficient the system says \"insufficient basis\" instead of generating an answer."
+      "body": "Every Q&A answer cites the document number and article it relies on. When the repository lacks a needed document, the system says \"Not found in the repository\" instead of generating an answer."
     },
     "p4": {
       "title": "Data security",
