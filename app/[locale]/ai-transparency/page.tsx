@@ -4,6 +4,7 @@ import { SectionHead } from '@/components/home/SectionHead'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { ButtonLink } from '@/components/ui/Button'
 import { Container } from '@/components/ui/Container'
+import { CONTENT_UPDATED } from '@/content/dates'
 import type { Locale } from '@/i18n/routing'
 import { formatDate } from '@/lib/format'
 import { breadcrumb } from '@/lib/seo/jsonld'
@@ -11,7 +12,6 @@ import { buildMetadata } from '@/lib/seo/metadata'
 import { absoluteUrl } from '@/lib/seo/urls'
 import { site } from '@/lib/site'
 
-const UPDATED = '2026-09-15'
 const ITEMS = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8', 'p9', 'p10'] as const
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -28,7 +28,7 @@ export default async function TransparencyPage() {
       <section className="bg-[radial-gradient(900px_300px_at_20%_-80px,#eff5e3_0%,rgba(239,245,227,0)_70%)] pt-12 pb-8 md:pt-16 md:pb-10">
         <Container className="flex flex-col gap-4">
           <SectionHead as="h1" align="left" eyebrow={t('eyebrow')} title={t('h1')} lead={t('lead')} />
-          <p className="text-sm text-muted">{t('updated', { date: formatDate(UPDATED, locale) })}</p>
+          <p className="text-sm text-muted">{t('updated', { date: formatDate(CONTENT_UPDATED.aiTransparency, locale) })}</p>
         </Container>
       </section>
       <section className="pb-16 md:pb-24">

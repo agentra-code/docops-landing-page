@@ -1,7 +1,17 @@
 import type { Metadata } from 'next'
+import { isTopicPage } from '@/content/topics'
 import type { Locale, PageKey } from '@/i18n/routing'
 import { site } from '@/lib/site'
 import { absoluteUrl, localizedPath } from './urls'
+
+/** Trang có ảnh OG riêng (file convention `opengraph-image.tsx` trong thư mục của trang); còn lại dùng ảnh chung. */
+const hasOwnOgImage = (page: PageKey) => page === '/download' || isTopicPage(page)
+
+/** URL tuyệt đối của ảnh chia sẻ 1200×630. Đường dẫn theo khoá nội bộ: không tiền tố với vi, /en với en. */
+export function ogImageUrl(locale: Locale, page: PageKey): string {
+  const prefix = localizedPath(locale, '/') === '/' ? '' : localizedPath(locale, '/')
+  return `${site.siteUrl()}${prefix}${hasOwnOgImage(page) ? page : ''}/opengraph-image`
+}
 
 /** Metadata chuẩn cho một trang: canonical, hreflang (x-default = vi), Open Graph, Twitter (spec §9). */
 export function buildMetadata(opts: {
@@ -17,10 +27,7 @@ export function buildMetadata(opts: {
   const url = absoluteUrl(locale, page, params)
   const vi = absoluteUrl('vi', page, params)
   const en = absoluteUrl('en', page, params)
-  // Ảnh OG theo file convention nằm ở app/[locale]/opengraph-image.tsx (mọi trang) và
-  // app/[locale]/download/opengraph-image.tsx (trang Tải về). URL ngoài: không tiền tố với vi, /en với en.
-  const ogPath = `${localizedPath(locale, '/') === '/' ? '' : localizedPath(locale, '/')}${page === '/download' ? '/download' : ''}/opengraph-image`
-  const ogImage = { url: `${site.siteUrl()}${ogPath}`, width: 1200, height: 630, alt: title }
+  const ogImage = { url: ogImageUrl(locale, page), width: 1200, height: 630, alt: title }
   return {
     title: absoluteTitle ? { absolute: title } : title,
     description,

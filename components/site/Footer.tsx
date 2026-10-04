@@ -1,6 +1,7 @@
 import { useLocale, useTranslations } from 'next-intl'
 import { Container } from '@/components/ui/Container'
 import { LogoMark } from '@/components/ui/Logo'
+import { TOPIC_IDS, topicCopy, topicPage } from '@/content/topics'
 import { Link } from '@/i18n/navigation'
 import type { Locale } from '@/i18n/routing'
 import { site } from '@/lib/site'
@@ -16,8 +17,8 @@ export function Footer() {
   return (
     <footer className="border-t border-line bg-sidebar pt-14 pb-8 md:pt-16">
       <Container>
-        <div className="grid gap-10 md:grid-cols-[1.6fr_repeat(3,minmax(0,1fr))] md:gap-12">
-          <div className="flex max-w-[360px] flex-col gap-4">
+        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-[1.5fr_repeat(4,minmax(0,1fr))] md:gap-12">
+          <div className="flex max-w-[360px] flex-col gap-4 sm:col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2.5 text-ink">
               <LogoMark size={26} />
               <span className="text-[17px] font-bold">{tc('siteName')}</span>
@@ -27,6 +28,13 @@ export function Footer() {
               {site.company} · {site.city[locale]}, {site.country[locale]} · {site.email}
             </p>
           </div>
+          <FooterColumn title={t('solutions')}>
+            {TOPIC_IDS.map((id) => (
+              <Link key={id} href={topicPage(id)} className={linkClass}>
+                {topicCopy(locale, id).name}
+              </Link>
+            ))}
+          </FooterColumn>
           <FooterColumn title={t('product')}>
             <Link href="/download" className={linkClass}>{tn('download')}</Link>
             <Link href={{ pathname: '/install/[os]', params: { os: 'macos' } }} className={linkClass}>{t('installMacos')}</Link>

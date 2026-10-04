@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { FinalCta } from '@/components/home/FinalCta'
 import { SectionHead } from '@/components/home/SectionHead'
 import { JsonLd } from '@/components/seo/JsonLd'
+import { TopicHub } from '@/components/topic/TopicHub'
 import { Container } from '@/components/ui/Container'
 import { Icon } from '@/components/ui/Icon'
 import type { IconName } from '@/components/ui/icons'
@@ -37,7 +38,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function HowItWorksPage() {
   const locale = (await getLocale()) as Locale
-  const [t, tc] = await Promise.all([getTranslations('howItWorks'), getTranslations('common')])
+  const [t, tc, th] = await Promise.all([getTranslations('howItWorks'), getTranslations('common'), getTranslations('topics.hub')])
   return (
     <main id="main" className="flex-1">
       <section className="bg-[radial-gradient(900px_300px_at_20%_-80px,#eff5e3_0%,rgba(239,245,227,0)_70%)] pt-12 pb-10 md:pt-16 md:pb-12">
@@ -115,6 +116,7 @@ export default async function HowItWorksPage() {
           </div>
         </Container>
       </Section>
+      <TopicHub eyebrow={th('eyebrow')} title={th('h2')} className="border-t border-line bg-card" />
       <FinalCta />
       <JsonLd data={breadcrumb([{ name: tc('siteName'), url: absoluteUrl(locale, '/') }, { name: t('eyebrow'), url: absoluteUrl(locale, '/how-it-works') }])} />
     </main>

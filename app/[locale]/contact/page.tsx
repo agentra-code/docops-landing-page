@@ -135,7 +135,7 @@ export default async function ContactPage() {
           </div>
         </Container>
       </Section>
-      <JsonLd data={organization()} />
+      <JsonLd data={organization(locale)} />
       <JsonLd data={breadcrumb([{ name: tc('siteName'), url: absoluteUrl(locale, '/') }, { name: t('h1'), url: absoluteUrl(locale, '/contact') }])} />
     </main>
   )

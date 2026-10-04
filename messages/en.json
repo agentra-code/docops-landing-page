@@ -43,7 +43,8 @@
     "installMacos": "Install on macOS",
     "installWindows": "Install on Windows",
     "privacy": "Privacy policy",
-    "copyright": "© {year} Agentra JSC · Da Nang, Vietnam"
+    "copyright": "© {year} Agentra JSC · Da Nang, Vietnam",
+    "solutions": "Solutions"
   },
   "home": {
     "hero": {
@@ -168,6 +169,10 @@
     "faq": {
       "eyebrow": "FAQ",
       "h2": "Frequently asked questions",
+      "q0": {
+        "q": "What is Agentra DocOps?",
+        "a": "{description} It is a desktop app for Windows and macOS built by Agentra JSC (Da Nang, Vietnam); the institution repository stays on your machine."
+      },
       "q1": {
         "q": "What is an activation key and where do I get one?",
         "a": "Agentra issues each institution a key in the form DOCOPS-XXXX-XXXX-XXXX that opens its own workspace. Install the app, choose \"No key yet (new registration)\" on the activation screen and send the request from inside the app, or email us with your institution name."
@@ -191,6 +196,10 @@
       "q6": {
         "q": "What does it cost?",
         "a": "Downloading and installing is free. Pricing depends on how much your institution uses; contact us for a quote."
+      },
+      "q7": {
+        "q": "Does DocOps replace our incoming/outgoing correspondence system?",
+        "a": "No. DocOps does not handle the incoming/outgoing correspondence flow or digital signatures. It works on document content: building a knowledge repository, cited search, legal basis review and Decree 30 drafting, with Word or PDF export for your existing issuing process."
       }
     },
     "cta": {
@@ -200,8 +209,7 @@
       "b2": "Contact us"
     },
     "meta": {
-      "title": "Agentra DocOps · AI for university administrative documents",
-      "description": "DocOps ingests, classifies, searches with citations, maps legal impact and drafts under Decree 30. Desktop app for Windows and macOS; staff decide last."
+      "title": "Agentra DocOps · AI for university administrative documents"
     }
   },
   "download": {
@@ -279,7 +287,7 @@
   },
   "howItWorks": {
     "meta": {
-      "title": "How DocOps works: six steps, staff decide last",
+      "title": "How DocOps works: six steps, staff decide",
       "description": "A document goes through six steps: ingest, classify, search, impact, draft and staff review. AI does the heavy lifting; a person makes the final decision."
     },
     "eyebrow": "How it works",
@@ -451,6 +459,22 @@
       "boxBody": "Email {email}, or open Feedback inside the DocOps app: feedback sent from the app automatically includes the version and technical logs.",
       "btn": "Email a bug report",
       "subject": "DocOps bug report"
+    }
+  },
+  "topics": {
+    "breadcrumb": "Breadcrumb",
+    "updated": "Updated {date}",
+    "inShort": "In short",
+    "cta2": "See how it works",
+    "faqEyebrow": "FAQ",
+    "faqH2": "Frequently asked questions",
+    "relatedEyebrow": "Keep exploring",
+    "relatedH2": "More of what DocOps does for universities",
+    "more": "Learn more",
+    "hub": {
+      "eyebrow": "Solutions",
+      "h2": "What DocOps solves for universities",
+      "lead": "The four most time-consuming jobs of clerical, legal and academic affairs staff, each with its own in-depth page."
     }
   }
 }

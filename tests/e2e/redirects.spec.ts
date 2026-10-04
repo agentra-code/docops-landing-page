@@ -12,7 +12,7 @@ test('old web-app paths redirect permanently', async ({ request }) => {
 test('metadata routes and security headers', async ({ request }) => {
   const sitemap = await request.get('/sitemap.xml')
   expect(sitemap.status()).toBe(200)
-  expect((await sitemap.text()).match(/<loc>/g)).toHaveLength(16)
+  expect((await sitemap.text()).match(/<loc>/g)).toHaveLength(24)
   const robots = await request.get('/robots.txt')
   expect(await robots.text()).toContain('Sitemap: ')
   const home = await request.get('/')

@@ -9,6 +9,10 @@ const PAGES: Array<[string, 'vi' | 'en']> = [
   ['/minh-bach-ai', 'vi'], ['/en/ai-transparency', 'en'],
   ['/lien-he', 'vi'], ['/en/contact', 'en'],
   ['/chinh-sach-bao-mat', 'vi'], ['/en/privacy', 'en'],
+  ['/ra-soat-can-cu-phap-ly', 'vi'], ['/en/legal-basis-review', 'en'],
+  ['/soan-thao-van-ban-nghi-dinh-30', 'vi'], ['/en/decree-30-drafting', 'en'],
+  ['/tra-cuu-van-ban-ai', 'vi'], ['/en/ai-document-search', 'en'],
+  ['/chuyen-doi-so-van-thu-truong-dai-hoc', 'vi'], ['/en/ai-for-universities', 'en'],
 ]
 
 for (const [path, lang] of PAGES) {
@@ -35,6 +39,24 @@ test('locale switch keeps the current page', async ({ page }) => {
   await expect(page).toHaveURL(/\/en\/download$/)
   await page.locator('header').getByRole('link', { name: 'VI', exact: true }).click()
   await expect(page).toHaveURL(/\/tai-ve$/)
+})
+
+test('locale switch keeps dynamic and topic pages', async ({ page }) => {
+  await page.goto('/huong-dan-cai-dat/macos')
+  await expect(page.locator('header').getByRole('link', { name: 'EN', exact: true })).toHaveAttribute('href', '/en/install/macos')
+  await page.goto('/en/legal-basis-review')
+  await expect(page.locator('header').getByRole('link', { name: 'VI', exact: true })).toHaveAttribute('href', '/ra-soat-can-cu-phap-ly')
+})
+
+test('topic page FAQ answers are in the DOM and match FAQPage JSON-LD', async ({ page }) => {
+  await page.goto('/soan-thao-van-ban-nghi-dinh-30')
+  const ld = (await page.locator('script[type="application/ld+json"]').allTextContents()).map((s) => JSON.parse(s))
+  const faq = ld.find((d) => d['@type'] === 'FAQPage')
+  expect(faq.mainEntity.length).toBeGreaterThanOrEqual(4)
+  for (const q of faq.mainEntity) {
+    await expect(page.locator('details summary', { hasText: q.name })).toHaveCount(1)
+    expect(await page.locator('details p').allTextContents()).toContain(q.acceptedAnswer.text)
+  }
 })
 
 test('unknown paths give a localized 404', async ({ page }) => {

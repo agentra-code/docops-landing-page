@@ -2,21 +2,32 @@
 
 import { useLocale, useTranslations } from 'next-intl'
 import { useParams } from 'next/navigation'
-import type { ComponentProps } from 'react'
-import { Link, usePathname } from '@/i18n/navigation'
-import { routing, type Locale } from '@/i18n/routing'
+import { usePathname } from '@/i18n/navigation'
+import { routing, type Locale, type PageKey } from '@/i18n/routing'
 import { track } from '@/lib/analytics'
 import { cn } from '@/lib/cn'
+import { localizedPath } from '@/lib/seo/urls'
 
-type Href = ComponentProps<typeof Link>['href']
+/** Khoá trang của đường dẫn hiện tại: `usePathname` trả mẫu ('/download') với trang tĩnh nhưng đường dẫn đã điền
+ *  tham số ('/install/macos') với trang động, nên khớp ngược từng mẫu với `params`. */
+function pageKeyOf(pathname: string, params: Record<string, string>): PageKey | undefined {
+  return (Object.keys(routing.pathnames) as PageKey[]).find(
+    (key) => key === pathname || key.replace(/\[(\w+)\]/g, (_, name: string) => params[name] ?? '') === pathname,
+  )
+}
 
-/** Chuyển VI/EN bằng link thật (bot theo được), giữ nguyên trang hiện tại (slug dịch theo locale). */
+/**
+ * Chuyển VI/EN bằng link thật (bot theo được), giữ nguyên trang hiện tại (slug dịch theo locale).
+ * Href tính sẵn tới URL cuối cùng: Link của next-intl với `locale` sinh `/vi/...` rồi bị 308 về `/...`
+ * (link tới trang redirect làm phí lượt crawl). Trang lạ (404) thì về trang chủ của ngôn ngữ kia.
+ * Thẻ <a> thường, không phải next/link: đổi ngôn ngữ là tải lại cả trang (đổi `<html lang>`), và prefetch RSC
+ * chéo ngôn ngữ của next/link bị middleware trả 404.
+ */
 export function LocaleSwitcher({ className }: { className?: string }) {
   const locale = useLocale() as Locale
   const t = useTranslations('common')
   const pathname = usePathname()
-  const params = useParams()
-  const href = { pathname, params } as Href
+  const params = useParams<Record<string, string>>()
   return (
     <div
       role="group"
@@ -26,10 +37,9 @@ export function LocaleSwitcher({ className }: { className?: string }) {
       {routing.locales.map((code) => {
         const on = code === locale
         return (
-          <Link
+          <a
             key={code}
-            href={href}
-            locale={code}
+            href={localizedPath(code, pageKeyOf(pathname, params) ?? '/', params)}
             hrefLang={code}
             aria-current={on ? 'true' : undefined}
             onClick={() => !on && track({ name: 'locale_switch', from: locale, to: code })}
@@ -39,7 +49,7 @@ export function LocaleSwitcher({ className }: { className?: string }) {
             )}
           >
             {code.toUpperCase()}
-          </Link>
+          </a>
         )
       })}
     </div>

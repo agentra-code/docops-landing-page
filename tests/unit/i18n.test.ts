@@ -10,7 +10,10 @@ const flatten = (o: unknown, p = ''): string[] =>
 
 describe('i18n', () => {
   test('pathnames cover every page in both locales', () => {
-    const expected = ['/', '/download', '/install/[os]', '/how-it-works', '/ai-transparency', '/contact', '/privacy']
+    const expected = [
+      '/', '/download', '/install/[os]', '/how-it-works', '/ai-transparency', '/contact', '/privacy',
+      '/decree-30-drafting', '/legal-basis-review', '/ai-document-search', '/ai-for-universities',
+    ]
     expect(Object.keys(routing.pathnames).sort()).toEqual([...expected].sort())
     for (const key of expected) {
       const entry = routing.pathnames[key as keyof typeof routing.pathnames]

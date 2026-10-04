@@ -87,7 +87,7 @@ export default async function DownloadPage() {
         </Container>
       </section>
       <JsonLd data={breadcrumb([{ name: tc('siteName'), url: absoluteUrl(locale, '/') }, { name: h1, url: absoluteUrl(locale, '/download') }])} />
-      <JsonLd data={softwareApplication(assets, locale, absoluteUrl(locale, '/download'))} />
+      <JsonLd data={softwareApplication(assets, locale)} />
     </main>
   )
 }
