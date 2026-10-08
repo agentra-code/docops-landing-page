@@ -21,6 +21,7 @@ export const routing = defineRouting({
     '/ai-for-organizations': { vi: '/ai-van-ban-co-quan-doanh-nghiep', en: '/ai-for-organizations' },
     '/administrative-document-types': { vi: '/cac-loai-van-ban-hanh-chinh', en: '/administrative-document-types' },
     '/administrative-document-format': { vi: '/the-thuc-van-ban-hanh-chinh', en: '/administrative-document-format' },
+    '/docops-vs-chatgpt': { vi: '/docops-va-chatgpt', en: '/docops-vs-chatgpt' },
   },
 })
 

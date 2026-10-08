@@ -16,6 +16,7 @@ const PAGES: Array<[string, 'vi' | 'en']> = [
   ['/chuyen-doi-so-van-thu-truong-dai-hoc', 'vi'], ['/en/ai-for-universities', 'en'],
   ['/cac-loai-van-ban-hanh-chinh', 'vi'], ['/en/administrative-document-types', 'en'],
   ['/the-thuc-van-ban-hanh-chinh', 'vi'], ['/en/administrative-document-format', 'en'],
+  ['/docops-va-chatgpt', 'vi'], ['/en/docops-vs-chatgpt', 'en'],
 ]
 
 for (const [path, lang] of PAGES) {

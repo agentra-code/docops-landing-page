@@ -707,4 +707,81 @@ export const TOPICS_VI: Record<TopicId, TopicCopy> = {
     ],
     share: { title: 'Thể thức văn bản NĐ 30', subtitle: '9 thành phần chính, lề, phông, cỡ chữ và checklist trước khi trình ký' },
   },
+  'docops-vs-chatgpt': {
+    name: 'DocOps và ChatGPT',
+    metaTitle: 'DocOps và ChatGPT cho văn bản hành chính',
+    description:
+      'So sánh DocOps và ChatGPT khi làm văn bản hành chính: nguồn câu trả lời, trích dẫn số hiệu và Điều, rà soát hiệu lực, thể thức Nghị định 30, dữ liệu đi đâu.',
+    keywords: ['dùng ChatGPT cho văn bản hành chính', 'DocOps và ChatGPT', 'ChatGPT soạn văn bản hành chính', 'so sánh AI cho văn thư', 'bảo mật dữ liệu khi dùng ChatGPT'],
+    eyebrow: 'So sánh',
+    h1: 'Dùng ChatGPT cho văn bản hành chính hay DocOps? So sánh trung thực',
+    lead: 'ChatGPT viết tốt và biết rộng. DocOps làm hẹp hơn: trả lời từ chính kho văn bản của đơn vị, dẫn số hiệu và Điều, biết căn cứ nào đã hết hiệu lực và soạn đúng thể thức Nghị định 30. Bảng dưới đây so sánh từng điểm, kể cả chỗ ChatGPT hợp hơn.',
+    card: 'So sánh trung thực khi làm văn bản hành chính: nguồn câu trả lời, trích dẫn, hiệu lực căn cứ, thể thức và dữ liệu.',
+    inShort:
+      'ChatGPT là trợ lý đa năng, trả lời từ kiến thức của mô hình, tìm kiếm web và tệp bạn tải lên. DocOps là ứng dụng desktop chỉ dành cho văn bản hành chính: câu trả lời chỉ lấy từ kho văn bản của đơn vị, dẫn số hiệu và Điều, căn cứ hết hiệu lực được cảnh báo và bản nháp theo khuôn Nghị định 30. Dùng ChatGPT cho việc viết chung; dùng DocOps khi câu trả lời phải dựa trên văn bản của đơn vị.',
+    definition: {
+      h2: 'Khác nhau ở đâu',
+      term: 'Khác biệt chính',
+      rest: 'nằm ở nguồn câu trả lời: ChatGPT trả lời từ kiến thức chung và những gì bạn đưa vào cuộc trò chuyện, còn DocOps chỉ trả lời từ kho văn bản đơn vị đã nạp và loại bỏ văn bản không có trong kho.',
+      paras: ['Thông tin về ChatGPT trên trang này lấy từ trang trợ giúp của OpenAI, đối chiếu ngày 08/10/2026. Tính năng và chính sách của ChatGPT có thể thay đổi; hãy xem trang gốc trước khi quyết định.'],
+    },
+    imageAlt: 'Màn Tra cứu của DocOps: kết quả tìm kiếm và cột hỏi đáp với trích dẫn số hiệu, Điều',
+    table: {
+      h2: 'So sánh từng điểm',
+      caption: 'So sánh ChatGPT và DocOps khi làm văn bản hành chính, theo trang của OpenAI và tài liệu DocOps, ngày 08/10/2026',
+      head: ['Tiêu chí', 'ChatGPT', 'DocOps'],
+      rows: [
+        ['Nguồn câu trả lời', 'Kiến thức của mô hình, tìm kiếm web, tệp bạn tải lên và ứng dụng kết nối như Google Drive; tệp trong một dự án (Projects) dùng được cho các cuộc trò chuyện của dự án đó', 'Chỉ kho văn bản đơn vị đã nạp và cán bộ đã chốt'],
+        ['Trích dẫn', 'Kèm link nguồn khi dùng tìm kiếm web', 'Mỗi câu trả lời dẫn số hiệu và Điều, bấm vào mở văn bản gốc'],
+        ['Khi không có thông tin', 'Có thể trả lời từ kiến thức chung của mô hình; người dùng cần tự kiểm tra số hiệu và trích dẫn', 'Nói rõ "Chưa tìm thấy trong kho"; văn bản AI nhắc tới mà không có trong kho bị loại và hiện cảnh báo'],
+        ['Căn cứ hết hiệu lực', 'Không theo dõi quan hệ thay thế, bãi bỏ giữa các văn bản của đơn vị', 'Cảnh báo căn cứ bị thay thế, bãi bỏ, chưa có hiệu lực trên toàn kho, xem tại một ngày bất kỳ'],
+        ['Soạn văn bản', 'Viết theo lời nhắc; thể thức phụ thuộc lời nhắc và người dùng tự soát', 'Khuôn 29 loại theo Nghị định 30, tự điền thông tin đơn vị, chỉ đề xuất căn cứ còn hiệu lực, xuất Word và PDF'],
+        ['Dữ liệu và huấn luyện', 'Gói cá nhân: hội thoại có thể được dùng để huấn luyện mô hình, trừ khi tắt "Improve the model for everyone"; kể cả khi đã tắt, bấm thích hoặc không thích một câu trả lời thì cả hội thoại đó có thể được dùng. Gói Business, Enterprise, Edu: mặc định không dùng để huấn luyện', 'Kho lưu tại máy; nội dung đi qua máy chủ DocOps tới mô hình AI để xử lý, máy chủ không lưu nội dung; Agentra không dùng dữ liệu của đơn vị để huấn luyện'],
+        ['Cách dùng', 'Trên web, ứng dụng máy tính và điện thoại', 'Ứng dụng desktop Windows, macOS; kích hoạt bằng key của đơn vị'],
+        ['Phạm vi', 'Đa năng: viết, dịch, tóm tắt và nhiều việc khác', 'Chỉ văn bản hành chính: nạp, phân loại, tra cứu, rà soát, soạn nháp'],
+      ],
+    },
+    blocks: [
+      {
+        h2: 'Khi nào ChatGPT hợp hơn',
+        items: [
+          { text: 'Viết thư, bài phát biểu, nội dung truyền thông không cần căn cứ.' },
+          { text: 'Hỏi kiến thức chung, giải thích khái niệm.' },
+          { text: 'Dịch hoặc tóm tắt một tài liệu đơn lẻ.' },
+          { text: 'Đơn vị chưa có kho văn bản và chỉ cần một bản nháp nhanh để tự sửa.' },
+        ],
+      },
+      {
+        h2: 'Khi nào DocOps hợp hơn',
+        items: [
+          { text: 'Câu trả lời phải dẫn đúng văn bản đơn vị đang áp dụng, xem', link: { topic: 'ai-document-search' } },
+          { text: 'Cần biết văn bản nào dựa trên căn cứ đã bị thay thế, xem', link: { topic: 'legal-basis-review' } },
+          { text: 'Soạn quyết định, tờ trình, thông báo đúng thể thức với căn cứ còn hiệu lực, xem', link: { topic: 'decree-30-drafting' } },
+          { text: 'Muốn kho văn bản nằm tại máy và có nhật ký quyết định của cán bộ, xem', link: { page: '/ai-transparency', label: 'Minh bạch AI' } },
+        ],
+      },
+      {
+        h2: 'Lưu ý khi đưa văn bản nội bộ vào ChatGPT',
+        paras: [
+          'Với tài khoản cá nhân, kiểm tra mục Data Controls và tắt "Improve the model for everyone" nếu không muốn hội thoại được dùng để huấn luyện. Lưu ý: kể cả khi đã tắt, nếu bạn bấm thích hoặc không thích một câu trả lời thì cả hội thoại đó có thể được dùng để huấn luyện. Văn bản mật hoặc có thông tin cá nhân phải theo quy định về bảo vệ bí mật nhà nước và dữ liệu cá nhân của đơn vị, dù dùng công cụ AI nào.',
+        ],
+        items: [
+          { text: 'Cài đặt huấn luyện và dữ liệu của ChatGPT:', link: { href: 'https://help.openai.com/en/articles/7730893-data-controls-in-chatgpt', label: 'Data controls in ChatGPT (OpenAI)' } },
+          { text: 'Cách tệp và ứng dụng trong dự án được dùng:', link: { href: 'https://help.openai.com/en/articles/10169521-projects-in-chatgpt', label: 'Projects in ChatGPT (OpenAI)' } },
+        ],
+      },
+      {
+        h2: 'Dùng cả hai',
+        paras: ['Hai công cụ không loại trừ nhau. Một cách chia việc: ChatGPT cho phần viết tự do không dựa trên văn bản của đơn vị, DocOps cho mọi câu hỏi và bản nháp phải dựa trên kho văn bản và căn cứ còn hiệu lực.'],
+      },
+    ],
+    faq: [
+      { q: 'DocOps có dùng ChatGPT bên trong không?', a: 'Không. Mô hình mặc định của DocOps là Claude của Anthropic; Agentra có thể cấu hình mô hình khác cho từng đơn vị, như GLM. Nội dung đi qua máy chủ DocOps tới nhà cung cấp mô hình, máy chủ không lưu nội dung.' },
+      { q: 'Tải văn bản của đơn vị lên ChatGPT có an toàn không?', a: 'Tuỳ gói và cài đặt. Theo OpenAI, hội thoại ở gói cá nhân có thể được dùng để huấn luyện trừ khi bạn tắt "Improve the model for everyone", và bấm thích hoặc không thích một câu trả lời thì cả hội thoại đó vẫn có thể được dùng; gói Business, Enterprise và Edu mặc định không dùng dữ liệu để huấn luyện. Văn bản mật không nên đưa vào dịch vụ AI trực tuyến nào nếu quy định của đơn vị không cho phép.' },
+      { q: 'ChatGPT có soạn được văn bản theo Nghị định 30 không?', a: 'Có thể soạn theo lời nhắc, nhưng ChatGPT không có sẵn thông tin đơn vị, không biết căn cứ nào trong kho còn hiệu lực, và thể thức cần người dùng tự soát. DocOps dùng khuôn 29 loại văn bản của Nghị định 30, tự điền thông tin đơn vị và chỉ đề xuất căn cứ còn hiệu lực trong kho.' },
+      { q: 'DocOps có miễn phí không?', a: 'Tải và cài DocOps miễn phí; chi phí sử dụng tính theo quy mô của đơn vị, liên hệ để nhận báo giá.' },
+      { q: 'Nên chọn DocOps hay ChatGPT?', a: 'Chọn theo nguồn câu trả lời bạn cần. Việc viết chung, không cần căn cứ: ChatGPT. Câu trả lời, bản nháp phải dựa trên văn bản đơn vị đang áp dụng và căn cứ còn hiệu lực: DocOps. Nhiều việc dùng được cả hai.' },
+    ],
+    share: { title: 'DocOps và ChatGPT', subtitle: 'Nguồn câu trả lời, trích dẫn, hiệu lực căn cứ và dữ liệu' },
+  },
 }

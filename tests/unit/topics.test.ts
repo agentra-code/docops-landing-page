@@ -15,4 +15,8 @@ describe('topicsByGroup', () => {
     expect(groups.flatMap((g) => g.ids)).not.toContain('ai-for-universities')
     expect(groups.every((g) => g.ids.length > 0)).toBe(true)
   })
+
+  test('every group has at least one topic page', () => {
+    expect(topicsByGroup().map((g) => g.group)).toEqual([...TOPIC_GROUPS])
+  })
 })

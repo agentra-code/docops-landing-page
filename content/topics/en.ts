@@ -700,4 +700,81 @@ export const TOPICS_EN: Record<TopicId, TopicCopy> = {
     ],
     share: { title: 'Decree 30 format', subtitle: 'Nine main parts, margins, font, sizes and a checklist before signing' },
   },
+  'docops-vs-chatgpt': {
+    name: 'DocOps vs ChatGPT',
+    metaTitle: 'DocOps vs ChatGPT for official documents',
+    description:
+      'DocOps vs ChatGPT for administrative documents: where answers come from, citations to number and article, validity checks, Decree 30 format and where data goes.',
+    keywords: ['ChatGPT for administrative documents', 'DocOps vs ChatGPT', 'drafting administrative documents with ChatGPT', 'AI comparison for records officers', 'data privacy when using ChatGPT'],
+    eyebrow: 'Comparison',
+    h1: 'ChatGPT for administrative documents, or DocOps? An honest comparison',
+    lead: 'ChatGPT writes well and knows a lot. DocOps does something narrower: it answers from the agency’s own document repository, cites the document number and Article, knows which legal bases have expired and drafts in the Decree 30 format. The table below compares them point by point, including where ChatGPT is the better fit.',
+    card: 'An honest comparison for administrative documents: answer sources, citations, validity of legal bases, format and data.',
+    inShort:
+      'ChatGPT is a general-purpose assistant that answers from the model’s knowledge, web search and files you upload. DocOps is a desktop app built only for administrative documents: answers come only from the agency’s repository with the document number and Article cited, expired legal bases are flagged and drafts follow the Decree 30 template. Use ChatGPT for general writing; use DocOps when the answer must rest on the agency’s own documents.',
+    definition: {
+      h2: 'Where they differ',
+      term: 'The main difference',
+      rest: 'is the source of the answer: ChatGPT answers from general knowledge and whatever you bring into the conversation, while DocOps answers only from the repository the agency has ingested and drops any document that is not in it.',
+      paras: ['Information about ChatGPT on this page comes from OpenAI’s help pages, checked on 8 October 2026. ChatGPT’s features and policies can change; read the original pages before you decide.'],
+    },
+    imageAlt: 'DocOps search screen: search results and a Q&A column with document number and article citations',
+    table: {
+      h2: 'Point-by-point comparison',
+      caption: 'ChatGPT and DocOps compared for administrative documents, based on OpenAI’s help pages and DocOps documentation, 8 October 2026',
+      head: ['Criterion', 'ChatGPT', 'DocOps'],
+      rows: [
+        ['Source of answers', 'The model’s knowledge, web search, files you upload and connected apps such as Google Drive; files in a project (Projects) are available to that project’s chats', 'Only the repository the agency has ingested and staff have confirmed'],
+        ['Citations', 'Source links when web search is used', 'Every answer cites the document number and Article, and one click opens the original document'],
+        ['When there is no information', 'May answer from the model’s general knowledge; the user needs to check numbers and citations', 'Says “Chưa tìm thấy trong kho” (not found in the repository); documents the AI mentions that are not in the repository are dropped and a warning is shown'],
+        ['Expired legal bases', 'Does not track replacement or repeal relationships between the agency’s documents', 'Warns about replaced, repealed or not-yet-effective bases across the whole repository, as of any chosen date'],
+        ['Drafting', 'Writes from your prompt; the format depends on the prompt and the user checks it', 'Templates for the 29 types in Decree 30, fills in the agency’s details, proposes only legal bases still in force, exports Word and PDF'],
+        ['Data and training', 'Personal plans: conversations may be used to train models unless “Improve the model for everyone” is turned off; even then, giving thumbs up or down on a response may let the whole conversation be used. Business, Enterprise and Edu plans: not used for training by default', 'The repository is stored on the device; content goes through the DocOps server to the AI model for processing and the server does not store it; Agentra does not use the agency’s data for training'],
+        ['How it is used', 'On the web, desktop apps and phones', 'Desktop app for Windows and macOS, activated with the agency’s key'],
+        ['Scope', 'General purpose: writing, translating, summarizing and much more', 'Administrative documents only: ingest, classify, search, review, draft'],
+      ],
+    },
+    blocks: [
+      {
+        h2: 'When ChatGPT is the better fit',
+        items: [
+          { text: 'Writing letters, speeches and communications that need no legal basis.' },
+          { text: 'Asking general questions and explaining concepts.' },
+          { text: 'Translating or summarizing a single document.' },
+          { text: 'An agency with no document repository yet that just needs a quick draft to edit by hand.' },
+        ],
+      },
+      {
+        h2: 'When DocOps is the better fit',
+        items: [
+          { text: 'Answers must cite the documents the agency actually applies, see', link: { topic: 'ai-document-search' } },
+          { text: 'You need to know which documents rest on a replaced legal basis, see', link: { topic: 'legal-basis-review' } },
+          { text: 'Drafting decisions, submissions and notices in the right format with legal bases still in force, see', link: { topic: 'decree-30-drafting' } },
+          { text: 'You want the repository on your own device and a log of staff decisions, see', link: { page: '/ai-transparency', label: 'AI transparency' } },
+        ],
+      },
+      {
+        h2: 'Before putting internal documents into ChatGPT',
+        paras: [
+          'On a personal account, check Data Controls and turn off “Improve the model for everyone” if you do not want conversations used for training. Note that even with it off, giving thumbs up or down on a response may let the whole conversation be used for training. Classified documents and documents with personal data must follow the agency’s rules on state secrets and personal data protection, whichever AI tool is used.',
+        ],
+        items: [
+          { text: 'ChatGPT training and data settings:', link: { href: 'https://help.openai.com/en/articles/7730893-data-controls-in-chatgpt', label: 'Data controls in ChatGPT (OpenAI)' } },
+          { text: 'How files and apps in a project are used:', link: { href: 'https://help.openai.com/en/articles/10169521-projects-in-chatgpt', label: 'Projects in ChatGPT (OpenAI)' } },
+        ],
+      },
+      {
+        h2: 'Using both',
+        paras: ['The two tools do not exclude each other. One way to split the work: ChatGPT for free writing that does not rest on the agency’s documents, DocOps for every question and draft that must rest on the repository and on legal bases still in force.'],
+      },
+    ],
+    faq: [
+      { q: 'Does DocOps use ChatGPT inside?', a: 'No. DocOps’s default model is Claude by Anthropic; Agentra can configure another model per agency, such as GLM. Content goes through the DocOps server to the model provider and the server does not store it.' },
+      { q: 'Is it safe to upload an agency’s documents to ChatGPT?', a: 'It depends on the plan and settings. According to OpenAI, conversations on personal plans may be used for training unless you turn off “Improve the model for everyone”, and giving thumbs up or down on a response can still let the whole conversation be used; Business, Enterprise and Edu plans do not use data for training by default. Classified documents should not go into any online AI service the agency’s rules do not allow.' },
+      { q: 'Can ChatGPT draft documents under Decree 30?', a: 'It can draft from a prompt, but ChatGPT has no built-in knowledge of your agency, does not know which legal bases in your repository are still in force, and the user has to check the format. DocOps uses the Decree 30 templates for 29 document types, fills in the agency’s details and proposes only legal bases still in force in the repository.' },
+      { q: 'Is DocOps free?', a: 'Downloading and installing DocOps is free; usage is priced by the size of the agency, contact us for a quote.' },
+      { q: 'Should I choose DocOps or ChatGPT?', a: 'Choose by the source of answer you need. General writing that needs no legal basis: ChatGPT. Answers and drafts that must rest on the documents the agency applies and on legal bases still in force: DocOps. Many tasks can use both.' },
+    ],
+    share: { title: 'DocOps vs ChatGPT', subtitle: 'Answer sources, citations, validity checks and data' },
+  },
 }
