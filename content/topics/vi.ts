@@ -571,15 +571,15 @@ export const TOPICS_VI: Record<TopicId, TopicCopy> = {
       },
       {
         h2: 'Ba loại bản sao văn bản',
+        paras: ['Chữ viết tắt theo Phụ lục III Nghị định 30/2020/NĐ-CP:'],
         items: [
-          { title: 'Bản sao y: SY', text: 'chữ viết tắt theo Phụ lục III.' },
-          { title: 'Bản trích sao: TrS', text: 'chữ viết tắt theo Phụ lục III.' },
-          { title: 'Bản sao lục: SL', text: 'chữ viết tắt theo Phụ lục III.' },
+          { title: 'Bản sao y', text: 'SY.' },
+          { title: 'Bản trích sao', text: 'TrS.' },
+          { title: 'Bản sao lục', text: 'SL.' },
         ],
       },
       {
         h2: 'Mẫu trình bày trong Phụ lục III',
-        ordered: true,
         items: [
           { text: 'Mẫu 1.1: Nghị quyết (cá biệt).' },
           { text: 'Mẫu 1.2: Quyết định (cá biệt) quy định trực tiếp.' },
@@ -738,7 +738,7 @@ export const TOPICS_VI: Record<TopicId, TopicCopy> = {
         ['Nguồn câu trả lời', 'Kiến thức của mô hình, tìm kiếm web, tệp bạn tải lên và ứng dụng kết nối như Google Drive; tệp trong một dự án (Projects) dùng được cho các cuộc trò chuyện của dự án đó', 'Chỉ kho văn bản đơn vị đã nạp và cán bộ đã chốt'],
         ['Trích dẫn', 'Kèm link nguồn khi dùng tìm kiếm web', 'Mỗi câu trả lời dẫn số hiệu và Điều, bấm vào mở văn bản gốc'],
         ['Khi không có thông tin', 'Có thể trả lời từ kiến thức chung của mô hình; người dùng cần tự kiểm tra số hiệu và trích dẫn', 'Nói rõ "Chưa tìm thấy trong kho"; văn bản AI nhắc tới mà không có trong kho bị loại và hiện cảnh báo'],
-        ['Căn cứ hết hiệu lực', 'Không theo dõi quan hệ thay thế, bãi bỏ giữa các văn bản của đơn vị', 'Cảnh báo căn cứ bị thay thế, bãi bỏ, chưa có hiệu lực trên toàn kho, xem tại một ngày bất kỳ'],
+        ['Căn cứ hết hiệu lực', 'Không có sẵn tính năng theo dõi quan hệ thay thế, bãi bỏ giữa các văn bản của đơn vị', 'Cảnh báo căn cứ bị thay thế, bãi bỏ, chưa có hiệu lực trên toàn kho, xem tại một ngày bất kỳ'],
         ['Soạn văn bản', 'Viết theo lời nhắc; thể thức phụ thuộc lời nhắc và người dùng tự soát', 'Khuôn 29 loại theo Nghị định 30, tự điền thông tin đơn vị, chỉ đề xuất căn cứ còn hiệu lực, xuất Word và PDF'],
         ['Dữ liệu và huấn luyện', 'Gói cá nhân: hội thoại có thể được dùng để huấn luyện mô hình, trừ khi tắt "Improve the model for everyone"; kể cả khi đã tắt, bấm thích hoặc không thích một câu trả lời thì cả hội thoại đó có thể được dùng. Gói Business, Enterprise, Edu: mặc định không dùng để huấn luyện', 'Kho lưu tại máy; nội dung đi qua máy chủ DocOps tới mô hình AI để xử lý, máy chủ không lưu nội dung; Agentra không dùng dữ liệu của đơn vị để huấn luyện'],
         ['Cách dùng', 'Trên web, ứng dụng máy tính và điện thoại', 'Ứng dụng desktop Windows, macOS; kích hoạt bằng key của đơn vị'],

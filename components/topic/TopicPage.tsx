@@ -158,7 +158,7 @@ export async function TopicPage({ id }: { id: TopicId }) {
             {c.table ? (
               <section className="flex flex-col gap-4">
                 <h2 className={H2}>{c.table.h2}</h2>
-                <div className="overflow-x-auto rounded-xl border border-line bg-card">
+                <div tabIndex={0} role="region" aria-label={c.table.caption} className="overflow-x-auto rounded-xl border border-line bg-card">
                   <table className="w-full min-w-[560px] border-collapse text-left text-[15px] leading-relaxed">
                     <caption className="sr-only">{c.table.caption}</caption>
                     <thead className="bg-sidebar">

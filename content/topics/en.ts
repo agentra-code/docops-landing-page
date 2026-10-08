@@ -397,7 +397,7 @@ export const TOPICS_EN: Record<TopicId, TopicCopy> = {
     keywords: [
       'administrative document AI for agencies and companies',
       'AI for corporate records and clerical work',
-      'document AI for unions and organizations',
+      'document AI for mass organizations',
       'internal company document search',
       'internal document knowledge base',
     ],
@@ -405,7 +405,7 @@ export const TOPICS_EN: Record<TopicId, TopicCopy> = {
     h1: 'Administrative document AI for agencies and companies, under Decree 30',
     lead:
       'Which of your documents rest on a circular that has been replaced? What does the internal regulation say about this, and in which Article? DocOps answers from your own repository and drafts to the Decree 30 format, so clerical, administration and legal staff work faster and still review everything themselves.',
-    card: 'For people’s committees, departments, companies, unions and associations: your own repository, cited search, legal basis review, Decree 30 drafting.',
+    card: 'For people’s committees, departments, companies, mass organizations and associations: your own repository, cited search, legal basis review, Decree 30 drafting.',
     inShort:
       'DocOps works for any organization that formats documents under Decree 30/2020/NĐ-CP, not just schools. The organization ingests PDF documents into its own repository on the machine, then searches with citations, reviews expired legal bases and drafts all 29 types of administrative document. DocOps runs alongside the incoming/outgoing document system already in use.',
     definition: {
@@ -564,15 +564,15 @@ export const TOPICS_EN: Record<TopicId, TopicCopy> = {
       },
       {
         h2: 'The three kinds of copy',
+        paras: ['Abbreviations follow Appendix III of Decree 30/2020/NĐ-CP:'],
         items: [
-          { title: 'Certified true copy: SY', text: 'abbreviation from Appendix III.' },
-          { title: 'Extract copy: TrS', text: 'abbreviation from Appendix III.' },
-          { title: 'Duplicate from the original: SL', text: 'abbreviation from Appendix III.' },
+          { title: 'Certified true copy', text: 'SY.' },
+          { title: 'Extract copy', text: 'TrS.' },
+          { title: 'Duplicate from the original', text: 'SL.' },
         ],
       },
       {
         h2: 'Layout templates in Appendix III',
-        ordered: true,
         items: [
           { text: 'Template 1.1: Resolution (individual).' },
           { text: 'Template 1.2: Decision (individual) with direct provisions.' },
@@ -731,7 +731,7 @@ export const TOPICS_EN: Record<TopicId, TopicCopy> = {
         ['Source of answers', 'The model’s knowledge, web search, files you upload and connected apps such as Google Drive; files in a project (Projects) are available to that project’s chats', 'Only the repository the agency has ingested and staff have confirmed'],
         ['Citations', 'Source links when web search is used', 'Every answer cites the document number and Article, and one click opens the original document'],
         ['When there is no information', 'May answer from the model’s general knowledge; the user needs to check numbers and citations', 'Says “Chưa tìm thấy trong kho” (not found in the repository); documents the AI mentions that are not in the repository are dropped and a warning is shown'],
-        ['Expired legal bases', 'Does not track replacement or repeal relationships between the agency’s documents', 'Warns about replaced, repealed or not-yet-effective bases across the whole repository, as of any chosen date'],
+        ['Expired legal bases', 'No built-in tracking of replacement or repeal between your organization’s documents', 'Warns about replaced, repealed or not-yet-effective bases across the whole repository, as of any chosen date'],
         ['Drafting', 'Writes from your prompt; the format depends on the prompt and the user checks it', 'Templates for the 29 types in Decree 30, fills in the agency’s details, proposes only legal bases still in force, exports Word and PDF'],
         ['Data and training', 'Personal plans: conversations may be used to train models unless “Improve the model for everyone” is turned off; even then, giving thumbs up or down on a response may let the whole conversation be used. Business, Enterprise and Edu plans: not used for training by default', 'The repository is stored on the device; content goes through the DocOps server to the AI model for processing and the server does not store it; Agentra does not use the agency’s data for training'],
         ['How it is used', 'On the web, desktop apps and phones', 'Desktop app for Windows and macOS, activated with the agency’s key'],
