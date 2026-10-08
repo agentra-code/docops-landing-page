@@ -71,3 +71,12 @@ test('unknown paths give a localized 404', async ({ page }) => {
   expect(en?.status()).toBe(404)
   await expect(page.locator('h1')).toHaveText('Page not found')
 })
+
+test('home topic hub lists every topic page in three groups', async ({ page }) => {
+  await page.goto('/')
+  for (const label of ['Tính năng', 'Theo loại đơn vị', 'Kiến thức văn thư']) await expect(page.locator('main').getByText(label, { exact: true }).first()).toBeVisible()
+  for (const href of [
+    '/ra-soat-can-cu-phap-ly', '/soan-thao-van-ban-nghi-dinh-30', '/tra-cuu-van-ban-ai', '/chuyen-doi-so-van-thu-truong-dai-hoc',
+    '/ai-van-ban-co-quan-doanh-nghiep', '/cac-loai-van-ban-hanh-chinh', '/the-thuc-van-ban-hanh-chinh', '/docops-va-chatgpt',
+  ]) await expect(page.locator(`main a[href="${href}"]`).first()).toBeVisible()
+})

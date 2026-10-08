@@ -11,7 +11,7 @@ export const TOPICS_EN: Record<TopicId, TopicCopy> = {
     eyebrow: 'Expired legal references',
     h1: 'Legal basis review: find documents that rest on expired references',
     lead:
-      'When the Ministry issues a new circular, your regulations and decisions may still cite the one it replaced. DocOps scans the whole repository, shows which documents need work and why, and keeps the original sentence as evidence.',
+      'When new circulars or decrees are issued, your organization\'s regulations and decisions may still rest on bases that have been replaced. DocOps scans the whole repository, shows which documents need changing and why, with the source sentence as evidence.',
     card: 'Find documents that rest on replaced, repealed or not-yet-effective bases, and see what changing one article pulls along.',
     inShort:
       'Legal basis review checks whether each institution document cites a document that was replaced, repealed or is not yet in force. DocOps runs it across the whole repository, recalculates it for any date you pick, and measures in advance how many places depend on a given article.',
