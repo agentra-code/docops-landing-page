@@ -7,7 +7,8 @@ import { track } from '@/lib/analytics'
 import { consentBannerEnabled } from '@/lib/consent'
 import { useConsent } from '@/lib/useConsent'
 
-/** Thanh đồng ý cookie ở đáy trang; chỉ hiện khi chưa chọn. Không chặn tương tác (spec §10). */
+/** Thanh đồng ý cookie ở đáy trang; chỉ hiện khi chưa chọn. Không chặn tương tác (spec §10).
+ *  z-20, dưới header z-30, để menu mobile mở ra phủ lên thanh này. */
 export function ConsentBar() {
   const t = useTranslations('consent')
   const [consent, setConsent] = useConsent()
@@ -20,7 +21,7 @@ export function ConsentBar() {
     <div
       role="region"
       aria-label={t('policy')}
-      className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-card/95 px-4 py-3.5 shadow-[0_-8px_30px_rgba(0,0,0,0.06)] backdrop-blur"
+      className="fixed inset-x-0 bottom-0 z-20 border-t border-line bg-card/95 px-4 py-3.5 shadow-[0_-8px_30px_rgba(0,0,0,0.06)] backdrop-blur"
     >
       <div className="mx-auto flex max-w-[1200px] flex-col gap-3 md:flex-row md:items-center md:gap-6">
         <p className="flex-1 text-[14px] leading-relaxed text-ink2">

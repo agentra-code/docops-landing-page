@@ -30,7 +30,7 @@
     "body": "The page could not load. Try again, or go back to the home page."
   },
   "consent": {
-    "text": "This site uses analytics cookies (Google Analytics) to understand how you use it. Vercel's visit statistics use no cookies.",
+    "text": "Agentra DocOps uses Google Analytics cookies to learn what staff need and make this site more useful. Decline and everything still works.",
     "policy": "Privacy policy",
     "accept": "Accept",
     "decline": "Decline"

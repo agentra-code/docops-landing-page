@@ -9,8 +9,10 @@ import { NavLinks } from './NavLinks'
 
 export function Header() {
   const t = useTranslations('common')
+  // Nền mờ nằm ở ::before: backdrop-filter (cũng như transform, filter) trên chính <header> biến nó thành khung chứa
+  // của phần tử `fixed` bên trong, panel menu mobile bị co về cao 64px của header.
   return (
-    <header className="sticky top-0 z-30 h-16 border-b border-line bg-card/95 backdrop-blur md:h-[72px]">
+    <header className="sticky top-0 z-30 h-16 border-b border-line before:absolute before:inset-0 before:-z-10 before:bg-card/95 before:backdrop-blur md:h-[72px]">
       <Container className="flex h-full items-center gap-10">
         <Link href="/" className="flex items-center gap-2.5 text-ink">
           <LogoMark size={26} />

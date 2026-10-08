@@ -13,6 +13,24 @@ test('mobile menu opens with the four nav links and a download button', async ({
   await expect(page.locator('#mobile-nav')).toHaveCount(0)
 })
 
+// toBeVisible vẫn qua khi panel bị cắt còn vài chục px hoặc bị thanh cookie đè: đo khung và bấm thử điểm giữa nút.
+test('open mobile menu fills the screen below the header, above the consent bar', async ({ page }) => {
+  await page.goto('/')
+  await expect(page.getByRole('button', { name: 'Đồng ý' })).toBeVisible()
+  await page.getByRole('button', { name: 'Mở menu' }).click()
+  const layout = await page.evaluate(() => {
+    const panel = document.getElementById('mobile-nav')!.getBoundingClientRect()
+    const header = document.querySelector('header')!.getBoundingClientRect()
+    const cta = [...document.querySelectorAll('#mobile-nav a')].find((a) => a.textContent?.includes('Tải DocOps'))!
+    const box = cta.getBoundingClientRect()
+    const hit = document.elementFromPoint(box.x + box.width / 2, box.y + box.height / 2)
+    return { top: panel.top, bottom: panel.bottom, headerBottom: header.bottom, vh: window.innerHeight, ctaOnTop: cta.contains(hit) }
+  })
+  expect(layout.top).toBeLessThanOrEqual(layout.headerBottom)
+  expect(layout.bottom).toBe(layout.vh)
+  expect(layout.ctaOnTop).toBe(true)
+})
+
 test('no horizontal overflow on the home page', async ({ page }) => {
   await page.goto('/')
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)

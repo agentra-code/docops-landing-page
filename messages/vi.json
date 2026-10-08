@@ -30,7 +30,7 @@
     "body": "Trang không tải được. Bấm thử lại, hoặc quay về trang chủ."
   },
   "consent": {
-    "text": "Trang này dùng cookie phân tích (Google Analytics) để hiểu cách bạn sử dụng site. Dữ liệu truy cập của Vercel không dùng cookie.",
+    "text": "Agentra DocOps dùng cookie Google Analytics để hiểu cán bộ cần gì và làm trang hữu ích hơn. Từ chối thì trang vẫn hoạt động đầy đủ.",
     "policy": "Chính sách bảo mật",
     "accept": "Đồng ý",
     "decline": "Từ chối"
