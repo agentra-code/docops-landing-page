@@ -10,6 +10,7 @@ const PAGES: Array<[string, 'vi' | 'en']> = [
   ['/lien-he', 'vi'], ['/en/contact', 'en'],
   ['/chinh-sach-bao-mat', 'vi'], ['/en/privacy', 'en'],
   ['/ra-soat-can-cu-phap-ly', 'vi'], ['/en/legal-basis-review', 'en'],
+  ['/ai-van-ban-co-quan-doanh-nghiep', 'vi'], ['/en/ai-for-organizations', 'en'],
   ['/soan-thao-van-ban-nghi-dinh-30', 'vi'], ['/en/decree-30-drafting', 'en'],
   ['/tra-cuu-van-ban-ai', 'vi'], ['/en/ai-document-search', 'en'],
   ['/chuyen-doi-so-van-thu-truong-dai-hoc', 'vi'], ['/en/ai-for-universities', 'en'],

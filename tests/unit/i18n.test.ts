@@ -12,7 +12,7 @@ describe('i18n', () => {
   test('pathnames cover every page in both locales', () => {
     const expected = [
       '/', '/download', '/install/[os]', '/how-it-works', '/ai-transparency', '/contact', '/privacy',
-      '/decree-30-drafting', '/legal-basis-review', '/ai-document-search', '/ai-for-universities',
+      '/decree-30-drafting', '/legal-basis-review', '/ai-document-search', '/ai-for-universities', '/ai-for-organizations',
     ]
     expect(Object.keys(routing.pathnames).sort()).toEqual([...expected].sort())
     for (const key of expected) {

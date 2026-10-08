@@ -385,4 +385,101 @@ export const TOPICS_EN: Record<TopicId, TopicCopy> = {
     ],
     share: { title: 'AI for universities', subtitle: 'From a folder of PDFs to a knowledge repository for every office' },
   },
+  'ai-for-organizations': {
+    name: 'Document AI for agencies and companies',
+    metaTitle: 'Document AI for agencies and companies',
+    description:
+      'DocOps reads, classifies, searches with citations and drafts Decree 30 documents for agencies, companies and associations, alongside your e-Office system.',
+    keywords: [
+      'administrative document AI for agencies and companies',
+      'AI for company document control',
+      'document AI for unions and organizations',
+      'internal company document search',
+      'internal document knowledge base',
+    ],
+    eyebrow: 'For agencies and companies',
+    h1: 'Administrative document AI for agencies and companies, under Decree 30',
+    lead:
+      'Which of your documents rest on a circular that has been replaced? What does the internal regulation say about this, and in which Article? DocOps answers from your own repository and drafts to the Decree 30 format, so clerical, administration and legal staff work faster and still review everything themselves.',
+    card: 'For people’s committees, departments, companies, unions and associations: your own repository, cited search, legal basis review, Decree 30 drafting.',
+    inShort:
+      'DocOps works for any organization that formats documents under Decree 30/2020/NĐ-CP, not just schools. The organization ingests PDF documents into its own repository on the machine, then searches with citations, reviews expired legal bases and drafts all 29 types of administrative document. DocOps runs alongside the incoming/outgoing document system already in use.',
+    definition: {
+      h2: 'Which organizations DocOps serves',
+      term: 'Agentra DocOps',
+      rest: 'is AI software for the administrative documents of universities, agencies, companies and organizations that format documents under Decree 30/2020/NĐ-CP on clerical work.',
+      paras: [
+        'Under Article 2 of the Decree, state agencies and organizations and state-owned enterprises apply it directly; political organizations, socio-political organizations, social organizations and socio-professional organizations apply it as appropriate, based on the Decree together with the regulations of the Communist Party and of the law. Non-state companies are not bound by it, but can adopt this format as the standard for internal documents.',
+        'Laws, decrees and circulars are not administrative documents, but DocOps tracks them as legal bases: which document cites which, and which has been replaced, repealed or not yet taken effect.',
+      ],
+    },
+    imageAlt: 'DocOps graph screen: an expired circular, the decision that rests on it and the documents pulled along, coloured by validity',
+    table: {
+      h2: 'Everyday clerical work: by hand and with DocOps',
+      caption: 'Comparison of how five common clerical tasks at agencies and companies are done by hand and with DocOps',
+      head: ['Task', 'By hand', 'With DocOps'],
+      rows: [
+        ['Find the internal rule on a matter', 'Open folder after folder, reread each document', 'Ask in plain words; the answer cites the number and Article, click to open the source document'],
+        ['Know which documents rest on a replaced circular', 'Remember or check by hand', 'Warnings across the whole repository: replaced, repealed, not yet in force'],
+        ['Draft a notice, decision or submission', 'Open an old document as a template, edit it line by line', 'Write one sentence of intent, get a draft in the right format, export to Word or PDF'],
+        ['Check the format of an incoming document', 'Check by eye', 'Check 9 format items, each marked passed, missing or needs review'],
+        ['Keep document knowledge when staff move on', 'Lives in the departed person’s head', 'A repository with numbers, validity and legal relations, building up year by year'],
+      ],
+    },
+    blocks: [
+      {
+        h2: 'What DocOps does for your organization',
+        items: [
+          { title: 'Ingest', text: 'PDF, scans included: pages are recognised one at a time, with the number, signing date, issuing body and subject extracted; staff confirm each document into the repository.' },
+          { title: 'Classify', text: 'files each document under one of the 29 types of administrative document in Decree 30.' },
+          { title: 'Search', text: 'full-text search without typing accents, plain-language questions and answers that cite the number and Article, see', link: { topic: 'ai-document-search' } },
+          { title: 'Legal basis review', text: 'warns about documents resting on bases that are replaced, repealed or not yet in force, see', link: { topic: 'legal-basis-review' } },
+          { title: 'Drafting', text: 'decisions, notices, submissions, plans, reports… from one sentence of intent, see', link: { topic: 'decree-30-drafting' } },
+          { title: 'Universities', text: 'get a dedicated section for academic affairs and academic regulations, see', link: { topic: 'ai-for-universities' } },
+        ],
+      },
+      {
+        h2: 'Runs alongside your document management system',
+        paras: [
+          'DocOps does not handle the incoming/outgoing document flow, submission for signature or digital signing. Your e-Office or document management software keeps that role unchanged.',
+          'DocOps works on document content: building a knowledge repository, cited search, legal basis review and drafting. Drafts export to Word or PDF to enter your existing issuance process.',
+        ],
+      },
+      {
+        h2: 'Where your organization’s data lives',
+        items: [
+          { text: 'The repository lives on the machine (a SQLite database); each organization has its own key and its own repository; backup and restore happen on the machine.' },
+          { text: 'AI steps (recognising scanned pages, classification, question answering, drafting) send content through the DocOps server to an AI model, by default Anthropic’s Claude. The server does not store the content.' },
+          { text: 'Details on how DocOps uses AI and protects data are on', link: { page: '/ai-transparency', label: 'AI and data transparency' } },
+        ],
+      },
+      {
+        h2: 'What DocOps does not do yet',
+        items: [
+          { text: 'It ingests PDF files only; Word files are usable in drafting (importing .docx into a draft).' },
+          { text: 'Communist Party documents and those of organizations with their own format guidance (no National Title or Motto) are not supported: the drafting template always includes the National Title and Motto, and the format check scores against Decree 30.' },
+          { text: 'It does not manage accounting vouchers such as invoices, receipts or payment vouchers.' },
+          { text: 'The app interface is in Vietnamese.' },
+        ],
+      },
+      {
+        h2: 'Getting started with DocOps',
+        ordered: true,
+        items: [
+          { text: 'Download and install DocOps for Windows or macOS on', link: { page: '/download', label: 'Download' } },
+          { text: 'Request a key for your organization in the app, or through', link: { page: '/contact', label: 'Contact' } },
+          { text: 'Fill in the organization details (parent body, issuing body, place name, signer) so drafts fill in the format parts automatically.' },
+          { text: 'Ingest the documents you rely on as bases and your internal documents, then confirm each one into the repository.' },
+        ],
+      },
+    ],
+    faq: [
+      { q: 'Can a private company use DocOps?', a: 'Yes. A key is not limited by type of organization. Decree 30 does not bind non-state companies, but if the organization formats documents this way, DocOps classifies, searches, reviews and drafts just as it does for state agencies.' },
+      { q: 'Does DocOps replace e-Office or an incoming/outgoing document system?', a: 'No. DocOps does not handle the incoming/outgoing flow, submission for signature or digital signing. It works on document content and exports drafts to Word or PDF to enter the process you already use.' },
+      { q: 'Can Communist Party documents or those with their own format be used?', a: 'Not yet. These documents do not use the National Title and Motto, while DocOps drafts and checks format under Decree 30, so they would be judged as missing components.' },
+      { q: 'Does DocOps manage accounting vouchers?', a: 'No. DocOps works with the 29 types of administrative document in Decree 30 and the legal documents they rest on. Invoices, receipts, payment vouchers and other accounting vouchers are out of scope.' },
+      { q: 'Where is the organization’s document data kept?', a: 'On your machine. The DocOps server only passes content to the AI model for steps that need AI and does not store it. Each organization has its own key and repository.' },
+    ],
+    share: { title: 'Agencies and companies', subtitle: 'Your own repository, cited search, Decree 30 drafting' },
+  },
 }

@@ -392,4 +392,101 @@ export const TOPICS_VI: Record<TopicId, TopicCopy> = {
     ],
     share: { title: 'Chuyển đổi số văn thư', subtitle: 'Từ thư mục PDF tới kho tri thức cho mọi phòng ban của trường đại học' },
   },
+  'ai-for-organizations': {
+    name: 'AI văn bản cho cơ quan, doanh nghiệp',
+    metaTitle: 'AI văn bản cho cơ quan, doanh nghiệp',
+    description:
+      'DocOps đọc, phân loại, tra cứu có trích dẫn và soạn nháp văn bản theo Nghị định 30 cho cơ quan, doanh nghiệp, đoàn thể. Chạy song song với hệ thống e-Office.',
+    keywords: [
+      'phần mềm AI văn bản hành chính cho cơ quan, doanh nghiệp',
+      'AI cho văn thư doanh nghiệp',
+      'phần mềm AI văn bản cho đoàn thể, tổ chức',
+      'tra cứu văn bản nội bộ doanh nghiệp',
+      'kho tri thức văn bản nội bộ',
+    ],
+    eyebrow: 'Giải pháp cho cơ quan, doanh nghiệp',
+    h1: 'Phần mềm AI văn bản hành chính cho cơ quan, doanh nghiệp và tổ chức',
+    lead:
+      'Văn bản nào của đơn vị đang dựa trên thông tư đã bị thay thế? Quy định nội bộ nói gì về việc này, ở Điều mấy? DocOps trả lời từ chính kho văn bản của bạn và soạn nháp đúng thể thức Nghị định 30, để văn thư, hành chính và pháp chế làm nhanh hơn mà vẫn tự duyệt.',
+    card: 'Cho UBND, sở ngành, doanh nghiệp, đoàn thể và hội: kho văn bản riêng, tra cứu có trích dẫn, rà soát căn cứ, soạn theo Nghị định 30.',
+    inShort:
+      'DocOps dùng được cho mọi đơn vị trình bày văn bản theo Nghị định 30/2020/NĐ-CP, không riêng trường học. Đơn vị nạp văn bản PDF vào kho riêng trên máy, rồi tra cứu có trích dẫn, rà soát căn cứ hết hiệu lực và soạn nháp 29 loại văn bản hành chính. DocOps chạy song song với hệ thống quản lý văn bản đi – đến đang dùng.',
+    definition: {
+      h2: 'DocOps phục vụ những đơn vị nào',
+      term: 'Agentra DocOps',
+      rest: 'là phần mềm AI cho văn bản hành chính của trường đại học, cơ quan, doanh nghiệp và tổ chức trình bày văn bản theo Nghị định 30/2020/NĐ-CP về công tác văn thư.',
+      paras: [
+        'Theo Điều 2 của Nghị định, cơ quan, tổ chức nhà nước và doanh nghiệp nhà nước áp dụng trực tiếp; tổ chức chính trị, tổ chức chính trị - xã hội, tổ chức xã hội, tổ chức xã hội - nghề nghiệp căn cứ Nghị định cùng các quy định của Đảng, của pháp luật để áp dụng cho phù hợp. Doanh nghiệp ngoài nhà nước không thuộc đối tượng bắt buộc, nhưng có thể lấy thể thức này làm chuẩn cho văn bản nội bộ.',
+        'Luật, nghị định và thông tư không phải văn bản hành chính, nhưng DocOps theo dõi chúng như căn cứ: văn bản nào dẫn văn bản nào, văn bản nào đã bị thay thế, bãi bỏ hoặc chưa có hiệu lực.',
+      ],
+    },
+    imageAlt: 'Màn Đồ thị của DocOps: một thông tư hết hiệu lực, quyết định đang đứng trên nó và các văn bản bị kéo theo, tô màu theo hiệu lực',
+    table: {
+      h2: 'Việc văn thư hằng ngày: làm tay và với DocOps',
+      caption: 'So sánh cách làm năm việc văn thư thường gặp ở cơ quan, doanh nghiệp, khi làm tay và khi dùng DocOps',
+      head: ['Việc', 'Làm tay', 'Với DocOps'],
+      rows: [
+        ['Tìm quy định nội bộ về một việc', 'Mở từng thư mục, đọc lại từng văn bản', 'Hỏi bằng lời, câu trả lời dẫn số hiệu và Điều, bấm vào mở văn bản gốc'],
+        ['Biết văn bản nào dựa trên thông tư đã bị thay thế', 'Nhớ hoặc dò lại bằng tay', 'Cảnh báo trên toàn kho: bị thay thế, bãi bỏ, chưa có hiệu lực'],
+        ['Soạn thông báo, quyết định, tờ trình', 'Mở văn bản cũ làm mẫu, sửa từng chỗ', 'Viết một câu ý chính, nhận bản nháp đúng thể thức, xuất Word hoặc PDF'],
+        ['Kiểm tra thể thức văn bản đến', 'Soát bằng mắt', 'Kiểm 9 mục thể thức, mỗi mục đạt, thiếu hoặc cần xem'],
+        ['Giữ hiểu biết về văn bản khi cán bộ chuyển công tác', 'Nằm trong đầu người cũ', 'Kho có số hiệu, hiệu lực, quan hệ pháp lý, tích luỹ theo năm'],
+      ],
+    },
+    blocks: [
+      {
+        h2: 'DocOps làm gì cho đơn vị của bạn',
+        items: [
+          { title: 'Nạp văn bản', text: 'PDF kể cả bản quét: nhận dạng từng trang, bóc số hiệu, ngày ký, cơ quan ban hành và trích yếu; cán bộ chốt từng văn bản vào kho.' },
+          { title: 'Phân loại', text: 'xếp vào 29 loại văn bản hành chính của Nghị định 30.' },
+          { title: 'Tra cứu', text: 'tìm toàn văn không cần gõ dấu, hỏi bằng lời và nhận câu trả lời dẫn số hiệu, Điều, xem', link: { topic: 'ai-document-search' } },
+          { title: 'Rà soát căn cứ', text: 'cảnh báo văn bản đang dựa trên căn cứ bị thay thế, bãi bỏ hoặc chưa có hiệu lực, xem', link: { topic: 'legal-basis-review' } },
+          { title: 'Soạn nháp', text: 'quyết định, thông báo, tờ trình, kế hoạch, báo cáo… từ một câu ý chính, xem', link: { topic: 'decree-30-drafting' } },
+          { title: 'Trường đại học', text: 'có thêm phần riêng cho phòng đào tạo và quy chế học vụ, xem', link: { topic: 'ai-for-universities' } },
+        ],
+      },
+      {
+        h2: 'Chạy cùng hệ thống quản lý văn bản đang dùng',
+        paras: [
+          'DocOps không xử lý luồng văn bản đi – đến, trình ký hay ký số. Hệ thống e-Office hoặc phần mềm quản lý văn bản điều hành của đơn vị vẫn giữ nguyên vai trò đó.',
+          'DocOps làm việc trên nội dung văn bản: xây kho tri thức, tra cứu có trích dẫn, rà soát căn cứ và soạn nháp. Bản nháp xuất ra Word hoặc PDF để đưa vào quy trình ban hành hiện có.',
+        ],
+      },
+      {
+        h2: 'Dữ liệu của đơn vị ở đâu',
+        items: [
+          { text: 'Kho văn bản nằm trên máy (cơ sở dữ liệu SQLite); mỗi đơn vị một key và một kho riêng; sao lưu và khôi phục tại máy.' },
+          { text: 'Các bước AI (nhận dạng trang quét, phân loại, hỏi đáp, soạn nháp) gửi nội dung qua máy chủ DocOps tới mô hình AI, mặc định là Claude của Anthropic. Máy chủ không lưu nội dung.' },
+          { text: 'Chi tiết cách DocOps dùng AI và bảo vệ dữ liệu ở trang', link: { page: '/ai-transparency', label: 'Minh bạch AI' } },
+        ],
+      },
+      {
+        h2: 'Những gì DocOps chưa làm',
+        items: [
+          { text: 'Chỉ nạp tệp PDF; tệp Word dùng được khi soạn thảo (nhập .docx vào bản nháp).' },
+          { text: 'Văn bản của Đảng và của tổ chức có hướng dẫn thể thức riêng (không dùng Quốc hiệu, Tiêu ngữ) chưa được hỗ trợ: khuôn soạn thảo luôn có Quốc hiệu, Tiêu ngữ và phần kiểm tra thể thức chấm theo Nghị định 30.' },
+          { text: 'Không quản lý chứng từ kế toán như hoá đơn, phiếu thu, phiếu chi.' },
+          { text: 'Giao diện ứng dụng bằng tiếng Việt.' },
+        ],
+      },
+      {
+        h2: 'Bắt đầu với DocOps',
+        ordered: true,
+        items: [
+          { text: 'Tải và cài DocOps cho Windows hoặc macOS ở trang', link: { page: '/download', label: 'Tải về' } },
+          { text: 'Xin key cho đơn vị ngay trong ứng dụng, hoặc qua trang', link: { page: '/contact', label: 'Liên hệ' } },
+          { text: 'Điền Thông tin đơn vị (cơ quan chủ quản, cơ quan ban hành, địa danh, người ký) để bản nháp tự điền phần thể thức.' },
+          { text: 'Nạp các văn bản đang dùng làm căn cứ và văn bản nội bộ, rồi chốt từng văn bản vào kho.' },
+        ],
+      },
+    ],
+    faq: [
+      { q: 'Doanh nghiệp tư nhân dùng DocOps được không?', a: 'Được. Key không giới hạn loại đơn vị. Nghị định 30 không bắt buộc doanh nghiệp ngoài nhà nước, nhưng nếu đơn vị trình bày văn bản theo thể thức này thì DocOps phân loại, tra cứu, rà soát và soạn nháp được như với cơ quan nhà nước.' },
+      { q: 'DocOps có thay e-Office hay phần mềm quản lý văn bản đi – đến không?', a: 'Không. DocOps không xử lý luồng văn bản đi – đến, trình ký hay ký số. DocOps làm việc trên nội dung văn bản và xuất bản nháp ra Word hoặc PDF để đưa vào quy trình đang dùng.' },
+      { q: 'Văn bản của Đảng hoặc tổ chức có thể thức riêng có dùng được không?', a: 'Chưa. Những văn bản này không dùng Quốc hiệu và Tiêu ngữ, trong khi DocOps soạn và kiểm tra thể thức theo Nghị định 30, nên chúng sẽ bị đánh giá là thiếu thành phần.' },
+      { q: 'DocOps có quản lý chứng từ kế toán không?', a: 'Không. DocOps làm việc với 29 loại văn bản hành chính của Nghị định 30 và văn bản pháp luật làm căn cứ. Hoá đơn, phiếu thu, phiếu chi và chứng từ kế toán khác không thuộc phạm vi.' },
+      { q: 'Dữ liệu văn bản của đơn vị nằm ở đâu?', a: 'Trên máy của bạn. Máy chủ DocOps chỉ chuyển nội dung tới mô hình AI ở các bước cần AI và không lưu nội dung. Mỗi đơn vị có key và kho riêng.' },
+    ],
+    share: { title: 'Cho cơ quan, doanh nghiệp', subtitle: 'Kho văn bản riêng, tra cứu có trích dẫn, soạn theo Nghị định 30' },
+  },
 }

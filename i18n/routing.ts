@@ -18,6 +18,7 @@ export const routing = defineRouting({
     '/legal-basis-review': { vi: '/ra-soat-can-cu-phap-ly', en: '/legal-basis-review' },
     '/ai-document-search': { vi: '/tra-cuu-van-ban-ai', en: '/ai-document-search' },
     '/ai-for-universities': { vi: '/chuyen-doi-so-van-thu-truong-dai-hoc', en: '/ai-for-universities' },
+    '/ai-for-organizations': { vi: '/ai-van-ban-co-quan-doanh-nghiep', en: '/ai-for-organizations' },
   },
 })
 
