@@ -8,7 +8,7 @@ import { TOPICS_VI } from './vi'
  * sitemap, footer, thẻ hub trên trang chủ, llms.txt, JSON-LD và link "Xem thêm". Thêm chủ đề = thêm một phần tử
  * ở đây + một khoá trong `routing.pathnames` + thư mục route mỏng trong app/[locale].
  */
-export const TOPIC_IDS = ['legal-basis-review', 'decree-30-drafting', 'ai-document-search', 'ai-for-universities', 'ai-for-organizations', 'administrative-document-types'] as const
+export const TOPIC_IDS = ['legal-basis-review', 'decree-30-drafting', 'ai-document-search', 'ai-for-universities', 'ai-for-organizations', 'administrative-document-types', 'administrative-document-format'] as const
 export type TopicId = (typeof TOPIC_IDS)[number]
 
 export const topicPage = (id: TopicId) => `/${id}` as const satisfies PageKey
@@ -26,6 +26,7 @@ export const TOPIC_META: Record<TopicId, { icon: IconName; image: string; update
   'ai-for-universities': { icon: 'book', image: '/images/product/khovanban.webp', updated: '2026-10-04', group: 'audience' },
   'ai-for-organizations': { icon: 'archive', image: '/images/product/dothi.webp', updated: '2026-10-08', group: 'audience' },
   'administrative-document-types': { icon: 'file', image: '/images/product/soanthao.webp', updated: '2026-10-08', group: 'guide' },
+  'administrative-document-format': { icon: 'tag', image: '/images/product/soanthao.webp', updated: '2026-10-08', group: 'guide' },
 }
 
 /** Trang chủ đề theo nhóm, đúng thứ tự TOPIC_GROUPS rồi TOPIC_IDS; bỏ trang `exclude` và nhóm rỗng. */
