@@ -44,7 +44,8 @@
     "installWindows": "Cài đặt trên Windows",
     "privacy": "Chính sách bảo mật",
     "copyright": "© {year} Agentra JSC · Đà Nẵng, Việt Nam",
-    "solutions": "Giải pháp"
+    "solutions": "Giải pháp",
+    "guides": "Kiến thức văn thư"
   },
   "home": {
     "hero": {
@@ -462,6 +463,7 @@
     }
   },
   "topics": {
+    "groups": { "feature": "Tính năng", "audience": "Theo loại đơn vị", "guide": "Kiến thức văn thư" },
     "breadcrumb": "Đường dẫn",
     "updated": "Cập nhật ngày {date}",
     "inShort": "Tóm lại",

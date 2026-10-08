@@ -37,6 +37,13 @@ function InlineLink({ link, locale }: { link: TopicLink; locale: Locale }) {
       </Link>
     )
   }
+  if ('href' in link) {
+    return (
+      <a href={link.href} className={cls} rel="noopener">
+        {link.label}
+      </a>
+    )
+  }
   return (
     <Link href={link.page} className={cls}>
       {link.label}

@@ -96,8 +96,9 @@ export function llmsTxt(input: LlmsInput): string {
   return `${lines.join('\n')}\n`
 }
 
-function linkText(locale: Locale, link: TopicLink): string {
+export function linkText(locale: Locale, link: TopicLink): string {
   if ('topic' in link) return `${topicCopy(locale, link.topic).name} (${absoluteUrl(locale, topicPage(link.topic))})`
+  if ('href' in link) return `${link.label} (${link.href})`
   return `${link.label} (${absoluteUrl(locale, link.page)})`
 }
 

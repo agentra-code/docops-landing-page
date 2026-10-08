@@ -14,16 +14,30 @@ export type TopicId = (typeof TOPIC_IDS)[number]
 export const topicPage = (id: TopicId) => `/${id}` as const satisfies PageKey
 export const isTopicPage = (page: string): page is `/${TopicId}` => TOPIC_IDS.some((id) => page === `/${id}`)
 
+/** Nhóm thẻ trên hub và footer: tính năng, theo loại đơn vị, kiến thức văn thư (thứ tự hiển thị). */
+export const TOPIC_GROUPS = ['feature', 'audience', 'guide'] as const
+export type TopicGroup = (typeof TOPIC_GROUPS)[number]
+
 /** Dữ liệu không đổi theo ngôn ngữ. `updated` là ngày nội dung đổi thật (sitemap, JSON-LD, dòng "Cập nhật"). */
-export const TOPIC_META: Record<TopicId, { icon: IconName; image: string; updated: string }> = {
-  'legal-basis-review': { icon: 'graph', image: '/images/product/rasoat.webp', updated: '2026-10-04' },
-  'decree-30-drafting': { icon: 'pen', image: '/images/product/soanthao.webp', updated: '2026-10-04' },
-  'ai-document-search': { icon: 'search', image: '/images/product/tracuu.webp', updated: '2026-10-04' },
-  'ai-for-universities': { icon: 'book', image: '/images/product/khovanban.webp', updated: '2026-10-04' },
+export const TOPIC_META: Record<TopicId, { icon: IconName; image: string; updated: string; group: TopicGroup }> = {
+  'legal-basis-review': { icon: 'graph', image: '/images/product/rasoat.webp', updated: '2026-10-04', group: 'feature' },
+  'decree-30-drafting': { icon: 'pen', image: '/images/product/soanthao.webp', updated: '2026-10-04', group: 'feature' },
+  'ai-document-search': { icon: 'search', image: '/images/product/tracuu.webp', updated: '2026-10-04', group: 'feature' },
+  'ai-for-universities': { icon: 'book', image: '/images/product/khovanban.webp', updated: '2026-10-04', group: 'audience' },
 }
 
-/** Link nội bộ trong thân bài: tới trang chủ đề khác (anchor = từ khoá chính của nó) hoặc trang sản phẩm. */
-export type TopicLink = { topic: TopicId } | { page: Exclude<PageKey, '/install/[os]'>; label: string }
+/** Trang chủ đề theo nhóm, đúng thứ tự TOPIC_GROUPS rồi TOPIC_IDS; bỏ trang `exclude` và nhóm rỗng. */
+export function topicsByGroup(exclude?: TopicId): Array<{ group: TopicGroup; ids: TopicId[] }> {
+  return TOPIC_GROUPS.map((group) => ({ group, ids: TOPIC_IDS.filter((id) => id !== exclude && TOPIC_META[id].group === group) })).filter(
+    (g) => g.ids.length > 0,
+  )
+}
+
+/** Link trong thân bài: trang chủ đề khác (anchor = từ khoá chính của nó), trang sản phẩm, hoặc nguồn bên ngoài. */
+export type TopicLink =
+  | { topic: TopicId }
+  | { page: Exclude<PageKey, '/install/[os]'>; label: string }
+  | { href: `https://${string}`; label: string }
 
 export type TopicBlock = {
   h2: string

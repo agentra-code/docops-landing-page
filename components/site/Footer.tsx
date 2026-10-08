@@ -1,7 +1,7 @@
 import { useLocale, useTranslations } from 'next-intl'
 import { Container } from '@/components/ui/Container'
 import { LogoMark } from '@/components/ui/Logo'
-import { TOPIC_IDS, topicCopy, topicPage } from '@/content/topics'
+import { topicCopy, topicPage, topicsByGroup } from '@/content/topics'
 import { Link } from '@/i18n/navigation'
 import type { Locale } from '@/i18n/routing'
 import { site } from '@/lib/site'
@@ -14,11 +14,14 @@ export function Footer() {
   const tn = useTranslations('nav')
   const tc = useTranslations('common')
   const locale = useLocale() as Locale
+  const groups = topicsByGroup()
+  const solutionIds = groups.filter((g) => g.group !== 'guide').flatMap((g) => g.ids)
+  const guideIds = groups.find((g) => g.group === 'guide')?.ids ?? []
   return (
     <footer className="border-t border-line bg-sidebar pt-14 pb-8 md:pt-16">
       <Container>
-        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-[1.5fr_repeat(4,minmax(0,1fr))] md:gap-12">
-          <div className="flex max-w-[360px] flex-col gap-4 sm:col-span-2 md:col-span-1">
+        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3 md:gap-12 lg:grid-cols-[1.5fr_repeat(5,minmax(0,1fr))]">
+          <div className="flex max-w-[360px] flex-col gap-4 sm:col-span-2 md:col-span-3 lg:col-span-1">
             <Link href="/" className="flex items-center gap-2.5 text-ink">
               <LogoMark size={26} />
               <span className="text-[17px] font-bold">{tc('siteName')}</span>
@@ -29,12 +32,21 @@ export function Footer() {
             </p>
           </div>
           <FooterColumn title={t('solutions')}>
-            {TOPIC_IDS.map((id) => (
+            {solutionIds.map((id) => (
               <Link key={id} href={topicPage(id)} className={linkClass}>
                 {topicCopy(locale, id).name}
               </Link>
             ))}
           </FooterColumn>
+          {guideIds.length > 0 ? (
+            <FooterColumn title={t('guides')}>
+              {guideIds.map((id) => (
+                <Link key={id} href={topicPage(id)} className={linkClass}>
+                  {topicCopy(locale, id).name}
+                </Link>
+              ))}
+            </FooterColumn>
+          ) : null}
           <FooterColumn title={t('product')}>
             <Link href="/download" className={linkClass}>{tn('download')}</Link>
             <Link href={{ pathname: '/install/[os]', params: { os: 'macos' } }} className={linkClass}>{t('installMacos')}</Link>

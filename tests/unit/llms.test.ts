@@ -1,7 +1,7 @@
 import { beforeAll, expect, test } from 'vitest'
 import { TOPIC_IDS, TOPICS } from '@/content/topics'
 import { brand } from '@/lib/seo/brand'
-import { homeFaq, llmsFullTxt, llmsTxt, type LlmsInput } from '@/lib/seo/llms'
+import { homeFaq, linkText, llmsFullTxt, llmsTxt, type LlmsInput } from '@/lib/seo/llms'
 
 const SITE = 'https://docops.agentra.io.vn'
 const input: LlmsInput = {
@@ -47,4 +47,10 @@ test('llms-full.txt carries the topic pages and the home FAQ as rendered', () =>
   const [q0] = homeFaq('vi')
   expect(q0.a.startsWith(brand.description.vi)).toBe(true)
   expect(full).not.toContain('{description}')
+})
+
+test('external links keep their own URL in llms-full.txt', () => {
+  expect(linkText('vi', { href: 'https://help.openai.com/en/articles/7730893-data-controls-faq', label: 'Data Controls FAQ' })).toBe(
+    'Data Controls FAQ (https://help.openai.com/en/articles/7730893-data-controls-faq)',
+  )
 })
