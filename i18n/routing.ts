@@ -19,6 +19,7 @@ export const routing = defineRouting({
     '/ai-document-search': { vi: '/tra-cuu-van-ban-ai', en: '/ai-document-search' },
     '/ai-for-universities': { vi: '/chuyen-doi-so-van-thu-truong-dai-hoc', en: '/ai-for-universities' },
     '/ai-for-organizations': { vi: '/ai-van-ban-co-quan-doanh-nghiep', en: '/ai-for-organizations' },
+    '/administrative-document-types': { vi: '/cac-loai-van-ban-hanh-chinh', en: '/administrative-document-types' },
   },
 })
 

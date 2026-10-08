@@ -36,3 +36,10 @@ test('no horizontal overflow on the home page', async ({ page }) => {
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)
   expect(overflow).toBeLessThanOrEqual(0)
 })
+
+test('the 29-type table scrolls inside its box, not the page', async ({ page }) => {
+  await page.goto('/cac-loai-van-ban-hanh-chinh')
+  await expect(page.locator('table tbody tr')).toHaveCount(29)
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)
+  expect(overflow).toBeLessThanOrEqual(0)
+})

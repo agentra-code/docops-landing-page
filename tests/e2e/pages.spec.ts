@@ -14,6 +14,7 @@ const PAGES: Array<[string, 'vi' | 'en']> = [
   ['/soan-thao-van-ban-nghi-dinh-30', 'vi'], ['/en/decree-30-drafting', 'en'],
   ['/tra-cuu-van-ban-ai', 'vi'], ['/en/ai-document-search', 'en'],
   ['/chuyen-doi-so-van-thu-truong-dai-hoc', 'vi'], ['/en/ai-for-universities', 'en'],
+  ['/cac-loai-van-ban-hanh-chinh', 'vi'], ['/en/administrative-document-types', 'en'],
 ]
 
 for (const [path, lang] of PAGES) {
