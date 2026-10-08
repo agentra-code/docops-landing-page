@@ -11,12 +11,12 @@ export const TOPICS_VI: Record<TopicId, TopicCopy> = {
     name: 'Rà soát căn cứ pháp lý',
     metaTitle: 'Rà soát căn cứ pháp lý hết hiệu lực bằng AI',
     description:
-      'Rà soát căn cứ pháp lý bị thay thế, bãi bỏ hoặc chưa có hiệu lực trong văn bản của trường, xem tại một ngày bất kỳ và đánh giá tác động trước khi sửa.',
+      'Rà soát căn cứ pháp lý bị thay thế, bãi bỏ hoặc chưa có hiệu lực trong văn bản của đơn vị, xem tại một ngày bất kỳ và đánh giá tác động trước khi sửa.',
     keywords: ['rà soát căn cứ pháp lý', 'văn bản hết hiệu lực', 'kiểm tra hiệu lực văn bản', 'đánh giá tác động văn bản', 'đồ thị quan hệ pháp lý'],
     eyebrow: 'Văn bản hết hiệu lực',
-    h1: 'Rà soát căn cứ pháp lý hết hiệu lực trong văn bản của trường',
+    h1: 'Rà soát căn cứ pháp lý hết hiệu lực trong văn bản của đơn vị',
     lead:
-      'Khi Bộ ban hành thông tư mới, quy chế và quyết định của trường có thể đang đứng trên căn cứ đã bị thay thế. DocOps dò toàn bộ kho, chỉ ra văn bản nào cần sửa và vì sao, kèm câu gốc làm bằng chứng.',
+      'Khi thông tư, nghị định mới được ban hành, quy chế và quyết định của đơn vị có thể đang đứng trên căn cứ đã bị thay thế. DocOps dò toàn bộ kho, chỉ ra văn bản nào cần sửa và vì sao, kèm câu gốc làm bằng chứng.',
     card: 'Tìm văn bản đang dựa trên căn cứ bị thay thế, bãi bỏ hoặc chưa có hiệu lực, và biết sửa một Điều thì kéo theo những gì.',
     inShort:
       'Rà soát căn cứ pháp lý là kiểm tra xem mỗi văn bản của đơn vị có đang viện dẫn văn bản đã bị thay thế, bãi bỏ hay chưa có hiệu lực không. DocOps làm việc này trên toàn kho, tính lại theo bất kỳ ngày nào bạn chọn, và đo trước một Điều đang được bao nhiêu chỗ trong kho dựa vào.',
@@ -62,25 +62,25 @@ export const TOPICS_VI: Record<TopicId, TopicCopy> = {
       {
         h2: 'Bán kính ảnh hưởng: sửa một Điều thì phải rà lại những gì',
         paras: [
-          'Rà soát trả lời câu hỏi sau khi luật đã đổi. Bán kính ảnh hưởng trả lời câu hỏi trước khi đổi: một Điều đang gánh bao nhiêu nghĩa vụ, con số chốt (số tín chỉ, số năm, tỉ lệ, mức thu), cổng chặn và ngưỡng học vụ trong kho.',
+          'Rà soát trả lời câu hỏi sau khi luật đã đổi. Bán kính ảnh hưởng trả lời câu hỏi trước khi đổi: một Điều đang gánh bao nhiêu con số chốt (số năm, tỉ lệ, mức thu, số tín chỉ), cổng chặn và ngưỡng trong kho.',
           'DocOps đếm số dòng nghiệp vụ viện dẫn từng Điều và vẽ mỗi Điều thành một bong bóng; bong bóng càng to thì càng nhiều chỗ phải rà lại khi sửa. Phép đếm chạy tại máy, tất định, không gọi AI và không tốn token. Trên kho mẫu đi kèm sản phẩm (104 văn bản, 206 Điều, 280 quan hệ), Điều nặng nhất đang được 12 dòng nghiệp vụ viện dẫn.',
         ],
       },
       {
         h2: 'Phần nào dùng AI, phần nào chạy tại máy',
         items: [
-          { title: 'Dùng AI', text: 'đọc văn bản, bóc các quan hệ dẫn chiếu và bốn lớp nghiệp vụ từ nội dung.' },
+          { title: 'Dùng AI', text: 'đọc văn bản, bóc các quan hệ dẫn chiếu và ba lớp nghiệp vụ (con số chốt, cổng chặn, ngưỡng) từ nội dung.' },
           { title: 'Chạy tại máy, không qua AI', text: 'cảnh báo hiệu lực, tính lại theo ngày, lan truyền tác động và bán kính ảnh hưởng. Cùng một kho thì luôn cho cùng một kết quả.' },
           { text: 'Câu hỏi bằng lời về một văn bản cụ thể được trả lời ở', link: { topic: 'ai-document-search' } },
           { text: 'Khi soạn văn bản mới, căn cứ đã hết hiệu lực được đánh dấu ngay trong bản nháp:', link: { topic: 'decree-30-drafting' } },
         ],
       },
       {
-        h2: 'Bắt đầu rà soát kho văn bản của trường',
+        h2: 'Bắt đầu rà soát kho văn bản của đơn vị',
         ordered: true,
         items: [
           { text: 'Tải DocOps cho Windows hoặc macOS và kích hoạt bằng key của đơn vị.' },
-          { text: 'Nạp các văn bản PDF đang dùng làm căn cứ: thông tư, quyết định của Bộ và văn bản nội bộ của trường.' },
+          { text: 'Nạp các văn bản PDF đang dùng làm căn cứ: thông tư, quyết định của cơ quan cấp trên và văn bản nội bộ của đơn vị.' },
           { text: 'Chốt từng văn bản vào kho và duyệt các quan hệ có độ tin cậy thấp.' },
           { text: 'Mở màn Rà soát, đặt "Hiệu lực tại ngày" và xử lý từng cảnh báo; đánh dấu Đã xử lý khi xong.' },
         ],
@@ -116,7 +116,7 @@ export const TOPICS_VI: Record<TopicId, TopicCopy> = {
     metaTitle: 'Soạn thảo văn bản theo Nghị định 30 bằng AI',
     description:
       'Soạn thảo 29 loại văn bản hành chính theo Nghị định 30/2020/NĐ-CP từ một câu ý chính, tự điền thông tin đơn vị, đánh dấu căn cứ hết hiệu lực, xuất Word và PDF.',
-    keywords: ['soạn thảo văn bản theo Nghị định 30', 'AI soạn thảo văn bản hành chính', 'thể thức văn bản hành chính', 'mẫu văn bản Nghị định 30', 'kiểm tra thể thức văn bản'],
+    keywords: ['soạn thảo văn bản theo Nghị định 30', 'AI soạn thảo văn bản hành chính', 'mẫu văn bản Nghị định 30', 'soạn quyết định, tờ trình, thông báo bằng AI'],
     eyebrow: 'AI soạn thảo văn bản hành chính',
     h1: 'Soạn thảo văn bản theo Nghị định 30 bằng AI, cán bộ sửa và ký',
     lead:
@@ -176,7 +176,10 @@ export const TOPICS_VI: Record<TopicId, TopicCopy> = {
         paras: [
           'Với văn bản đã nạp vào kho, DocOps kiểm tra 9 thành phần thể thức: quốc hiệu, tiêu ngữ, tên cơ quan, số hiệu, địa danh và ngày tháng, trích yếu, nơi nhận, chữ ký và dấu. Mỗi thành phần được đánh giá đạt, thiếu hoặc cần xem, cùng một kết luận chung đạt, cần xem hoặc không đạt.',
         ],
-        items: [{ text: 'Khi cần tìm một quy định để viện dẫn, hỏi thẳng kho văn bản ở trang', link: { topic: 'ai-document-search' } }],
+        items: [
+          { text: 'Khi cần tìm một quy định để viện dẫn, hỏi thẳng kho văn bản ở trang', link: { topic: 'ai-document-search' } },
+          { text: 'Toàn bộ thành phần thể thức và kỹ thuật trình bày theo Nghị định 30 có ở trang', link: { topic: 'administrative-document-format' } },
+        ],
       },
     ],
     faq: [
@@ -208,13 +211,13 @@ export const TOPICS_VI: Record<TopicId, TopicCopy> = {
     name: 'Tra cứu văn bản bằng AI',
     metaTitle: 'Tra cứu văn bản bằng AI, có trích dẫn nguồn',
     description:
-      'Hỏi bằng lời trên kho văn bản của trường, nhận câu trả lời trích dẫn số hiệu và Điều. Tìm toàn văn không cần gõ dấu, 10.000 văn bản trong 0,01 giây.',
+      'Hỏi bằng lời trên kho văn bản của đơn vị, nhận câu trả lời trích dẫn số hiệu và Điều. Tìm toàn văn không cần gõ dấu, 10.000 văn bản trong 0,01 giây.',
     keywords: ['tra cứu văn bản bằng AI', 'hỏi đáp văn bản có trích dẫn', 'tìm kiếm văn bản nội bộ', 'tra cứu quy chế trường đại học', 'tìm văn bản không dấu'],
     eyebrow: 'Hỏi đáp có trích dẫn',
     h1: 'Tra cứu văn bản bằng AI, mỗi câu trả lời đều chỉ ra số hiệu và Điều',
     lead:
-      'Hỏi DocOps như hỏi một đồng nghiệp nắm hết quy chế của trường. Câu trả lời chỉ lấy từ kho văn bản của đơn vị, dẫn đúng số hiệu và Điều, bấm vào là mở văn bản gốc.',
-    card: 'Hỏi bằng lời trên kho văn bản của trường, câu trả lời dẫn số hiệu và Điều; tìm toàn văn không cần gõ dấu.',
+      'Hỏi DocOps như hỏi một đồng nghiệp nắm hết quy chế, quy định của đơn vị. Câu trả lời chỉ lấy từ kho văn bản của đơn vị, dẫn đúng số hiệu và Điều, bấm vào là mở văn bản gốc.',
+    card: 'Hỏi bằng lời trên kho văn bản của đơn vị, câu trả lời dẫn số hiệu và Điều; tìm toàn văn không cần gõ dấu.',
     inShort:
       'DocOps có hai cách tra cứu: tìm toàn văn không cần gõ dấu, và hỏi đáp bằng ngôn ngữ tự nhiên. Câu trả lời chỉ dựa trên kho văn bản của đơn vị, trích dẫn số hiệu và Điều, và nói rõ khi kho chưa có văn bản cần thiết thay vì đoán.',
     definition: {
@@ -261,7 +264,7 @@ export const TOPICS_VI: Record<TopicId, TopicCopy> = {
       {
         h2: 'Tra theo lớp nghiệp vụ',
         paras: [
-          'Ngoài kết quả tìm kiếm, màn Tra cứu có các thẻ Ngưỡng và con số, Cổng chặn và Việc theo đơn vị. Đây là các dòng nghiệp vụ AI đã bóc từ văn bản lúc nạp, mỗi dòng ghi rõ lấy từ Điều nào của văn bản nào. Phòng đào tạo có thể xem ngay mọi ngưỡng học vụ và con số chốt mà không phải mở từng quy chế.',
+          'Ngoài kết quả tìm kiếm, màn Tra cứu có thẻ Ngưỡng & con số và thẻ Cổng chặn. Đây là các dòng nghiệp vụ AI đã bóc từ văn bản lúc nạp, mỗi dòng ghi rõ lấy từ Điều nào của văn bản nào. Ở trường đại học, phòng đào tạo xem ngay mọi ngưỡng học vụ và con số chốt mà không phải mở từng quy chế.',
         ],
         items: [{ text: 'Các dòng nghiệp vụ này cũng là đầu vào cho bán kính ảnh hưởng ở trang', link: { topic: 'legal-basis-review' } }],
       },
@@ -295,7 +298,7 @@ export const TOPICS_VI: Record<TopicId, TopicCopy> = {
         a: 'Kho văn bản và lịch sử hỏi đáp lưu tại máy. Khi hỏi, DocOps gửi kèm câu hỏi một gói ngữ cảnh trích từ kho qua máy chủ DocOps tới nhà cung cấp mô hình AI để tạo câu trả lời.',
       },
     ],
-    share: { title: 'Tra cứu văn bản bằng AI', subtitle: 'Câu trả lời chỉ từ kho của trường, trích dẫn số hiệu và Điều' },
+    share: { title: 'Tra cứu văn bản bằng AI', subtitle: 'Câu trả lời chỉ từ kho của đơn vị, trích dẫn số hiệu và Điều' },
   },
 
   'ai-for-universities': {
@@ -327,7 +330,7 @@ export const TOPICS_VI: Record<TopicId, TopicCopy> = {
       rows: [
         ['Thông tin của văn bản', 'Tên tệp do người đặt', 'Số hiệu, ngày ký, cơ quan ban hành, trích yếu, loại văn bản'],
         ['Quan hệ giữa văn bản', 'Không có', 'Căn cứ, hướng dẫn, sửa đổi, thay thế, bãi bỏ, kèm câu gốc'],
-        ['Con số và ngưỡng', 'Phải mở từng tệp', 'Ngưỡng và con số, cổng chặn, việc theo đơn vị tra được ngay'],
+        ['Con số và ngưỡng', 'Phải mở từng tệp', 'Ngưỡng và con số, cổng chặn tra được ngay'],
         ['Tra cứu', 'Tìm theo tên tệp', 'Tìm toàn văn không dấu và hỏi đáp có trích dẫn'],
         ['Khi cán bộ nghỉ', 'Mất bản đồ quan hệ', 'Kho, đồ thị và tệp sao lưu ở lại với đơn vị'],
       ],
@@ -340,6 +343,7 @@ export const TOPICS_VI: Record<TopicId, TopicCopy> = {
           { title: 'Phòng Đào tạo', text: 'tra mọi ngưỡng học vụ và con số chốt theo quy chế đang hiệu lực; trước khi sửa một quy chế, xem Điều nào đang gánh nhiều quy định nhất.' },
           { title: 'Pháp chế', text: 'rà các văn bản nội bộ đang dựa trên căn cứ bị thay thế hoặc bãi bỏ, xem hiệu lực tại một ngày.', link: { topic: 'legal-basis-review' } },
           { title: 'Lãnh đạo và chuyên viên', text: 'hỏi bằng lời và nhận câu trả lời dẫn số hiệu, Điều; soạn tờ trình, quyết định đúng thể thức.', link: { topic: 'decree-30-drafting' } },
+          { title: 'Ngoài trường học', text: 'cơ quan, doanh nghiệp và tổ chức dùng cùng các tính năng này, xem', link: { topic: 'ai-for-organizations' } },
         ],
       },
       {
@@ -661,7 +665,7 @@ export const TOPICS_VI: Record<TopicId, TopicCopy> = {
           { title: 'Địa danh và thời gian ban hành văn bản', text: 'in thường, cỡ 13–14, nghiêng, cùng dòng với số, ký hiệu. Sau địa danh có dấu phẩy; ngày nhỏ hơn 10 và tháng 1, 2 ghi thêm số 0.' },
           { title: 'Tên loại và trích yếu nội dung văn bản', text: 'tên loại in hoa, cỡ 13–14, đậm; trích yếu in thường, cỡ 13–14, đậm, ngay dưới tên loại. Công văn ghi trích yếu sau "V/v", in thường, cỡ 12–13.' },
           { title: 'Nội dung văn bản', text: 'in thường, cỡ 13–14, canh đều hai lề, lùi đầu dòng 1 cm hoặc 1,27 cm, cách đoạn tối thiểu 6pt, cách dòng từ đơn tới 1,5 lines.' },
-          { title: 'Chức vụ, họ tên và chữ ký của người có thẩm quyền', text: 'quyền hạn ký ghi TM., Q., KT., TL. hoặc TUQ. Quyền hạn, chức vụ in hoa, cỡ 13–14, đậm; họ tên in thường, cỡ 13–14, đậm, không ghi học hàm, học vị trước họ tên.' },
+          { title: 'Chức vụ, họ tên và chữ ký của người có thẩm quyền', text: 'quyền hạn ký ghi TM., Q., KT., TL. hoặc TUQ. Quyền hạn, chức vụ in hoa, cỡ 13–14, đậm; họ tên in thường, cỡ 13–14, đậm, không ghi học hàm, học vị trước họ tên, trừ trường hợp người đứng đầu ngành, lĩnh vực quy định cho lực lượng vũ trang, tổ chức sự nghiệp giáo dục, y tế, khoa học.' },
           { title: 'Dấu, chữ ký số của cơ quan, tổ chức', text: 'trên văn bản điện tử là hình ảnh dấu màu đỏ, kích thước thật, định dạng .png nền trong suốt, trùm khoảng 1/3 hình ảnh chữ ký số của người có thẩm quyền về bên trái.' },
           { title: 'Nơi nhận', text: '"Nơi nhận:" cỡ 12, nghiêng, đậm; danh sách cỡ 11, đứng; dòng cuối ghi "Lưu: VT" cùng đơn vị soạn thảo và số bản.' },
         ],
@@ -671,8 +675,8 @@ export const TOPICS_VI: Record<TopicId, TopicCopy> = {
         items: [
           { title: 'Phụ lục', text: 'đi kèm văn bản khi cần (Điều 8 khoản 3 điểm a).' },
           { title: 'Dấu chỉ độ mật, mức độ khẩn, chỉ dẫn phạm vi lưu hành', text: 'mức độ khẩn gồm hỏa tốc, thượng khẩn, khẩn; độ mật gồm tuyệt mật, tối mật, mật; phạm vi lưu hành ví dụ "XEM XONG TRẢ LẠI", "LƯU HÀNH NỘI BỘ".' },
-          { title: 'Ký hiệu người soạn thảo và số lượng bản phát hành', text: 'thành phần bổ sung theo điểm c khoản 3 Điều 8.' },
-          { title: 'Địa chỉ cơ quan, tổ chức; thư điện tử; trang thông tin điện tử; số điện thoại; số Fax', text: 'thành phần bổ sung theo điểm d khoản 3 Điều 8.' },
+          { title: 'Ký hiệu người soạn thảo và số lượng bản phát hành', text: 'thành phần bổ sung theo điểm c khoản 3 Điều 8, gồm ký hiệu người soạn thảo và số lượng bản phát hành.' },
+          { title: 'Địa chỉ cơ quan, tổ chức; thư điện tử; trang thông tin điện tử; số điện thoại; số Fax', text: 'thành phần bổ sung theo điểm d khoản 3 Điều 8, gồm địa chỉ cơ quan, thư điện tử, trang thông tin điện tử, điện thoại, số Fax.' },
         ],
       },
       {
@@ -778,7 +782,7 @@ export const TOPICS_VI: Record<TopicId, TopicCopy> = {
     faq: [
       { q: 'DocOps có dùng ChatGPT bên trong không?', a: 'Không. Mô hình mặc định của DocOps là Claude của Anthropic; Agentra có thể cấu hình mô hình khác cho từng đơn vị, như GLM. Nội dung đi qua máy chủ DocOps tới nhà cung cấp mô hình, máy chủ không lưu nội dung.' },
       { q: 'Tải văn bản của đơn vị lên ChatGPT có an toàn không?', a: 'Tuỳ gói và cài đặt. Theo OpenAI, hội thoại ở gói cá nhân có thể được dùng để huấn luyện trừ khi bạn tắt "Improve the model for everyone", và bấm thích hoặc không thích một câu trả lời thì cả hội thoại đó vẫn có thể được dùng; gói Business, Enterprise và Edu mặc định không dùng dữ liệu để huấn luyện. Văn bản mật không nên đưa vào dịch vụ AI trực tuyến nào nếu quy định của đơn vị không cho phép.' },
-      { q: 'ChatGPT có soạn được văn bản theo Nghị định 30 không?', a: 'Có thể soạn theo lời nhắc, nhưng ChatGPT không có sẵn thông tin đơn vị, không biết căn cứ nào trong kho còn hiệu lực, và thể thức cần người dùng tự soát. DocOps dùng khuôn 29 loại văn bản của Nghị định 30, tự điền thông tin đơn vị và chỉ đề xuất căn cứ còn hiệu lực trong kho.' },
+      { q: 'ChatGPT có soạn được văn bản theo Nghị định 30 không?', a: 'Có thể soạn theo lời nhắc, nhưng ChatGPT không tự biết thông tin đơn vị nếu bạn không đưa vào, không biết căn cứ nào trong kho còn hiệu lực, và thể thức cần người dùng tự soát. DocOps dùng khuôn 29 loại văn bản của Nghị định 30, tự điền thông tin đơn vị và chỉ đề xuất căn cứ còn hiệu lực trong kho.' },
       { q: 'DocOps có miễn phí không?', a: 'Tải và cài DocOps miễn phí; chi phí sử dụng tính theo quy mô của đơn vị, liên hệ để nhận báo giá.' },
       { q: 'Nên chọn DocOps hay ChatGPT?', a: 'Chọn theo nguồn câu trả lời bạn cần. Việc viết chung, không cần căn cứ: ChatGPT. Câu trả lời, bản nháp phải dựa trên văn bản đơn vị đang áp dụng và căn cứ còn hiệu lực: DocOps. Nhiều việc dùng được cả hai.' },
     ],

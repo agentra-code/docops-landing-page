@@ -61,7 +61,7 @@ test('sitemap lists every page in both locales, lastmod only from real dates', a
   // Không có ngày nội dung thật thì không ghi lastmod (không dùng giờ build)
   expect(entries.find((e) => e.url === 'https://docops.agentra.io.vn')).not.toHaveProperty('lastModified')
   expect(entries.find((e) => e.url.endsWith('/lien-he'))).not.toHaveProperty('lastModified')
-  expect((entries.find((e) => e.url.endsWith('/ra-soat-can-cu-phap-ly'))!.lastModified as Date).toISOString().slice(0, 10)).toBe('2026-10-04')
+  expect((entries.find((e) => e.url.endsWith('/ra-soat-can-cu-phap-ly'))!.lastModified as Date).toISOString().slice(0, 10)).toBe('2026-10-08')
 })
 
 test('robots allows everyone and names the AI crawlers', async () => {

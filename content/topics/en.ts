@@ -9,7 +9,7 @@ export const TOPICS_EN: Record<TopicId, TopicCopy> = {
       'Find institution documents citing legal bases that were replaced, repealed or not yet in force, check them as of any date and see the impact before amending.',
     keywords: ['legal basis review', 'expired legal references', 'document validity check', 'regulatory impact analysis', 'legal relationship graph'],
     eyebrow: 'Expired legal references',
-    h1: 'Legal basis review: find university documents that rest on expired references',
+    h1: 'Legal basis review: find documents that rest on expired references',
     lead:
       'When the Ministry issues a new circular, your regulations and decisions may still cite the one it replaced. DocOps scans the whole repository, shows which documents need work and why, and keeps the original sentence as evidence.',
     card: 'Find documents that rest on replaced, repealed or not-yet-effective bases, and see what changing one article pulls along.',
@@ -57,14 +57,14 @@ export const TOPICS_EN: Record<TopicId, TopicCopy> = {
       {
         h2: 'Impact radius: what to re-check when you change an article',
         paras: [
-          'Review answers the question after the law has changed. Impact radius answers it before: how many obligations, key figures (credits, years, ratios, fees), hard gates and academic thresholds in the repository rest on a given article.',
+          'Review answers the question after the law has changed. Impact radius answers it before: how many key figures (years, ratios, fees, credits), hard gates and thresholds in the repository rest on a given article.',
           'DocOps counts the business rows that cite each article and draws each article as a bubble; the bigger the bubble, the more places to re-check. The count runs on your machine, is deterministic, calls no AI and uses no tokens. On the sample repository that ships with the product (104 documents, 206 articles, 280 relations), the heaviest article is cited by 12 business rows.',
         ],
       },
       {
         h2: 'What uses AI and what runs locally',
         items: [
-          { title: 'Uses AI', text: 'reading documents and extracting cross-references and the four business layers from their content.' },
+          { title: 'Uses AI', text: 'reading documents and extracting cross-references and three business layers (key figures, hard gates, thresholds) from their content.' },
           { title: 'Runs locally, no AI', text: 'validity warnings, date recalculation, impact spread and impact radius. The same repository always gives the same result.' },
           { text: 'Plain-language questions about a specific document are answered by', link: { topic: 'ai-document-search' } },
           { text: 'When you write a new document, expired bases are flagged right in the draft:', link: { topic: 'decree-30-drafting' } },
@@ -75,7 +75,7 @@ export const TOPICS_EN: Record<TopicId, TopicCopy> = {
         ordered: true,
         items: [
           { text: 'Download DocOps for Windows or macOS and activate it with your institution key.' },
-          { text: 'Ingest the PDFs you rely on as bases: Ministry circulars and decisions plus your internal documents.' },
+          { text: 'Ingest the PDFs you rely on as bases: circulars and decisions of higher authorities plus your internal documents.' },
           { text: 'Confirm each document into the repository and approve low-confidence relations.' },
           { text: 'Open Review, set "Valid as of" and work through the warnings; mark each one handled when done.' },
         ],
@@ -111,7 +111,7 @@ export const TOPICS_EN: Record<TopicId, TopicCopy> = {
     metaTitle: 'Decree 30 document drafting with AI',
     description:
       'Draft the 29 document types of Decree 30/2020/ND-CP from a one-sentence brief, with institution details filled in, expired bases flagged, Word or PDF export.',
-    keywords: ['Decree 30 document drafting', 'AI drafting of administrative documents', 'Vietnamese administrative document format', 'Decree 30/2020/ND-CP templates', 'document format check'],
+    keywords: ['Decree 30 document drafting', 'AI drafting of administrative documents', 'Decree 30/2020/ND-CP templates', 'drafting decisions, submissions and notices with AI'],
     eyebrow: 'AI drafting for administrative documents',
     h1: 'Decree 30 document drafting with AI, edited and signed by your staff',
     lead:
@@ -169,7 +169,10 @@ export const TOPICS_EN: Record<TopicId, TopicCopy> = {
         paras: [
           'For documents ingested into the repository, DocOps checks 9 format parts: national title, motto, issuing body, number, place and date, summary, recipients, signature and seal. Each part is rated ok, missing or needs review, with an overall pass, needs review or fail.',
         ],
-        items: [{ text: 'When you need a provision to cite, ask the repository directly with', link: { topic: 'ai-document-search' } }],
+        items: [
+          { text: 'When you need a provision to cite, ask the repository directly with', link: { topic: 'ai-document-search' } },
+          { text: 'The full set of format parts and layout rules under Decree 30 is on', link: { topic: 'administrative-document-format' } },
+        ],
       },
     ],
     faq: [
@@ -206,8 +209,8 @@ export const TOPICS_EN: Record<TopicId, TopicCopy> = {
     eyebrow: 'Q&A with citations',
     h1: 'AI document search where every answer names the document number and article',
     lead:
-      'Ask DocOps the way you would ask a colleague who knows every regulation of your university. Answers come only from your institution repository, cite the exact document number and article, and open the source in one click.',
-    card: 'Ask in plain language across your university documents; answers cite document number and article. Full-text search without diacritics.',
+      'Ask DocOps the way you would ask a colleague who knows every regulation of your organization. Answers come only from your institution repository, cite the exact document number and article, and open the source in one click.',
+    card: 'Ask in plain language across your organization’s documents; answers cite document number and article. Full-text search without diacritics.',
     inShort:
       'DocOps offers two ways to search: full-text search that ignores Vietnamese diacritics, and natural-language Q&A. Answers rely only on your institution repository, cite document number and article, and say plainly when the repository lacks a needed document instead of guessing.',
     definition: {
@@ -254,7 +257,7 @@ export const TOPICS_EN: Record<TopicId, TopicCopy> = {
       {
         h2: 'Search by business layer',
         paras: [
-          'Besides search results, the Search screen has tabs for Thresholds and figures, Hard gates and Tasks by unit. These are business rows the AI extracted at ingestion, each naming the article and document it comes from. The academic affairs office can see every academic threshold and key figure without opening each regulation.',
+          'Besides search results, the Search screen has a Thresholds and figures tab and a Hard gates tab. These are business rows the AI extracted at ingestion, each naming the article and document it comes from. At a university, the academic affairs office sees every academic threshold and key figure without opening each regulation.',
         ],
         items: [{ text: 'These rows also feed the impact radius described in', link: { topic: 'legal-basis-review' } }],
       },
@@ -320,7 +323,7 @@ export const TOPICS_EN: Record<TopicId, TopicCopy> = {
       rows: [
         ['Document details', 'A file name someone typed', 'Number, signing date, issuing body, summary, document type'],
         ['Relations between documents', 'None', 'Basis, guidance, amendment, replacement, repeal, with the source sentence'],
-        ['Figures and thresholds', 'Open each file', 'Thresholds and figures, hard gates, tasks by unit, searchable at once'],
+        ['Figures and thresholds', 'Open each file', 'Thresholds and figures and hard gates, searchable at once'],
         ['Search', 'By file name', 'Diacritic-free full-text search and cited Q&A'],
         ['When staff leave', 'The relationship map is lost', 'Repository, graph and backups stay with the institution'],
       ],
@@ -333,6 +336,7 @@ export const TOPICS_EN: Record<TopicId, TopicCopy> = {
           { title: 'Academic affairs office', text: 'look up every academic threshold and key figure in the regulations in force; before amending a regulation, see which article carries the most rules.' },
           { title: 'Legal office', text: 'find internal documents resting on replaced or repealed bases and check validity as of a date.', link: { topic: 'legal-basis-review' } },
           { title: 'Leadership and specialists', text: 'ask in plain language and get answers citing number and article; draft submissions and decisions in the correct format.', link: { topic: 'decree-30-drafting' } },
+          { title: 'Beyond universities', text: 'agencies, companies and organizations use the same features, see', link: { topic: 'ai-for-organizations' } },
         ],
       },
       {
@@ -621,7 +625,7 @@ export const TOPICS_EN: Record<TopicId, TopicCopy> = {
     imageAlt: 'DocOps Drafting screen: a draft administrative document on an A4 page, with a validity label on each line of legal basis',
     table: {
       h2: 'Layout rules in Appendix I',
-      caption: 'General rules and font sizes of the main parts under Appendix I of Decree 30/2020/ND-CP. Sizes are in points. Quoted strings stay in Vietnamese.',
+      caption: 'General rules and font sizes of the main parts under Appendix I of Decree 30/2020/ND-CP.',
       head: ['Element', 'Rule'],
       rows: [
         ['Paper size', 'A4 (210 mm x 297 mm), portrait'],
@@ -654,7 +658,7 @@ export const TOPICS_EN: Record<TopicId, TopicCopy> = {
           { title: 'Place and date of issue', text: 'lower case, size 13–14, italic, on the same line as the number and code. A comma follows the place name; days below 10 and months 1 and 2 get a leading 0.' },
           { title: 'Type and summary', text: 'the type name is in capitals, size 13–14, bold; the summary is in lower case, size 13–14, bold, right under the type name. An official letter writes its summary after “V/v”, in lower case, size 12–13.' },
           { title: 'Content', text: 'lower case, size 13–14, justified, first-line indent 1 cm or 1.27 cm, at least 6pt between paragraphs, line spacing from single to 1.5 lines.' },
-          { title: 'Position, name and signature of the authorized person', text: 'the signing authority is written TM., Q., KT., TL. or TUQ. The authority and position are in capitals, size 13–14, bold; the name is in lower case, size 13–14, bold, with no academic title or degree before it.' },
+          { title: 'Position, name and signature of the authorized person', text: 'the signing authority is written TM., Q., KT., TL. or TUQ. The authority and position are in capitals, size 13–14, bold; the name is in lower case, size 13–14, bold, with no academic title or degree before it, unless the head of the sector rules otherwise for armed forces and for education, health and science public-service bodies.' },
           { title: 'Seal or digital signature of the body', text: 'on an electronic document this is a red seal image at real size, as a transparent-background .png, overlapping about 1/3 of the authorized person’s digital signature image on its left side.' },
           { title: 'Recipients', text: '“Nơi nhận:” is size 12, italic, bold; the list is size 11, upright; the last line reads “Lưu: VT” followed by the drafting unit and the number of copies.' },
         ],
@@ -664,8 +668,8 @@ export const TOPICS_EN: Record<TopicId, TopicCopy> = {
         items: [
           { title: 'Appendix', text: 'attached to the document when needed (Article 8, clause 3, point a).' },
           { title: 'Confidentiality, urgency and circulation marks', text: 'urgency levels are hỏa tốc, thượng khẩn and khẩn; confidentiality levels are tuyệt mật, tối mật and mật; circulation notes include “XEM XONG TRẢ LẠI” and “LƯU HÀNH NỘI BỘ”.' },
-          { title: 'Drafter’s code and number of copies issued', text: 'an additional part under Article 8, clause 3, point c.' },
-          { title: 'Address, email, website, phone and fax of the body', text: 'an additional part under Article 8, clause 3, point d.' },
+          { title: 'Drafter’s code and number of copies issued', text: 'an additional part under Article 8, clause 3, point c: the drafter’s code and the number of copies issued.' },
+          { title: 'Address, email, website, phone and fax of the body', text: 'an additional part under Article 8, clause 3, point d: the body’s address, email, website, phone and fax number.' },
         ],
       },
       {
@@ -771,7 +775,7 @@ export const TOPICS_EN: Record<TopicId, TopicCopy> = {
     faq: [
       { q: 'Does DocOps use ChatGPT inside?', a: 'No. DocOps’s default model is Claude by Anthropic; Agentra can configure another model per agency, such as GLM. Content goes through the DocOps server to the model provider and the server does not store it.' },
       { q: 'Is it safe to upload an agency’s documents to ChatGPT?', a: 'It depends on the plan and settings. According to OpenAI, conversations on personal plans may be used for training unless you turn off “Improve the model for everyone”, and giving thumbs up or down on a response can still let the whole conversation be used; Business, Enterprise and Edu plans do not use data for training by default. Classified documents should not go into any online AI service the agency’s rules do not allow.' },
-      { q: 'Can ChatGPT draft documents under Decree 30?', a: 'It can draft from a prompt, but ChatGPT has no built-in knowledge of your agency, does not know which legal bases in your repository are still in force, and the user has to check the format. DocOps uses the Decree 30 templates for 29 document types, fills in the agency’s details and proposes only legal bases still in force in the repository.' },
+      { q: 'Can ChatGPT draft documents under Decree 30?', a: 'It can draft from a prompt, but ChatGPT does not know your agency’s details unless you provide them, does not know which legal bases in your repository are still in force, and the user has to check the format. DocOps uses the Decree 30 templates for 29 document types, fills in the agency’s details and proposes only legal bases still in force in the repository.' },
       { q: 'Is DocOps free?', a: 'Downloading and installing DocOps is free; usage is priced by the size of the agency, contact us for a quote.' },
       { q: 'Should I choose DocOps or ChatGPT?', a: 'Choose by the source of answer you need. General writing that needs no legal basis: ChatGPT. Answers and drafts that must rest on the documents the agency applies and on legal bases still in force: DocOps. Many tasks can use both.' },
     ],

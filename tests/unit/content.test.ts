@@ -109,3 +109,16 @@ describe('brand reaches beyond universities', () => {
     expect(brand.description[locale]).toMatch(locale === 'vi' ? /cơ quan.*doanh nghiệp/ : /agencies and companies/)
   })
 })
+
+describe('claims match the app', () => {
+  const all = JSON.stringify(TOPICS)
+  test('no four business layers and no unit-task tab', () => {
+    expect(all).not.toMatch(/bốn lớp nghiệp vụ|four business layers|Việc theo đơn vị|Tasks by unit/)
+  })
+  test('feature pages speak to any organization', () => {
+    for (const id of ['legal-basis-review', 'ai-document-search'] as const) {
+      expect(`${TOPICS.vi[id].h1} ${TOPICS.vi[id].description}`).not.toMatch(/của trường/)
+      expect(`${TOPICS.en[id].h1} ${TOPICS.en[id].description}`).not.toMatch(/universit/i)
+    }
+  })
+})

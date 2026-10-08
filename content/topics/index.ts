@@ -20,10 +20,10 @@ export type TopicGroup = (typeof TOPIC_GROUPS)[number]
 
 /** Dữ liệu không đổi theo ngôn ngữ. `updated` là ngày nội dung đổi thật (sitemap, JSON-LD, dòng "Cập nhật"). */
 export const TOPIC_META: Record<TopicId, { icon: IconName; image: string; updated: string; group: TopicGroup }> = {
-  'legal-basis-review': { icon: 'graph', image: '/images/product/rasoat.webp', updated: '2026-10-04', group: 'feature' },
-  'decree-30-drafting': { icon: 'pen', image: '/images/product/soanthao.webp', updated: '2026-10-04', group: 'feature' },
-  'ai-document-search': { icon: 'search', image: '/images/product/tracuu.webp', updated: '2026-10-04', group: 'feature' },
-  'ai-for-universities': { icon: 'book', image: '/images/product/khovanban.webp', updated: '2026-10-04', group: 'audience' },
+  'legal-basis-review': { icon: 'graph', image: '/images/product/rasoat.webp', updated: '2026-10-08', group: 'feature' },
+  'decree-30-drafting': { icon: 'pen', image: '/images/product/soanthao.webp', updated: '2026-10-08', group: 'feature' },
+  'ai-document-search': { icon: 'search', image: '/images/product/tracuu.webp', updated: '2026-10-08', group: 'feature' },
+  'ai-for-universities': { icon: 'book', image: '/images/product/khovanban.webp', updated: '2026-10-08', group: 'audience' },
   'ai-for-organizations': { icon: 'archive', image: '/images/product/dothi.webp', updated: '2026-10-08', group: 'audience' },
   'administrative-document-types': { icon: 'file', image: '/images/product/soanthao.webp', updated: '2026-10-08', group: 'guide' },
   'administrative-document-format': { icon: 'tag', image: '/images/product/soanthao.webp', updated: '2026-10-08', group: 'guide' },
