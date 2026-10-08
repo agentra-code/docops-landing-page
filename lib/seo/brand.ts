@@ -9,10 +9,14 @@ import type { Locale } from '@/i18n/routing'
  *
  * Bản đồ từ khoá (mỗi URL một chủ đề chính để các trang không tranh nhau; từ khoá chính đứng đầu):
  *   / · /en                                 phần mềm AI văn bản hành chính trường đại học; Agentra DocOps
- *   /soan-thao-van-ban-nghi-dinh-30         soạn thảo văn bản theo Nghị định 30, AI soạn thảo văn bản hành chính, kiểm tra thể thức
+ *   /soan-thao-van-ban-nghi-dinh-30         soạn thảo văn bản theo Nghị định 30, AI soạn thảo văn bản hành chính, mẫu văn bản Nghị định 30
  *   /ra-soat-can-cu-phap-ly                 rà soát căn cứ pháp lý, văn bản hết hiệu lực, đánh giá tác động khi văn bản thay đổi
  *   /tra-cuu-van-ban-ai                     tra cứu văn bản bằng AI, hỏi đáp văn bản có trích dẫn
  *   /chuyen-doi-so-van-thu-truong-dai-hoc   chuyển đổi số công tác văn thư trường đại học, AI cho phòng hành chính, đào tạo
+ *   /ai-van-ban-co-quan-doanh-nghiep        phần mềm AI văn bản hành chính cho cơ quan, doanh nghiệp, AI cho văn thư doanh nghiệp, đoàn thể
+ *   /cac-loai-van-ban-hanh-chinh            các loại văn bản hành chính, 29 loại văn bản theo Nghị định 30, chữ viết tắt tên loại văn bản
+ *   /the-thuc-van-ban-hanh-chinh            thể thức văn bản hành chính, cách trình bày văn bản theo Nghị định 30, kiểm tra thể thức
+ *   /docops-va-chatgpt                      dùng ChatGPT cho văn bản hành chính, DocOps và ChatGPT
  *   /tai-ve                                 tải DocOps cho Windows, macOS
  *   /huong-dan-cai-dat/{macos,windows}      cài DocOps trên Mac / Windows
  *   /quy-trinh                              quy trình xử lý văn bản bằng AI có cán bộ duyệt (human in the loop)
@@ -29,8 +33,8 @@ export const brand = {
     en: 'AI software for university administrative documents',
   },
   description: {
-    vi: 'Agentra DocOps là phần mềm AI cho văn bản hành chính trường đại học: tra cứu có trích dẫn, rà soát căn cứ hết hiệu lực, soạn nháp theo Nghị định 30.',
-    en: 'Agentra DocOps is AI software for university administrative documents: search with citations, expired legal basis checks and drafting under Decree 30.',
+    vi: 'Agentra DocOps là phần mềm AI cho văn bản hành chính trường đại học, cơ quan, doanh nghiệp: tra cứu có trích dẫn, rà soát căn cứ, soạn nháp theo Nghị định 30.',
+    en: 'Agentra DocOps is AI software for administrative documents at universities, agencies and companies: cited search, legal basis checks, Decree 30 drafting.',
   },
   /** "DocOps" còn là tên một phương pháp viết tài liệu kỹ thuật và một benchmark nghiên cứu: nói rõ để AI không nhầm. */
   disambiguation: {
@@ -43,8 +47,8 @@ export const brand = {
     en: 'Agentra JSC builds AI workflows for Vietnamese education and is based in Da Nang, Vietnam.',
   },
   audience: {
-    vi: 'Cán bộ văn thư, hành chính, đào tạo và pháp chế ở trường đại học, cao đẳng',
-    en: 'Clerical, administrative, academic affairs and legal staff at universities and colleges',
+    vi: 'Cán bộ văn thư, hành chính, đào tạo và pháp chế ở trường đại học, cao đẳng; văn thư, hành chính, pháp chế ở cơ quan, doanh nghiệp, tổ chức',
+    en: 'Clerical, administrative, academic affairs and legal staff at universities and colleges; clerical, administrative and legal staff at agencies, companies and organizations',
   },
   /** Tính năng có thật trong ứng dụng; giữ đúng sự thật khi sản phẩm đổi. */
   features: {
@@ -79,6 +83,7 @@ export const brand = {
       'AI soạn thảo văn bản theo Nghị định 30',
       'rà soát căn cứ pháp lý',
       'tra cứu văn bản có trích dẫn',
+      'phần mềm AI văn bản hành chính cho doanh nghiệp',
     ],
     en: [
       'AI software for university administrative documents',
@@ -87,6 +92,7 @@ export const brand = {
       'Decree 30 document drafting',
       'legal basis review',
       'cited document search',
+      'administrative document AI for companies',
     ],
   },
 } satisfies {

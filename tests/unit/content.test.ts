@@ -93,3 +93,19 @@ describe('content dates match the MDX sources', () => {
     expect(updated(`content/privacy/${locale}.mdx`)).toBe(CONTENT_UPDATED.privacy)
   })
 })
+
+describe('home FAQ', () => {
+  test('vi and en have the same questions', () => {
+    const keys = (m: { home: { faq: Record<string, unknown> } }) => Object.keys(m.home.faq).filter((k) => /^q\d+$/.test(k))
+    expect(keys(en)).toEqual(keys(vi))
+  })
+  test('covers agencies and companies', () => {
+    expect(Object.values(vi.home.faq).some((v) => typeof v === 'object' && v.q.includes('doanh nghiệp'))).toBe(true)
+  })
+})
+
+describe('brand reaches beyond universities', () => {
+  test.each(LOCALES)('%s description names agencies and companies', (locale) => {
+    expect(brand.description[locale]).toMatch(locale === 'vi' ? /cơ quan.*doanh nghiệp/ : /agencies and companies/)
+  })
+})

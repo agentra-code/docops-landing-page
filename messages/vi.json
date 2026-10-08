@@ -1,7 +1,7 @@
 {
   "common": {
     "siteName": "Agentra DocOps",
-    "tagline": "Phần mềm AI xử lý văn bản hành chính trường đại học",
+    "tagline": "Phần mềm AI xử lý văn bản hành chính cho trường đại học, cơ quan, doanh nghiệp",
     "download": "Tải DocOps",
     "retry": "Thử lại",
     "skipToContent": "Bỏ qua tới nội dung",
@@ -36,7 +36,7 @@
     "decline": "Từ chối"
   },
   "footer": {
-    "tagline": "Phần mềm AI xử lý văn bản hành chính trường đại học. Một sản phẩm của Agentra.",
+    "tagline": "Phần mềm AI xử lý văn bản hành chính cho trường đại học, cơ quan, doanh nghiệp. Một sản phẩm của Agentra.",
     "product": "Sản phẩm",
     "trust": "Tin cậy",
     "company": "Công ty",
@@ -140,7 +140,7 @@
         "desc": "Văn bản gốc lưu trên máy của bạn. Mỗi đơn vị một key và một workspace riêng, tách biệt hoàn toàn."
       },
       "t3": {
-        "title": "Không huấn luyện trên dữ liệu của trường",
+        "title": "Không huấn luyện trên dữ liệu của đơn vị",
         "desc": "Máy chủ chỉ xử lý phần AI và không giữ nội dung sau khi trả kết quả."
       }
     },
@@ -184,7 +184,7 @@
       },
       "q3": {
         "q": "Dữ liệu văn bản lưu ở đâu?",
-        "a": "Trên máy của bạn. Máy chủ chỉ xử lý phần AI và không giữ nội dung sau khi trả kết quả. Agentra không dùng dữ liệu của trường để huấn luyện mô hình."
+        "a": "Trên máy của bạn. Máy chủ chỉ xử lý phần AI và không giữ nội dung sau khi trả kết quả. Agentra không dùng dữ liệu của đơn vị để huấn luyện mô hình."
       },
       "q4": {
         "q": "Vì sao Windows hoặc macOS cảnh báo khi cài?",
@@ -201,6 +201,10 @@
       "q7": {
         "q": "DocOps có thay hệ thống quản lý công văn đi – đến không?",
         "a": "Không. DocOps không xử lý luồng công văn đi – đến hay ký số. DocOps làm việc trên nội dung văn bản: xây kho tri thức, tra cứu có trích dẫn, rà soát căn cứ pháp lý và soạn thảo theo Nghị định 30, xuất ra Word hoặc PDF để đưa vào quy trình ban hành đang dùng."
+      },
+      "q8": {
+        "q": "DocOps có dùng cho cơ quan, doanh nghiệp được không?",
+        "a": "Có. Ngoài trường đại học, DocOps dùng được cho cơ quan nhà nước, doanh nghiệp, đoàn thể và hội trình bày văn bản theo Nghị định 30: đủ 29 loại văn bản hành chính, thông tư và nghị định làm căn cứ, tra cứu có trích dẫn và soạn nháp. DocOps chưa hỗ trợ văn bản của Đảng và không quản lý chứng từ kế toán."
       }
     },
     "cta": {
@@ -471,12 +475,12 @@
     "faqEyebrow": "Hỏi đáp",
     "faqH2": "Câu hỏi thường gặp",
     "relatedEyebrow": "Xem thêm",
-    "relatedH2": "DocOps còn làm gì cho trường",
+    "relatedH2": "DocOps còn làm gì cho đơn vị của bạn",
     "more": "Tìm hiểu thêm",
     "hub": {
       "eyebrow": "Giải pháp",
-      "h2": "DocOps giải quyết việc gì cho trường đại học",
-      "lead": "Bốn việc tốn nhiều giờ nhất của văn thư, pháp chế và phòng đào tạo, mỗi việc một trang hướng dẫn chi tiết."
+      "h2": "DocOps giải quyết việc gì cho trường đại học, cơ quan và doanh nghiệp",
+      "lead": "Từng tính năng, từng loại đơn vị và kiến thức văn thư theo Nghị định 30, mỗi chủ đề một trang hướng dẫn chi tiết."
     }
   }
 }

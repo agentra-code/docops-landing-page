@@ -1,7 +1,7 @@
 {
   "common": {
     "siteName": "Agentra DocOps",
-    "tagline": "AI software for university administrative documents",
+    "tagline": "AI software for administrative documents at universities, agencies and companies",
     "download": "Download DocOps",
     "retry": "Try again",
     "skipToContent": "Skip to content",
@@ -36,7 +36,7 @@
     "decline": "Decline"
   },
   "footer": {
-    "tagline": "AI software for university administrative documents. A product of Agentra.",
+    "tagline": "AI software for administrative documents at universities, agencies and companies. A product of Agentra.",
     "product": "Product",
     "trust": "Trust",
     "company": "Company",
@@ -201,6 +201,10 @@
       "q7": {
         "q": "Does DocOps replace our incoming/outgoing correspondence system?",
         "a": "No. DocOps does not handle the incoming/outgoing correspondence flow or digital signatures. It works on document content: building a knowledge repository, cited search, legal basis review and Decree 30 drafting, with Word or PDF export for your existing issuing process."
+      },
+      "q8": {
+        "q": "Can agencies and companies use DocOps?",
+        "a": "Yes. Beyond universities, DocOps works for government agencies, companies, unions and associations that format documents under Decree 30: all 29 administrative document types, circulars and decrees tracked as legal bases, cited search and drafting. DocOps does not yet support Communist Party documents and does not manage accounting vouchers."
       }
     },
     "cta": {
@@ -471,12 +475,12 @@
     "faqEyebrow": "FAQ",
     "faqH2": "Frequently asked questions",
     "relatedEyebrow": "Keep exploring",
-    "relatedH2": "More of what DocOps does for universities",
+    "relatedH2": "More of what DocOps does for your organization",
     "more": "Learn more",
     "hub": {
       "eyebrow": "Solutions",
-      "h2": "What DocOps solves for universities",
-      "lead": "The four most time-consuming jobs of clerical, legal and academic affairs staff, each with its own in-depth page."
+      "h2": "What DocOps solves for universities, agencies and companies",
+      "lead": "Each feature, each type of organization and the Decree 30 records basics, each with its own in-depth page."
     }
   }
 }

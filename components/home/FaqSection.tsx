@@ -3,10 +3,12 @@ import { Container } from '@/components/ui/Container'
 import { Section } from '@/components/ui/Section'
 import type { Locale } from '@/i18n/routing'
 import { brand } from '@/lib/seo/brand'
+import vi from '@/messages/vi.json'
 import { Faq } from './Faq'
 import { SectionHead } from './SectionHead'
 
-export const FAQ_KEYS = ['q0', 'q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7'] as const
+/** Khoá câu hỏi lấy từ messages (vi và en cùng bộ khoá, tests/unit/content.test.ts): thêm câu hỏi chỉ cần sửa JSON. */
+export const FAQ_KEYS = Object.keys(vi.home.faq).filter((k) => /^q\d+$/.test(k))
 
 type FaqT = (key: string, values: { description: string }) => string
 
