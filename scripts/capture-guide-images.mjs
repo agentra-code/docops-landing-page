@@ -170,7 +170,7 @@ const SHOTS = [
     async go(page) { await openSettings(page) },
     // The two column stacks, without the sidebar and the top bar (shown in the first shot), down to the lowest card.
     clip: async (page) => {
-      const low = await boxAround([card(page, 'Phản hồi'), card(page, 'Kết nối agent')], 0)
+      const low = await boxAround([card(page, 'Trợ giúp & phản hồi'), card(page, 'Kết nối agent')], 0)
       return { x: 216, y: 62, width: 1128, height: low.y + low.height + 22 - 62 }
     },
   },
@@ -226,7 +226,13 @@ try {
     if (only.length > 0 && !only.includes(shot.id)) continue
     const context = await browser.newContext({ viewport: { width: WIDTH, height: shot.height }, deviceScaleFactor: shot.scale ?? 1, locale: 'vi-VN', timezoneId: TIMEZONE })
     await context.clock.setFixedTime(NOW)
-    await context.addInitScript(() => { try { localStorage.setItem('uiMode', 'classic'); localStorage.setItem('theme', 'light') } catch { /* private mode */ } })
+    // `onboardingTour.doneAt`: the first-use tour (desktop `onboarding/tourState.ts`) is marked done, so it can never start over a shot.
+    await context.addInitScript(() => {
+      try {
+        localStorage.setItem('uiMode', 'classic'); localStorage.setItem('theme', 'light')
+        localStorage.setItem('onboardingTour.doneAt', '2026-10-18T02:42:00.000Z')
+      } catch { /* private mode */ }
+    })
     const page = await context.newPage()
     page.on('console', (m) => { if (/\[fake\] (NO HANDLER|CONTRACT|BAD INPUT)/.test(m.text())) problems.push(`${shot.id}: ${m.text().slice(0, 300)}`) })
     page.on('pageerror', (e) => { problems.push(`${shot.id}: pageerror ${String(e).slice(0, 300)}`) })

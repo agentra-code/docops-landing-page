@@ -19,6 +19,23 @@ for (const locale of ['vi', 'en']) {
   }
 }
 
+// Thẻ cuối cột trái Cài đặt của app đã đổi tên từ "Phản hồi" thành "Trợ giúp & phản hồi" (Dự án 2 Task 8). Trang cài đặt và trang liên hệ
+// chỉ người dùng tới thẻ ấy, nên phải gọi đúng tên mới (tên nút "Gửi phản hồi" và mục menu Trợ giúp → Gửi phản hồi thì giữ).
+for (const locale of ['vi', 'en']) {
+  for (const os of GUIDE_OS) {
+    test(`${locale}/${os} install page points at the Settings card by its current name`, () => {
+      const src = readFileSync(`content/install/${locale}/${os}.mdx`, 'utf8')
+      expect(src).toContain('**Trợ giúp & phản hồi**')
+      expect(src).not.toMatch(/\*\*(Phản hồi|Feedback)\*\*/)
+    })
+  }
+  test(`${locale} contact page names the same card`, () => {
+    const box = (JSON.parse(readFileSync(`messages/${locale}.json`, 'utf8')) as { contact: { support: { boxBody: string } } }).contact.support.boxBody
+    expect(box).toContain('Trợ giúp & phản hồi')
+    expect(box).not.toMatch(/mục Phản hồi|Feedback inside/)
+  })
+}
+
 test('isGuideOs', () => {
   expect(isGuideOs('macos')).toBe(true)
   expect(isGuideOs('linux')).toBe(false)

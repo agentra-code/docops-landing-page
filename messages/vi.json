@@ -476,7 +476,7 @@
       "i3": "Phiên bản Windows hoặc macOS, và loại chip nếu là máy Mac",
       "i4": "Phiên bản DocOps (Cài đặt, thẻ Phiên bản)",
       "boxTitle": "Hai cách gửi",
-      "boxBody": "Email về {email}, hoặc mở mục Phản hồi ngay trong app DocOps: phản hồi gửi từ app tự đính kèm phiên bản và nhật ký kỹ thuật.",
+      "boxBody": "Email về {email}, hoặc dùng thẻ Trợ giúp & phản hồi trong Cài đặt của app DocOps: phản hồi gửi từ app tự đính kèm phiên bản và nhật ký kỹ thuật.",
       "btn": "Gửi email báo lỗi",
       "subject": "Báo lỗi DocOps"
     }

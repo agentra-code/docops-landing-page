@@ -476,7 +476,7 @@
       "i3": "Your Windows or macOS version, and the chip if it is a Mac",
       "i4": "Your DocOps version (Settings, Version tab)",
       "boxTitle": "Two ways to send",
-      "boxBody": "Email {email}, or open Feedback inside the DocOps app: feedback sent from the app automatically includes the version and technical logs.",
+      "boxBody": "Email {email}, or use the Trợ giúp & phản hồi (Help and feedback) card in the DocOps app's Settings: feedback sent from the app automatically includes the version and technical logs.",
       "btn": "Email a bug report",
       "subject": "DocOps bug report"
     }
