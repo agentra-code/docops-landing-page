@@ -102,6 +102,15 @@ for (const g of GUIDES) {
     expect(toc).toEqual(GUIDE_IDS.map((id) => `#${id}`))
   })
 
+  // Link `#id` trong trang (mục lục và hai câu tham chiếu chéo `#ra-soat`, `#sao-luu`) phải trỏ vào phần tử có thật, và id không trùng.
+  test(`${g.path}: every in-page #link points at exactly one element`, async ({ page }) => {
+    await page.goto(g.path, { waitUntil: 'domcontentloaded' })
+    const hashes = await page.locator('main#main a[href^="#"]').evaluateAll((as) => as.map((a) => a.getAttribute('href')!.slice(1)))
+    expect(hashes, 'the in-text cross references are found').toEqual(expect.arrayContaining(['ra-soat', 'sao-luu']))
+    expect(hashes.length, 'toc (12) + cross references').toBeGreaterThanOrEqual(14)
+    for (const id of new Set(hashes)) expect(await page.locator(`[id="${id}"]`).count(), `#${id}`).toBe(1)
+  })
+
   // Header dính (72 px) không được che tiêu đề mục khi app mở trang kèm #id.
   for (const id of ['tra-cuu', 'cau-hoi-thuong-gap']) {
     test(`${g.path}#${id}: the section heading lands in the viewport, below the sticky header`, async ({ page }) => {
@@ -160,4 +169,45 @@ for (const g of GUIDES) {
     await expect(page.locator('h1')).toHaveCount(1)
     await expect(page.locator('header nav a[aria-current="page"]')).toHaveAttribute('href', g.path)
   })
+}
+
+// ── Thanh điều hướng ở khổ desktop ───────────────────────────────────────────────────────────────────────────────────────────────────
+// Container rộng tối đa 1200 px (nội dung 1136 px) nên MỌI khung ≥ 1200 px có cùng chỗ cho thanh. Chiều rộng cần của thanh với nhãn từ khoá chính
+// "DocOps user guide" suýt vượt chỗ ấy: flex co các mục lại và nhãn bẻ làm hai dòng (cao 59 thay vì 37 px), logo cũng bẻ — mà không tràn ngang trang,
+// nên chỉ đo `scrollWidth` thì không thấy. Phải ĐẾM DÒNG chữ của từng nhãn.
+for (const width of [1100, 1280, 1366, 1920]) {
+  for (const [path, lang] of [['/', 'vi'], ['/en', 'en']] as const) {
+    test(`${path} at ${width}px: every header nav link and the logo text are on one line, and nothing overflows`, async ({ page }) => {
+      await page.setViewportSize({ width, height: 800 })
+      await page.goto(path, { waitUntil: 'domcontentloaded' })
+      await page.evaluate(() => document.fonts.ready) // phông chữ web đổi bề rộng chữ: đo sau khi nạp xong
+      const m = await page.evaluate(() => {
+        const lines = (el: Element) => {
+          const r = document.createRange()
+          r.selectNodeContents(el)
+          return new Set([...r.getClientRects()].filter((q) => q.width > 0).map((q) => Math.round(q.top))).size
+        }
+        const header = document.querySelector('header')!
+        const links = [...header.querySelectorAll('nav a')].filter((a) => (a as HTMLElement).offsetParent !== null)
+        const logo = header.querySelector('a[href="/"], a[href="/en"]')!.querySelector('span:last-child')!
+        const bar = header.firstElementChild as HTMLElement
+        return {
+          labels: links.map((a) => a.textContent),
+          lines: links.map(lines),
+          heights: links.map((a) => Math.round(a.getBoundingClientRect().height)),
+          logoLines: lines(logo),
+          // Mép phải của phần tử cuối so với mép phải vùng nội dung của container (trừ padding 32 px): `scrollWidth` không thấy chỗ tràn ≤ padding.
+          // Âm = còn chỗ trống; dương = nội dung lấn ra padding (nhãn không bẻ dòng thì chỗ tràn lộ ở đây thay vì ở số dòng).
+          spill: Math.round([...bar.children].filter((k) => (k as HTMLElement).offsetParent !== null).pop()!.getBoundingClientRect().right - (bar.getBoundingClientRect().right - parseFloat(getComputedStyle(bar).paddingRight))),
+          pageOverflow: document.documentElement.scrollWidth - window.innerWidth,
+        }
+      })
+      expect(m.labels.length, `${lang} nav items at ${width}px: ${m.labels.join(' | ')}`).toBe(width >= 1280 ? 5 : 4)
+      expect(m.lines, `lines per label: ${m.labels.join(' | ')}`).toEqual(m.labels.map(() => 1))
+      expect(new Set(m.heights).size, `label heights ${m.heights}`).toBe(1)
+      expect(m.logoLines, 'logo text lines').toBe(1)
+      expect(m.spill, 'header content spills out of its container (px)').toBeLessThanOrEqual(0)
+      expect(m.pageOverflow, 'page scrolls sideways').toBeLessThanOrEqual(0)
+    })
+  }
 }

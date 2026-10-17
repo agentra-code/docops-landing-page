@@ -81,6 +81,27 @@ describe('internal links in MDX resolve to a real page of the SAME language', ()
   }
 })
 
+describe('in-page links point at a heading the same page renders', () => {
+  // `](#ra-soat)` không phải đường dẫn nên `internalLinks` bỏ qua; id gõ sai thì trình duyệt im lặng ở lại chỗ cũ. Trang hướng dẫn có hai link kiểu này.
+  const ids = (src: string) => new Set([...src.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]!))
+  const fragments = (src: string) => [...src.matchAll(/\]\(#([^)\s]*)\)/g)].map((m) => m[1]!)
+
+  test.each(LOCALES)('%s: the guide cross-references #ra-soat and #sao-luu, and both exist', (locale) => {
+    const src = readFileSync(`content/guide/${locale}.mdx`, 'utf8')
+    expect(fragments(src)).toEqual(expect.arrayContaining(['ra-soat', 'sao-luu']))
+  })
+
+  for (const locale of LOCALES) {
+    for (const file of mdxFiles(locale)) {
+      test(`${file}`, () => {
+        const src = readFileSync(file, 'utf8')
+        const known = ids(src)
+        for (const f of fragments(src)) expect(known.has(f), `](#${f}) has no element with that id (ids: ${[...known].join(' ')})`).toBe(true)
+      })
+    }
+  }
+})
+
 describe('links to the user guide use its main keyword as anchor text', () => {
   test.each(LOCALES)('%s: the guide is reachable from both install guides, with the keyword as anchor', (locale) => {
     for (const os of GUIDE_OS) {
