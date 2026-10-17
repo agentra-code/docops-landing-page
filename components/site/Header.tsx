@@ -19,7 +19,7 @@ export function Header() {
           <span className="text-[17px] font-bold tracking-[0.2px]">{t('siteName')}</span>
         </Link>
         <nav aria-label={t('mainNav')} className="ml-auto hidden items-center gap-7 md:flex">
-          <NavLinks />
+          <NavLinks bar />
         </nav>
         <div className="hidden items-center gap-3.5 md:flex">
           <LocaleSwitcher />

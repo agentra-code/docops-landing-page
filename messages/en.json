@@ -17,6 +17,7 @@
     "howItWorks": "How it works",
     "transparency": "AI transparency",
     "download": "Download",
+    "userGuide": "DocOps user guide",
     "contact": "Contact"
   },
   "notFound": {
@@ -176,7 +177,7 @@
       },
       "q1": {
         "q": "What is an activation key and where do I get one?",
-        "a": "Agentra issues each institution a key in the form DOCOPS-XXXX-XXXX-XXXX that opens its own workspace. Install the app, choose \"No key yet (new registration)\" on the activation screen and send the request from inside the app, or email us with your institution name."
+        "a": "Agentra issues each institution a key in the form DOCOPS-XXXX-XXXX-XXXX that opens its own workspace. Install the app, click \"Gửi yêu cầu tới quản trị\" (Send a request to the administrator) on the activation screen and send the request from inside the app, or email us with your institution name."
       },
       "q2": {
         "q": "Do I need an internet connection?",
@@ -256,6 +257,8 @@
       "title": "Already installed? New versions update inside the app",
       "body": "Open Settings, the Version tab, click Check for updates and then Download and install. No need to download the installer again."
     },
+    "afterInstall": "Installed it? Read the <link>DocOps user guide</link>",
+    "afterInstallBody": "Twelve sections with screenshots: activating your key, ingesting documents, search, drafting, backup and connecting an agent.",
     "help": "Cannot download? Email <email></email> and we will send the file another way."
   },
   "install": {
@@ -456,7 +459,7 @@
       },
       "s2": {
         "title": "Send the request from the app",
-        "desc": "On the activation screen choose \"No key yet (new registration)\", enter your institution and a contact, then send."
+        "desc": "On the activation screen click \"Gửi yêu cầu tới quản trị\" (Send a request to the administrator), enter your institution, a contact person and an email or phone number, then send."
       },
       "s3": {
         "title": "Receive the key by email",

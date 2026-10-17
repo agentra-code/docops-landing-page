@@ -19,6 +19,7 @@ import type { Locale } from '@/i18n/routing'
  *   /docops-va-chatgpt                      dùng ChatGPT cho văn bản hành chính, DocOps và ChatGPT
  *   /tai-ve                                 tải DocOps cho Windows, macOS
  *   /huong-dan-cai-dat/{macos,windows}      cài DocOps trên Mac / Windows
+ *   /huong-dan-su-dung                      hướng dẫn sử dụng DocOps, cách dùng DocOps
  *   /quy-trinh                              quy trình xử lý văn bản bằng AI có cán bộ duyệt (human in the loop)
  *   /minh-bach-ai                           minh bạch AI, bảo mật dữ liệu văn bản
  * Anchor text của link nội bộ tới một trang = từ khoá chính của trang đó, và chỉ dùng cho trang đó.

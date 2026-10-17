@@ -74,6 +74,24 @@ export default async function DownloadPage() {
                 <span className="text-[15px] leading-relaxed text-ink2">{t('update.body')}</span>
               </div>
             </div>
+            {/* Anchor text = từ khoá chính của /huong-dan-su-dung (lib/seo/brand.ts); tests/unit/internal-links.test.ts canh nó. */}
+            <div className="flex gap-3.5 rounded-xl border border-line bg-card2 p-5">
+              <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px] bg-accent-soft text-accent-strong">
+                <Icon name="book" size={20} />
+              </span>
+              <div className="flex flex-col gap-1">
+                <b className="text-base">
+                  {t.rich('afterInstall', {
+                    link: (chunks) => (
+                      <Link href="/user-guide" className="text-accent-strong underline underline-offset-2">
+                        {chunks}
+                      </Link>
+                    ),
+                  })}
+                </b>
+                <span className="text-[15px] leading-relaxed text-ink2">{t('afterInstallBody')}</span>
+              </div>
+            </div>
           </div>
           <p className="mt-7 text-center text-[14.5px] text-muted">
             {t.rich('help', {

@@ -1,13 +1,15 @@
 import { expect, test } from '@playwright/test'
+import { openAtAnchor } from './helpers'
 
-test('mobile menu opens with the four nav links and a download button', async ({ page }) => {
+test('mobile menu opens with the five nav links and a download button', async ({ page }) => {
   await page.goto('/')
   const toggle = page.getByRole('button', { name: 'Mở menu' })
   await expect(toggle).toBeVisible()
   await toggle.click()
   const nav = page.locator('#mobile-nav')
-  await expect(nav.locator('nav').getByRole('link')).toHaveCount(4)
+  await expect(nav.locator('nav').getByRole('link')).toHaveCount(5)
   await expect(nav.getByRole('link', { name: 'Tải DocOps' })).toBeVisible()
+  await expect(nav.getByRole('link', { name: /hướng dẫn sử dụng DocOps/i })).toBeVisible()
   await nav.getByRole('link', { name: 'Tải về' }).click()
   await expect(page).toHaveURL(/\/tai-ve$/)
   await expect(page.locator('#mobile-nav')).toHaveCount(0)
@@ -42,4 +44,14 @@ test('the 29-type table scrolls inside its box, not the page', async ({ page }) 
   await expect(page.locator('table tbody tr')).toHaveCount(29)
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)
   expect(overflow).toBeLessThanOrEqual(0)
+})
+
+test('user guide: no horizontal overflow, and #tra-cuu lands below the 64 px mobile header', async ({ page }) => {
+  await openAtAnchor(page, '/huong-dan-su-dung#tra-cuu')
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)
+  expect(overflow).toBeLessThanOrEqual(0)
+  const header = (await page.locator('header').boundingBox())!
+  const h = (await page.locator('h2#tra-cuu').boundingBox())!
+  expect(h.y, 'heading top is below the header').toBeGreaterThanOrEqual(header.y + header.height)
+  expect(h.y + h.height, 'heading bottom is inside the viewport').toBeLessThanOrEqual(page.viewportSize()!.height)
 })

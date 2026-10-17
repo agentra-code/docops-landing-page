@@ -47,6 +47,27 @@ describe('page metadata in messages', () => {
   })
 })
 
+describe('keyword map in lib/seo/brand.ts', () => {
+  // Bản đồ từ khoá là chú thích đầu tệp (mỗi URL một chủ đề chính). Trang mới mà không vào bản đồ thì không ai biết từ khoá của nó đã có chủ.
+  const map = readFileSync('lib/seo/brand.ts', 'utf8').split('export const brand')[0]!
+  // Liên hệ và Chính sách bảo mật không nhắm từ khoá nào; trang chủ có dòng riêng (`/ · /en`).
+  const NO_KEYWORD = new Set<string>(['/', '/contact', '/privacy'])
+
+  test('lists the Vietnamese slug of every page that targets a keyword', () => {
+    for (const [page, entry] of Object.entries(routing.pathnames)) {
+      if (NO_KEYWORD.has(page)) continue
+      const slug = (typeof entry === 'string' ? entry : entry.vi).replace(/\/\[\w+\]$/, '')
+      expect(map, `${page} -> ${slug}`).toContain(`  ${slug}`)
+    }
+  })
+
+  test('gives the user guide its main keyword first, then the second form people type', () => {
+    const line = map.split('\n').find((l) => l.includes('/huong-dan-su-dung'))
+    expect(line, '/huong-dan-su-dung line').toBeDefined()
+    expect(line).toMatch(/\/huong-dan-su-dung\s+hướng dẫn sử dụng DocOps, cách dùng DocOps/)
+  })
+})
+
 describe('topic pages', () => {
   for (const locale of LOCALES) {
     for (const id of TOPIC_IDS) {

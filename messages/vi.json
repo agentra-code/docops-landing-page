@@ -17,6 +17,7 @@
     "howItWorks": "Quy trình",
     "transparency": "Minh bạch AI",
     "download": "Tải về",
+    "userGuide": "Hướng dẫn sử dụng DocOps",
     "contact": "Liên hệ"
   },
   "notFound": {
@@ -176,7 +177,7 @@
       },
       "q1": {
         "q": "Key kích hoạt là gì và xin ở đâu?",
-        "a": "Mỗi đơn vị được Agentra cấp một key dạng DOCOPS-XXXX-XXXX-XXXX để mở workspace riêng. Cài app, ở màn Kích hoạt chọn \"Chưa có key (đăng ký mới)\" và gửi đơn ngay trong app, hoặc email cho chúng tôi kèm tên đơn vị."
+        "a": "Mỗi đơn vị được Agentra cấp một key dạng DOCOPS-XXXX-XXXX-XXXX để mở workspace riêng. Cài app, ở màn Kích hoạt bấm \"Gửi yêu cầu tới quản trị\" và gửi đơn ngay trong app, hoặc email cho chúng tôi kèm tên đơn vị."
       },
       "q2": {
         "q": "Có cần Internet không?",
@@ -256,6 +257,8 @@
       "title": "Đã cài rồi? Bản mới tự cập nhật trong app",
       "body": "Vào Cài đặt, thẻ Phiên bản, bấm Kiểm tra cập nhật rồi Tải và cài. Không cần tải lại tệp cài."
     },
+    "afterInstall": "Cài xong? Xem <link>hướng dẫn sử dụng DocOps</link>",
+    "afterInstallBody": "Mười hai mục có ảnh chụp màn hình: kích hoạt key, nạp văn bản, tra cứu, soạn thảo, sao lưu và kết nối agent.",
     "help": "Không tải được? Email <email></email>, chúng tôi gửi tệp qua kênh khác."
   },
   "install": {
@@ -456,7 +459,7 @@
       },
       "s2": {
         "title": "Gửi đơn ngay trong app",
-        "desc": "Ở màn Kích hoạt chọn \"Chưa có key (đăng ký mới)\", điền tên đơn vị và người liên hệ rồi gửi."
+        "desc": "Ở màn Kích hoạt bấm \"Gửi yêu cầu tới quản trị\", điền tên đơn vị, người liên hệ và email hoặc số điện thoại rồi gửi."
       },
       "s3": {
         "title": "Nhận key qua email",
