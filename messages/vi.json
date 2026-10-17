@@ -17,6 +17,7 @@
     "howItWorks": "Quy trình",
     "transparency": "Minh bạch AI",
     "download": "Tải về",
+    "userGuide": "Hướng dẫn sử dụng DocOps",
     "contact": "Liên hệ"
   },
   "notFound": {
@@ -176,7 +177,7 @@
       },
       "q1": {
         "q": "Key kích hoạt là gì và xin ở đâu?",
-        "a": "Mỗi đơn vị được Agentra cấp một key dạng DOCOPS-XXXX-XXXX-XXXX để mở workspace riêng. Cài app, ở màn Kích hoạt chọn \"Chưa có key (đăng ký mới)\" và gửi đơn ngay trong app, hoặc email cho chúng tôi kèm tên đơn vị."
+        "a": "Mỗi đơn vị được Agentra cấp một key dạng DOCOPS-XXXX-XXXX-XXXX để mở workspace riêng. Cài app, ở màn Kích hoạt bấm \"Gửi yêu cầu tới quản trị\" và gửi đơn ngay trong app, hoặc email cho chúng tôi kèm tên đơn vị."
       },
       "q2": {
         "q": "Có cần Internet không?",
@@ -256,6 +257,8 @@
       "title": "Đã cài rồi? Bản mới tự cập nhật trong app",
       "body": "Vào Cài đặt, thẻ Phiên bản, bấm Kiểm tra cập nhật rồi Tải và cài. Không cần tải lại tệp cài."
     },
+    "afterInstall": "Cài xong? Xem <link>hướng dẫn sử dụng DocOps</link>",
+    "afterInstallBody": "Mười hai mục có ảnh chụp màn hình: kích hoạt key, nạp văn bản, tra cứu, soạn thảo, sao lưu và kết nối agent.",
     "help": "Không tải được? Email <email></email>, chúng tôi gửi tệp qua kênh khác."
   },
   "install": {
@@ -288,6 +291,18 @@
         "title": "Cài DocOps trên máy Windows",
         "description": "Hướng dẫn cài DocOps trên Windows 10/11: tải tệp Setup, vượt cảnh báo SmartScreen, chạy trình cài, kích hoạt bằng key và cập nhật trong app."
       }
+    }
+  },
+  "guide": {
+    "eyebrow": "Hướng dẫn sử dụng",
+    "breadcrumbNav": "Đường dẫn trang",
+    "breadcrumbHome": "Trang chủ",
+    "breadcrumbGuide": "Hướng dẫn sử dụng",
+    "bottom": {
+      "title": "Chưa cài DocOps?",
+      "body": "Tải bản cho máy của bạn, cài theo hướng dẫn rồi quay lại trang này.",
+      "download": "Tải DocOps",
+      "install": "Hướng dẫn cài đặt"
     }
   },
   "howItWorks": {
@@ -444,7 +459,7 @@
       },
       "s2": {
         "title": "Gửi đơn ngay trong app",
-        "desc": "Ở màn Kích hoạt chọn \"Chưa có key (đăng ký mới)\", điền tên đơn vị và người liên hệ rồi gửi."
+        "desc": "Ở màn Kích hoạt bấm \"Gửi yêu cầu tới quản trị\", điền tên đơn vị, người liên hệ và email hoặc số điện thoại rồi gửi."
       },
       "s3": {
         "title": "Nhận key qua email",
@@ -461,7 +476,7 @@
       "i3": "Phiên bản Windows hoặc macOS, và loại chip nếu là máy Mac",
       "i4": "Phiên bản DocOps (Cài đặt, thẻ Phiên bản)",
       "boxTitle": "Hai cách gửi",
-      "boxBody": "Email về {email}, hoặc mở mục Phản hồi ngay trong app DocOps: phản hồi gửi từ app tự đính kèm phiên bản và nhật ký kỹ thuật.",
+      "boxBody": "Email về {email}, hoặc dùng thẻ Trợ giúp & phản hồi trong Cài đặt của app DocOps: phản hồi gửi từ app tự đính kèm phiên bản và nhật ký kỹ thuật.",
       "btn": "Gửi email báo lỗi",
       "subject": "Báo lỗi DocOps"
     }

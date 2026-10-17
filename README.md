@@ -48,6 +48,7 @@ proxy.ts                 # next-intl (Next 16 gọi là proxy thay cho middlewar
 |---|---|
 | Chữ trên giao diện (cả hai ngôn ngữ) | `messages/vi.json`, `messages/en.json` (giữ cùng tập khoá) |
 | Hướng dẫn cài đặt | `content/install/<vi|en>/<macos|windows>.mdx` (`meta.toc` là mục lục) |
+| Hướng dẫn sử dụng | `content/guide/<vi|en>.mdx`; 12 id mục ở `content/guide/index.ts` được app desktop ghim để mở đúng `#mục` — đổi id thì đổi cả bên app |
 | Chính sách bảo mật | `content/privacy/<vi|en>.mdx` |
 | Email, địa chỉ, điện thoại/Zalo, URL công ty | `lib/site.ts` (điện thoại/Zalo để trống thì thẻ Liên hệ tự ẩn) |
 | Ảnh màn hình app | `pnpm capture-images <đường dẫn docops-application/docs/thiet-ke>` → `public/images/product/*.webp` |

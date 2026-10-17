@@ -12,7 +12,8 @@ test('old web-app paths redirect permanently', async ({ request }) => {
 test('metadata routes and security headers', async ({ request }) => {
   const sitemap = await request.get('/sitemap.xml')
   expect(sitemap.status()).toBe(200)
-  expect((await sitemap.text()).match(/<loc>/g)).toHaveLength(32)
+  // 17 trang (cài đặt có 2 hệ điều hành) × 2 ngôn ngữ = 34; Hướng dẫn sử dụng là 2 trong số đó (17/10)
+  expect((await sitemap.text()).match(/<loc>/g)).toHaveLength(34)
   const robots = await request.get('/robots.txt')
   expect(await robots.text()).toContain('Sitemap: ')
   const home = await request.get('/')

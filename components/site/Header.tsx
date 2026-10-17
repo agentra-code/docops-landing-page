@@ -13,13 +13,13 @@ export function Header() {
   // của phần tử `fixed` bên trong, panel menu mobile bị co về cao 64px của header.
   return (
     <header className="sticky top-0 z-30 h-16 border-b border-line before:absolute before:inset-0 before:-z-10 before:bg-card/95 before:backdrop-blur md:h-[72px]">
-      <Container className="flex h-full items-center gap-10">
+      <Container className="flex h-full items-center gap-10 xl:gap-6">
         <Link href="/" className="flex items-center gap-2.5 text-ink">
           <LogoMark size={26} />
-          <span className="text-[17px] font-bold tracking-[0.2px]">{t('siteName')}</span>
+          <span className="text-[17px] font-bold tracking-[0.2px] xl:whitespace-nowrap">{t('siteName')}</span>
         </Link>
-        <nav aria-label={t('mainNav')} className="ml-auto hidden items-center gap-7 md:flex">
-          <NavLinks />
+        <nav aria-label={t('mainNav')} className="ml-auto hidden items-center gap-7 md:flex xl:gap-5">
+          <NavLinks bar />
         </nav>
         <div className="hidden items-center gap-3.5 md:flex">
           <LocaleSwitcher />

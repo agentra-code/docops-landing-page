@@ -41,6 +41,7 @@ test('share images: own image for download and topic pages, shared image elsewhe
 test('sitemap lists every page in both locales, lastmod only from real dates', async () => {
   const { default: sitemap } = await import('@/app/sitemap')
   const { routing } = await import('@/i18n/routing')
+  const { CONTENT_UPDATED } = await import('@/content/dates')
   const entries = await sitemap()
   // 11 trang (cài đặt có 2 hệ điều hành) × 2 ngôn ngữ
   const pageCount = Object.keys(routing.pathnames).length + 1
@@ -51,6 +52,15 @@ test('sitemap lists every page in both locales, lastmod only from real dates', a
   expect(urls).toContain('https://docops.agentra.io.vn/en/install/windows')
   expect(urls).toContain('https://docops.agentra.io.vn/soan-thao-van-ban-nghi-dinh-30')
   expect(urls).toContain('https://docops.agentra.io.vn/en/ai-for-universities')
+  // Hướng dẫn sử dụng: hai bản, cùng hreflang, lastmod = ngày nội dung (CONTENT_UPDATED.guide)
+  const guide = entries.find((e) => e.url === 'https://docops.agentra.io.vn/huong-dan-su-dung')!
+  expect(guide.alternates?.languages).toEqual({
+    vi: 'https://docops.agentra.io.vn/huong-dan-su-dung',
+    en: 'https://docops.agentra.io.vn/en/user-guide',
+    'x-default': 'https://docops.agentra.io.vn/huong-dan-su-dung',
+  })
+  expect(urls).toContain('https://docops.agentra.io.vn/en/user-guide')
+  expect((guide.lastModified as Date).toISOString().slice(0, 10)).toBe(CONTENT_UPDATED.guide)
   const dl = entries.find((e) => e.url.endsWith('/tai-ve'))!
   expect(dl.alternates?.languages).toMatchObject({ en: 'https://docops.agentra.io.vn/en/download', 'x-default': 'https://docops.agentra.io.vn/tai-ve' })
   const { releaseSnapshot } = await import('@/lib/releases/snapshot')

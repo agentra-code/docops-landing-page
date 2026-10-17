@@ -16,14 +16,19 @@ import { absoluteUrl } from './urls'
 
 const MESSAGES = { vi, en }
 type PageMeta = { title: string; description: string }
-export type LlmsInput = { release: { version: string; releaseDate: string } | null; privacy: Record<Locale, PageMeta> }
+export type LlmsInput = {
+  release: { version: string; releaseDate: string } | null
+  /** Tiêu đề và mô tả của các trang MDX (meta nằm trong tệp MDX nên nạp bất đồng bộ ở llms-input.ts). */
+  privacy: Record<Locale, PageMeta>
+  guide: Record<Locale, PageMeta>
+}
 
 const L = {
   vi: { solutions: 'Giải pháp (tiếng Việt)', pages: 'Trang sản phẩm (tiếng Việt)', home: 'Trang chủ', faq: 'Hỏi đáp thường gặp (tiếng Việt)', updated: 'Cập nhật' },
   en: { solutions: 'Solutions (English)', pages: 'Product pages (English)', home: 'Home', faq: 'Frequently asked questions (English)', updated: 'Updated' },
 } satisfies Record<Locale, Record<string, string>>
 
-function productPages(locale: Locale, privacy: PageMeta): Array<{ title: string; url: string; description: string }> {
+function productPages(locale: Locale, privacy: PageMeta, guide: PageMeta): Array<{ title: string; url: string; description: string }> {
   const m = MESSAGES[locale]
   return [
     { title: `${brand.name}: ${L[locale].home}`, url: absoluteUrl(locale, '/'), description: brand.description[locale] },
@@ -33,6 +38,7 @@ function productPages(locale: Locale, privacy: PageMeta): Array<{ title: string;
       url: absoluteUrl(locale, '/install/[os]', { os }),
       description: m.install.meta[os].description,
     })),
+    { title: guide.title, url: absoluteUrl(locale, '/user-guide'), description: guide.description },
     { title: m.howItWorks.meta.title, url: absoluteUrl(locale, '/how-it-works'), description: m.howItWorks.meta.description },
     { title: m.transparency.meta.title, url: absoluteUrl(locale, '/ai-transparency'), description: m.transparency.meta.description },
     { title: m.contact.meta.title, url: absoluteUrl(locale, '/contact'), description: m.contact.meta.description },
@@ -84,7 +90,7 @@ export function llmsTxt(input: LlmsInput): string {
   }
   for (const locale of routing.locales) {
     lines.push('', `## ${L[locale].pages}`, '')
-    for (const p of productPages(locale, input.privacy[locale])) lines.push(`- [${p.title}](${p.url}): ${p.description}`)
+    for (const p of productPages(locale, input.privacy[locale], input.guide[locale])) lines.push(`- [${p.title}](${p.url}): ${p.description}`)
   }
   lines.push(
     '',
@@ -147,6 +153,9 @@ export function llmsFullTxt(input: LlmsInput): string {
     for (const f of homeFaq(locale)) lines.push(`**${f.q}**`, f.a, '')
     for (const id of TOPIC_IDS) lines.push(...topicMd(locale, id, topicCopy(locale, id)))
   }
-  lines.push(`Chính sách minh bạch AI / AI transparency: ${absoluteUrl('vi', '/ai-transparency')} (${CONTENT_UPDATED.aiTransparency})`)
+  lines.push(
+    `Chính sách minh bạch AI / AI transparency: ${absoluteUrl('vi', '/ai-transparency')} (${CONTENT_UPDATED.aiTransparency})`,
+    `Hướng dẫn sử dụng, từ kích hoạt tới sao lưu / User guide, from activation to backup: ${absoluteUrl('vi', '/user-guide')} · ${absoluteUrl('en', '/user-guide')} (${CONTENT_UPDATED.guide})`,
+  )
   return `${lines.join('\n')}\n`
 }

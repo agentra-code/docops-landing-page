@@ -51,6 +51,7 @@ export function Footer() {
             <Link href="/download" className={linkClass}>{tn('download')}</Link>
             <Link href={{ pathname: '/install/[os]', params: { os: 'macos' } }} className={linkClass}>{t('installMacos')}</Link>
             <Link href={{ pathname: '/install/[os]', params: { os: 'windows' } }} className={linkClass}>{t('installWindows')}</Link>
+            <Link href="/user-guide" className={linkClass}>{tn('userGuide')}</Link>
             <Link href="/how-it-works" className={linkClass}>{tn('howItWorks')}</Link>
           </FooterColumn>
           <FooterColumn title={t('trust')}>

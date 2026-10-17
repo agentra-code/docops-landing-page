@@ -47,6 +47,27 @@ describe('page metadata in messages', () => {
   })
 })
 
+describe('keyword map in lib/seo/brand.ts', () => {
+  // Bản đồ từ khoá là chú thích đầu tệp (mỗi URL một chủ đề chính). Trang mới mà không vào bản đồ thì không ai biết từ khoá của nó đã có chủ.
+  const map = readFileSync('lib/seo/brand.ts', 'utf8').split('export const brand')[0]!
+  // Liên hệ và Chính sách bảo mật không nhắm từ khoá nào; trang chủ có dòng riêng (`/ · /en`).
+  const NO_KEYWORD = new Set<string>(['/', '/contact', '/privacy'])
+
+  test('lists the Vietnamese slug of every page that targets a keyword', () => {
+    for (const [page, entry] of Object.entries(routing.pathnames)) {
+      if (NO_KEYWORD.has(page)) continue
+      const slug = (typeof entry === 'string' ? entry : entry.vi).replace(/\/\[\w+\]$/, '')
+      expect(map, `${page} -> ${slug}`).toContain(`  ${slug}`)
+    }
+  })
+
+  test('gives the user guide its main keyword first, then the second form people type', () => {
+    const line = map.split('\n').find((l) => l.includes('/huong-dan-su-dung'))
+    expect(line, '/huong-dan-su-dung line').toBeDefined()
+    expect(line).toMatch(/\/huong-dan-su-dung\s+hướng dẫn sử dụng DocOps, cách dùng DocOps/)
+  })
+})
+
 describe('topic pages', () => {
   for (const locale of LOCALES) {
     for (const id of TOPIC_IDS) {
@@ -91,6 +112,28 @@ describe('content dates match the MDX sources', () => {
     const updated = (file: string) => readFileSync(file, 'utf8').match(/updated: '([\d-]+)'/)?.[1]
     for (const os of GUIDE_OS) expect(updated(`content/install/${locale}/${os}.mdx`)).toBe(CONTENT_UPDATED.install[os])
     expect(updated(`content/privacy/${locale}.mdx`)).toBe(CONTENT_UPDATED.privacy)
+    expect(updated(`content/guide/${locale}.mdx`)).toBe(CONTENT_UPDATED.guide)
+  })
+})
+
+describe('user guide search copy (spec Dự án 2 §5.4, W2)', () => {
+  /** A string field of `export const meta`, with `\'` unescaped. */
+  const metaField = (src: string, field: string) =>
+    src.match(new RegExp(`^  ${field}: '((?:[^'\\\\]|\\\\.)*)',$`, 'm'))?.[1]?.replace(/\\'/g, "'")
+  test.each(LOCALES)('%s title and description', (locale) => {
+    const src = readFileSync(`content/guide/${locale}.mdx`, 'utf8')
+    const title = metaField(src, 'title')
+    const description = metaField(src, 'description')
+    expect(title, `${locale} meta.title`).toBeTypeOf('string')
+    expect(description, `${locale} meta.description`).toBeTypeOf('string')
+    expectTitle(`${locale} user guide`, title!)
+    expectDescription(`${locale} user guide`, description!)
+    // Từ khoá chính của URL (spec §5.4) phải nằm trong tiêu đề — tiêu đề cũng là h1 của trang.
+    expect(title!.toLowerCase()).toContain(locale === 'vi' ? 'hướng dẫn sử dụng docops' : 'docops user guide')
+  })
+  test('updated is a real ISO date, not in the future', () => {
+    expect(CONTENT_UPDATED.guide).toMatch(/^\d{4}-\d{2}-\d{2}$/)
+    expect(new Date(CONTENT_UPDATED.guide).getTime()).toBeLessThanOrEqual(Date.now())
   })
 })
 

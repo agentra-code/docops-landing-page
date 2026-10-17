@@ -14,6 +14,8 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     // Nguồn thiết kế và báo cáo test không phải mã của site
     "docs/**",
+    // Bộ dựng ảnh hướng dẫn chạy bằng Vite + React + hợp đồng IPC của app desktop (không phải mã của site)
+    "scripts/guide-capture/**",
     ".lighthouseci/**",
     "playwright-report/**",
     "test-results/**",
