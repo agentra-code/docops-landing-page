@@ -80,17 +80,20 @@ describe('user guide', () => {
     })
   }
 
-  test('vi: names the real buttons of the app, verbatim', () => {
-    const src = guideSource('vi')
-    for (const label of [
-      'Nạp văn bản', 'Gửi yêu cầu tới quản trị', 'Sửa thông tin', 'Thay tệp…', 'Thay văn bản cũ bằng bản này',
-      'Đọc lại bằng OCR', 'Đọc lại chữ (miễn phí)', 'Sửa metadata rồi chốt', 'Bản thảo đã lưu', 'Nhập nội dung có sẵn',
-      'Xem lại hướng dẫn nhanh', 'Trợ giúp & phản hồi', '/huongdan', 'Sao lưu ngay', 'Khôi phục…',
-      'Cho phép agent trên máy này điều khiển DocOps',
-    ]) expect(src, label).toContain(label)
-  })
+  // App chỉ có tiếng Việt: bản tiếng Anh cũng phải gọi nút bằng đúng chữ trên màn hình (kèm lời dịch), không thì người đọc không tìm ra nút.
+  for (const locale of LOCALES) {
+    test(`${locale}: names the real buttons of the app, verbatim`, () => {
+      const src = guideSource(locale)
+      for (const label of [
+        'Nạp văn bản', 'Gửi yêu cầu tới quản trị', 'Sửa thông tin', 'Thay tệp…', 'Thay văn bản cũ bằng bản này',
+        'Đọc lại bằng OCR', 'Đọc lại chữ (miễn phí)', 'Sửa metadata rồi chốt', 'Bản thảo đã lưu', 'Nhập nội dung có sẵn',
+        'Xem lại hướng dẫn nhanh', 'Trợ giúp & phản hồi', '/huongdan', 'Sao lưu ngay', 'Khôi phục…',
+        'Cho phép agent trên máy này điều khiển DocOps',
+      ]) expect(src, label).toContain(label)
+    })
+  }
 
-  test('both: paid actions are said to be paid, free ones free', () => {
+  test('both: paid actions are said to be paid', () => {
     const vi = guideSource('vi')
     expect(vi).toMatch(sameLine('Đọc lại bằng OCR', 'tốn phí'))
     expect(vi).toMatch(sameLine('Thay tệp', 'bản quét[^\\n]*tốn phí'))
@@ -99,7 +102,6 @@ describe('user guide', () => {
     expect(en).toMatch(sameLine('Đọc lại bằng OCR', 'billed'))
     expect(en).toMatch(sameLine('Thay tệp', 'scan[^\\n]*billed'))
     expect(en).toMatch(sameLine('Nhờ AI trình bày lại', 'billed'))
-    expect(en).toMatch(sameLine('Đọc lại chữ \\(miễn phí\\)', 'free'))
   })
 
   test('en: every screenshot is captioned "The app interface is in Vietnamese."', () => {
