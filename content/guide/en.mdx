@@ -30,7 +30,7 @@ export const meta = {
 DocOps has no personal accounts. Each computer is activated once with your institution's key; after that the app opens straight away.
 
 <figure className="flex flex-col gap-2">
-  <img src="/images/guide/bat-dau.webp" alt="The DocOps Overview screen in the Classic layout, with the main screens listed in the left column" decoding="async" className="h-auto w-full rounded-xl border border-line" />
+  <img src="/images/guide/bat-dau.webp" alt="The DocOps Overview screen in the Classic layout, with the main screens listed in the left column" width="1600" height="900" decoding="async" className="h-auto w-full rounded-xl border border-line" />
   <figcaption className="text-[13.5px] leading-snug text-muted">The Classic layout: screens in the left column, the Nạp văn bản button and the confirmation tray bell in the top bar. The app interface is in Vietnamese.</figcaption>
 </figure>
 
@@ -78,7 +78,7 @@ In the chat box, slash commands accept any spelling: with or without Vietnamese 
 DocOps takes PDF files: PDFs that already carry a text layer (usually exported from Word) and scans (a photo of each page). For a scan, the AI reads the text page by page. The AI then extracts the document number, signing date, issuing body, signer and legal-basis relations. A document enters the library only after you confirm what the machine read.
 
 <figure className="flex flex-col gap-2">
-  <img src="/images/guide/nap-van-ban.webp" alt="The ingest window with a percentage bar, the step in progress and a file list with each file's state" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
+  <img src="/images/guide/nap-van-ban.webp" alt="The ingest window with a percentage bar, the step in progress and a file list with each file's state" width="1220" height="2026" loading="lazy" decoding="async" className="h-auto w-full max-w-[520px] rounded-xl border border-line" />
   <figcaption className="text-[13.5px] leading-snug text-muted">The Nạp văn bản window while DocOps reads a batch of files. The app interface is in Vietnamese.</figcaption>
 </figure>
 
@@ -113,7 +113,7 @@ DocOps takes PDF files: PDFs that already carry a text layer (usually exported f
 The document library lists every ingested document: number, subject, type, year and state. Click the number or an empty part of the row to open the detail panel on the right; click the subject to see a long subject in full.
 
 <figure className="flex flex-col gap-2">
-  <img src="/images/guide/kho-van-ban.webp" alt="The document library with the filter box, the state buttons and the detail panel of an open document" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
+  <img src="/images/guide/kho-van-ban.webp" alt="The document library filtered by “tốt nghiệp”: rows matched in the body text with a snippet, and the detail panel of an open document" width="1600" height="900" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
   <figcaption className="text-[13.5px] leading-snug text-muted">The document library and the detail panel of one document. The app interface is in Vietnamese.</figcaption>
 </figure>
 
@@ -183,7 +183,7 @@ DocOps has no recycle bin. [Back up](#sao-luu) before cleaning up the library.
 Search looks through the number, the subject and the full text of every ingested document, including text the machine read from scans. Searching runs on your computer and is free.
 
 <figure className="flex flex-col gap-2">
-  <img src="/images/guide/tra-cuu.webp" alt="The Search screen with three result columns, passages with the matched words highlighted and page numbers" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
+  <img src="/images/guide/tra-cuu.webp" alt="The Search screen with three result columns, passages with the matched words highlighted and page numbers" width="1600" height="900" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
   <figcaption className="text-[13.5px] leading-snug text-muted">Search results: each document comes with the passage and page that hold the words typed. The app interface is in Vietnamese.</figcaption>
 </figure>
 
@@ -217,7 +217,7 @@ Some text PDFs ingested with an older DocOps version have their letters split ap
 Ask in plain words about your institution's document library. The AI answers only from the documents you ingested, and cites the exact document, page or article so you can open it and check.
 
 <figure className="flex flex-col gap-2">
-  <img src="/images/guide/hoi-ai.webp" alt="The Chat with AI panel on the Search screen, with an answer whose buttons lead to documents and pages" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
+  <img src="/images/guide/hoi-ai.webp" alt="The Chat with AI panel on the Search screen, with an answer whose buttons lead to documents and pages" width="1600" height="900" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
   <figcaption className="text-[13.5px] leading-snug text-muted">An AI answer with its citations: click one to open the exact document and page. The app interface is in Vietnamese.</figcaption>
 </figure>
 
@@ -243,7 +243,7 @@ The AI finds relevant documents using the very words of your question, so use th
 Review covers two jobs: confirming what the machine read, in the **Khay xác nhận** (Confirmation tray), and handling legal-basis validity warnings on the **Rà soát** (Review) screen.
 
 <figure className="flex flex-col gap-2">
-  <img src="/images/guide/ra-soat.webp" alt="The Review screen with documents carrying validity warnings and the content of the selected document" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
+  <img src="/images/guide/ra-soat.webp" alt="The Review screen with documents carrying validity warnings and the content of the selected document" width="1600" height="1300" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
   <figcaption className="text-[13.5px] leading-snug text-muted">The Review screen: the flagged legal bases, the original sentence and the document's content in one place. The app interface is in Vietnamese.</figcaption>
 </figure>
 
@@ -292,7 +292,7 @@ The top of the screen always reads "Đã soát N văn bản · M cạnh" (Checke
 The graph draws the legal-basis relations between documents: which document stands on which legal basis, and which documents are pulled along when a legal basis changes. A card's colour shows its validity on the chosen date: Còn hiệu lực (In force), Hết hiệu lực (Expired), Sắp thay đổi (Changing soon).
 
 <figure className="flex flex-col gap-2">
-  <img src="/images/guide/do-thi.webp" alt="The Impact graph with one document selected and its Stands on and Pulls along lists on the right" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
+  <img src="/images/guide/do-thi.webp" alt="The Impact graph with one document selected and its Stands on and Pulls along lists on the right" width="1600" height="900" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
   <figcaption className="text-[13.5px] leading-snug text-muted">Impact mode: select a card to see what it stands on and what it pulls along. The app interface is in Vietnamese.</figcaption>
 </figure>
 
@@ -328,7 +328,7 @@ This answers the question: if an article of this document is amended, what in th
 Drafting writes administrative documents in the 29 types of Decree 30/2020/NĐ-CP. The AI writes a first version from your main points, you edit it, then you export Word or PDF in the correct format.
 
 <figure className="flex flex-col gap-2">
-  <img src="/images/guide/soan-thao.webp" alt="The Drafting screen with the Main points, Document and Content cards and an A4 page preview on the right" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
+  <img src="/images/guide/soan-thao.webp" alt="The Drafting screen with the Main points, Document and Content cards and an A4 page preview on the right" width="1600" height="1180" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
   <figcaption className="text-[13.5px] leading-snug text-muted">Drafting: fill in on the left, preview the A4 page on the right. The app interface is in Vietnamese.</figcaption>
 </figure>
 
@@ -381,7 +381,7 @@ The **Nhờ AI trình bày lại** (Ask the AI to lay it out again) button rearr
 Settings has two columns. The left column is this computer's data: Key & thiết bị (Key and devices), Sao lưu & khôi phục (Backup and restore), Dung lượng lưu trữ (Storage), Phiên bản (Version), Trợ giúp & phản hồi (Help and feedback). The right column: Thông tin đơn vị (Institution details), Giao diện (Appearance), Mức dùng AI tháng này (AI usage this month), Kết nối agent (Connecting an agent).
 
 <figure className="flex flex-col gap-2">
-  <img src="/images/guide/cai-dat.webp" alt="The two-column Settings screen with the Key and devices, Institution details, Appearance and AI usage cards" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
+  <img src="/images/guide/cai-dat.webp" alt="The two-column Settings screen with the Key and devices, Institution details, Appearance and AI usage cards" width="1128" height="1489" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
   <figcaption className="text-[13.5px] leading-snug text-muted">The Settings screen. The app interface is in Vietnamese.</figcaption>
 </figure>
 
@@ -441,7 +441,7 @@ The card shows whether the key is active or locked, the institution name and how
 The document library lives only on this computer. A backup is one `.docopsbak` file holding the whole library: documents, page images, drafts and conversations. Back up before deleting documents, replacing a file, compressing images, signing out or moving to another computer, and once a week as a routine.
 
 <figure className="flex flex-col gap-2">
-  <img src="/images/guide/sao-luu.webp" alt="The Backup and restore card and the Storage card in Settings" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
+  <img src="/images/guide/sao-luu.webp" alt="The Backup and restore card and the Storage card in Settings" width="1098" height="992" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
   <figcaption className="text-[13.5px] leading-snug text-muted">Backup, restore and image compression sit in the left column of Settings. The app interface is in Vietnamese.</figcaption>
 </figure>
 
@@ -484,7 +484,7 @@ If there has been no backup in the last 24 hours, DocOps asks you to back up fir
 Connecting an agent lets an AI assistant running on this same computer, such as Claude Desktop or Claude Code, use DocOps on your behalf: search and read the document library, write and export drafts, ingest documents. The connection is off by default.
 
 <figure className="flex flex-col gap-2">
-  <img src="/images/guide/ket-noi-agent.webp" alt="The Connecting an agent card switched on, with the copy buttons, the export folder and the daily call limit" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
+  <img src="/images/guide/ket-noi-agent.webp" alt="The Connecting an agent card switched on, with the copy buttons, the export folder and the daily call limit" width="1098" height="1026" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
   <figcaption className="text-[13.5px] leading-snug text-muted">The Kết nối agent card in Settings. The app interface is in Vietnamese.</figcaption>
 </figure>
 
@@ -513,7 +513,7 @@ An agent cannot: confirm at a confirmation step (it only proposes; the proposal 
 The questions that come up most when starting with DocOps: where the data is, what is billed, a forgotten key, moving computer, and losing the connection to the server.
 
 <figure className="flex flex-col gap-2">
-  <img src="/images/guide/cau-hoi-thuong-gap.webp" alt="The Key and devices card in Settings, showing the key status and how many computers use it" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
+  <img src="/images/guide/cau-hoi-thuong-gap.webp" alt="The Key and devices card in Settings, showing the key status and how many computers use it" width="1098" height="628" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
   <figcaption className="text-[13.5px] leading-snug text-muted">The Key & thiết bị card shows whether the key is active and how many computers use it. The app interface is in Vietnamese.</figcaption>
 </figure>
 

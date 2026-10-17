@@ -1,4 +1,5 @@
-import { readFileSync } from 'node:fs'
+import { existsSync, readFileSync, statSync } from 'node:fs'
+import sharp from 'sharp'
 import { describe, expect, test } from 'vitest'
 import { GUIDE_SECTION_IDS } from '@/content/guide'
 import { GUIDE_OS, isGuideOs } from '@/content/install'
@@ -151,6 +152,42 @@ describe('user guide', () => {
     expect(srcs('en')).toEqual(srcs('vi'))
   })
 
-  // W1 phần ảnh — Task 2 bỏ todo: mỗi id có ít nhất một <img> có alt, VÀ tệp public/images/guide/<id>.webp tồn tại.
-  test.todo('W1: every section has a screenshot whose file exists in public/images/guide/')
+  // W1 phần ảnh (spec §5.3, Task 2) — ảnh chụp từ renderer desktop bằng `scripts/capture-guide-images.mjs`.
+  const IMAGE_DIR = 'public/images/guide'
+  const imgTags = (locale: (typeof LOCALES)[number]) => [...guideSource(locale).matchAll(/<img [^>]*\/>/g)].map((m) => m[0])
+  const attr = (tag: string, name: string) => tag.match(new RegExp(`\\s${name}="([^"]*)"`))?.[1]
+  const imageFile = (id: string) => `${IMAGE_DIR}/${id}.webp`
+
+  for (const locale of LOCALES) {
+    test.each(GUIDE_SECTION_IDS)(`${locale}: section "%s" has a screenshot with an alt, and the file is in public/images/guide/`, (id) => {
+      const mine = imgTags(locale).filter((tag) => attr(tag, 'src') === `/images/guide/${id}.webp`)
+      expect(mine.length, `no <img> for ${id}`).toBeGreaterThanOrEqual(1)
+      for (const tag of mine) expect((attr(tag, 'alt') ?? '').trim(), tag).not.toBe('')
+      expect(existsSync(imageFile(id)), imageFile(id)).toBe(true)
+    })
+
+    // Chiều rộng/cao khai trong thẻ giữ chỗ cho ảnh trước khi tải (không nhảy bố cục): phải là kích thước THẬT của tệp, nên chụp lại ảnh mà quên sửa thẻ thì đỏ.
+    test(`${locale}: every <img> declares the real width and height of its file, and the file is a webp`, async () => {
+      for (const tag of imgTags(locale)) {
+        const id = attr(tag, 'src')!.match(/\/images\/guide\/([a-z-]+)\.webp$/)![1]!
+        const meta = await sharp(imageFile(id)).metadata()
+        expect(meta.format, id).toBe('webp')
+        expect([attr(tag, 'width'), attr(tag, 'height')], id).toEqual([String(meta.width), String(meta.height)])
+      }
+    })
+  }
+
+  // Ngân sách của spec §5.3 / brief Task 2: mỗi ảnh ≤ 250 KB, cả mười hai ≤ 2 MB (trang tải trên mạng di động).
+  test('the twelve screenshots stay within budget: each ≤ 250 KB, all together ≤ 2 MB', () => {
+    const sizes = GUIDE_SECTION_IDS.map((id) => [id, statSync(imageFile(id)).size] as const)
+    for (const [id, bytes] of sizes) expect(bytes, `${id}: ${Math.round(bytes / 1024)} KB`).toBeLessThanOrEqual(250 * 1024)
+    expect(sizes.reduce((sum, [, bytes]) => sum + bytes, 0)).toBeLessThanOrEqual(2 * 1024 * 1024)
+  })
+
+  // Mẫu ảnh không lọt tên người thật hay mã cán bộ: nguồn dữ liệu mẫu của bộ chụp là một trường tưởng tượng.
+  test('the screenshot harness carries only the invented unit, no real signer', () => {
+    const world = readFileSync('scripts/guide-capture/world.ts', 'utf8')
+    expect(world).toContain("export const UNIT = 'Trường Đại học Mẫu'")
+    expect(readFileSync('scripts/guide-capture/fake.ts', 'utf8')).not.toMatch(/signerName: '[^']+'|signer: '[^']+'/)
+  })
 })

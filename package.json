@@ -17,7 +17,8 @@
     "lhci": "lhci autorun",
     "verify": "pnpm typecheck && pnpm lint && pnpm test",
     "sync-releases": "node scripts/sync-releases.mjs",
-    "capture-images": "node scripts/capture-product-images.mjs"
+    "capture-images": "node scripts/capture-product-images.mjs",
+    "capture-guide-images": "node scripts/capture-guide-images.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
