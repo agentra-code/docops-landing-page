@@ -13,14 +13,14 @@ export const state: { ingest: 'running' | 'idle'; agentOn: boolean; chat: 'empty
 
 // ── Warnings: which basis is dead, which documents lean on it ───────────────────────────────
 const BASES = {
-  'TT 08/2021/TT-BGDĐT': { replacedBy: 'TT 56/2026/TT-BGDĐT', reason: 'bị thay thế', fromDate: '2026-09-01' },
-  'TT 17/2021/TT-BGDĐT': { replacedBy: 'TT 54/2026/TT-BGDĐT', reason: 'bị thay thế', fromDate: '2026-09-01' },
+  'QĐ 05/QĐ-SMẪU': { replacedBy: 'QĐ 56/QĐ-SMẪU', reason: 'bị thay thế', fromDate: '2026-09-01' },
+  'HD 12/HD-BMẪU': { replacedBy: 'HD 54/HD-BMẪU', reason: 'bị thay thế', fromDate: '2026-09-01' },
 }
 const WARN: Record<string, string[]> = {
-  'QĐ 12/QĐ-ĐHM': ['TT 08/2021/TT-BGDĐT'],
-  'QĐ 64/QĐ-ĐHM': ['TT 08/2021/TT-BGDĐT', 'TT 17/2021/TT-BGDĐT'],
-  'QĐ 118/QĐ-ĐHM': ['TT 08/2021/TT-BGDĐT'],
-  'KH 03/KH-ĐHM': ['TT 17/2021/TT-BGDĐT'],
+  'QĐ 12/QĐ-ĐHM': ['QĐ 05/QĐ-SMẪU'],
+  'QĐ 64/QĐ-ĐHM': ['QĐ 05/QĐ-SMẪU', 'HD 12/HD-BMẪU'],
+  'QĐ 118/QĐ-ĐHM': ['QĐ 05/QĐ-SMẪU'],
+  'KH 03/KH-ĐHM': ['HD 12/HD-BMẪU'],
 }
 const basisTotals: Record<string, number> = { 'QĐ 12/QĐ-ĐHM': 3, 'QĐ 64/QĐ-ĐHM': 3, 'QĐ 118/QĐ-ĐHM': 2, 'KH 03/KH-ĐHM': 2 }
 
@@ -53,14 +53,14 @@ const DRAFT_TEXT = [
   'Điều 3. Quyết định này có hiệu lực kể từ ngày ký. Trưởng các phòng, khoa và các thành viên Hội đồng chịu trách nhiệm thi hành Quyết định này.',
 ].join('\n')
 const draft = {
-  id: 2, docType: 'decision', parentAgency: 'BỘ GIÁO DỤC VÀ ĐÀO TẠO', issuer: 'TRƯỜNG ĐẠI HỌC MẪU', docNumber: '', place: 'Hà Nội',
+  id: 2, docType: 'decision', parentAgency: 'BỘ MẪU', issuer: 'TRƯỜNG ĐẠI HỌC MẪU', docNumber: '', place: 'Hà Nội',
   signedDate: '2026-10-18', subject: 'thành lập Hội đồng xét công nhận tốt nghiệp đợt 2 năm 2026', issuingAuthority: 'HIỆU TRƯỞNG TRƯỜNG ĐẠI HỌC MẪU',
   addressee: null, body: docBodyOfPlainText(DRAFT_TEXT), recipients: 'Như Điều 3;\nLưu: VT, ĐT.',
   intent: 'Thành lập Hội đồng xét công nhận tốt nghiệp đợt 2 năm 2026, giao Phòng Đào tạo làm đầu mối.',
   signerAuthority: 'KT.', signerTitle: 'PHÓ HIỆU TRƯỞNG', signerName: '', signer2Title: '', signer2Name: '', updatedAt: iso(-90_000),
 }
 let ingestStartedAt = Date.now() - 48_000
-const norm = (t: string) => t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd').toLowerCase()
+const norm = (t: string) => t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd')
 const hit = (snippet: string, word: string): Array<[number, number]> => {
   const out: Array<[number, number]> = []
   const s = norm(snippet), w = norm(word)
@@ -74,20 +74,20 @@ function passageOf(docNumber: string, snippet: string, word: string, page: numbe
 }
 function searchFor(q: string) {
   const n = norm(q)
-  if (n.includes('08/2021')) {
-    const s = 'Căn cứ Thông tư số 08/2021/TT-BGDĐT ngày 18 tháng 3 năm 2021 của Bộ trưởng Bộ Giáo dục và Đào tạo ban hành Quy chế đào tạo trình độ đại học;'
+  if (n.includes('05/qd-smau')) {
+    const s = 'Căn cứ Quyết định số 05/QĐ-SMẪU ngày 18 tháng 3 năm 2021 của Sở Mẫu ban hành Quy chế mẫu về đào tạo trình độ đại học;'
     return {
-      documents: [{ docNumber: 'TT 08/2021/TT-BGDĐT', subject: 'Ban hành Quy chế đào tạo trình độ đại học' }],
-      legalBases: [{ docNumber: 'TT 08/2021/TT-BGDĐT', citingCount: 3 }],
+      documents: [{ docNumber: 'QĐ 05/QĐ-SMẪU', subject: 'Quy chế mẫu về đào tạo trình độ đại học' }],
+      legalBases: [{ docNumber: 'QĐ 05/QĐ-SMẪU', citingCount: 3 }],
       articles: [
-        { docNumber: 'QĐ 12/QĐ-ĐHM', articleNo: 7, title: 'Tổ chức đào tạo theo tín chỉ', text: 'Việc tổ chức đào tạo theo hệ thống tín chỉ thực hiện theo quy định tại Thông tư số 08/2021/TT-BGDĐT và hướng dẫn của Nhà trường.' },
-        { docNumber: 'QĐ 118/QĐ-ĐHM', articleNo: 2, title: 'Cơ sở xét công nhận tốt nghiệp', text: 'Việc xét công nhận tốt nghiệp căn cứ Điều 31 của Thông tư số 08/2021/TT-BGDĐT.' },
+        { docNumber: 'QĐ 12/QĐ-ĐHM', articleNo: 7, title: 'Tổ chức đào tạo theo tín chỉ', text: 'Việc tổ chức đào tạo theo hệ thống tín chỉ thực hiện theo quy định tại Quyết định số 05/QĐ-SMẪU và hướng dẫn của Nhà trường.' },
+        { docNumber: 'QĐ 118/QĐ-ĐHM', articleNo: 2, title: 'Cơ sở xét công nhận tốt nghiệp', text: 'Việc xét công nhận tốt nghiệp căn cứ Điều 31 của Quyết định số 05/QĐ-SMẪU.' },
       ],
       elapsedMs: 7,
       passages: [
-        passageOf('QĐ 12/QĐ-ĐHM', s, '08/2021', 1, 'Căn cứ', 101),
-        passageOf('QĐ 64/QĐ-ĐHM', s, '08/2021', 1, 'Căn cứ', 202),
-        passageOf('QĐ 118/QĐ-ĐHM', s, '08/2021', 1, 'Căn cứ', 303),
+        passageOf('QĐ 12/QĐ-ĐHM', s, '05/QĐ-SMẪU', 1, 'Căn cứ', 101),
+        passageOf('QĐ 64/QĐ-ĐHM', s, '05/QĐ-SMẪU', 1, 'Căn cứ', 202),
+        passageOf('QĐ 118/QĐ-ĐHM', s, '05/QĐ-SMẪU', 1, 'Căn cứ', 303),
       ],
       passagesRelaxed: false, indexing: null,
     }
@@ -103,7 +103,7 @@ function searchFor(q: string) {
       legalBases: [],
       articles: [
         { docNumber: 'QĐ 118/QĐ-ĐHM', articleNo: 3, title: 'Điều kiện xét công nhận tốt nghiệp', text: s1 },
-        { docNumber: 'QĐ 12/QĐ-ĐHM', articleNo: 24, title: 'Điều kiện tốt nghiệp và cấp bằng', text: 'Sinh viên được xét tốt nghiệp khi đáp ứng các điều kiện của Quy chế này và quy định của Bộ Giáo dục và Đào tạo.' },
+        { docNumber: 'QĐ 12/QĐ-ĐHM', articleNo: 24, title: 'Điều kiện tốt nghiệp và cấp bằng', text: 'Sinh viên được xét tốt nghiệp khi đáp ứng các điều kiện của Quy chế này và quy định của Bộ Mẫu.' },
       ],
       elapsedMs: 9,
       passages: [
@@ -124,7 +124,7 @@ const turnBase = { attached: [], actions: [], notFound: [], droppedCitations: []
 const chatTurns = () => state.chat === 'empty' ? [] : [
   { ...turnBase, id: 1, seq: 1, kind: 'user', text: 'Quy định về điều kiện xét tốt nghiệp nằm ở văn bản nào, Điều mấy?', citations: [] },
   { ...turnBase, id: 2, seq: 2, kind: 'assistant',
-    text: 'Điều kiện xét công nhận tốt nghiệp nằm ở QĐ 118/QĐ-ĐHM, Điều 3 [ID:311]: sinh viên phải tích lũy đủ số tín chỉ của chương trình, đạt chuẩn đầu ra ngoại ngữ và không đang bị kỷ luật. Quy chế đào tạo QĐ 12/QĐ-ĐHM, Điều 24 [ID:124] quy định chung về tốt nghiệp và cấp bằng.\n\nCả hai văn bản đang dẫn Thông tư 08/2021/TT-BGDĐT, căn cứ này đã được thay bằng TT 56/2026/TT-BGDĐT, nên cần rà soát lại.',
+    text: 'Điều kiện xét công nhận tốt nghiệp nằm ở QĐ 118/QĐ-ĐHM, Điều 3 [ID:311]: sinh viên phải tích lũy đủ số tín chỉ của chương trình, đạt chuẩn đầu ra ngoại ngữ và không đang bị kỷ luật. Quy chế đào tạo QĐ 12/QĐ-ĐHM, Điều 24 [ID:124] quy định chung về tốt nghiệp và cấp bằng.\n\nCả hai văn bản đang dẫn Quyết định 05/QĐ-SMẪU, căn cứ này đã được thay bằng QĐ 56/QĐ-SMẪU, nên cần rà soát lại.',
     citations: [
       { docNumber: 'QĐ 118/QĐ-ĐHM', articleNo: 3, passageId: 311, page: 2, label: 'QĐ 118/QĐ-ĐHM' },
       { docNumber: 'QĐ 12/QĐ-ĐHM', articleNo: 24, passageId: 124, page: 11, label: 'QĐ 12/QĐ-ĐHM' },
@@ -195,12 +195,12 @@ export const handlers: Record<string, Handler> = {
       awaitingConfirmation: 2, events, risks,
       byYear: Object.entries(byYear).map(([year, count]) => ({ year: Number(year), count })).sort((a, b) => a.year - b.year),
       byType: Object.entries(byType).map(([docType, count]) => ({ docType, count })).sort((a, b) => b.count - a.count),
-      articleCount: 164, edgeCount: EDGES.length, reviewedCount: 6, unanalyzedCount: 2,
-      inspected: { documents: DOCS.length - 2, edges: EDGES.length }, lastAnalyzedAt: iso(-3 * 3600_000),
+      articleCount: 164, edgeCount: EDGES.length, reviewedCount: 6, unanalyzedCount: 1,
+      inspected: { documents: DOCS.length - 1, edges: EDGES.length }, lastAnalyzedAt: iso(-3 * 3600_000),
     })
   },
 
-  getUnitInfo: () => ok({ parentAgency: 'BỘ GIÁO DỤC VÀ ĐÀO TẠO', issuer: 'TRƯỜNG ĐẠI HỌC MẪU', place: 'Hà Nội', signerAuthority: 'KT.', signerTitle: 'PHÓ HIỆU TRƯỞNG', signerName: '' }),
+  getUnitInfo: () => ok({ parentAgency: 'BỘ MẪU', issuer: 'TRƯỜNG ĐẠI HỌC MẪU', place: 'Hà Nội', signerAuthority: 'KT.', signerTitle: 'PHÓ HIỆU TRƯỞNG', signerName: '' }),
   getKeyDevices: () => ok({
     status: 'active', unitName: UNIT, devicesInUse: 3, maxDevices: 10,
     devices: [
@@ -234,13 +234,16 @@ export const handlers: Record<string, Handler> = {
       }))
       return { docNumber: n, subject: d.subject, signedOn: d.signedOn, issuer: d.issuer, unhandledCount: warnings.length, warnings }
     })
-    return ok({ rows, inspected: { documents: DOCS.length - 2, edges: EDGES.length } })
+    return ok({ rows, inspected: { documents: DOCS.length - 1, edges: EDGES.length } })
   },
+  // ONE card with two relations to approve (H1): the review band has a ceiling (20% of the column, 300 px at most) and a card of an H2/H4
+  // document plus the H2 "select all" bar does not fit under it, so a second card would only ever show as a clipped sliver.
   getInboxByDocument: () => ok(inboxByDocumentReply([
-    journeyDocument({ documentId: 'd-qd301', docNumberLabel: 'QĐ 301/QĐ-ĐHM', subject: DOCS.find((d) => d.id === 'd-qd301')!.subject,
-      items: [inboxItem({ subjectId: 'd-qd301', gateCode: 'H2', summary: 'Duyệt vào kho — QĐ 301/QĐ-ĐHM', fieldsToDecide: 3, documentId: 'd-qd301', createdAt: iso(-20 * 3600_000) })] }),
     journeyDocument({ documentId: 'd-cv412', docNumberLabel: 'CV 412/ĐHM-ĐT', subject: DOCS.find((d) => d.id === 'd-cv412')!.subject,
-      items: [inboxItem({ subjectId: 'd-cv412', gateCode: 'H2', summary: 'Duyệt vào kho — CV 412/ĐHM-ĐT', fieldsToDecide: 4, documentId: 'd-cv412', createdAt: iso(-20 * 3600_000) })] }),
+      items: [
+        inboxItem({ subjectId: 'qh:d-cv412:0', gateCode: 'H1', summary: 'Quan hệ — CV 412/ĐHM-ĐT', fieldsToDecide: 1, documentId: 'd-cv412', createdAt: iso(-20 * 3600_000) }),
+        inboxItem({ subjectId: 'qh:d-cv412:1', gateCode: 'H1', summary: 'Quan hệ — CV 412/ĐHM-ĐT', fieldsToDecide: 1, documentId: 'd-cv412', createdAt: iso(-20 * 3600_000) }),
+      ] }),
   ], { warnings: [] }).data),
   getDocumentContent: (p: { docNumber?: string; documentId?: string }) => {
     const d = DOCS.find((x) => x.docNumber === p.docNumber || x.id === p.documentId)

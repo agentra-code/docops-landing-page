@@ -1,12 +1,23 @@
 // Ảnh chụp giao diện cho trang Hướng dẫn sử dụng → public/images/guide/<id>.webp (một ảnh cho mỗi mục chính).
 //
 // Dùng:  node scripts/capture-guide-images.mjs [<thư mục packages/desktop>] [--only id,id]
-//        (mặc định lấy DOCOPS_DESKTOP, rồi ../docops-application/packages/desktop)
+//        (mặc định lấy DOCOPS_DESKTOP, rồi docops-application/packages/desktop nằm cạnh repo website; trong git worktree thì truyền đường dẫn)
+//        Chạy từ thư mục nào cũng được: đường dẫn ra/vào đều tính từ vị trí của script này.
 //
 // Ảnh chụp từ renderer THẬT của app desktop (cùng React, cùng CSS, cùng màn hình), dựng trong Chromium KHÔNG có Electron, KHÔNG có
 // máy chủ, KHÔNG có key, KHÔNG gọi AI: `scripts/guide-capture/fake.ts` thay `window.docops` bằng dữ liệu mẫu bịa (một trường đại học
 // tưởng tượng, không người thật, không mã cán bộ), đúng hình dạng hợp đồng IPC (mỗi câu trả lời đi qua `IPC_CONTRACT` của desktop,
 // sai hình dạng là script dừng). Spec Dự án 2 §5.3: giao diện Cổ điển, theme sáng, rộng 1600 px, đồng hồ cố định.
+//
+// COUPLING TO THE DESKTOP (what to re-check when the desktop moves): the bridge `fake.ts` answers against `src/contracts/ipc.ts`
+// (`IPC_CONTRACT`: command names and strict input/output shapes), builds the Soạn thảo body with `src/contracts/docBody.ts`
+// (`docBodyOfPlainText`) and builds the confirmation-tray replies with `test/testUtils/gateFixtures.ts` (`inboxItem`, `journeyDocument`,
+// `inboxByDocumentReply`). A renamed command or a widened output makes this script stop with a `[fake] …` line instead of photographing
+// an error screen; the images already committed are not touched.
+//
+// SAMPLE DATA IS INVENTED ON PURPOSE (world.ts): "Trường Đại học Mẫu" and the made-up issuers "Sở Mẫu" (…-SMẪU) and "Bộ Mẫu" (…-BMẪU).
+// Never put a real ministry document number or a real validity date in it — the page is public and the "replaced / expired" relations
+// shown in the images would read as legal statements. tests/unit/guides.test.ts fails on any document number that does not end in an invented issuer.
 //
 // WHY A SCRIPT IN THIS REPO AND NOT A THROWAWAY FOLDER: the guide has to be re-shot whenever the desktop UI moves, and the sample
 // store is the site's business (it is public copy), so both live next to `capture-product-images.mjs`. Nothing is written inside the
@@ -23,12 +34,17 @@ import sharp from 'sharp'
 const args = process.argv.slice(2)
 const only = (args.find((a) => a.startsWith('--only='))?.slice(7) ?? '').split(',').filter(Boolean)
 const positional = args.filter((a) => !a.startsWith('--'))
-const desktop = resolve(positional[0] ?? process.env.DOCOPS_DESKTOP ?? '../docops-application/packages/desktop')
-const outDir = resolve('public/images/guide')
-const harness = resolve('scripts/guide-capture')
+// Everything is anchored on this file, not on the current directory: `node scripts/capture-guide-images.mjs` and
+// `cd scripts && node capture-guide-images.mjs` write the same files.
+const siteRoot = resolve(import.meta.dirname, '..')
+const desktop = resolve(positional[0] ?? process.env.DOCOPS_DESKTOP ?? join(siteRoot, '..', 'docops-application', 'packages', 'desktop'))
+const outDir = join(siteRoot, 'public', 'images', 'guide')
+const harness = join(import.meta.dirname, 'guide-capture')
 const WIDTH = 1600
-/** The one moment every shot is taken at — the sample store's own "today" (world.ts). */
-const NOW = new Date(2026, 9, 18, 9, 42, 0)
+/** The one moment every shot is taken at — the sample store's own "today" (world.ts), 09:42 in Vietnam, as a UTC INSTANT so a machine in
+ * another zone does not drift; the browser context is pinned to the same zone below. */
+const NOW = new Date('2026-10-18T02:42:00Z')
+const TIMEZONE = 'Asia/Ho_Chi_Minh'
 
 const viteBin = join(desktop, 'node_modules', '.bin', 'vite')
 if (!existsSync(viteBin) || !existsSync(join(desktop, 'src', 'renderer', 'App.tsx'))) {
@@ -99,7 +115,7 @@ const SHOTS = [
     id: 'tra-cuu', height: 900, quality: 84,
     async go(page) {
       await sidebar(page, 'Tra cứu')
-      await page.getByRole('searchbox').fill('08/2021')
+      await page.getByRole('searchbox').fill('05/QĐ-SMẪU')
       await page.getByText('3 văn bản dẫn').waitFor()
       await page.getByText('Hỏi về kho văn bản của đơn vị').waitFor()
       await settle(page, 900)
@@ -116,11 +132,11 @@ const SHOTS = [
     },
   },
   {
-    id: 'ra-soat', height: 1300, quality: 84,
+    id: 'ra-soat', height: 1560, quality: 84,
     async go(page) {
       await sidebar(page, 'Rà soát')
       await page.getByText('CĂN CỨ PHÁP LÝ').waitFor()
-      await page.getByText(/Căn cứ Thông tư số 08\/2021/).first().click()
+      await page.getByText(/Căn cứ Quyết định số 05\/QĐ-SMẪU/).first().click()
       await settle(page, 900)
     },
   },
@@ -208,7 +224,7 @@ try {
   let total = 0
   for (const shot of SHOTS) {
     if (only.length > 0 && !only.includes(shot.id)) continue
-    const context = await browser.newContext({ viewport: { width: WIDTH, height: shot.height }, deviceScaleFactor: shot.scale ?? 1, locale: 'vi-VN' })
+    const context = await browser.newContext({ viewport: { width: WIDTH, height: shot.height }, deviceScaleFactor: shot.scale ?? 1, locale: 'vi-VN', timezoneId: TIMEZONE })
     await context.clock.setFixedTime(NOW)
     await context.addInitScript(() => { try { localStorage.setItem('uiMode', 'classic'); localStorage.setItem('theme', 'light') } catch { /* private mode */ } })
     const page = await context.newPage()

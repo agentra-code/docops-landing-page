@@ -184,6 +184,30 @@ describe('user guide', () => {
     expect(sizes.reduce((sum, [, bytes]) => sum + bytes, 0)).toBeLessThanOrEqual(2 * 1024 * 1024)
   })
 
+  // Trang công khai, nên mọi số hiệu trong ảnh phải BỊA: ảnh mà ghi "TT 08/2021/TT-BGDĐT bị thay bằng …" thì người đọc hiểu là một khẳng định
+  // về luật thật. Chặn bằng danh sách cho phép (số hiệu phải kết thúc bằng mã cơ quan bịa: ĐHM = Trường Đại học Mẫu, SMẪU = Sở Mẫu,
+  // BMẪU = Bộ Mẫu) thay vì danh sách cấm, để một hậu tố thật lạ (…-BYT, …-BTC) cũng đỏ.
+  test('the screenshot harness invents every document number: each ends in a made-up issuer code', () => {
+    const FICTIONAL = /(?:^|-)(?:ĐHM|SMẪU|BMẪU)(?:-|$)/u
+    const numbers = ['world.ts', 'fake.ts'].flatMap((file) =>
+      [...readFileSync(`scripts/guide-capture/${file}`, 'utf8').matchAll(/(?<![\w/])\d{1,4}\/(?:\d{4}\/)?(\p{Lu}[\p{L}-]*)/gu)].map((m) => [file, m[0], m[1]!] as const))
+    expect(numbers.length, 'the pattern must still see the document numbers').toBeGreaterThan(30)
+    for (const [file, whole, code] of numbers) expect(FICTIONAL.test(code), `${file}: "${whole}"`).toBe(true)
+    // Và không còn chữ chỉ cơ quan thật, kể cả khi số hiệu viết kiểu khác.
+    const all = ['world.ts', 'fake.ts'].map((file) => readFileSync(`scripts/guide-capture/${file}`, 'utf8')).join('\n')
+    expect(all).not.toMatch(/BGDĐT|NĐ-CP|NQ-CP|QĐ-TTg|CT-TTg|\/QH\d|UBND|Bộ Giáo dục|Chính phủ|Luật |ĐHSP/u)
+  })
+
+  // Câu báo "ảnh là dữ liệu mẫu" phải đứng TRƯỚC ảnh đầu tiên, cả hai ngôn ngữ.
+  test.each([
+    ['vi', 'Ảnh minh hoạ dùng dữ liệu mẫu của một trường giả định; số hiệu, quan hệ và ngày trong ảnh chỉ để minh hoạ.'],
+    ['en', 'The screenshots use sample data from a fictional university; the document numbers, relations and dates in them are for illustration only.'],
+  ] as const)('%s: the sample-data notice stands before the first screenshot', (locale, sentence) => {
+    const src = guideSource(locale)
+    expect(src.indexOf(sentence), 'notice missing').toBeGreaterThan(-1)
+    expect(src.indexOf(sentence)).toBeLessThan(src.indexOf('<img '))
+  })
+
   // Mẫu ảnh không lọt tên người thật hay mã cán bộ: nguồn dữ liệu mẫu của bộ chụp là một trường tưởng tượng.
   test('the screenshot harness carries only the invented unit, no real signer', () => {
     const world = readFileSync('scripts/guide-capture/world.ts', 'utf8')
