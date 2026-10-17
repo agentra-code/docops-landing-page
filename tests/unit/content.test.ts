@@ -91,6 +91,28 @@ describe('content dates match the MDX sources', () => {
     const updated = (file: string) => readFileSync(file, 'utf8').match(/updated: '([\d-]+)'/)?.[1]
     for (const os of GUIDE_OS) expect(updated(`content/install/${locale}/${os}.mdx`)).toBe(CONTENT_UPDATED.install[os])
     expect(updated(`content/privacy/${locale}.mdx`)).toBe(CONTENT_UPDATED.privacy)
+    expect(updated(`content/guide/${locale}.mdx`)).toBe(CONTENT_UPDATED.guide)
+  })
+})
+
+describe('user guide search copy (spec Dự án 2 §5.4, W2)', () => {
+  /** A string field of `export const meta`, with `\'` unescaped. */
+  const metaField = (src: string, field: string) =>
+    src.match(new RegExp(`^  ${field}: '((?:[^'\\\\]|\\\\.)*)',$`, 'm'))?.[1]?.replace(/\\'/g, "'")
+  test.each(LOCALES)('%s title and description', (locale) => {
+    const src = readFileSync(`content/guide/${locale}.mdx`, 'utf8')
+    const title = metaField(src, 'title')
+    const description = metaField(src, 'description')
+    expect(title, `${locale} meta.title`).toBeTypeOf('string')
+    expect(description, `${locale} meta.description`).toBeTypeOf('string')
+    expectTitle(`${locale} user guide`, title!)
+    expectDescription(`${locale} user guide`, description!)
+    // Từ khoá chính của URL (spec §5.4) phải nằm trong tiêu đề — tiêu đề cũng là h1 của trang.
+    expect(title!.toLowerCase()).toContain(locale === 'vi' ? 'hướng dẫn sử dụng docops' : 'docops user guide')
+  })
+  test('updated is a real ISO date, not in the future', () => {
+    expect(CONTENT_UPDATED.guide).toMatch(/^\d{4}-\d{2}-\d{2}$/)
+    expect(new Date(CONTENT_UPDATED.guide).getTime()).toBeLessThanOrEqual(Date.now())
   })
 })
 

@@ -1,0 +1,544 @@
+export const meta = {
+  title: 'Hướng dẫn sử dụng DocOps',
+  description: 'Hướng dẫn sử dụng DocOps từng bước: kích hoạt, nạp văn bản, tra cứu, hỏi AI, rà soát căn cứ, soạn thảo theo Nghị định 30, sao lưu và kết nối agent.',
+  updated: '2026-10-17',
+  minutes: 20,
+  toc: [
+    { id: 'bat-dau', label: 'Bắt đầu' },
+    { id: 'nap-van-ban', label: 'Nạp văn bản' },
+    { id: 'kho-van-ban', label: 'Kho văn bản' },
+    { id: 'tra-cuu', label: 'Tra cứu' },
+    { id: 'hoi-ai', label: 'Hỏi AI' },
+    { id: 'ra-soat', label: 'Rà soát' },
+    { id: 'do-thi', label: 'Đồ thị quan hệ' },
+    { id: 'soan-thao', label: 'Soạn thảo' },
+    { id: 'cai-dat', label: 'Cài đặt' },
+    { id: 'sao-luu', label: 'Sao lưu và khôi phục' },
+    { id: 'ket-noi-agent', label: 'Kết nối agent' },
+    { id: 'cau-hoi-thuong-gap', label: 'Câu hỏi thường gặp' },
+  ],
+}
+
+<Callout kind="note">
+  Trang này viết cho DocOps trên máy tính (macOS và Windows). Tên nút được ghi đúng như trên màn hình. Việc nào dùng AI và tính phí vào key của đơn vị đều ghi rõ ngay ở bước đó. Chưa cài DocOps? Xem [hướng dẫn cài đặt](/huong-dan-cai-dat/macos).
+</Callout>
+
+<Steps>
+
+<Step n={1} id="bat-dau" title="Bắt đầu">
+
+DocOps không dùng tài khoản cá nhân. Mỗi máy được kích hoạt một lần bằng key của đơn vị; kích hoạt xong là vào thẳng ứng dụng.
+
+<figure className="flex flex-col gap-2">
+  <img src="/images/guide/bat-dau.webp" alt="Màn Tổng quan của DocOps ở giao diện Cổ điển, cột trái liệt kê các màn chính" decoding="async" className="h-auto w-full rounded-xl border border-line" />
+  <figcaption className="text-[13.5px] leading-snug text-muted">Giao diện Cổ điển: các màn ở cột trái, nút Nạp văn bản và chuông Khay xác nhận ở thanh trên cùng.</figcaption>
+</figure>
+
+<SubBlock title="Kích hoạt bằng key">
+
+1. Mở DocOps. Màn đầu tiên có ô **Key kích hoạt**.
+2. Nhập key quản trị viên đã cấp, dạng `DOCOPS-XXXX-XXXX-XXXX`, rồi bấm **Kích hoạt**. Máy cần có Internet.
+3. Chưa có key? Bấm **Gửi yêu cầu tới quản trị**, điền tên đơn vị, người liên hệ, email hoặc số điện thoại, chọn lý do **Chưa có key (đăng ký mới)** rồi bấm **Gửi yêu cầu**. Ghi lại mã yêu cầu hiện ra để báo quản trị.
+
+Mỗi key dùng được trên tối đa 10 máy.
+
+</SubBlock>
+
+<SubBlock title="Hướng dẫn nhanh lần đầu">
+
+Sau lần kích hoạt đầu tiên trên máy, DocOps chạy một vòng hướng dẫn nhanh 8 bước, khoảng 1 phút. Vòng này lần lượt giới thiệu Nạp văn bản, Kho văn bản, Tra cứu, Hỏi AI, Khay xác nhận, Soạn thảo và Cài đặt, chỉ vào đúng nút trên màn hình. Đã quen thì bấm **Bỏ qua**. Mở lại bất cứ lúc nào bằng một trong ba cách:
+
+- menu **Trợ giúp → Xem lại hướng dẫn nhanh**;
+- **Cài đặt**, thẻ **Trợ giúp & phản hồi**, nút **Xem lại hướng dẫn nhanh**;
+- gõ `/huongdan` vào ô chat của giao diện Hiện đại.
+
+Menu **Trợ giúp → Hướng dẫn sử dụng** mở trang này trong trình duyệt.
+
+</SubBlock>
+
+<SubBlock title="Hai kiểu giao diện">
+
+- **Cổ điển** (mặc định): cột trái có Tổng quan, Rà soát, Tra cứu, Đồ thị, Soạn thảo, Kho văn bản, và Cài đặt ở cuối cột. Thanh trên cùng có ô tìm nhanh, nút **Nạp văn bản** và chuông Khay xác nhận.
+- **Hiện đại**: mọi tính năng gom vào một ô chat. Gõ `/` để mở tính năng, `@` để gắn văn bản vào câu hỏi, gõ chữ thường để hỏi AI.
+
+Đổi kiểu ở **Cài đặt → Giao diện → Kiểu giao diện**; đổi xong có tác dụng ngay.
+
+Ở ô chat, lệnh gạch chéo nhận mọi cách gõ: có dấu hay không dấu, gạch nối hay dấu cách, và cả tên tiếng Anh. `/caidat`, `/cai-dat`, `/cài đặt` và `/settings` đều mở Cài đặt. Gõ được thêm từ khoá ngay sau lệnh, ví dụ `/tracuu học phí` hoặc `/kho tuyển sinh`.
+
+</SubBlock>
+
+<Callout kind="info" title="Phím tắt">
+  ⌘K (Windows: Ctrl K) mở ô tìm nhanh ở mọi màn. ⌘O (Ctrl O) mở hộp chọn tệp để nạp. Phím **?** mở bảng phím tắt đầy đủ, Esc đóng hộp thoại đang mở.
+</Callout>
+
+</Step>
+
+<Step n={2} id="nap-van-ban" title="Nạp văn bản">
+
+DocOps nhận tệp PDF, gồm PDF có sẵn lớp chữ (thường xuất từ Word) và bản quét (ảnh chụp từng trang). Với bản quét, AI đọc chữ từng trang. Sau đó AI bóc số hiệu, ngày ký, cơ quan ban hành, người ký và quan hệ căn cứ. Văn bản chỉ vào kho sau khi bạn xác nhận thông tin máy đọc.
+
+<figure className="flex flex-col gap-2">
+  <img src="/images/guide/nap-van-ban.webp" alt="Cửa sổ Nạp văn bản với thanh phần trăm, bước đang chạy và danh sách tệp kèm trạng thái" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
+  <figcaption className="text-[13.5px] leading-snug text-muted">Cửa sổ Nạp văn bản trong lúc DocOps đọc một đợt tệp.</figcaption>
+</figure>
+
+1. Bấm **Nạp văn bản** ở thanh trên cùng (hoặc ⌘O / Ctrl O, hoặc menu **Tệp → Nạp văn bản**).
+2. Chọn một hay nhiều tệp PDF. Giữ ⌘ (Windows: Ctrl) hoặc Shift khi bấm để chọn nhiều tệp một lần.
+3. Cửa sổ **Nạp văn bản** hiện ba bước: Chọn tệp, AI phân tích, Đối chiếu & chốt. Thanh phần trăm, đồng hồ và danh sách cho biết từng tệp đang chờ, đang đọc, xong hay lỗi; bản quét hiện thêm số trang đang đọc.
+4. Không cần ngồi đợi: bấm **Chạy nền & đóng**. Việc nạp vẫn chạy; viên "Đang nạp x/y" trên thanh trên cùng mở lại cửa sổ.
+5. Muốn dừng đợt đang chạy, bấm **Dừng sau tệp hiện tại**: tệp đang đọc chạy nốt, các tệp còn lại không nạp.
+6. Nạp xong, bấm **Mở khay xác nhận** để xác nhận thông tin từng văn bản (xem mục [Rà soát](#ra-soat)).
+
+<Callout kind="warning" title="Tốn phí AI">
+  Mọi tệp nạp vào đều qua các bước AI bóc thông tin và quan hệ, tính phí vào key của đơn vị. Bản quét tốn thêm phần đọc chữ, mỗi trang một lượt gọi AI, nên một tệp quét dày tốn nhiều hơn một tệp PDF có chữ cùng số trang.
+</Callout>
+
+<SubBlock title="Khi nạp lỗi">
+
+- Tệp lỗi hiện nhãn **Lỗi** kèm câu lý do. Bấm **Thử lại tệp này** để nạp lại riêng tệp đó.
+- Khi máy chủ tạm từ chối (quá nhiều yêu cầu cùng lúc, hoặc hạn mức của đơn vị đã hết), đợt nạp dừng và ghi giờ sẽ thử lại. Bấm **Tiếp tục ngay** để thử luôn, hoặc **Dừng hẳn**.
+- Đợt nạp có tệp bị lỗi khi đọc hoặc phân tích thì DocOps hỏi một lần: **Gửi báo cáo lỗi cho quản trị?** Báo cáo không chứa tên tệp, nội dung văn bản hay đường dẫn trong máy; bấm **Thông tin sẽ gửi** để xem trước. Bấm **Gửi báo cáo** rồi ghi lại mã hiện ra. Bấm **Bỏ qua** thì báo cáo của đợt đó không gửi và không hỏi lại.
+- Gặp lỗi khác: menu **Trợ giúp → Gửi phản hồi**.
+
+</SubBlock>
+
+<Callout kind="info">
+  Đóng cửa sổ Nạp văn bản không huỷ việc nạp. Trường máy đọc chưa chắc, hoặc chữ đọc từ ảnh bị nghi ngờ, không làm hỏng đợt nạp: văn bản đó chờ bạn đối chiếu ở Khay xác nhận.
+</Callout>
+
+</Step>
+
+<Step n={3} id="kho-van-ban" title="Kho văn bản">
+
+Kho văn bản liệt kê mọi văn bản đã nạp: số hiệu, trích yếu, loại, năm và trạng thái. Bấm số hiệu hoặc khoảng trống trên dòng để mở bảng chi tiết bên phải; bấm trích yếu để xem đủ dòng trích yếu dài.
+
+<figure className="flex flex-col gap-2">
+  <img src="/images/guide/kho-van-ban.webp" alt="Kho văn bản với ô lọc, các nút trạng thái và bảng chi tiết của một văn bản đang mở" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
+  <figcaption className="text-[13.5px] leading-snug text-muted">Kho văn bản và bảng chi tiết của một văn bản.</figcaption>
+</figure>
+
+<SubBlock title="Lọc">
+
+1. Bấm một nút trạng thái: **Tất cả**, **Chờ xác nhận**, **Đang phân tích** hoặc **Cần nạp lại quan hệ**.
+2. Gõ vào ô **Lọc trong kho…**. Ô này tìm trong số hiệu, trích yếu và cả nội dung văn bản. Dòng khớp trong thân văn bản ghi "khớp trong nội dung" kèm đoạn chứa chữ bạn gõ.
+3. Bấm **Bỏ bộ lọc** để xem lại cả kho.
+
+</SubBlock>
+
+<SubBlock title="Đọc bản gốc">
+
+Trong bảng chi tiết, bấm ảnh trang 1 ở mục **Bản gốc**. Cửa sổ đọc cho cuộn liên tục qua các trang; nút **⇤ Đầu** và **Cuối ⇥** (hoặc phím Home, End) về trang đầu và trang cuối, phím ← → lật trang, nút − và + thu phóng ảnh.
+
+</SubBlock>
+
+<SubBlock title="Sửa thông tin">
+
+1. Mở chi tiết văn bản, bấm **Sửa thông tin**.
+2. Sửa Số hiệu, Loại văn bản, Trích yếu, Cơ quan ban hành, Người ký, Ngày ký hoặc Hiệu lực từ, rồi bấm **Lưu**.
+3. Nếu đổi số hiệu của một văn bản đang có quan hệ, DocOps hỏi "Đổi số hiệu sẽ nối lại N quan hệ sang số mới." Bấm **Đổi** để đồng ý, **Thôi** để giữ số cũ.
+
+Nút chỉ có khi văn bản ở trạng thái Hoàn tất hoặc Trả lại nguồn, không đứng ở bước chốt và không đang được phân tích.
+
+</SubBlock>
+
+<SubBlock title="Thay tệp">
+
+Dùng khi tệp đã nạp bị sai: thiếu trang, nhầm bản, bản quét mờ.
+
+1. Mở chi tiết văn bản, bấm **Thay tệp…** và chọn tệp PDF đúng.
+2. Hộp xác nhận cho biết văn bản cũ sẽ bị xoá và thay bằng một văn bản mới đọc từ tệp bạn chọn. Văn bản mới đi qua lại bước xác nhận thông tin.
+3. Tích ô "Tôi hiểu văn bản cũ sẽ bị xoá và không hoàn tác được", rồi bấm **Thay tệp**. Không muốn đợi thì bấm **Chạy nền**: việc thay vẫn chạy, kết quả hiện ở Khay xác nhận.
+
+Văn bản vừa nạp mà trùng số hiệu với một văn bản đã có thì dừng lại, và chi tiết của nó ghi "Trùng số hiệu với văn bản «…» đã có trong kho" kèm hai nút: **Thay văn bản cũ bằng bản này** (bản vừa nạp đã đọc chữ rồi nên không phải đọc lại), hoặc **Xoá bản vừa nạp**.
+
+</SubBlock>
+
+<Callout kind="warning" title="Không hoàn tác được">
+  Thay tệp xoá hẳn văn bản cũ: ảnh trang, chữ và các quan hệ đi ra của nó. Quan hệ do văn bản khác trích tới số hiệu này vẫn được giữ. Dùng **Thay tệp…** với một bản quét thì việc đọc chữ tốn phí như nạp mới.
+</Callout>
+
+<SubBlock title="Văn bản chưa đọc được chữ hoặc dừng giữa chừng">
+
+- Bản quét mà máy chưa đọc được chữ có nút **Đọc lại bằng OCR**: DocOps đọc chữ từ ảnh trang đã lưu rồi phân tích tiếp. Việc này tốn phí như đọc một bản quét mới.
+- Văn bản ghi **Dừng giữa chừng** hoặc **Chưa xử lý được** có nút **Chạy lại xử lý**, cũng tốn phí AI.
+- Mỗi lúc chỉ đọc lại được một văn bản; các nút khác tạm khoá tới khi lượt đang chạy xong.
+
+</SubBlock>
+
+<SubBlock title="Xoá văn bản">
+
+1. Bấm biểu tượng thùng rác cuối dòng, hoặc **Xoá** trong bảng chi tiết.
+2. Hộp thoại liệt kê các văn bản sẽ mất căn cứ nếu xoá văn bản này.
+3. Tích "Tôi hiểu thao tác này không thể hoàn tác", rồi bấm **Xoá vĩnh viễn**.
+
+DocOps không có thùng rác. [Sao lưu](#sao-luu) trước khi dọn kho.
+
+</SubBlock>
+
+</Step>
+
+<Step n={4} id="tra-cuu" title="Tra cứu">
+
+Tra cứu tìm trong số hiệu, trích yếu và toàn bộ nội dung của mọi văn bản đã nạp, kể cả chữ máy đọc từ bản quét. Việc tìm chạy ngay trên máy, không tốn phí.
+
+<figure className="flex flex-col gap-2">
+  <img src="/images/guide/tra-cuu.webp" alt="Màn Tra cứu với ba cột kết quả, trích đoạn có chữ khớp được tô và số trang" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
+  <figcaption className="text-[13.5px] leading-snug text-muted">Kết quả tra cứu: mỗi văn bản kèm trích đoạn và trang chứa chữ đã gõ.</figcaption>
+</figure>
+
+1. Mở **Tra cứu** và gõ vào ô tìm. Có dấu hay không dấu đều được: gõ "hoc phi" vẫn ra văn bản ghi "học phí".
+2. Viết tắt hành chính được hiểu theo cả hai chiều: "QĐ tuyển sinh" ra văn bản ghi "quyết định tuyển sinh", và ngược lại. Tương tự với CV, TB, KH, NĐ, TT, UBND và các viết tắt thông dụng khác.
+3. Kết quả chia ba nhóm: **Văn bản**, **Căn cứ** và **Điều khoản**. Văn bản khớp trong nội dung hiện một trích đoạn có chữ khớp được tô, kèm số trang.
+4. Bấm một kết quả để mở văn bản. Nếu kết quả là một đoạn trong thân văn bản, cửa sổ đọc bản gốc mở đúng trang chứa đoạn đó.
+
+Ô tìm nhanh ⌘K (Ctrl K) dùng cùng bộ tìm này và mở được ở mọi màn.
+
+<Callout kind="info">
+  Không văn bản nào khớp đủ mọi từ thì Tra cứu ghi "Không có văn bản khớp đủ mọi từ" và hiện văn bản khớp một phần. Ngay sau khi cập nhật DocOps, dòng "Đang lập chỉ mục nội dung…" cho biết nội dung các văn bản cũ đang được chuẩn bị để tìm; chờ dòng này xong rồi tìm lại.
+</Callout>
+
+<SubBlock title="Đọc lại chữ của PDF cũ (miễn phí)">
+
+Một số PDF có lớp chữ nạp bằng bản DocOps cũ bị tách rời chữ cái (ví dụ "B Ộ GIÁO D Ụ C"), nên tìm theo nội dung dễ trượt. DocOps tự đọc lại các tệp này từ tệp gốc khi khởi động. Riêng tệp gốc nằm trong thư mục macOS bảo vệ (Desktop, Documents, Downloads, iCloud Drive, ổ ngoài) thì phải bấm nút:
+
+1. Ở Tra cứu, dòng "N văn bản PDF cũ có thể đọc lại chữ để tìm chính xác hơn" hiện kèm nút **Đọc lại chữ (miễn phí)**. Bấm nút.
+2. macOS có thể hỏi quyền cho DocOps đọc thư mục đó. Cho phép để DocOps đọc được tệp gốc.
+3. DocOps báo số văn bản đã đọc lại. Tệp gốc đã bị xoá hoặc đổi nội dung thì không đọc lại được.
+
+Việc này đọc lớp chữ có sẵn trong tệp, không gọi AI và không tốn phí.
+
+</SubBlock>
+
+</Step>
+
+<Step n={5} id="hoi-ai" title="Hỏi AI">
+
+Hỏi bằng câu thường về kho văn bản của đơn vị. AI chỉ trả lời từ các văn bản đã nạp và dẫn đúng văn bản, trang hoặc Điều để bạn mở ra kiểm tra.
+
+<figure className="flex flex-col gap-2">
+  <img src="/images/guide/hoi-ai.webp" alt="Khung Trò chuyện với AI ở màn Tra cứu, câu trả lời có các nút dẫn tới văn bản và trang" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
+  <figcaption className="text-[13.5px] leading-snug text-muted">Câu trả lời của AI kèm chỗ dẫn: bấm để mở đúng văn bản và trang.</figcaption>
+</figure>
+
+1. Giao diện Cổ điển: mở **Tra cứu**, dùng khung **Trò chuyện với AI** ở cột phải. Giao diện Hiện đại: gõ thẳng vào ô chat.
+2. Gõ câu hỏi rồi bấm Enter (⇧ Enter để xuống dòng). Muốn hỏi về một văn bản cụ thể, gõ `@` rồi chọn văn bản để gắn vào câu hỏi.
+3. Đọc câu trả lời. Mỗi chỗ dẫn là một nút ghi số hiệu và trang; bấm để mở đúng văn bản tại trang đó.
+4. Hỏi tiếp trong cùng cuộc trò chuyện: AI đọc cả các câu trước. Bấm **+ Mới** để bắt đầu cuộc khác, **Lịch sử** để mở lại cuộc cũ.
+
+AI tìm văn bản liên quan bằng chính các từ trong câu hỏi, nên hãy dùng từ mà văn bản của đơn vị hay dùng: tên việc, số hiệu, tên cơ quan.
+
+<Callout kind="warning" title="Tốn phí AI">
+  Mỗi câu hỏi tốn phí vào key của đơn vị; dưới mỗi câu trả lời ghi số token và thời gian. Bấm **Gửi lại** cũng là một lượt tính phí mới.
+</Callout>
+
+<Callout kind="info">
+  Kho thiếu văn bản cần thiết thì câu trả lời ghi "Chưa tìm thấy trong kho: …" thay vì đoán. AI nhắc tới văn bản không có trong kho thì app ghi rõ "AI nhắc tới văn bản không có trong kho". AI có thể sai: luôn mở văn bản gốc để kiểm trước khi dùng câu trả lời.
+</Callout>
+
+</Step>
+
+<Step n={6} id="ra-soat" title="Rà soát">
+
+Rà soát gồm hai việc: xác nhận những gì máy đọc ở **Khay xác nhận**, và xử lý cảnh báo hiệu lực căn cứ ở màn **Rà soát**.
+
+<figure className="flex flex-col gap-2">
+  <img src="/images/guide/ra-soat.webp" alt="Màn Rà soát với danh sách văn bản có cảnh báo hiệu lực và nội dung văn bản đang chọn" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
+  <figcaption className="text-[13.5px] leading-snug text-muted">Màn Rà soát: căn cứ có cảnh báo, câu gốc và nội dung văn bản ở cùng một chỗ.</figcaption>
+</figure>
+
+<SubBlock title="Khay xác nhận">
+
+Chuông ở thanh trên cùng đếm số việc đang chờ bạn. Mỗi thẻ trong khay là một văn bản, ghi bước chốt nó đang đứng:
+
+- **H2**, nút **Duyệt vào kho**: xác nhận thông tin máy bóc (số hiệu, ngày ký, cơ quan ban hành, trích yếu…). Mọi văn bản mới nạp đều qua bước này.
+- **H4**, nút **Mở màn đối chiếu**: trường máy chưa chắc hoặc chữ đọc từ ảnh bị nghi ngờ; so với ảnh bản gốc rồi chọn giá trị đúng.
+- **H1**, nút **Duyệt N quan hệ**: quan hệ căn cứ máy rút ra nhưng chưa đủ chắc, chờ bạn đồng ý hoặc bác.
+
+Xác nhận một văn bản ở bước H2:
+
+1. Bấm chuông, chọn văn bản, bấm **Duyệt vào kho**.
+2. Màn chốt hiện từng trường máy đọc kèm độ tin cậy, cạnh ảnh trang. Ở khung ảnh trang, nút **⇤ Đầu** và **Cuối ⇥** về trang đầu và trang cuối; bấm vào khung rồi dùng phím Home, End, ← →, hoặc gõ số trang vào ô số trang.
+3. Đúng hết thì bấm **Chốt**.
+4. Cần sửa thì sửa ngay trong ô, rồi bấm **Sửa metadata rồi chốt**. Hộp **Xác nhận sửa thông tin rồi chốt** liệt kê từng trường, cột "Máy đọc" cạnh cột "Bạn sửa thành". Bấm **Chốt với N thay đổi**, hoặc **Quay lại sửa**.
+5. Văn bản không dùng được (thiếu trang, số hiệu không đọc được): ghi lý do vào ô lý do rồi bấm **Trả lại nguồn**.
+6. Chưa quyết được thì bấm **Để sau**; văn bản vẫn nằm trong khay.
+
+Chốt ở H2 là xác nhận thông tin; văn bản vào kho sau khi các bước phân tích còn lại chạy xong. Trong khay, phím ↑ ↓ chuyển giữa các việc, Enter mở việc đang chọn. Việc đã quyết gom vào nhóm **Đã xong** ở cuối khay; bấm **Ẩn** trên một thẻ hoặc **Ẩn tất cả** để dọn khay, **Hiện mục đã ẩn** rồi **Hiện lại** để đưa thẻ về.
+
+</SubBlock>
+
+<Callout kind="warning">
+  Phím C (chốt nhanh) và **Chọn tất cả mục H2** chốt mà không mở màn chốt. Chỉ dùng khi bạn đã xem thông tin của những văn bản đó.
+</Callout>
+
+<SubBlock title="Cảnh báo hiệu lực căn cứ">
+
+Màn **Rà soát** liệt kê văn bản của đơn vị đang dẫn căn cứ có vấn đề về hiệu lực, tính tại ngày ở ô **Hiệu lực tại ngày** (mặc định là hôm nay).
+
+1. Lọc bằng các nút **Căn cứ bị bãi bỏ**, **Sắp thay đổi**, **Đã xử lý**.
+2. Chọn một văn bản. Bên phải hiện các căn cứ có cảnh báo, câu gốc trích căn cứ đó, và nội dung văn bản ở hai thẻ **Chữ** và **Ảnh trang** (có nút ⇤ Đầu, Cuối ⇥ và phím Home, End).
+3. Bấm câu gốc để nhảy tới đúng câu ấy trong nội dung văn bản. Căn cứ đã hết hiệu lực mà có văn bản thay thế thì có nút **Thay bằng …** mở văn bản mới.
+4. Xử lý xong thì bấm **Đã xử lý** (phím X). DocOps chuyển sang cảnh báo kế tiếp.
+
+Đầu màn luôn ghi "Đã soát N văn bản · M cạnh". Danh sách trống mà số cạnh là 0 nghĩa là máy chưa có quan hệ nào để soát, không phải kho đã sạch.
+
+</SubBlock>
+
+</Step>
+
+<Step n={7} id="do-thi" title="Đồ thị quan hệ">
+
+Đồ thị vẽ quan hệ căn cứ giữa các văn bản: văn bản nào đứng trên căn cứ nào, và văn bản nào bị kéo theo khi một căn cứ thay đổi. Màu thẻ cho biết hiệu lực tại ngày đang chọn: Còn hiệu lực, Hết hiệu lực, Sắp thay đổi.
+
+<figure className="flex flex-col gap-2">
+  <img src="/images/guide/do-thi.webp" alt="Đồ thị Tác động với một văn bản đang chọn và cột Đứng trên, Kéo theo ở bên phải" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
+  <figcaption className="text-[13.5px] leading-snug text-muted">Chế độ Tác động: chọn một thẻ để xem nó đứng trên những gì và kéo theo những gì.</figcaption>
+</figure>
+
+<SubBlock title="Xem tác động">
+
+1. Mở **Đồ thị**, chế độ **Tác động**. Cuộn chuột để phóng to, thu nhỏ; kéo nền để di chuyển; kéo một thẻ để xếp lại.
+2. Bấm một thẻ. Cột phải hiện **Đứng trên** (các căn cứ của nó) và **Kéo theo** (các văn bản dựa vào nó). Bấm **Mở văn bản** để đọc.
+3. Đổi ô **Hiệu lực tại ngày** để xem hiệu lực ở một thời điểm khác.
+4. Ở ô chat, gõ `/dothi` kèm số hiệu, hoặc kèm vài chữ trong trích yếu. Một văn bản khớp thì đồ thị mở luôn; nhiều văn bản khớp thì DocOps cho bạn chọn; không văn bản nào khớp thì DocOps nói rõ.
+
+Chọn một thẻ là căn cứ được trích nhưng chưa nạp vào kho thì cột phải ghi "Không có trong kho — căn cứ được viện dẫn".
+
+</SubBlock>
+
+<SubBlock title="Bán kính ảnh hưởng">
+
+Trả lời câu hỏi: nếu sửa một Điều trong văn bản này, những gì trong kho phải rà lại?
+
+1. Ở chế độ Tác động, chọn một văn bản.
+2. Bấm **Bán kính ảnh hưởng**. Mỗi Điều đang được viện dẫn là một bong bóng, ghi "Đ.23" và số trích dẫn. Bong bóng càng to thì càng nhiều chỗ trong kho dựa vào Điều đó.
+3. Cột phải ghi số Điều và số trích dẫn đã soát trên toàn kho, để phân biệt "0 vì không có gì dựa vào" với "0 vì chưa có gì để soát".
+
+</SubBlock>
+
+<Callout kind="info">
+  Bán kính ảnh hưởng chạy trên máy, không gọi AI, không tốn phí. Nó chỉ đếm những dòng nghiệp vụ máy đã bóc khi nạp (con số chốt, cổng chặn, ngưỡng…), nên con số là mức tối thiểu. Văn bản chưa được bóc điều khoản thì không có bong bóng.
+</Callout>
+
+</Step>
+
+<Step n={8} id="soan-thao" title="Soạn thảo">
+
+Soạn thảo viết văn bản hành chính theo 29 loại của Nghị định 30/2020/NĐ-CP. AI viết bản đầu từ ý chính, bạn sửa, rồi xuất Word hoặc PDF đúng thể thức.
+
+<figure className="flex flex-col gap-2">
+  <img src="/images/guide/soan-thao.webp" alt="Màn Soạn thảo với các thẻ Ý chính, Văn bản, Nội dung và bản xem trước trang A4 bên phải" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
+  <figcaption className="text-[13.5px] leading-snug text-muted">Soạn thảo: điền bên trái, xem trước trang A4 bên phải.</figcaption>
+</figure>
+
+<SubBlock title="Viết bản thảo mới">
+
+1. Mở **Soạn thảo**. Màn mở sẵn một bản trắng.
+2. Chọn **Loại văn bản**, rồi gõ **Ý chính**: việc cần ban hành, áp dụng cho ai, vì sao.
+3. Bấm **Viết**. AI viết bản đầu trong khoảng 10 đến 20 giây và chọn căn cứ còn hiệu lực trong kho. Căn cứ đã hết hiệu lực hoặc sắp bị thay không được đưa vào, và được ghi ra ngay dưới nút.
+4. Sửa ở thẻ **Nội dung** như trong Word: ⌘B đậm, ⌘I nghiêng, ⌘U gạch chân (Windows: Ctrl); đoạn bắt đầu bằng "Điều" tự đánh số. Bấm **+ Thêm căn cứ** để tìm căn cứ trong kho.
+5. Điền Số/ký hiệu, Địa danh, Ngày ký, Kính gửi, Nơi nhận và người ký. Cơ quan chủ quản và cơ quan ban hành lấy từ **Cài đặt → Thông tin đơn vị**; bấm **Sửa cho bản này** để đổi riêng cho bản đang soạn.
+6. Bấm **Xuất Word** hoặc **Xuất PDF**, chọn chỗ lưu. Bấm **Mở thư mục** để thấy tệp vừa xuất.
+
+</SubBlock>
+
+<Callout kind="warning" title="Tốn phí AI">
+  **Viết** và **Viết lại** gọi AI, tính phí vào key của đơn vị; kết quả lấy từ bộ nhớ đệm thì ghi "không tốn token". **Viết lại** thay toàn bộ nội dung đang có, nên DocOps hỏi trước: bấm **Giữ** để giữ bản đang sửa.
+</Callout>
+
+<SubBlock title="Bản thảo đã lưu">
+
+- Bản thảo tự lưu khi gõ. Xuất xong bản thảo vẫn còn trong máy.
+- Khi bản đang mở còn trắng, khung **Bản thảo đã lưu** liệt kê các bản trước: bấm **Mở** để soạn tiếp, **Xoá** để xoá. Hàng nút phía trên màn cũng mở được từng bản; **+ Bản thảo mới** tạo bản trắng.
+- **Xoá bản thảo này** (hiện khi bản đang mở đã có chữ) xoá bản đó. Mọi lần xoá đều qua hộp xác nhận "Xoá bản thảo «…»?": bản thảo bị xoá khỏi máy và không lấy lại được; tệp Word hay PDF đã xuất từ nó không bị ảnh hưởng.
+
+</SubBlock>
+
+<SubBlock title="Nhập nội dung có sẵn">
+
+Đã có toàn văn trong tay (dán được, hoặc một tệp Word hay PDF)?
+
+1. Bấm **Nhập nội dung có sẵn**.
+2. Dán toàn văn, hoặc bấm **Chọn tệp Word hoặc PDF…** (nhận `.docx` và `.pdf`).
+3. Xem cột **Nhận diện được**: số hiệu, trích yếu, nơi nhận, người ký; phần còn lại vào ô Nội dung. Bấm **Tạo bản thảo**.
+
+Với tệp:
+
+- Tệp do DocOps xuất và chưa sửa: DocOps dựng lại đúng bản thảo đã soạn. Bản đó còn trong máy thì mở lại bản đó; không còn thì tạo một bản thảo mới y như lúc xuất.
+- Tệp đã sửa ngoài DocOps: nhập theo chữ trong tệp.
+- PDF bản quét: không nhập được vì không có chữ. Dùng bản Word, hoặc nạp tệp vào Kho văn bản để DocOps đọc chữ.
+- Tệp `.doc` đời cũ: mở bằng Word rồi lưu thành `.docx`.
+
+Nút **Nhờ AI trình bày lại** xếp lại các dòng theo khuôn của loại văn bản; việc này tốn phí AI.
+
+</SubBlock>
+
+</Step>
+
+<Step n={9} id="cai-dat" title="Cài đặt">
+
+Cài đặt chia hai cột. Cột trái là dữ liệu của máy này: Key & thiết bị, Sao lưu & khôi phục, Dung lượng lưu trữ, Phiên bản, Trợ giúp & phản hồi. Cột phải: Thông tin đơn vị, Giao diện, Mức dùng AI tháng này, Kết nối agent.
+
+<figure className="flex flex-col gap-2">
+  <img src="/images/guide/cai-dat.webp" alt="Màn Cài đặt hai cột với các thẻ Key và thiết bị, Thông tin đơn vị, Giao diện, Mức dùng AI tháng này" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
+  <figcaption className="text-[13.5px] leading-snug text-muted">Màn Cài đặt.</figcaption>
+</figure>
+
+<SubBlock title="Thông tin đơn vị">
+
+Điền Cơ quan chủ quản, Cơ quan ban hành, Địa danh, Quyền hạn ký, Chức vụ người ký và Họ tên người ký, rồi bấm **Lưu thông tin đơn vị**. Mỗi bản thảo mới điền sẵn từ đây; sửa trong một bản thảo không đổi Cài đặt.
+
+</SubBlock>
+
+<SubBlock title="Mức dùng AI tháng này">
+
+Thẻ ghi chi phí ước tính của key đơn vị trong tháng này, kèm tổng số token. Đây là chỗ xem nhanh nhất mọi việc tốn phí đã dùng bao nhiêu.
+
+</SubBlock>
+
+<SubBlock title="Giao diện">
+
+- **Kiểu giao diện**: Cổ điển hoặc Hiện đại.
+- **Sáng / tối**: Sáng, Tối, hoặc Theo hệ điều hành.
+
+Bấm là có tác dụng ngay, không cần lưu. Lựa chọn này lưu riêng cho từng máy.
+
+</SubBlock>
+
+<SubBlock title="Phiên bản và cập nhật">
+
+1. Ở thẻ **Phiên bản**, bấm **Kiểm tra cập nhật**.
+2. Có bản mới thì bấm **Tải và cài**, đợi tải xong.
+3. Bấm **Khởi động lại để cài**. DocOps đóng lại, cài bản mới rồi tự mở lại.
+
+Lưu bản thảo đang soạn trước khi bấm bước 3.
+
+</SubBlock>
+
+<SubBlock title="Trợ giúp & phản hồi">
+
+- **Hướng dẫn sử dụng ↗** mở trang này trong trình duyệt.
+- **Xem lại hướng dẫn nhanh** chạy lại vòng hướng dẫn 8 bước.
+- **Gửi phản hồi**: báo lỗi, góp ý hoặc đặt câu hỏi tới quản trị DocOps. Hộp gửi hiện trước thông tin máy đi kèm (phiên bản, hệ điều hành, tên máy, mã máy, màn đang mở, số văn bản đã nạp); không gửi nội dung văn bản nào. Gửi xong, ghi lại mã phản hồi để trao đổi thêm.
+
+</SubBlock>
+
+<SubBlock title="Key & thiết bị">
+
+Thẻ ghi key đang hoạt động hay đã bị khoá, tên đơn vị và số máy đang dùng key. Nút **Đăng xuất khỏi máy này** xoá toàn bộ kho văn bản, bản thảo, hội thoại và ảnh trên máy, rồi mở lại DocOps ở màn kích hoạt. Phải gõ đúng `XOÁ KHO` để xác nhận.
+
+</SubBlock>
+
+<Callout kind="warning" title="Đăng xuất là xoá dữ liệu">
+  Đăng xuất không hoàn tác được. Bấm **Sao lưu ngay trước khi xoá** nếu còn cần dữ liệu. Máy đã đăng xuất vẫn chiếm một chỗ trên key cho đến khi quản trị viên thu hồi.
+</Callout>
+
+</Step>
+
+<Step n={10} id="sao-luu" title="Sao lưu và khôi phục">
+
+Kho văn bản chỉ nằm trên máy này. Một bản sao lưu là một tệp `.docopsbak` chứa toàn bộ kho: văn bản, ảnh trang, bản thảo và hội thoại. Nên sao lưu trước khi xoá văn bản, thay tệp, nén ảnh, đăng xuất hoặc đổi máy, và định kỳ mỗi tuần.
+
+<figure className="flex flex-col gap-2">
+  <img src="/images/guide/sao-luu.webp" alt="Thẻ Sao lưu và khôi phục cùng thẻ Dung lượng lưu trữ trong Cài đặt" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
+  <figcaption className="text-[13.5px] leading-snug text-muted">Sao lưu, khôi phục và nén ảnh nằm ở cột trái của Cài đặt.</figcaption>
+</figure>
+
+<SubBlock title="Sao lưu">
+
+1. Mở **Cài đặt → Sao lưu & khôi phục**, bấm **Sao lưu ngay**.
+2. Chọn nơi lưu tệp; tên gợi ý có ngày sao lưu, ví dụ `docops-2026-10-17.docopsbak`. Nên lưu ra ổ ngoài hoặc ổ mạng của đơn vị, không chỉ trên chính máy này.
+3. DocOps báo "Đã sao lưu N văn bản và M ảnh vào …".
+
+Máy chưa sao lưu lần nào, hoặc đã 7 ngày chưa sao lưu, thì DocOps hiện một dải nhắc ở trên cùng có nút **Sao lưu ngay**; bấm × trên dải để tắt nhắc trong 7 ngày.
+
+</SubBlock>
+
+<SubBlock title="Khôi phục">
+
+1. Ở thẻ **Sao lưu & khôi phục**, bấm **Khôi phục…** và chọn tệp `.docopsbak`.
+2. DocOps thay toàn bộ kho hiện tại bằng bản sao lưu, rồi tự mở lại.
+
+</SubBlock>
+
+<Callout kind="warning">
+  Khôi phục thay hết kho đang có, kể cả văn bản nạp sau lần sao lưu đó. Cần giữ kho hiện tại thì sao lưu nó trước. Bản sao lưu làm từ bản DocOps mới hơn thì bản DocOps cũ không mở được: cập nhật DocOps trước khi khôi phục.
+</Callout>
+
+<SubBlock title="Nén ảnh">
+
+Thẻ **Dung lượng lưu trữ** ghi ảnh bản gốc và dữ liệu đang chiếm bao nhiêu, và còn bao nhiêu ảnh chưa nén.
+
+1. Bấm **Nén ảnh (còn khoảng …)**. Ảnh giữ nguyên độ phân giải.
+2. Muốn ngừng thì bấm **Dừng**; ảnh đang nén làm nốt rồi dừng.
+
+Chưa sao lưu trong 24 giờ qua thì DocOps đòi sao lưu trước, hoặc tích **Tôi đã tự sao lưu bằng cách khác**. Nén ảnh chạy trên máy, không tốn phí AI.
+
+</SubBlock>
+
+</Step>
+
+<Step n={11} id="ket-noi-agent" title="Kết nối agent">
+
+Kết nối agent cho phép một trợ lý AI chạy trên chính máy này, như Claude Desktop hoặc Claude Code, dùng DocOps thay bạn: tìm và đọc Kho văn bản, soạn và xuất bản thảo, nạp văn bản. Kết nối mặc định tắt.
+
+<figure className="flex flex-col gap-2">
+  <img src="/images/guide/ket-noi-agent.webp" alt="Thẻ Kết nối agent đang bật, có nút chép cấu hình, thư mục xuất và trần lời gọi mỗi ngày" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
+  <figcaption className="text-[13.5px] leading-snug text-muted">Thẻ Kết nối agent trong Cài đặt.</figcaption>
+</figure>
+
+1. Mở **Cài đặt → Kết nối agent**, bật **Cho phép agent trên máy này điều khiển DocOps**. Dòng trạng thái chuyển sang "Đang bật".
+2. Claude Desktop: bấm **Chép cấu hình cho Claude Desktop**, mở tệp `claude_desktop_config.json` của Claude Desktop và dán vào, rồi mở lại Claude Desktop. Tệp còn trống thì dán nguyên khối; đã có mục `mcpServers` thì chỉ chép phần `docops` vào trong mục ấy.
+3. Claude Code: bấm **Chép lệnh cho Claude Code** rồi dán vào terminal.
+4. Muốn agent xuất Word hoặc PDF: ở dòng **Thư mục xuất cho agent**, bấm **Chọn thư mục…**.
+5. Đặt **Số lời gọi tốn phí AI mỗi ngày** (0 là chặn hết, tối đa 500), bấm **Lưu**.
+
+<SubBlock title="Agent được làm và không được làm">
+
+Agent được: tìm và đọc văn bản, xem quan hệ và hiệu lực tại một ngày, xem việc chờ xác nhận, tạo và đọc bản thảo, nhập văn bản có sẵn thành bản thảo, nhờ AI viết bản thảo, xuất bản thảo vào thư mục đã chọn, nạp tệp PDF, hỏi trợ lý về kho.
+
+Agent không được: chốt ở bước xác nhận (nó chỉ đề xuất, đề xuất hiện trên thẻ ở Khay xác nhận và bạn quyết bằng nút trong app), xoá văn bản, thay tệp, sao lưu hay khôi phục, đăng xuất, cập nhật app, gửi phản hồi, sửa thông tin đơn vị, tự bật kết nối, đổi mã truy cập hay nâng trần của chính nó.
+
+</SubBlock>
+
+<Callout kind="warning" title="Tốn phí AI">
+  Việc agent nạp văn bản, nhờ AI viết bản thảo hay hỏi trợ lý đều tính phí vào key của đơn vị và bị đếm theo trần mỗi ngày. Thẻ liệt kê hoạt động gần đây của agent. Bấm **Đổi mã truy cập** nếu nghi mã bị lộ: mã cũ hết hiệu lực ngay, không phải chép lại cấu hình.
+</Callout>
+
+</Step>
+
+<Step n={12} id="cau-hoi-thuong-gap" title="Câu hỏi thường gặp">
+
+<figure className="flex flex-col gap-2">
+  <img src="/images/guide/cau-hoi-thuong-gap.webp" alt="Thẻ Key và thiết bị trong Cài đặt, ghi trạng thái key và số máy đang dùng" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
+  <figcaption className="text-[13.5px] leading-snug text-muted">Thẻ Key & thiết bị cho biết key còn hoạt động không và đang dùng trên mấy máy.</figcaption>
+</figure>
+
+### Dữ liệu của tôi nằm ở đâu?
+
+Kho văn bản (văn bản, ảnh trang, bản thảo, hội thoại) nằm trên máy này, trong thư mục dữ liệu của DocOps: `~/Library/Application Support/DocOps` trên macOS, `%APPDATA%\DocOps` trên Windows. Máy chủ DocOps chỉ xử lý phần AI và không giữ nội dung sau khi trả kết quả. Chi tiết ở trang [Minh bạch AI và dữ liệu](/minh-bach-ai).
+
+### Vì sao có việc tốn phí, có việc không?
+
+Việc nào gọi AI thì tính theo token vào key của đơn vị: đọc chữ bản quét, bóc thông tin và quan hệ khi nạp, hỏi AI, Viết bản thảo, Nhờ AI trình bày lại, Đọc lại bằng OCR, Chạy lại xử lý và Thay tệp. Việc chạy trên máy thì miễn phí: tra cứu, lọc kho, đồ thị và bán kính ảnh hưởng, xuất Word hay PDF, sao lưu, nén ảnh, Đọc lại chữ (miễn phí). Xem tổng chi phí ở **Cài đặt → Mức dùng AI tháng này**.
+
+### Tôi quên key thì sao?
+
+Máy đã kích hoạt vẫn dùng bình thường, không cần nhập lại key. Cần kích hoạt máy khác mà không còn key: ở màn kích hoạt, bấm **Gửi yêu cầu tới quản trị** và chọn lý do **Mất key**. Nếu dải đỏ trên cùng báo máy chủ không nhận thẻ thiết bị này, bấm **Xin cấp lại key**; có key mới thì bấm **Nhập key mới**, dữ liệu trên máy giữ nguyên.
+
+### Đổi sang máy khác thế nào?
+
+1. Trên máy cũ: **Cài đặt → Sao lưu & khôi phục → Sao lưu ngay**, rồi chép tệp `.docopsbak` sang máy mới.
+2. Trên máy mới: [cài DocOps](/huong-dan-cai-dat/macos) và kích hoạt bằng key của đơn vị. Key đã dùng hết số máy thì gửi yêu cầu với lý do **Đổi máy**.
+3. Trên máy mới: **Cài đặt → Sao lưu & khôi phục → Khôi phục…**, chọn tệp vừa chép.
+4. Máy cũ không dùng nữa: **Đăng xuất khỏi máy này** để xoá dữ liệu trên đó, và nhờ quản trị viên thu hồi máy để trả lại chỗ trên key.
+
+Kiểu giao diện và chế độ sáng, tối lưu riêng từng máy, không đi theo bản sao lưu; chọn lại trên máy mới.
+
+### App báo "Không kết nối được máy chủ DocOps"?
+
+Trong lúc dải này còn hiện, việc đọc chữ, phân tích, hỏi AI và AI viết bản thảo không chạy; tra cứu, đọc văn bản và sửa bản thảo trên máy vẫn dùng được. Kiểm tra kết nối mạng rồi bấm **Thử lại** trên dải. Vẫn không được thì gửi phản hồi kèm ảnh chụp màn hình.
+
+</Step>
+
+</Steps>

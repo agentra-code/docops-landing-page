@@ -29,6 +29,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   for (const id of TOPIC_IDS) push(topicPage(id), undefined, TOPIC_META[id].updated)
   push('/download', undefined, released)
   for (const os of GUIDE_OS) push('/install/[os]', { os }, CONTENT_UPDATED.install[os])
+  push('/user-guide', undefined, CONTENT_UPDATED.guide)
   push('/how-it-works')
   push('/ai-transparency', undefined, CONTENT_UPDATED.aiTransparency)
   push('/contact')

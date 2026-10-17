@@ -290,6 +290,18 @@
       }
     }
   },
+  "guide": {
+    "eyebrow": "Hướng dẫn sử dụng",
+    "breadcrumbNav": "Đường dẫn trang",
+    "breadcrumbHome": "Trang chủ",
+    "breadcrumbGuide": "Hướng dẫn sử dụng",
+    "bottom": {
+      "title": "Chưa cài DocOps?",
+      "body": "Tải bản cho máy của bạn, cài theo hướng dẫn rồi quay lại trang này.",
+      "download": "Tải DocOps",
+      "install": "Hướng dẫn cài đặt"
+    }
+  },
   "howItWorks": {
     "meta": {
       "title": "Quy trình DocOps: 6 bước, cán bộ quyết cuối",

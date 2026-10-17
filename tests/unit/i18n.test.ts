@@ -13,6 +13,7 @@ describe('i18n', () => {
     const expected = [
       '/', '/download', '/install/[os]', '/how-it-works', '/ai-transparency', '/contact', '/privacy',
       '/decree-30-drafting', '/legal-basis-review', '/ai-document-search', '/ai-for-universities', '/ai-for-organizations', '/administrative-document-types', '/administrative-document-format', '/docops-vs-chatgpt',
+      '/user-guide',
     ]
     expect(Object.keys(routing.pathnames).sort()).toEqual([...expected].sort())
     for (const key of expected) {
@@ -22,6 +23,8 @@ describe('i18n', () => {
     }
     expect(routing.pathnames['/download']).toEqual({ vi: '/tai-ve', en: '/download' })
     expect(routing.pathnames['/install/[os]']).toEqual({ vi: '/huong-dan-cai-dat/[os]', en: '/install/[os]' })
+    // Desktop `GUIDE_URL` = https://docops.agentra.io.vn/huong-dan-su-dung (spec Dự án 2 §9.4): đổi slug là gãy link trong app.
+    expect(routing.pathnames['/user-guide']).toEqual({ vi: '/huong-dan-su-dung', en: '/user-guide' })
   })
 
   test('vi and en messages have the same keys', () => {

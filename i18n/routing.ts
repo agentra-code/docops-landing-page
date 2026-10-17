@@ -9,6 +9,8 @@ export const routing = defineRouting({
     '/': '/',
     '/download': { vi: '/tai-ve', en: '/download' },
     '/install/[os]': { vi: '/huong-dan-cai-dat/[os]', en: '/install/[os]' },
+    // Desktop mở trang này bằng GUIDE_URL cố định (…/huong-dan-su-dung) — đổi slug là gãy link trong app.
+    '/user-guide': { vi: '/huong-dan-su-dung', en: '/user-guide' },
     '/how-it-works': { vi: '/quy-trinh', en: '/how-it-works' },
     '/ai-transparency': { vi: '/minh-bach-ai', en: '/ai-transparency' },
     '/contact': { vi: '/lien-he', en: '/contact' },

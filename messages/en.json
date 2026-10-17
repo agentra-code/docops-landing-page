@@ -290,6 +290,18 @@
       }
     }
   },
+  "guide": {
+    "eyebrow": "User guide",
+    "breadcrumbNav": "Breadcrumb",
+    "breadcrumbHome": "Home",
+    "breadcrumbGuide": "User guide",
+    "bottom": {
+      "title": "Not installed yet?",
+      "body": "Download the build for your computer, install it, then come back to this page.",
+      "download": "Download DocOps",
+      "install": "Installation guide"
+    }
+  },
   "howItWorks": {
     "meta": {
       "title": "How DocOps works: six steps, staff decide",
