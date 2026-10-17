@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs'
 import { describe, expect, test } from 'vitest'
 import { GUIDE_SECTION_IDS } from '@/content/guide'
 import { GUIDE_OS, isGuideOs } from '@/content/install'
+import { localizedPath } from '@/lib/seo/urls'
 
 for (const locale of ['vi', 'en']) {
   for (const os of GUIDE_OS) {
@@ -98,11 +99,45 @@ describe('user guide', () => {
     expect(vi).toMatch(sameLine('Đọc lại bằng OCR', 'tốn phí'))
     expect(vi).toMatch(sameLine('Thay tệp', 'bản quét[^\\n]*tốn phí'))
     expect(vi).toMatch(sameLine('Nhờ AI trình bày lại', 'tốn phí'))
+    expect(vi).toMatch(sameLine('Nạp lại quan hệ', 'tốn phí'))
     const en = guideSource('en')
     expect(en).toMatch(sameLine('Đọc lại bằng OCR', 'billed'))
     expect(en).toMatch(sameLine('Thay tệp', 'scan[^\\n]*billed'))
     expect(en).toMatch(sameLine('Nhờ AI trình bày lại', 'billed'))
+    expect(en).toMatch(sameLine('Nạp lại quan hệ', 'billed'))
   })
+
+  // Nút tốn phí của app (lệnh trong PAID_COMMANDS của desktop) phải có trong danh sách "tính phí" của câu hỏi thường gặp,
+  // ở NỬA trả phí của câu, trước chỗ câu chuyển sang việc miễn phí.
+  test.each([
+    ['vi', /^Việc nào gọi AI.*$/m, 'Việc chạy trên máy'],
+    ['en', /^Anything that calls the AI.*$/m, 'Anything that runs'],
+  ] as const)('%s: the FAQ list of billed actions names every paid button', (locale, line, freeHalf) => {
+    const paid = (guideSource(locale).match(line)?.[0] ?? '').split(freeHalf)[0]
+    for (const label of ['Nhờ AI trình bày lại', 'Đọc lại bằng OCR', 'Chạy lại xử lý', 'Nạp lại quan hệ', 'Thay tệp']) {
+      expect(paid, label).toContain(label)
+    }
+  })
+
+  for (const locale of LOCALES) {
+    test(`${locale}: "cannot reach the server" points to the real contact page, not to in-app feedback with attachments`, () => {
+      const src = guideSource(locale)
+      // Hộp Gửi phản hồi chỉ có ô chữ và cũng gửi qua chính máy chủ đang không với tới (/v1/feedback).
+      expect(src).not.toMatch(/gửi phản hồi kèm|phản hồi kèm ảnh|send feedback with|feedback with a screenshot|attach a screenshot/i)
+      const faq = src.slice(src.indexOf('id="cau-hoi-thuong-gap"'))
+      expect(faq).toContain(`](${localizedPath(locale, '/contact')})`)
+    })
+
+    test(`${locale}: every section opens with a short paragraph`, () => {
+      const firsts = [...guideSource(locale).matchAll(/<Step n=\{\d+\} id="([^"]+)"[^>]*>\n\n([^\n]+)/g)]
+      expect(firsts).toHaveLength(GUIDE_SECTION_IDS.length)
+      for (const [, id, line] of firsts) expect(line, id).toMatch(/^[^<#\-\d\s|`]/)
+    })
+
+    test(`${locale}: does not tell people to save a draft by hand (drafts auto-save, there is no save button)`, () => {
+      expect(guideSource(locale)).not.toMatch(/Lưu bản thảo đang soạn|Save the draft you are working on/)
+    })
+  }
 
   test('en: every screenshot is captioned "The app interface is in Vietnamese."', () => {
     const src = guideSource('en')

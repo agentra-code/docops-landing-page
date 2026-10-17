@@ -154,13 +154,14 @@ Văn bản vừa nạp mà trùng số hiệu với một văn bản đã có th
 </SubBlock>
 
 <Callout kind="warning" title="Không hoàn tác được">
-  Thay tệp xoá hẳn văn bản cũ: ảnh trang, chữ và các quan hệ đi ra của nó. Quan hệ do văn bản khác trích tới số hiệu này vẫn được giữ. Dùng **Thay tệp…** với một bản quét thì việc đọc chữ tốn phí như nạp mới.
+  Thay tệp xoá hẳn văn bản cũ: ảnh trang, chữ và các quan hệ đi ra của nó. Quan hệ do văn bản khác trích tới số hiệu này vẫn được giữ. Mỗi lần **Thay tệp…** đều chạy lại các bước AI phân tích văn bản mới nên tốn phí như nạp mới; tệp mới là bản quét thì tốn phí thêm phần đọc chữ.
 </Callout>
 
 <SubBlock title="Văn bản chưa đọc được chữ hoặc dừng giữa chừng">
 
 - Bản quét mà máy chưa đọc được chữ có nút **Đọc lại bằng OCR**: DocOps đọc chữ từ ảnh trang đã lưu rồi phân tích tiếp. Việc này tốn phí như đọc một bản quét mới.
 - Văn bản ghi **Dừng giữa chừng** hoặc **Chưa xử lý được** có nút **Chạy lại xử lý**, cũng tốn phí AI.
+- Văn bản máy chưa rút được quan hệ căn cứ có nút **Nạp lại quan hệ**. Bấm nút trạng thái **Cần nạp lại quan hệ** để tích nhiều văn bản một lần rồi bấm **Nạp lại quan hệ của N văn bản**. Hộp xác nhận cho biết số văn bản sẽ chạy; **Nạp lại quan hệ** tốn phí AI, và văn bản chưa có chữ được đọc chữ từ ảnh trang trước rồi quay lại bước xác nhận thông tin. Bấm **Bắt đầu**.
 - Mỗi lúc chỉ đọc lại được một văn bản; các nút khác tạm khoá tới khi lượt đang chạy xong.
 
 </SubBlock>
@@ -268,7 +269,7 @@ Chốt ở H2 là xác nhận thông tin; văn bản vào kho sau khi các bư�
 </SubBlock>
 
 <Callout kind="warning">
-  Phím C (chốt nhanh) và **Chọn tất cả mục H2** chốt mà không mở màn chốt. Chỉ dùng khi bạn đã xem thông tin của những văn bản đó.
+  Phím C (chốt nhanh), và ô tích **Chọn tất cả mục H2** đi cùng nút **Chốt N mục**, chốt mà không mở màn chốt. Chỉ dùng khi bạn đã xem thông tin của những văn bản đó.
 </Callout>
 
 <SubBlock title="Cảnh báo hiệu lực căn cứ">
@@ -277,7 +278,7 @@ Màn **Rà soát** liệt kê văn bản của đơn vị đang dẫn căn cứ 
 
 1. Lọc bằng các nút **Căn cứ bị bãi bỏ**, **Sắp thay đổi**, **Đã xử lý**.
 2. Chọn một văn bản. Bên phải hiện các căn cứ có cảnh báo, câu gốc trích căn cứ đó, và nội dung văn bản ở hai thẻ **Chữ** và **Ảnh trang** (có nút ⇤ Đầu, Cuối ⇥ và phím Home, End).
-3. Bấm câu gốc để nhảy tới đúng câu ấy trong nội dung văn bản. Căn cứ đã hết hiệu lực mà có văn bản thay thế thì có nút **Thay bằng …** mở văn bản mới.
+3. Bấm câu gốc để nhảy tới đúng câu ấy trong nội dung văn bản. Căn cứ đã hết hiệu lực mà có văn bản thay thế thì có nút **Thay bằng …**: bấm để mở Kho văn bản, lọc sẵn theo số hiệu của văn bản thay thế.
 4. Xử lý xong thì bấm **Đã xử lý** (phím X). DocOps chuyển sang cảnh báo kế tiếp.
 
 Đầu màn luôn ghi "Đã soát N văn bản · M cạnh". Danh sách trống mà số cạnh là 0 nghĩa là máy chưa có quan hệ nào để soát, không phải kho đã sạch.
@@ -411,7 +412,7 @@ Bấm là có tác dụng ngay, không cần lưu. Lựa chọn này lưu riêng
 2. Có bản mới thì bấm **Tải và cài**, đợi tải xong.
 3. Bấm **Khởi động lại để cài**. DocOps đóng lại, cài bản mới rồi tự mở lại.
 
-Lưu bản thảo đang soạn trước khi bấm bước 3.
+Bản thảo tự lưu sau mỗi lần sửa, không có nút lưu. Trước khi bấm bước 3, chờ dòng cạnh tiêu đề Soạn thảo ghi "nháp đã lưu · giờ:phút".
 
 </SubBlock>
 
@@ -509,6 +510,8 @@ Agent không được: chốt ở bước xác nhận (nó chỉ đề xuất, �
 
 <Step n={12} id="cau-hoi-thuong-gap" title="Câu hỏi thường gặp">
 
+Những câu hay gặp khi mới dùng DocOps: dữ liệu nằm ở đâu, việc nào tốn phí, quên key, đổi máy và khi mất kết nối tới máy chủ.
+
 <figure className="flex flex-col gap-2">
   <img src="/images/guide/cau-hoi-thuong-gap.webp" alt="Thẻ Key và thiết bị trong Cài đặt, ghi trạng thái key và số máy đang dùng" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
   <figcaption className="text-[13.5px] leading-snug text-muted">Thẻ Key & thiết bị cho biết key còn hoạt động không và đang dùng trên mấy máy.</figcaption>
@@ -520,7 +523,7 @@ Kho văn bản (văn bản, ảnh trang, bản thảo, hội thoại) nằm trê
 
 ### Vì sao có việc tốn phí, có việc không?
 
-Việc nào gọi AI thì tính theo token vào key của đơn vị: đọc chữ bản quét, bóc thông tin và quan hệ khi nạp, hỏi AI, Viết bản thảo, Nhờ AI trình bày lại, Đọc lại bằng OCR, Chạy lại xử lý và Thay tệp. Việc chạy trên máy thì miễn phí: tra cứu, lọc kho, đồ thị và bán kính ảnh hưởng, xuất Word hay PDF, sao lưu, nén ảnh, Đọc lại chữ (miễn phí). Xem tổng chi phí ở **Cài đặt → Mức dùng AI tháng này**.
+Việc nào gọi AI thì tính theo token vào key của đơn vị: đọc chữ bản quét, bóc thông tin và quan hệ khi nạp, hỏi AI, Viết bản thảo, Nhờ AI trình bày lại, Đọc lại bằng OCR, Chạy lại xử lý, Nạp lại quan hệ và Thay tệp. Việc chạy trên máy thì miễn phí: tra cứu, lọc kho, đồ thị và bán kính ảnh hưởng, xuất Word hay PDF, sao lưu, nén ảnh, Đọc lại chữ (miễn phí). Xem tổng chi phí ở **Cài đặt → Mức dùng AI tháng này**.
 
 ### Tôi quên key thì sao?
 
@@ -537,7 +540,7 @@ Kiểu giao diện và chế độ sáng, tối lưu riêng từng máy, không 
 
 ### App báo "Không kết nối được máy chủ DocOps"?
 
-Trong lúc dải này còn hiện, việc đọc chữ, phân tích, hỏi AI và AI viết bản thảo không chạy; tra cứu, đọc văn bản và sửa bản thảo trên máy vẫn dùng được. Kiểm tra kết nối mạng rồi bấm **Thử lại** trên dải. Vẫn không được thì gửi phản hồi kèm ảnh chụp màn hình.
+Trong lúc dải này còn hiện, việc đọc chữ, phân tích, hỏi AI và AI viết bản thảo không chạy; tra cứu, đọc văn bản và sửa bản thảo trên máy vẫn dùng được. Kiểm tra kết nối mạng rồi bấm **Thử lại** trên dải. Vẫn không được thì báo quản trị viên của đơn vị, hoặc gửi ảnh chụp màn hình qua trang [Liên hệ](/lien-he). Lúc mất kết nối không gửi được phản hồi từ app, vì phản hồi cũng đi qua máy chủ DocOps; khi kết nối trở lại, dùng **Trợ giúp → Gửi phản hồi**.
 
 </Step>
 

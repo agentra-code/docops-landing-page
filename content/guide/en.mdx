@@ -154,13 +154,14 @@ If a document you just ingested has the same number as one already in the librar
 </SubBlock>
 
 <Callout kind="warning" title="Cannot be undone">
-  Replacing a file deletes the old document for good: its page images, its text and the relations it points out to. Relations that other documents cite to this number are kept. Using **Thay tệp…** with a scan means the text reading is billed like a new ingest.
+  Replacing a file deletes the old document for good: its page images, its text and the relations it points out to. Relations that other documents cite to this number are kept. Every **Thay tệp…** re-runs the AI analysis on the new document, so it is billed like a new ingest; if the new file is a scan, the text reading is billed on top.
 </Callout>
 
 <SubBlock title="Documents whose text was not read, or that stopped halfway">
 
 - A scan whose text the machine has not read has a **Đọc lại bằng OCR** (Re-read with OCR) button: DocOps reads the text from the stored page images and carries on with the analysis. This is billed like reading a new scan.
 - A document marked **Dừng giữa chừng** (Stopped halfway) or **Chưa xử lý được** (Not processed) has a **Chạy lại xử lý** (Run processing again) button, also billed AI use.
+- A document whose legal-basis relations the machine could not extract has a **Nạp lại quan hệ** (Reload relations) button. Click the **Cần nạp lại quan hệ** (Relations need reloading) state button to tick several documents at once, then click **Nạp lại quan hệ của N văn bản** (Reload relations of N documents). The confirmation box says how many documents will run; **Nạp lại quan hệ** is billed AI use, and a document without text first has its text read from the page images, then returns to the details confirmation step. Click **Bắt đầu** (Start).
 - Only one document can be re-read at a time; the other buttons are locked until the running one finishes.
 
 </SubBlock>
@@ -268,7 +269,7 @@ Confirming at H2 confirms the details; the document enters the library once the 
 </SubBlock>
 
 <Callout kind="warning">
-  The C key (quick confirm) and **Chọn tất cả mục H2** (Select all H2 items) confirm without opening the confirmation screen. Use them only when you have already looked at those documents' details.
+  The C key (quick confirm), and the **Chọn tất cả mục H2** (Select all H2 items) tick box with its **Chốt N mục** (Confirm N items) button, confirm without opening the confirmation screen. Use them only when you have already looked at those documents' details.
 </Callout>
 
 <SubBlock title="Legal-basis validity warnings">
@@ -277,7 +278,7 @@ The **Rà soát** (Review) screen lists your institution's documents that cite a
 
 1. Filter with the **Căn cứ bị bãi bỏ** (Basis repealed), **Sắp thay đổi** (Changing soon) and **Đã xử lý** (Handled) buttons.
 2. Choose a document. The right side shows the flagged legal bases, the original sentence that cites each one, and the document's content in two tabs, **Chữ** (Text) and **Ảnh trang** (Page images), with ⇤ Đầu and Cuối ⇥ buttons and the Home and End keys.
-3. Click the original sentence to jump to that very sentence in the document's content. A legal basis that has expired and has a replacement offers a **Thay bằng …** (Replace with …) button that opens the new document.
+3. Click the original sentence to jump to that very sentence in the document's content. A legal basis that has expired and has a replacement offers a **Thay bằng …** (Replace with …) button: it opens the document library, filtered by the replacement's number.
 4. When you have dealt with it, click **Đã xử lý** (Handled), or press X. DocOps moves on to the next warning.
 
 The top of the screen always reads "Đã soát N văn bản · M cạnh" (Checked N documents · M edges). An empty list with 0 edges means the machine has no relations to check yet, not that the library is clean.
@@ -411,7 +412,7 @@ A click applies it at once, with nothing to save. These choices are stored separ
 2. If there is a new version, click **Tải và cài** (Download and install) and wait for the download.
 3. Click **Khởi động lại để cài** (Restart to install). DocOps closes, installs the new version and reopens.
 
-Save the draft you are working on before step 3.
+Drafts save themselves after every change; there is no save button. Before step 3, wait until the line next to the Drafting title reads "nháp đã lưu · hh:mm" (draft saved · time).
 
 </SubBlock>
 
@@ -469,7 +470,7 @@ If this computer has never been backed up, or has gone 7 days without a backup, 
 
 The **Dung lượng lưu trữ** (Storage) card shows how much space the original images and the data take, and how many images are not compressed yet.
 
-1. Click **Nén ảnh (còn khoảng …)** (Compress images, about … after). Images keep their resolution.
+1. Click **Nén ảnh (còn khoảng …)** (Compress images, down to about …). Images keep their resolution.
 2. To stop, click **Dừng** (Stop); the image being compressed finishes, then it stops.
 
 If there has been no backup in the last 24 hours, DocOps asks you to back up first, or to tick **Tôi đã tự sao lưu bằng cách khác** (I have backed up another way). Compressing runs on your computer and uses no billed AI.
@@ -509,6 +510,8 @@ An agent cannot: confirm at a confirmation step (it only proposes; the proposal 
 
 <Step n={12} id="cau-hoi-thuong-gap" title="Frequently asked questions">
 
+The questions that come up most when starting with DocOps: where the data is, what is billed, a forgotten key, moving computer, and losing the connection to the server.
+
 <figure className="flex flex-col gap-2">
   <img src="/images/guide/cau-hoi-thuong-gap.webp" alt="The Key and devices card in Settings, showing the key status and how many computers use it" loading="lazy" decoding="async" className="h-auto w-full rounded-xl border border-line" />
   <figcaption className="text-[13.5px] leading-snug text-muted">The Key & thiết bị card shows whether the key is active and how many computers use it. The app interface is in Vietnamese.</figcaption>
@@ -520,7 +523,7 @@ The document library (documents, page images, drafts, conversations) lives on th
 
 ### Why are some things billed and others not?
 
-Anything that calls the AI is charged in tokens to your institution's key: reading the text of scans, extracting details and relations at ingest, asking the AI, Viết (Write a draft), Nhờ AI trình bày lại (Ask the AI to lay it out again), Đọc lại bằng OCR (Re-read with OCR), Chạy lại xử lý (Run processing again) and Thay tệp (Replace file). Anything that runs on your computer is free: search, filtering the library, the graph and impact radius, exporting Word or PDF, backups, image compression, and Đọc lại chữ (miễn phí). See the total cost under **Cài đặt → Mức dùng AI tháng này** (Settings → AI usage this month).
+Anything that calls the AI is charged in tokens to your institution's key: reading the text of scans, extracting details and relations at ingest, asking the AI, Viết (Write a draft), Nhờ AI trình bày lại (Ask the AI to lay it out again), Đọc lại bằng OCR (Re-read with OCR), Chạy lại xử lý (Run processing again), Nạp lại quan hệ (Reload relations) and Thay tệp (Replace file). Anything that runs on your computer is free: search, filtering the library, the graph and impact radius, exporting Word or PDF, backups, image compression, and Đọc lại chữ (miễn phí). See the total cost under **Cài đặt → Mức dùng AI tháng này** (Settings → AI usage this month).
 
 ### What if I forget the key?
 
@@ -537,7 +540,7 @@ The layout and the light or dark setting are stored separately on each computer 
 
 ### The app says "Không kết nối được máy chủ DocOps"?
 
-That strip means "Cannot reach the DocOps server". While it shows, text reading, analysis, asking the AI and AI drafting do not run; search, reading documents and editing drafts on your computer still work. Check the network connection, then click **Thử lại** (Try again) on the strip. If it still fails, send feedback with a screenshot.
+That strip means "Cannot reach the DocOps server". While it shows, text reading, analysis, asking the AI and AI drafting do not run; search, reading documents and editing drafts on your computer still work. Check the network connection, then click **Thử lại** (Try again) on the strip. If it still fails, tell your institution's administrator, or send a screenshot through the [Contact](/en/contact) page. Feedback cannot be sent from the app while the connection is down, because it also goes through the DocOps server; once the connection is back, use **Trợ giúp → Gửi phản hồi** (Help → Send feedback).
 
 </Step>
 
