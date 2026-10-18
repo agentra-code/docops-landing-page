@@ -87,8 +87,8 @@ test('home topic hub lists every topic page in three groups', async ({ page }) =
 // Mười hai id này là CHÍNH chuỗi mà app desktop ghim (X1, tests/unit/guides.test.ts): app mở trang kèm `#<id>`.
 const GUIDE_IDS = ['bat-dau', 'nap-van-ban', 'kho-van-ban', 'tra-cuu', 'hoi-ai', 'ra-soat', 'do-thi', 'soan-thao', 'cai-dat', 'sao-luu', 'ket-noi-agent', 'cau-hoi-thuong-gap']
 const GUIDES = [
-  { path: '/huong-dan-su-dung', lang: 'vi', keyword: /hướng dẫn sử dụng DocOps/i, download: '/tai-ve', install: ['/huong-dan-cai-dat/macos', '/huong-dan-cai-dat/windows'] },
-  { path: '/en/user-guide', lang: 'en', keyword: /DocOps user guide/i, download: '/en/download', install: ['/en/install/macos', '/en/install/windows'] },
+  { path: '/huong-dan-su-dung', lang: 'vi', keyword: /hướng dẫn sử dụng DocOps/i, bar: /^HDSD$/, download: '/tai-ve', install: ['/huong-dan-cai-dat/macos', '/huong-dan-cai-dat/windows'] },
+  { path: '/en/user-guide', lang: 'en', keyword: /DocOps user guide/i, bar: /DocOps user guide/i, download: '/en/download', install: ['/en/install/macos', '/en/install/windows'] },
 ] as const
 
 for (const g of GUIDES) {
@@ -141,7 +141,8 @@ for (const g of GUIDES) {
     const home = g.lang === 'vi' ? '/' : '/en'
     await goto(home)
     await expect(link('header nav')).toBeVisible() // khung desktop của dự án là 1280 px, đúng ngưỡng xl
-    await expect(link('header nav')).toHaveText(g.keyword)
+    await expect(link('header nav')).toHaveText(g.bar) // thanh tiếng Việt viết tắt "HDSD" (PO 18/10); nhãn đầy đủ ở title
+    await expect(link('header nav')).toHaveAttribute('title', g.keyword)
     await expect(link('footer')).toHaveCount(1)
     await expect(link('footer')).toHaveText(g.keyword)
     for (const from of [g.download, ...g.install]) {
