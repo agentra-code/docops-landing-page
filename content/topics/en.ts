@@ -102,6 +102,7 @@ export const TOPICS_EN: Record<TopicId, TopicCopy> = {
         q: 'Does the review replace the legal office?',
         a: 'No. DocOps shows which documents need attention and why, with the original sentence as evidence. Deciding to amend, replace or repeal a document stays with the authorised staff.',
       },
+      { q: 'How do I check the legal bases in an official letter before it goes out?', a: 'Draft or import the letter in the Drafting screen. Each "Căn cứ …" line gets a label: in force, expired, about to change or not in the repository, based on the documents your organization has ingested.' },
     ],
     share: { title: 'Legal basis review', subtitle: 'Find documents that rest on replaced, repealed or not-yet-effective bases' },
   },
@@ -153,6 +154,17 @@ export const TOPICS_EN: Record<TopicId, TopicCopy> = {
         ],
       },
       {
+        h2: 'Official letters, proposals, reports and minutes with AI',
+        paras: ['Each document type has its own layout from the Decree 30 templates. Pick the type, write the brief, and DocOps writes the content into that layout.'],
+        items: [
+          { title: 'Official letter (công văn)', text: 'no type name; the subject goes after "V/v" under the reference number; addressed with "Kính gửi".' },
+          { title: 'Proposal (tờ trình)', text: 'type name TỜ TRÌNH, subject "Về việc…", sent to the authority that decides.' },
+          { title: 'Report (báo cáo)', text: 'type name BÁO CÁO and subject; content from your brief, figures checked by staff.' },
+          { title: 'Meeting minutes (biên bản)', text: 'a dedicated minutes layout from the Decree 30 templates; put time, attendees and key conclusions in the brief.' },
+          { title: 'Decisions, notices, plans', text: 'and the other administrative document types, listed on', link: { topic: 'administrative-document-types' } },
+        ],
+      },
+      {
         h2: 'Valid bases from the first draft',
         paras: [
           'Before writing, DocOps leaves out of the AI input any basis that is expired or about to change in your repository. After writing, every "Pursuant to …" line gets a label: In force, Expired, About to change, or Not in repository.',
@@ -196,6 +208,7 @@ export const TOPICS_EN: Record<TopicId, TopicCopy> = {
         q: 'Where do the institution details in a document come from?',
         a: 'From Institution details in Settings: parent body, issuing body, place, signing authority, and the signer title and name. Fill them in once and every draft reuses them.',
       },
+      { q: 'Can AI write meeting minutes?', a: 'Yes. Pick the Minutes type and write a brief with the meeting, time, attendees and conclusions; DocOps lays it out in the Decree 30 minutes layout. Staff check the content before signing.' },
     ],
     share: { title: 'Decree 30 drafting', subtitle: '29 administrative document types, expired bases flagged, Word and PDF export' },
   },
@@ -290,6 +303,7 @@ export const TOPICS_EN: Record<TopicId, TopicCopy> = {
         q: 'Do questions and documents leave my machine?',
         a: 'The repository and Q&A history stay on your machine. When you ask, DocOps sends the question with a context pack drawn from the repository through the DocOps server to the AI model provider to produce the answer.',
       },
+      { q: 'Can DocOps search every Vietnamese legal document?', a: 'No. DocOps answers only from documents your organization has ingested. To search a law, decree or circular, ingest it; DocOps can then cite it and track its validity.' },
     ],
     share: { title: 'AI document search', subtitle: 'Answers only from your repository, citing document number and article' },
   },
@@ -390,19 +404,21 @@ export const TOPICS_EN: Record<TopicId, TopicCopy> = {
     share: { title: 'AI for universities', subtitle: 'From a folder of PDFs to a knowledge repository for every office' },
   },
   'ai-for-organizations': {
-    name: 'Document AI for agencies and companies',
-    metaTitle: 'Document AI for agencies and companies',
+    name: 'Document AI for communes, agencies, firms',
+    metaTitle: 'Document AI for communes, agencies, firms',
     description:
-      'DocOps reads, classifies, searches with citations and drafts Decree 30 documents for agencies, companies and associations, alongside your e-Office system.',
+      'DocOps reads, searches with citations and drafts Decree 30 documents for commune people’s committees, government agencies and companies, alongside e-Office.',
     keywords: [
-      'administrative document AI for agencies and companies',
+      'administrative document AI for commune people’s committees',
+      'AI software for government agencies',
+      'AI assistant for civil servants',
       'AI for corporate records and clerical work',
       'document AI for mass organizations',
       'internal company document search',
       'internal document knowledge base',
     ],
-    eyebrow: 'For agencies and companies',
-    h1: 'Administrative document AI for agencies and companies, under Decree 30',
+    eyebrow: 'For communes, agencies and companies',
+    h1: 'Administrative document AI for commune people’s committees, government agencies and companies',
     lead:
       'Which of your documents rest on a circular that has been replaced? What does the internal regulation say about this, and in which Article? DocOps answers from your own repository and drafts to the Decree 30 format, so clerical, administration and legal staff work faster and still review everything themselves.',
     card: 'For people’s committees, departments, companies, mass organizations and associations: your own repository, cited search, legal basis review, Decree 30 drafting.',
@@ -440,6 +456,18 @@ export const TOPICS_EN: Record<TopicId, TopicCopy> = {
           { title: 'Legal basis review', text: 'warns about documents resting on bases that are replaced, repealed or not yet in force, see', link: { topic: 'legal-basis-review' } },
           { title: 'Drafting', text: 'decisions, notices, submissions, plans, reports… from one sentence of intent, see', link: { topic: 'decree-30-drafting' } },
           { title: 'Universities', text: 'get a dedicated section for academic affairs and academic regulations, see', link: { topic: 'ai-for-universities' } },
+        ],
+      },
+      {
+        h2: 'For commune people’s committees and civil servants',
+        paras: [
+          'At a commune or ward people’s committee, one civil servant often drafts documents and also has to know the decisions and plans issued from above. DocOps is an AI assistant for both jobs, on the commune’s own repository.',
+        ],
+        items: [
+          { title: 'Drafting', text: 'official letters, proposals, reports, plans, notices and minutes under Decree 30 from a one-sentence brief; committee name, place and signer filled in for you, see', link: { topic: 'decree-30-drafting' } },
+          { title: 'Documents from above', text: 'ingest decisions, plans and guidance from the province and departments, then ask in plain words; answers cite document number and article, see', link: { topic: 'ai-document-search' } },
+          { title: 'Legal basis review', text: 'see which commune documents rest on bases that were replaced or repealed, see', link: { topic: 'legal-basis-review' } },
+          { title: 'Own repository', text: 'one key and one separate repository per commune, on your machine.' },
         ],
       },
       {
@@ -483,6 +511,8 @@ export const TOPICS_EN: Record<TopicId, TopicCopy> = {
       { q: 'Can Communist Party documents or those with their own format be used?', a: 'Not yet. These documents do not use the National Title and Motto, while DocOps drafts and checks format under Decree 30, so they would be judged as missing components.' },
       { q: 'Does DocOps manage accounting vouchers?', a: 'No. DocOps works with the 29 types of administrative document in Decree 30 and the legal documents they rest on. Invoices, receipts, payment vouchers and other accounting vouchers are out of scope.' },
       { q: 'Where is the organization’s document data kept?', a: 'On your machine. The DocOps server only passes content to the AI model for steps that need AI and does not store it. Each organization has its own key and repository.' },
+      { q: 'Can commune and ward people’s committees use DocOps?', a: 'Yes. Their documents are administrative documents under Decree 30, so DocOps drafts official letters, proposals, reports, plans and minutes, searches with citations and reviews legal bases on the commune’s own repository.' },
+      { q: 'Is DocOps a document management system for communes?', a: 'No. The incoming/outgoing document system (e-Office) and digital signing stay as they are. DocOps works on content: search, legal basis review and drafting, then exports Word or PDF into that process.' },
     ],
     share: { title: 'Agencies and companies', subtitle: 'Your own repository, cited search, Decree 30 drafting' },
   },

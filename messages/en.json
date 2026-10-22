@@ -52,8 +52,8 @@
   "home": {
     "hero": {
       "eyebrow": "Desktop app for Windows and macOS",
-      "h1": "{product}: the AI agent for university administrative documents",
-      "sub": "From document to decision in minutes, not days. DocOps ingests, classifies, searches with citations, maps legal impact and drafts under Decree 30. Your staff always make the final call.",
+      "h1": "{product}: AI software for drafting administrative documents",
+      "sub": "For government agencies, commune people’s committees, universities and companies. DocOps ingests, classifies, searches with citations, reviews legal bases and drafts under Decree 30, in minutes rather than days. Your staff always make the final call.",
       "ctaDefault": "Download DocOps",
       "ctaMac": "Download for macOS",
       "ctaWindows": "Download for Windows",
@@ -197,7 +197,7 @@
         "a": "No re-download needed. In the app open Settings, the Version tab, click Check for updates, then Download and install, then Restart to install."
       },
       "q6": {
-        "q": "What does it cost?",
+        "q": "How do I get a price quote?",
         "a": "Downloading and installing is free. Pricing depends on how much your institution uses; contact us for a quote."
       },
       "q7": {
@@ -205,8 +205,8 @@
         "a": "No. DocOps does not handle the incoming/outgoing correspondence flow or digital signatures. It works on document content: building a knowledge repository, cited search, legal basis review and Decree 30 drafting, with Word or PDF export for your existing issuing process."
       },
       "q8": {
-        "q": "Can agencies and companies use DocOps?",
-        "a": "Yes. Beyond universities, DocOps works for government agencies, companies, mass organizations and associations that format documents under Decree 30: all 29 administrative document types, circulars and decrees tracked as legal bases, cited search and drafting. DocOps does not yet support documents of the Communist Party or of organizations with their own formatting rules, and does not manage accounting vouchers."
+        "q": "Can commune people’s committees, agencies and companies use DocOps?",
+        "a": "Yes. Beyond universities, DocOps works for government agencies, commune and ward people’s committees, companies, mass organizations and associations that format documents under Decree 30: all 29 administrative document types, circulars and decrees tracked as legal bases, cited search and drafting. DocOps does not yet support documents of the Communist Party or of organizations with their own formatting rules, and does not manage accounting vouchers."
       }
     },
     "cta": {
@@ -216,7 +216,7 @@
       "b2": "Contact us"
     },
     "meta": {
-      "title": "Agentra DocOps · AI for university administrative documents"
+      "title": "Administrative document drafting software · Agentra DocOps"
     }
   },
   "download": {
@@ -483,7 +483,11 @@
     }
   },
   "topics": {
-    "groups": { "feature": "Features", "audience": "By organization", "guide": "Records management guides" },
+    "groups": {
+      "feature": "Features",
+      "audience": "By organization",
+      "guide": "Records management guides"
+    },
     "breadcrumb": "Breadcrumb",
     "updated": "Updated {date}",
     "inShort": "In short",

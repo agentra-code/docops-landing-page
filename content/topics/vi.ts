@@ -12,7 +12,7 @@ export const TOPICS_VI: Record<TopicId, TopicCopy> = {
     metaTitle: 'Rà soát căn cứ pháp lý hết hiệu lực bằng AI',
     description:
       'Rà soát căn cứ pháp lý bị thay thế, bãi bỏ hoặc chưa có hiệu lực trong văn bản của đơn vị, xem tại một ngày bất kỳ và đánh giá tác động trước khi sửa.',
-    keywords: ['rà soát căn cứ pháp lý', 'văn bản hết hiệu lực', 'kiểm tra hiệu lực văn bản', 'đánh giá tác động văn bản', 'đồ thị quan hệ pháp lý'],
+    keywords: ['rà soát căn cứ pháp lý', 'văn bản hết hiệu lực', 'kiểm tra hiệu lực văn bản', 'kiểm tra căn cứ pháp lý trong công văn', 'công cụ tìm căn cứ pháp lý', 'đánh giá tác động văn bản', 'đồ thị quan hệ pháp lý'],
     eyebrow: 'Văn bản hết hiệu lực',
     h1: 'Rà soát căn cứ pháp lý hết hiệu lực trong văn bản của đơn vị',
     lead:
@@ -107,6 +107,7 @@ export const TOPICS_VI: Record<TopicId, TopicCopy> = {
         q: 'Rà soát có thay cho ý kiến của bộ phận pháp chế không?',
         a: 'Không. DocOps chỉ ra văn bản nào cần xem và vì sao, kèm câu gốc làm bằng chứng. Quyết định sửa, thay hay bãi bỏ văn bản vẫn do cán bộ có thẩm quyền đưa ra.',
       },
+      { q: 'Kiểm tra căn cứ pháp lý trong một công văn sắp ban hành thế nào?', a: 'Soạn hoặc nhập công văn vào màn Soạn thảo. Mỗi dòng "Căn cứ …" được gắn nhãn Còn hiệu lực, Hết hiệu lực, Sắp thay đổi hoặc Không có trong kho, dựa trên các văn bản đơn vị đã nạp.' },
     ],
     share: { title: 'Rà soát căn cứ pháp lý', subtitle: 'Tìm văn bản đang dựa trên căn cứ bị thay thế, bãi bỏ hoặc chưa có hiệu lực' },
   },
@@ -116,7 +117,7 @@ export const TOPICS_VI: Record<TopicId, TopicCopy> = {
     metaTitle: 'Soạn thảo văn bản theo Nghị định 30 bằng AI',
     description:
       'Soạn thảo 29 loại văn bản hành chính theo Nghị định 30/2020/NĐ-CP từ một câu ý chính, tự điền thông tin đơn vị, đánh dấu căn cứ hết hiệu lực, xuất Word và PDF.',
-    keywords: ['soạn thảo văn bản theo Nghị định 30', 'AI soạn thảo văn bản hành chính', 'mẫu văn bản Nghị định 30', 'soạn quyết định, tờ trình, thông báo bằng AI'],
+    keywords: ['soạn thảo văn bản theo Nghị định 30', 'AI soạn công văn', 'AI viết tờ trình', 'AI viết báo cáo hành chính', 'AI viết biên bản cuộc họp', 'mẫu văn bản Nghị định 30'],
     eyebrow: 'AI soạn thảo văn bản hành chính',
     h1: 'Soạn thảo văn bản theo Nghị định 30 bằng AI, cán bộ sửa và ký',
     lead:
@@ -155,6 +156,17 @@ export const TOPICS_VI: Record<TopicId, TopicCopy> = {
           { text: 'AI viết toàn bộ văn bản trên trang A4; thông tin đơn vị lấy từ Cài đặt, Thông tin đơn vị.' },
           { text: 'Sửa trực tiếp như trong Word; danh sách "Còn trống" nhắc những chỗ chưa điền.' },
           { text: 'Xuất ra Word hoặc PDF để trình ký theo quy trình của đơn vị.' },
+        ],
+      },
+      {
+        h2: 'Soạn công văn, tờ trình, báo cáo, biên bản bằng AI',
+        paras: ['Mỗi loại văn bản có khung trình bày riêng theo mẫu của Nghị định 30. Chọn loại, viết ý chính, DocOps viết nội dung vào đúng khung đó.'],
+        items: [
+          { title: 'Công văn', text: 'không có tên loại; trích yếu ghi sau "V/v" dưới số, ký hiệu; có "Kính gửi".' },
+          { title: 'Tờ trình', text: 'tên loại TỜ TRÌNH, trích yếu "Về việc…", gửi cấp có thẩm quyền xem xét, quyết định.' },
+          { title: 'Báo cáo', text: 'tên loại BÁO CÁO và trích yếu; nội dung theo ý chính bạn nêu, số liệu do cán bộ kiểm.' },
+          { title: 'Biên bản cuộc họp', text: 'khung biên bản riêng theo mẫu của Nghị định 30; viết thời gian, thành phần và kết luận chính vào ý chính để AI trình bày.' },
+          { title: 'Quyết định, thông báo, kế hoạch', text: 'cùng 29 loại văn bản hành chính khác, danh sách ở trang', link: { topic: 'administrative-document-types' } },
         ],
       },
       {
@@ -203,6 +215,7 @@ export const TOPICS_VI: Record<TopicId, TopicCopy> = {
         q: 'Thông tin đơn vị trên văn bản lấy từ đâu?',
         a: 'Từ mục Thông tin đơn vị trong Cài đặt: cơ quan chủ quản, cơ quan ban hành, địa danh, thẩm quyền ký, chức vụ và họ tên người ký. Điền một lần, mọi bản nháp dùng lại.',
       },
+      { q: 'Dùng AI viết biên bản cuộc họp được không?', a: 'Được. Chọn loại Biên bản, viết ý chính gồm cuộc họp gì, thời gian, thành phần và kết luận; DocOps trình bày theo khung biên bản của Nghị định 30. Cán bộ kiểm nội dung trước khi ký.' },
     ],
     share: { title: 'Soạn văn bản theo NĐ 30', subtitle: '29 loại văn bản hành chính, căn cứ hết hiệu lực được đánh dấu, xuất Word và PDF' },
   },
@@ -212,7 +225,7 @@ export const TOPICS_VI: Record<TopicId, TopicCopy> = {
     metaTitle: 'Tra cứu văn bản bằng AI, có trích dẫn nguồn',
     description:
       'Hỏi bằng lời trên kho văn bản của đơn vị, nhận câu trả lời trích dẫn số hiệu và Điều. Tìm toàn văn không cần gõ dấu, 10.000 văn bản trong 0,01 giây.',
-    keywords: ['tra cứu văn bản bằng AI', 'hỏi đáp văn bản có trích dẫn', 'tìm kiếm văn bản nội bộ', 'tra cứu quy chế trường đại học', 'tìm văn bản không dấu'],
+    keywords: ['tra cứu văn bản bằng AI', 'hỏi đáp văn bản có trích dẫn', 'AI tra cứu văn bản pháp luật trong kho của đơn vị', 'tìm kiếm văn bản nội bộ', 'tra cứu quy chế trường đại học', 'tìm văn bản không dấu'],
     eyebrow: 'Hỏi đáp có trích dẫn',
     h1: 'Tra cứu văn bản bằng AI, mỗi câu trả lời đều chỉ ra số hiệu và Điều',
     lead:
@@ -297,6 +310,7 @@ export const TOPICS_VI: Record<TopicId, TopicCopy> = {
         q: 'Câu hỏi và kho văn bản có rời khỏi máy không?',
         a: 'Kho văn bản và lịch sử hỏi đáp lưu tại máy. Khi hỏi, DocOps gửi kèm câu hỏi một gói ngữ cảnh trích từ kho qua máy chủ DocOps tới nhà cung cấp mô hình AI để tạo câu trả lời.',
       },
+      { q: 'DocOps tra cứu được mọi văn bản pháp luật Việt Nam không?', a: 'Không. DocOps chỉ trả lời từ văn bản đơn vị đã nạp vào kho. Muốn tra một luật, nghị định hay thông tư, hãy nạp văn bản đó; DocOps sẽ trích dẫn được và theo dõi hiệu lực của nó.' },
     ],
     share: { title: 'Tra cứu văn bản bằng AI', subtitle: 'Câu trả lời chỉ từ kho của đơn vị, trích dẫn số hiệu và Điều' },
   },
@@ -306,7 +320,7 @@ export const TOPICS_VI: Record<TopicId, TopicCopy> = {
     metaTitle: 'Chuyển đổi số văn thư trường đại học với AI',
     description:
       'Chuyển đổi số công tác văn thư ở trường đại học: biến văn bản PDF thành kho tri thức có cấu trúc, quan hệ pháp lý và tra cứu có trích dẫn cho từng phòng ban.',
-    keywords: ['chuyển đổi số văn thư trường đại học', 'ứng dụng AI trong quản lý văn bản trường đại học', 'số hoá văn bản hành chính', 'AI cho phòng đào tạo', 'kho văn bản trường đại học'],
+    keywords: ['chuyển đổi số văn thư trường đại học', 'phần mềm AI văn bản hành chính trường đại học', 'ứng dụng AI trong quản lý văn bản trường đại học', 'số hoá văn bản hành chính', 'AI cho phòng đào tạo', 'kho văn bản trường đại học'],
     eyebrow: 'Giải pháp cho trường đại học',
     h1: 'Chuyển đổi số công tác văn thư trường đại học, từ thư mục PDF tới kho tri thức',
     lead:
@@ -397,19 +411,23 @@ export const TOPICS_VI: Record<TopicId, TopicCopy> = {
     share: { title: 'Chuyển đổi số văn thư', subtitle: 'Từ thư mục PDF tới kho tri thức cho mọi phòng ban của trường đại học' },
   },
   'ai-for-organizations': {
-    name: 'AI văn bản cho cơ quan, doanh nghiệp',
-    metaTitle: 'AI văn bản cho cơ quan, doanh nghiệp',
+    name: 'AI văn bản cho UBND, cơ quan, doanh nghiệp',
+    metaTitle: 'AI văn bản cho UBND, cơ quan, doanh nghiệp',
     description:
-      'DocOps đọc, phân loại, tra cứu có trích dẫn và soạn nháp văn bản theo Nghị định 30 cho cơ quan, doanh nghiệp, đoàn thể. Chạy song song với hệ thống e-Office.',
+      'DocOps đọc, tra cứu có trích dẫn và soạn nháp văn bản theo Nghị định 30 cho UBND xã, cơ quan nhà nước, doanh nghiệp, đoàn thể. Chạy song song với e-Office.',
     keywords: [
-      'phần mềm AI văn bản hành chính cho cơ quan, doanh nghiệp',
+      'phần mềm AI văn bản hành chính cho UBND xã',
+      'phần mềm AI cho cơ quan nhà nước',
+      'phần mềm soạn thảo văn bản UBND xã',
+      'trợ lý AI cho cán bộ công chức',
+      'trợ lý AI hành chính công',
       'AI cho văn thư doanh nghiệp',
       'phần mềm AI văn bản cho đoàn thể, tổ chức',
       'tra cứu văn bản nội bộ doanh nghiệp',
       'kho tri thức văn bản nội bộ',
     ],
-    eyebrow: 'Giải pháp cho cơ quan, doanh nghiệp',
-    h1: 'Phần mềm AI văn bản hành chính cho cơ quan, doanh nghiệp và tổ chức',
+    eyebrow: 'Giải pháp cho UBND xã, cơ quan, doanh nghiệp',
+    h1: 'Phần mềm AI văn bản hành chính cho UBND xã, cơ quan nhà nước và doanh nghiệp',
     lead:
       'Văn bản nào của đơn vị đang dựa trên thông tư đã bị thay thế? Quy định nội bộ nói gì về việc này, ở Điều mấy? DocOps trả lời từ chính kho văn bản của bạn và soạn nháp đúng thể thức Nghị định 30, để văn thư, hành chính và pháp chế làm nhanh hơn mà vẫn tự duyệt.',
     card: 'Cho UBND, sở ngành, doanh nghiệp, đoàn thể và hội: kho văn bản riêng, tra cứu có trích dẫn, rà soát căn cứ, soạn theo Nghị định 30.',
@@ -447,6 +465,18 @@ export const TOPICS_VI: Record<TopicId, TopicCopy> = {
           { title: 'Rà soát căn cứ', text: 'cảnh báo văn bản đang dựa trên căn cứ bị thay thế, bãi bỏ hoặc chưa có hiệu lực, xem', link: { topic: 'legal-basis-review' } },
           { title: 'Soạn nháp', text: 'quyết định, thông báo, tờ trình, kế hoạch, báo cáo… từ một câu ý chính, xem', link: { topic: 'decree-30-drafting' } },
           { title: 'Trường đại học', text: 'có thêm phần riêng cho phòng đào tạo và quy chế học vụ, xem', link: { topic: 'ai-for-universities' } },
+        ],
+      },
+      {
+        h2: 'Cho UBND xã, phường và cán bộ công chức',
+        paras: [
+          'Ở UBND xã, phường, một công chức thường vừa soạn văn bản vừa phải nắm các quyết định, kế hoạch của cấp trên. DocOps là trợ lý AI cho cán bộ, công chức trong hai việc đó, trên kho văn bản riêng của xã.',
+        ],
+        items: [
+          { title: 'Soạn văn bản', text: 'công văn, tờ trình, báo cáo, kế hoạch, thông báo, biên bản theo Nghị định 30 từ một câu ý chính; tên UBND, địa danh, người ký tự điền, xem', link: { topic: 'decree-30-drafting' } },
+          { title: 'Tra văn bản cấp trên', text: 'nạp quyết định, kế hoạch, hướng dẫn của tỉnh và sở ngành, rồi hỏi bằng lời; câu trả lời dẫn số hiệu và Điều, xem', link: { topic: 'ai-document-search' } },
+          { title: 'Rà soát căn cứ', text: 'biết văn bản nào của xã đang dựa trên căn cứ đã bị thay thế hoặc bãi bỏ, xem', link: { topic: 'legal-basis-review' } },
+          { title: 'Kho riêng', text: 'mỗi xã một key và một kho văn bản riêng trên máy.' },
         ],
       },
       {
@@ -490,6 +520,8 @@ export const TOPICS_VI: Record<TopicId, TopicCopy> = {
       { q: 'Văn bản của Đảng hoặc tổ chức có thể thức riêng có dùng được không?', a: 'Chưa. Những văn bản này không dùng Quốc hiệu và Tiêu ngữ, trong khi DocOps soạn và kiểm tra thể thức theo Nghị định 30, nên chúng sẽ bị đánh giá là thiếu thành phần.' },
       { q: 'DocOps có quản lý chứng từ kế toán không?', a: 'Không. DocOps làm việc với 29 loại văn bản hành chính của Nghị định 30 và văn bản pháp luật làm căn cứ. Hoá đơn, phiếu thu, phiếu chi và chứng từ kế toán khác không thuộc phạm vi.' },
       { q: 'Dữ liệu văn bản của đơn vị nằm ở đâu?', a: 'Trên máy của bạn. Máy chủ DocOps chỉ chuyển nội dung tới mô hình AI ở các bước cần AI và không lưu nội dung. Mỗi đơn vị có key và kho riêng.' },
+      { q: 'UBND xã, phường dùng DocOps được không?', a: 'Được. Văn bản của UBND xã, phường là văn bản hành chính theo Nghị định 30, nên DocOps soạn nháp công văn, tờ trình, báo cáo, kế hoạch, biên bản, tra cứu có trích dẫn và rà soát căn cứ trên kho riêng của xã.' },
+      { q: 'DocOps có phải phần mềm quản lý văn bản cấp xã không?', a: 'Không. Phần mềm quản lý văn bản đi – đến (e-Office) và ký số của xã vẫn giữ nguyên. DocOps làm việc trên nội dung: tra cứu, rà soát căn cứ và soạn nháp, rồi xuất Word hoặc PDF để đưa vào quy trình đó.' },
     ],
     share: { title: 'Cho cơ quan, doanh nghiệp', subtitle: 'Kho văn bản riêng, tra cứu có trích dẫn, soạn theo Nghị định 30' },
   },

@@ -52,8 +52,8 @@
   "home": {
     "hero": {
       "eyebrow": "Ứng dụng desktop cho Windows và macOS",
-      "h1": "{product}: tác tử AI cho văn bản hành chính trường đại học",
-      "sub": "Từ văn bản đến quyết định, trong vài phút thay vì vài ngày. DocOps nhập, phân loại, tra cứu có trích dẫn, dò tác động pháp lý và soạn nháp theo Nghị định 30. Cán bộ luôn là người duyệt cuối.",
+      "h1": "{product}: phần mềm soạn thảo văn bản hành chính bằng AI",
+      "sub": "Cho cơ quan nhà nước, UBND xã, trường đại học và doanh nghiệp. DocOps nhập, phân loại, tra cứu có trích dẫn, rà soát căn cứ pháp lý và soạn nháp theo Nghị định 30, trong vài phút thay vì vài ngày. Cán bộ luôn là người duyệt cuối.",
       "ctaDefault": "Tải DocOps",
       "ctaMac": "Tải về cho macOS",
       "ctaWindows": "Tải về cho Windows",
@@ -197,7 +197,7 @@
         "a": "Không cần tải lại. Trong app vào Cài đặt, thẻ Phiên bản, bấm Kiểm tra cập nhật, rồi Tải và cài, sau đó Khởi động lại để cài."
       },
       "q6": {
-        "q": "Chi phí sử dụng?",
+        "q": "Báo giá DocOps thế nào?",
         "a": "Tải và cài miễn phí. Chi phí tính theo quy mô sử dụng của đơn vị; liên hệ để nhận báo giá."
       },
       "q7": {
@@ -205,8 +205,8 @@
         "a": "Không. DocOps không xử lý luồng công văn đi – đến hay ký số. DocOps làm việc trên nội dung văn bản: xây kho tri thức, tra cứu có trích dẫn, rà soát căn cứ pháp lý và soạn thảo theo Nghị định 30, xuất ra Word hoặc PDF để đưa vào quy trình ban hành đang dùng."
       },
       "q8": {
-        "q": "DocOps có dùng cho cơ quan, doanh nghiệp được không?",
-        "a": "Có. Ngoài trường đại học, DocOps dùng được cho cơ quan nhà nước, doanh nghiệp, đoàn thể và hội trình bày văn bản theo Nghị định 30: đủ 29 loại văn bản hành chính, thông tư và nghị định làm căn cứ, tra cứu có trích dẫn và soạn nháp. DocOps chưa hỗ trợ văn bản của Đảng và của các tổ chức có hướng dẫn thể thức riêng, và không quản lý chứng từ kế toán."
+        "q": "DocOps có dùng cho UBND xã, cơ quan, doanh nghiệp được không?",
+        "a": "Có. Ngoài trường đại học, DocOps dùng được cho cơ quan nhà nước, UBND xã, phường, doanh nghiệp, đoàn thể và hội trình bày văn bản theo Nghị định 30: đủ 29 loại văn bản hành chính, thông tư và nghị định làm căn cứ, tra cứu có trích dẫn và soạn nháp. DocOps chưa hỗ trợ văn bản của Đảng và của các tổ chức có hướng dẫn thể thức riêng, và không quản lý chứng từ kế toán."
       }
     },
     "cta": {
@@ -216,7 +216,7 @@
       "b2": "Liên hệ"
     },
     "meta": {
-      "title": "Agentra DocOps · AI cho văn bản hành chính trường đại học"
+      "title": "Phần mềm soạn thảo văn bản hành chính AI · Agentra DocOps"
     }
   },
   "download": {
@@ -483,7 +483,11 @@
     }
   },
   "topics": {
-    "groups": { "feature": "Tính năng", "audience": "Theo loại đơn vị", "guide": "Kiến thức văn thư" },
+    "groups": {
+      "feature": "Tính năng",
+      "audience": "Theo loại đơn vị",
+      "guide": "Kiến thức văn thư"
+    },
     "breadcrumb": "Đường dẫn",
     "updated": "Cập nhật ngày {date}",
     "inShort": "Tóm lại",
