@@ -74,3 +74,4 @@ và CI không nhúng để khỏi 404). Bật **Web Analytics** và **Speed Insi
 2. Project Settings → Functions → Region: **Singapore (sin1)** để tái tạo ISR gần người dùng.
 3. Push `main` → production; mỗi PR có preview URL. CI (`.github/workflows/ci.yml`) chạy verify, build, e2e, Lighthouse.
 4. Chuyển domain và phát hành bản desktop: xem `docs/van-hanh.md`.
+5. v.1.2
