@@ -62,7 +62,8 @@ proxy.ts                 # next-intl (Next 16 gọi là proxy thay cho middlewar
 | `DOWNLOAD_FEED_URL` | không | mặc định `https://download-docsopapp.agentra.io.vn/desktop/` |
 | `NEXT_PUBLIC_GA_MEASUREMENT_ID` | không | `G-XXXX`; thiếu thì không nạp GA4 |
 | `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | không | meta xác minh Google Search Console |
-| `NEXT_PUBLIC_CONSENT_BANNER` | không | `off` để tắt thanh cookie (GA4 nạp ngay) |
+| `NEXT_PUBLIC_CLARITY_PROJECT_ID` | không | chỉ để thử (CI đặt `clarity-test`); không đặt thì bản production dùng mã Microsoft Clarity thật trong `lib/clarity.ts` (`z6n0xpgry8`), dev và preview không nạp Clarity. Clarity chỉ nạp sau "Đồng ý", như GA4 |
+| `NEXT_PUBLIC_CONSENT_BANNER` | không | `off` để tắt thanh cookie (GA4 và Clarity nạp ngay) |
 
 Vercel tự đặt `NEXT_PUBLIC_VERCEL_ENV`; chỉ khi có biến này site mới nhúng script Vercel Analytics/Speed Insights (ở máy
 và CI không nhúng để khỏi 404). Bật **Web Analytics** và **Speed Insights** trong dashboard của project.

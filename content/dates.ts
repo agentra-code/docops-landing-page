@@ -5,7 +5,7 @@
  */
 export const CONTENT_UPDATED = {
   install: { macos: '2026-10-18', windows: '2026-10-18' },
-  privacy: '2026-09-15',
+  privacy: '2026-11-17',
   aiTransparency: '2026-10-04',
   guide: '2026-10-17',
 } as const

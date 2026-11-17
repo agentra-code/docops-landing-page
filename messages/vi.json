@@ -32,7 +32,7 @@
     "body": "Trang không tải được. Bấm thử lại, hoặc quay về trang chủ."
   },
   "consent": {
-    "text": "Agentra DocOps dùng cookie Google Analytics để hiểu cán bộ cần gì và làm trang hữu ích hơn. Từ chối thì trang vẫn hoạt động đầy đủ.",
+    "text": "Agentra DocOps dùng cookie Google Analytics và Microsoft Clarity để hiểu cán bộ cần gì và làm trang hữu ích hơn. Từ chối thì trang vẫn hoạt động đầy đủ.",
     "policy": "Chính sách bảo mật",
     "accept": "Đồng ý",
     "decline": "Từ chối"
